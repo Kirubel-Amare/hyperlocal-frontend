@@ -60,12 +60,17 @@ export default function LoginPage() {
             priority
           />
           <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-cyan-500 rounded flex items-center justify-center">
-                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6 4h12v2H6z" />
-                </svg>
+            <div className="flex items-center ">
+              <div className="w-20 h-20 relative">
+                <Image
+                  src="/logo-removebg-preview.png"
+                  alt="Servicely Logo"
+                  fill
+                  className="object-contain"
+                />
+
               </div>
+
               <span className="text-white text-lg font-bold">SERVICELY</span>
             </div>
             <h2 className="text-4xl font-bold text-white mb-4">
