@@ -1,4 +1,3 @@
-// types/registration.ts
 export interface RegistrationData {
   // Step 1
   accountType: 'hire' | 'work';
