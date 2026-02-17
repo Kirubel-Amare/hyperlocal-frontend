@@ -123,9 +123,8 @@ export default function Step1({ initialData, onSubmit }: Step1Props) {
 
       <DividerWithText text="OR" />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 gap-3">
         <SocialLoginButton provider="google" onClick={() => console.log('Google sign up')} />
-        <SocialLoginButton provider="apple" onClick={() => console.log('Apple sign up')} />
       </div>
     </div>
   )

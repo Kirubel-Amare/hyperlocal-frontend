@@ -7,10 +7,10 @@ interface HeaderProps {
   rightElement?: ReactNode  // new prop for custom content
 }
 
-export default function Header({ 
-  showLoginLink = true, 
+export default function Header({
+  showLoginLink = true,
   loginHref = '/login',
-  rightElement 
+  rightElement
 }: HeaderProps) {
   return (
     <header className="bg-white border-b border-gray-200">
@@ -28,7 +28,7 @@ export default function Header({
           rightElement
         ) : showLoginLink ? (
           <div className="flex items-center gap-4">
-            <span className="text-gray-600">Already have an account?</span>
+            <span className="text-gray-600 hidden sm:inline">Already have an account?</span>
             <Link href={loginHref} className="text-cyan-600 hover:text-cyan-700 font-medium">
               Log in
             </Link>

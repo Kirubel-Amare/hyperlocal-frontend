@@ -123,9 +123,8 @@ export default function LoginPage() {
 
               <DividerWithText text="OR CONTINUE WITH" />
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 gap-3">
                 <SocialLoginButton provider="google" onClick={() => console.log('Google sign in')} />
-                <SocialLoginButton provider="apple" onClick={() => console.log('Apple sign in')} />
               </div>
             </form>
 
