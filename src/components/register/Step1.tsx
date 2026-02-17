@@ -41,15 +41,14 @@ export default function Step1({ initialData, onSubmit }: Step1Props) {
       </p>
 
       {/* Account Type Cards */}
-      <div className="grid grid-cols-2 gap-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
         <button
           type="button"
           onClick={() => setAccountType('hire')}
-          className={`p-6 border-2 rounded-lg text-left transition-all ${
-            accountType === 'hire'
-              ? 'border-cyan-500 bg-cyan-50'
-              : 'border-gray-200 bg-white hover:border-gray-300'
-          }`}
+          className={`p-6 border-2 rounded-lg text-left transition-all ${accountType === 'hire'
+            ? 'border-cyan-500 bg-cyan-50'
+            : 'border-gray-200 bg-white hover:border-gray-300'
+            }`}
         >
           <ShoppingCart size={32} className={`mb-3 ${accountType === 'hire' ? 'text-cyan-600' : 'text-gray-600'}`} />
           <h3 className="font-bold text-gray-900 mb-2">I want to hire</h3>
@@ -61,11 +60,10 @@ export default function Step1({ initialData, onSubmit }: Step1Props) {
         <button
           type="button"
           onClick={() => setAccountType('work')}
-          className={`p-6 border-2 rounded-lg text-left transition-all ${
-            accountType === 'work'
-              ? 'border-cyan-500 bg-cyan-50'
-              : 'border-gray-200 bg-white hover:border-gray-300'
-          }`}
+          className={`p-6 border-2 rounded-lg text-left transition-all ${accountType === 'work'
+            ? 'border-cyan-500 bg-cyan-50'
+            : 'border-gray-200 bg-white hover:border-gray-300'
+            }`}
         >
           <Briefcase size={32} className={`mb-3 ${accountType === 'work' ? 'text-cyan-600' : 'text-gray-600'}`} />
           <h3 className="font-bold text-gray-900 mb-2">I want to work</h3>
@@ -125,7 +123,7 @@ export default function Step1({ initialData, onSubmit }: Step1Props) {
 
       <DividerWithText text="OR" />
 
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <SocialLoginButton provider="google" onClick={() => console.log('Google sign up')} />
         <SocialLoginButton provider="apple" onClick={() => console.log('Apple sign up')} />
       </div>

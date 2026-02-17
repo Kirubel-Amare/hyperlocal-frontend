@@ -46,9 +46,9 @@ export default function LoginPage() {
   }
 
   return (
-    
+
     <div className="flex justify-center min-h-screen bg-gray-50 p-4">
-   
+
       <div className="flex w-full max-w-6xl border-gray-800 rounded-lg overflow-hidden shadow-lg bg-white">
         {/* Left Side - Image */}
         <div className="hidden lg:flex lg:w-1/2 relative bg-gray-800">
@@ -81,7 +81,7 @@ export default function LoginPage() {
         </div>
 
         {/* Right Side - Login Form */}
-        <div className="lg:w-1/2 flex flex-col items-center justify-center px-6 py-8 sm:px-8 lg:px-8">
+        <div className="w-full lg:w-1/2 flex flex-col items-center justify-center px-6 py-8 sm:px-8 lg:px-8">
           <div className="w-full max-w-sm">
             <h1 className="text-4xl font-bold text-gray-900 mb-2">Welcome Back</h1>
             <p className="text-base text-blue-500 mb-8">

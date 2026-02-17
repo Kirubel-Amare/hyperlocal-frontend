@@ -44,7 +44,7 @@ export default function Step2({ initialData, onBack, onSubmit }: Step2Props) {
           required
         />
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <FormField
             label="City"
             type="text"
