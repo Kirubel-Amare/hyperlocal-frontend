@@ -24,7 +24,7 @@ export default function Header({
             height={100}
             alt="Logo"
           />
-          <span className="text-lg font-bold">Hyperlocal</span>
+         
         </div>
         {rightElement ? (
           rightElement

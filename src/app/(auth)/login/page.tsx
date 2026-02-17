@@ -49,7 +49,7 @@ export default function LoginPage() {
 
     <div className="flex justify-center min-h-screen bg-gray-50 p-4">
 
-      <div className="flex w-full max-w-6xl border-gray-800 rounded-lg overflow-hidden shadow-lg bg-white mt-10 mb-10">
+      <div className="flex w-full max-w-6xl  border-gray-800 rounded-lg overflow-hidden shadow-lg bg-white mt-10 mb-10">
         {/* Left Side - Image */}
         <div className="hidden lg:flex lg:w-1/2 relative bg-gray-800">
           <Image
@@ -86,14 +86,14 @@ export default function LoginPage() {
         </div>
 
         {/* Right Side - Login Form */}
-        <div className="w-full lg:w-1/2 flex flex-col items-center justify-center px-6 py-8 sm:px-8 lg:px-8">
+        <div className="w-full lg:w-1/2 flex  flex-col items-center justify-center px-6 py-8 sm:px-8 lg:px-8">
           <div className="w-full max-w-sm">
             <h1 className="text-4xl font-bold text-gray-900 mb-2">Welcome Back</h1>
             <p className="text-base text-blue-500 mb-8">
               Enter your details to access your account.
             </p>
 
-            <form onSubmit={handleSignIn} className="space-y-6 border border-gray-200 p-6 rounded-lg shadow-lg">
+            <form onSubmit={handleSignIn} className="space-y-6 p-6 rounded-lg shadow-lg">
               <FormField
                 label="Email Address"
                 type="email"
