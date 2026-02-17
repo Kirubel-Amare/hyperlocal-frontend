@@ -71,7 +71,7 @@ export default function LandingPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-cyan-50 to-white py-12 md:py-16">
+      <section className="bg-gradient-to-b from-cyan-50 to-white py-12 md:py-16 mt-20">
         <div className="max-w-6xl mx-auto px-4 md:px-6">
           <div className="text-center mb-8 md:mb-12">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
