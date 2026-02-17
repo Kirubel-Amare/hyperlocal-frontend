@@ -38,9 +38,9 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      <main className="max-w-2xl mx-auto px-4 md:px-6 py-8 md:py-12">
+      <main className="max-w-2xl mx-auto px-4 md:px-6 py-8 md:py-12 ">
         {/* Progress Bar */}
-        <div className="mb-8">
+        <div className="mb-8 mt-16">
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm font-medium text-cyan-600">
               STEP {step} OF 3

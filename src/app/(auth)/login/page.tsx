@@ -49,7 +49,7 @@ export default function LoginPage() {
 
     <div className="flex justify-center min-h-screen bg-gray-50 p-4">
 
-      <div className="flex w-full max-w-6xl border-gray-800 rounded-lg overflow-hidden shadow-lg bg-white">
+      <div className="flex w-full max-w-6xl border-gray-800 rounded-lg overflow-hidden shadow-lg bg-white mt-10 mb-10">
         {/* Left Side - Image */}
         <div className="hidden lg:flex lg:w-1/2 relative bg-gray-800">
           <Image

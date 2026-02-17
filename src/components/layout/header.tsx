@@ -14,19 +14,18 @@ export default function Header({
   rightElement
 }: HeaderProps) {
   return (
-    <header className="bg-white border-b border-gray-200">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <header className="fixed top-0 left-0 w-full h-20 z-50 bg-gray-200/30 backdrop-blur-lg shadow-lg">
+      <div className="w-full px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Image
+            className="rounded-full"
             src="/logo-removebg-preview.png"
-            alt="Servicely Logo"
-            width={32}   // adjust to your logo’s natural size
-            height={32}
-            className="object-contain"
+            width={100}
+            height={100}
+            alt="Logo"
           />
-          <span className="text-xl font-bold text-gray-900">Hyperlocal</span>
+          <span className="text-lg font-bold">Hyperlocal</span>
         </div>
-
         {rightElement ? (
           rightElement
         ) : showLoginLink ? (
