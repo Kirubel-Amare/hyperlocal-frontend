@@ -13,7 +13,7 @@ interface HeaderProps {
 
 const navLinks = [
   { name: 'Home', href: '/' },
-  { name: 'Services', href: '/#services' },
+  { name: 'Services', href: '/services' },
   { name: 'How it Works', href: '/#how-it-works' },
   { name: 'FAQ', href: '/#faq' },
   { name: 'About', href: '/about' },

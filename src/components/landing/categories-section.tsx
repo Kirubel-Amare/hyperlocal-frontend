@@ -41,7 +41,7 @@ export default function CategoriesSection() {
             <h2 className="text-5xl font-bold text-gray-900 mb-3">Browse by Category</h2>
             <p className="text-gray-600 text-lg">Explore services from verified professionals</p>
           </div>
-          <Link href="#" className="text-cyan-600 hover:text-cyan-700 font-semibold text-base flex items-center gap-2 hover:gap-3 transition-all group">
+          <Link href="/services" className="text-cyan-600 hover:text-cyan-700 font-semibold text-base flex items-center gap-2 hover:gap-3 transition-all group">
             View All
             <span className="transform group-hover:translate-x-1 transition-transform">→</span>
           </Link>
@@ -55,9 +55,10 @@ export default function CategoriesSection() {
             return (
               <Link
                 key={index}
-                href="#"
+                href={`/services?category=${category.name}`}
                 className="group bg-white rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 hover:border-cyan-200 overflow-hidden relative"
               >
+
                 {/* Gradient background on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
