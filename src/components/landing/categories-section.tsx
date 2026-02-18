@@ -33,7 +33,7 @@ export default function CategoriesSection() {
   }
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-white to-cyan-50">
+    <section id="services" className="py-20 px-6 bg-gradient-to-b from-white to-cyan-50">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-16">
@@ -60,7 +60,7 @@ export default function CategoriesSection() {
               >
                 {/* Gradient background on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
+
                 <div className="relative z-10">
                   <div className={`w-16 h-16 ${colorClass} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md group-hover:shadow-lg`}>
                     <Icon size={32} strokeWidth={1.5} />

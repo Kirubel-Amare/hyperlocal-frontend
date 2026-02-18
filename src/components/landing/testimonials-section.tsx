@@ -30,7 +30,7 @@ export default function TestimonialsSection() {
   return (
     <section className="relative w-full py-24 bg-gradient-to-br from-gray-50 via-white to-cyan-50">
       <div className="absolute -top-20 left-1/4 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-      
+
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative">
         {/* Header */}
         <div className="text-center mb-16">

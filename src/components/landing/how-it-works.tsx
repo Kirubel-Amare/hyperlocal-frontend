@@ -35,9 +35,9 @@ export default function HowItWorks() {
   ]
 
   return (
-    <section className="relative w-full py-24 bg-white">
+    <section id="how-it-works" className="relative w-full py-24 bg-white">
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-      
+
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative">
         {/* Header */}
         <div className="text-center mb-20">

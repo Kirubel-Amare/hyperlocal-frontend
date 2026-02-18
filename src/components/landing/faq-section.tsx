@@ -34,9 +34,9 @@ export default function FAQSection() {
   ]
 
   return (
-    <section className="relative w-full py-24 bg-gradient-to-br from-gray-50 to-white">
+    <section id="faq" className="relative w-full py-24 bg-gradient-to-br from-gray-50 to-white">
       <div className="absolute -top-40 left-1/3 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-      
+
       <div className="max-w-4xl mx-auto px-6 lg:px-12 relative">
         {/* Header */}
         <div className="text-center mb-16">
@@ -62,9 +62,8 @@ export default function FAQSection() {
                 <h3 className="text-lg font-bold text-gray-900 text-left">{faq.question}</h3>
                 <ChevronDown
                   size={24}
-                  className={`text-cyan-500 flex-shrink-0 ml-4 transition-transform ${
-                    openIndex === i ? 'rotate-180' : ''
-                  }`}
+                  className={`text-cyan-500 flex-shrink-0 ml-4 transition-transform ${openIndex === i ? 'rotate-180' : ''
+                    }`}
                 />
               </button>
               {openIndex === i && (
