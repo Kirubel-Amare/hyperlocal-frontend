@@ -4,13 +4,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { servicesData } from '@/lib/services-data'
 import { Star, MapPin, Clock, CheckCircle, Share2, Heart, ChevronRight } from 'lucide-react'
-import { useState } from 'react'
+import { useState, use } from 'react'
 
 interface DetailPageProps {
-  params: {
+  params: Promise<{
     category: string
     id: string
-  }
+  }>
 }
 
 const categoryNames: Record<string, string> = {
@@ -24,7 +24,7 @@ const categoryNames: Record<string, string> = {
 }
 
 export default function ServiceDetailPage({ params }: DetailPageProps) {
-  const { category, id } = params
+  const { category, id } = use(params)
   const [liked, setLiked] = useState(false)
 
   const categoryData = servicesData[category] || []
@@ -117,11 +117,10 @@ export default function ServiceDetailPage({ params }: DetailPageProps) {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab.toLowerCase())}
-                  className={`py-3 font-medium transition-colors border-b-2 ${
-                    activeTab === tab.toLowerCase()
+                  className={`py-3 font-medium transition-colors border-b-2 ${activeTab === tab.toLowerCase()
                       ? 'text-cyan-600 border-cyan-600'
                       : 'text-gray-600 border-transparent hover:text-gray-900'
-                  }`}
+                    }`}
                 >
                   {tab}
                 </button>
@@ -225,11 +224,10 @@ export default function ServiceDetailPage({ params }: DetailPageProps) {
                     <button
                       key={day}
                       onClick={() => setSelectedDate(parseInt(day))}
-                      className={`py-2 rounded-lg text-sm font-medium transition-all ${
-                        selectedDate === parseInt(day)
+                      className={`py-2 rounded-lg text-sm font-medium transition-all ${selectedDate === parseInt(day)
                           ? 'bg-cyan-500 text-white'
                           : 'text-gray-600 hover:bg-gray-100'
-                      }`}
+                        }`}
                     >
                       {day}
                     </button>
@@ -245,11 +243,10 @@ export default function ServiceDetailPage({ params }: DetailPageProps) {
                     <button
                       key={time}
                       onClick={() => setSelectedTime(time)}
-                      className={`px-3 py-2 rounded-lg text-sm font-medium transition-all border-2 ${
-                        selectedTime === time
+                      className={`px-3 py-2 rounded-lg text-sm font-medium transition-all border-2 ${selectedTime === time
                           ? 'bg-cyan-500 text-white border-cyan-500'
                           : 'border-cyan-500 text-cyan-600 hover:bg-cyan-50'
-                      }`}
+                        }`}
                     >
                       {time}
                     </button>

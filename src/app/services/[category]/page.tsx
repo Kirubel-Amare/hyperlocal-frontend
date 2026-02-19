@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, use } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { servicesData, Service } from '@/lib/services-data'
@@ -8,9 +8,9 @@ import ServiceCard from '@/components/service/service-card'
 import { ChevronRight, MapPin, Star, Check, Clock, Search, Bell, User } from 'lucide-react'
 
 interface CategoryPageProps {
-  params: {
+  params: Promise<{
     category: string
-  }
+  }>
 }
 
 const categoryNames: Record<string, string> = {
@@ -24,7 +24,7 @@ const categoryNames: Record<string, string> = {
 }
 
 export default function CategoryPage({ params }: CategoryPageProps) {
-  const category = params.category
+  const { category } = use(params)
   const categoryData = servicesData[category] || []
   const categoryName = categoryNames[category] || 'Services'
 
