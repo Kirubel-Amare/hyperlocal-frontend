@@ -43,7 +43,7 @@ export function PaginationGlass({
     }
 
     return (
-        <div className="w-full mt-12 pb-8">
+        <div className="w-full mt-4 pb-8">
             <div className="max-w-[1600px] mx-auto px-4 sm:px-8">
                 {/* Main Pagination Container with Glass Effect */}
                 <div className="relative group">

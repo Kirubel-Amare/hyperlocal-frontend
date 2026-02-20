@@ -52,7 +52,7 @@ export function Pagination({
     }
 
     return (
-        <div className="w-full mt-16 mb-8">
+        <div className="w-full mt-4 mb-8">
             <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Main Pagination Container */}
                 <div className="relative">

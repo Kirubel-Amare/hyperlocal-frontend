@@ -9,7 +9,7 @@ import { FilterSidebar } from '@/components/services/filter-sidebar'
 import { MobileFilterBar } from '@/components/services/mobile-filter-bar'
 import { SortSelector } from '@/components/filters/sort-selector'
 import { QuickFilters } from '@/components/filters/quick-filters'
-import { Pagination } from '@/components/ui/pagination'
+import { PaginationGlass } from '@/components/ui/pagination-glass'
 import { EmptyState } from '@/components/ui/empty-state'
 import Footer from '@/components/layout/Footer'
 
@@ -118,7 +118,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
       <Header />
 
       {/* Main Content */}
-      <div className="max-w-[1600px] mx-auto px-8 pt-28 pb-32">
+      <div className="max-w-[1600px] mx-auto px-8 pt-28 pb-12">
         <div className="flex flex-col lg:flex-row gap-12 xl:gap-20">
           <FilterSidebar
             currentCategory={category}
@@ -174,7 +174,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
         </div>
       </div>
 
-      <Pagination
+      <PaginationGlass
         currentPage={currentPage}
         totalPages={totalPages}
         itemsPerPage={itemsPerPage}
