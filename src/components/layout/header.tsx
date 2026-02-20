@@ -134,8 +134,8 @@ export default function Header({
                   <Image
                     className="rounded-full relative z-10 transition-transform duration-300 group-hover:scale-110"
                     src="/logo-removebg-preview.png"
-                    width={48}
-                    height={48}
+                    width={80}
+                    height={80}
                     alt="Logo"
                   />
                 </div>
