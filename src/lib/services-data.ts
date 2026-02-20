@@ -10,8 +10,8 @@ export interface Review {
 }
 
 export interface Service {
-  location: ReactNode
-  distance: ReactNode
+  location?: ReactNode
+  distance?: number
   id: string
   name: string
   provider: string
@@ -22,6 +22,7 @@ export interface Service {
   category: string
   description: string
   fullDescription: string
+  role?: string
   availability: string[]
   reviews: Review[]
   providerImage: string
@@ -30,6 +31,122 @@ export interface Service {
 }
 
 export const servicesData: Record<string, Service[]> = {
+  all: [
+    {
+      id: 'all-1',
+      name: 'Sarah Jenkins',
+      role: 'MASTER PLUMBER & PIPE SPECIALIST',
+      provider: 'Sarah Jenkins',
+      rating: 4.9,
+      totalReviews: 128,
+      price: 45,
+      image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500&h=500&fit=crop',
+      category: 'plumbing',
+      description: 'Expert residential plumbing, emergency repairs, and full bathroom remodels.',
+      fullDescription: 'Expert residential plumbing, emergency repairs, and full bathroom remodels.',
+      availability: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+      providerImage: 'https://api.dicebear.com/7.x/avataaars/svg?seed=SarahJ',
+      providerBio: 'Licensed master plumber with 15 years experience.',
+      tags: ['Licensed', 'Emergency Service'],
+      reviews: [],
+      distance: 1.2
+    },
+    {
+      id: 'all-2',
+      name: 'Marcus Chen',
+      role: 'IT & TECH SUPPORT SPECIALIST',
+      provider: 'Marcus Chen',
+      rating: 5.0,
+      totalReviews: 84,
+      price: 60,
+      image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500&h=500&fit=crop',
+      category: 'technical-help',
+      description: 'On-site computer repair, Wi-Fi optimization, and smart home setup.',
+      fullDescription: 'On-site computer repair, Wi-Fi optimization, and smart home setup.',
+      availability: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+      providerImage: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Marcus',
+      providerBio: 'Tech support specialist.',
+      tags: ['IT Support', 'Smart Home'],
+      reviews: [],
+      distance: 0.8
+    },
+    {
+      id: 'all-3',
+      name: 'Elena Rodriguez',
+      role: 'DEEP CLEANING PROFESSIONAL',
+      provider: 'Elena Rodriguez',
+      rating: 4.7,
+      totalReviews: 210,
+      price: 35,
+      image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500&h=500&fit=crop',
+      category: 'cleaning',
+      description: 'Eco-friendly home cleaning specializing in move-in/move-out.',
+      fullDescription: 'Eco-friendly home cleaning.',
+      availability: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+      providerImage: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Elena',
+      providerBio: 'Professional cleaner.',
+      tags: ['Eco-friendly', 'Deep Cleaning'],
+      reviews: [],
+      distance: 2.5
+    },
+    {
+      id: 'all-4',
+      name: 'David Wilson',
+      role: 'ELECTRICIAN & ENERGY CONSULTANT',
+      provider: 'David Wilson',
+      rating: 4.8,
+      totalReviews: 56,
+      price: 55,
+      image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500&h=500&fit=crop',
+      category: 'electrical',
+      description: 'Circuit repair, lighting installation, and energy efficiency audits for homes.',
+      fullDescription: 'Circuit repair, lighting installation, and energy efficiency audits for homes.',
+      availability: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+      providerImage: 'https://api.dicebear.com/7.x/avataaars/svg?seed=David',
+      providerBio: 'Licensed electrician.',
+      tags: ['Licensed', 'Energy Audits'],
+      reviews: [],
+      distance: 4.1
+    },
+    {
+      id: 'all-5',
+      name: 'Maya Johnson',
+      role: 'PERSONAL FITNESS TRAINER',
+      provider: 'Maya Johnson',
+      rating: 4.9,
+      totalReviews: 142,
+      price: 30,
+      image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500&h=500&fit=crop',
+      category: 'personal-care',
+      description: 'Certified trainer focusing on strength building and mobility. In-home and...',
+      fullDescription: 'Certified trainer focusing on strength building and mobility.',
+      availability: ['Mon', 'Wed', 'Fri'],
+      providerImage: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Maya',
+      providerBio: 'Certified fitness trainer.',
+      tags: ['Fitness', 'Trainer'],
+      reviews: [],
+      distance: 1.5
+    },
+    {
+      id: 'all-6',
+      name: 'James Miller',
+      role: 'PROFESSIONAL LANDSCAPER',
+      provider: 'James Miller',
+      rating: 4.6,
+      totalReviews: 97,
+      price: 40,
+      image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500&h=500&fit=crop',
+      category: 'gardening',
+      description: 'Garden maintenance, lawn mowing, and seasonal cleanup. Reliable and...',
+      fullDescription: 'Garden maintenance, lawn mowing, and seasonal cleanup.',
+      availability: ['Tue', 'Thu', 'Sat'],
+      providerImage: 'https://api.dicebear.com/7.x/avataaars/svg?seed=James',
+      providerBio: 'Professional Landscaper.',
+      tags: ['Landscaping', 'Garden'],
+      reviews: [],
+      distance: 3.2
+    }
+  ],
   plumbing: [
     {
       id: 'plumb-1',

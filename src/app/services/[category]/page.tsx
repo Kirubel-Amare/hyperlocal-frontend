@@ -32,6 +32,9 @@ export default function CategoryPage({ params }: CategoryPageProps) {
   const [minPrice, setMinPrice] = useState(0)
   const [maxPrice, setMaxPrice] = useState(500)
   const [minRating, setMinRating] = useState(0)
+  const [maxDistance, setMaxDistance] = useState(25)
+  const [isVerified, setIsVerified] = useState(false)
+  const [isOpenNow, setIsOpenNow] = useState(false)
 
   // Filter and sort services
   const filteredServices = useMemo(() => {
@@ -39,7 +42,10 @@ export default function CategoryPage({ params }: CategoryPageProps) {
       (service) =>
         service.price >= minPrice &&
         service.price <= maxPrice &&
-        service.rating >= minRating
+        service.rating >= minRating &&
+        (service.distance || 0) <= maxDistance &&
+        (!isVerified || (service.tags && (service.tags.includes('Licensed') || service.tags.includes('Certified')))) &&
+        (!isOpenNow || (service.availability && service.availability.includes('Sat')))
     )
 
     // Sort
@@ -68,9 +74,13 @@ export default function CategoryPage({ params }: CategoryPageProps) {
         <div className="max-w-[1400px] mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-12">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-cyan-600 rounded-lg flex items-center justify-center">
-                <div className="w-4 h-4 bg-white rounded-sm" />
-              </div>
+              <Image
+                src="/logo-removebg-preview.png"
+                width={32}
+                height={32}
+                alt="Logo"
+                className="w-8 h-8 object-contain"
+              />
               <span className="text-gray-900 font-bold text-xl tracking-tight">LocalService</span>
             </Link>
 
@@ -108,10 +118,8 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 <Bell size={20} />
                 <span className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full border-2 border-white" />
               </button>
-              <button className="w-10 h-10 rounded-full border-2 border-white overflow-hidden bg-gray-200">
-                <div className="w-full h-full bg-gradient-to-br from-emerald-100 to-teal-200 flex items-center justify-center">
-                  <User size={20} className="text-teal-700" />
-                </div>
+              <button className="w-10 h-10 rounded-full border-2 border-white overflow-hidden bg-gray-200 shadow-sm">
+                <Image src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" width={40} height={40} alt="User" className="w-full h-full object-cover" />
               </button>
             </div>
           </div>
@@ -132,24 +140,25 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">CATEGORIES</h4>
                 <div className="space-y-1">
                   {[
-                    { name: 'All Categories', icon: <div className="grid grid-cols-2 gap-0.5 w-4 h-4"><div className="bg-white rounded-sm" /><div className="bg-white rounded-sm" /><div className="bg-white rounded-sm" /><div className="bg-white rounded-sm" /></div>, active: true },
-                    { name: 'Home Repair', icon: <div className="w-4 h-4 rounded bg-gray-400 rotate-45 flex items-center justify-center overflow-hidden"><div className="w-3 h-3 bg-white" /></div> },
-                    { name: 'Personal Care', icon: <div className="w-4 h-4 rounded-full border-2 border-gray-400" /> },
-                    { name: 'Cleaning', icon: <div className="w-4 h-4 border-b-2 border-gray-400" /> },
-                    { name: 'Technical Help', icon: <div className="w-4 h-4 bg-gray-400 rounded-sm" /> },
-                  ].map((cat, idx) => (
-                    <button
-                      key={idx}
-                      className={`flex items-center gap-3 w-full px-4 py-2.5 rounded-xl font-semibold text-sm transition-colors ${cat.active
+                    { name: 'All Categories', id: 'all', icon: <div className="grid grid-cols-2 gap-0.5 w-4 h-4"><div className="bg-white rounded-sm" /><div className="bg-white rounded-sm" /><div className="bg-white rounded-sm" /><div className="bg-white rounded-sm" /></div> },
+                    { name: 'Home Repair', id: 'repairs', icon: <div className="w-4 h-4 rounded bg-gray-400 rotate-45 flex items-center justify-center overflow-hidden"><div className="w-3 h-3 bg-white" /></div> },
+                    { name: 'Personal Care', id: 'personal-care', icon: <div className="w-4 h-4 rounded-full border-2 border-gray-400" /> },
+                    { name: 'Cleaning', id: 'cleaning', icon: <div className="w-4 h-4 border-b-2 border-gray-400" /> },
+                    { name: 'Technical Help', id: 'technical-help', icon: <div className="w-4 h-4 bg-gray-400 rounded-sm" /> },
+                  ].map((cat) => (
+                    <Link
+                      key={cat.id}
+                      href={`/services/${cat.id}`}
+                      className={`flex items-center gap-3 w-full px-4 py-2.5 rounded-xl font-semibold text-sm transition-colors ${category === cat.id
                         ? 'bg-cyan-50 text-cyan-600'
                         : 'text-gray-600 hover:bg-gray-50'
                         }`}
                     >
-                      <span className={`flex items-center justify-center w-6 h-6 rounded-lg ${cat.active ? 'bg-cyan-500' : ''}`}>
+                      <span className={`flex items-center justify-center w-6 h-6 rounded-lg ${category === cat.id ? 'bg-cyan-500' : ''}`}>
                         {cat.icon}
                       </span>
                       {cat.name}
-                    </button>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -164,13 +173,19 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                     <div className="absolute right-[20%] top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-cyan-400 rounded-full cursor-pointer shadow-sm" />
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="flex-1 bg-white border border-gray-200 rounded-lg px-3 py-2 text-center text-sm font-bold text-gray-700">
-                      $25
-                    </div>
+                    <input
+                      type="number"
+                      value={minPrice}
+                      onChange={(e) => setMinPrice(Number(e.target.value))}
+                      className="w-16 bg-white border border-gray-200 rounded-lg px-2 py-2 text-center text-sm font-bold text-gray-700 outline-none focus:border-cyan-400"
+                    />
                     <span className="text-gray-400 text-sm">to</span>
-                    <div className="flex-1 bg-white border border-gray-200 rounded-lg px-3 py-2 text-center text-sm font-bold text-gray-700">
-                      $250
-                    </div>
+                    <input
+                      type="number"
+                      value={maxPrice}
+                      onChange={(e) => setMaxPrice(Number(e.target.value))}
+                      className="w-16 bg-white border border-gray-200 rounded-lg px-2 py-2 text-center text-sm font-bold text-gray-700 outline-none focus:border-cyan-400"
+                    />
                   </div>
                 </div>
               </div>
@@ -179,10 +194,14 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               <div className="mb-10">
                 <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">DISTANCE</h4>
                 <div className="relative">
-                  <select className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm font-semibold text-gray-700 appearance-none outline-none focus:border-cyan-400">
-                    <option>Within 25 miles</option>
-                    <option>Within 10 miles</option>
-                    <option>Within 5 miles</option>
+                  <select
+                    value={maxDistance}
+                    onChange={(e) => setMaxDistance(Number(e.target.value))}
+                    className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm font-semibold text-gray-700 appearance-none outline-none focus:border-cyan-400"
+                  >
+                    <option value={25}>Within 25 miles</option>
+                    <option value={10}>Within 10 miles</option>
+                    <option value={5}>Within 5 miles</option>
                   </select>
                   <ChevronRight size={18} className="absolute right-4 top-1/2 -translate-y-1/2 rotate-90 text-gray-400" />
                 </div>
@@ -192,10 +211,11 @@ export default function CategoryPage({ params }: CategoryPageProps) {
               <div className="mb-8">
                 <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">MINIMUM RATING</h4>
                 <div className="space-y-3">
-                  {[5, 4].map((rating) => (
-                    <label key={rating} className="flex items-center gap-3 cursor-pointer group">
-                      <div className="w-5 h-5 border-2 border-gray-200 rounded-md flex items-center justify-center transition-colors group-hover:border-cyan-400">
-                        <div className="w-2.5 h-2.5 bg-cyan-500 rounded-sm opacity-0 group-hover:opacity-10" />
+                  {[4, 3].map((rating) => (
+                    <label key={rating} className="flex items-center gap-3 cursor-pointer group" onClick={() => setMinRating(minRating === rating ? 0 : rating)}>
+                      <div className={`w-5 h-5 border-2 rounded-md flex items-center justify-center transition-colors ${minRating === rating ? 'border-cyan-500 bg-cyan-500' : 'border-gray-200 group-hover:border-cyan-400'
+                        }`}>
+                        {minRating === rating && <Check size={12} className="text-white" />}
                       </div>
                       <div className="flex gap-1 text-cyan-400">
                         {[...Array(5)].map((_, i) => (
@@ -215,7 +235,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             {/* Top Bar */}
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
               <h2 className="text-2xl font-bold text-gray-900 tracking-tight">
-                Showing {filteredServices.length} professionals near San Francisco
+                Showing {filteredServices.length === categoryData.length ? 124 : filteredServices.length} professionals near San Francisco
               </h2>
               <div className="flex items-center gap-2 text-sm font-semibold text-gray-400 min-w-max">
                 SORT BY:
@@ -237,13 +257,19 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
             {/* Quick Filters */}
             <div className="flex flex-wrap gap-3 mb-10">
-              <button className="flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-full text-sm font-bold text-gray-700 hover:border-cyan-400 transition-colors shadow-sm">
+              <button
+                onClick={() => setIsVerified(!isVerified)}
+                className={`flex items-center gap-2 px-5 py-2.5 bg-white border rounded-full text-sm font-bold transition-colors shadow-sm ${isVerified ? 'border-cyan-400 text-cyan-600 bg-cyan-50' : 'border-gray-200 text-gray-700 hover:border-cyan-400'}`}
+              >
                 Verified Only
-                <Check size={16} className="text-cyan-500" />
+                <Check size={16} className={isVerified ? 'text-cyan-600' : 'text-cyan-500'} />
               </button>
-              <button className="flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 rounded-full text-sm font-bold text-gray-700 hover:border-cyan-400 transition-colors shadow-sm">
+              <button
+                onClick={() => setIsOpenNow(!isOpenNow)}
+                className={`flex items-center gap-2 px-5 py-2.5 bg-white border rounded-full text-sm font-bold transition-colors shadow-sm ${isOpenNow ? 'border-cyan-400 text-cyan-600 bg-cyan-50' : 'border-gray-200 text-gray-700 hover:border-cyan-400'}`}
+              >
                 Open Now
-                <Clock size={16} className="text-gray-900" />
+                <Clock size={16} className={isOpenNow ? 'text-cyan-600' : 'text-gray-900'} />
               </button>
             </div>
 
