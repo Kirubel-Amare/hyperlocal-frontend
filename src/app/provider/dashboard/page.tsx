@@ -15,7 +15,7 @@ export default function ProviderDashboardPage() {
           Dashboard Overview
         </h1>
         <p className="text-gray-500">
-          You have <span className="text-[#12b3b6] font-bold">{user.newRequestsCount} new requests</span> waiting for response.
+          You have <span className="text-[#1E7B7C] font-bold">{user.newRequestsCount} new requests</span> waiting for response.
         </p>
       </div>
 
@@ -25,7 +25,7 @@ export default function ProviderDashboardPage() {
         <div className="bg-white rounded-[24px] p-6 shadow-sm border border-gray-100 flex flex-col justify-between h-40">
           <div className="flex justify-between items-start">
             <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest">TOTAL EARNINGS</span>
-            <Wallet2 size={20} className="text-[#12b3b6]" />
+            <Wallet2 size={20} className="text-[#1E7B7C]" />
           </div>
           <div>
             <div className="text-4xl font-bold text-gray-900 mb-2">{stats.totalEarnings.amount}</div>
@@ -40,7 +40,7 @@ export default function ProviderDashboardPage() {
         <div className="bg-white rounded-[24px] p-6 shadow-sm border border-gray-100 flex flex-col justify-between h-40">
           <div className="flex justify-between items-start">
             <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest">ACTIVE JOBS</span>
-            <UserPlus size={20} className="text-[#12b3b6]" />
+            <UserPlus size={20} className="text-[#1E7B7C]" />
           </div>
           <div>
             <div className="text-3xl font-bold text-gray-900 mb-2">{stats.activeJobs.count}</div>
@@ -52,7 +52,7 @@ export default function ProviderDashboardPage() {
         <div className="bg-white rounded-[24px] p-6 shadow-sm border border-gray-100 flex flex-col justify-between h-40">
           <div className="flex justify-between items-start">
             <span className="text-[11px] font-bold text-gray-400 uppercase tracking-widest">PROFILE VIEWS</span>
-            <Eye size={20} className="text-[#12b3b6]" />
+            <Eye size={20} className="text-[#1E7B7C]" />
           </div>
           <div>
             <div className="text-4xl font-bold text-gray-900 mb-2">{stats.profileViews.count}</div>
@@ -68,7 +68,7 @@ export default function ProviderDashboardPage() {
       <div className="mb-10">
         <div className="flex justify-between items-end mb-6">
           <h2 className="text-xl font-bold text-gray-900">New Requests</h2>
-          <button className="text-[#12b3b6] font-bold text-sm hover:underline">View All</button>
+          <button className="text-[#1E7B7C] font-bold text-sm hover:underline">View All</button>
         </div>
 
         <div className="space-y-4">
@@ -83,7 +83,7 @@ export default function ProviderDashboardPage() {
                     }`}>
                     {req.urgency}
                   </span>
-                  <span className="text-xs font-semibold text-[#12b3b6]">{req.distance}</span>
+                  <span className="text-xs font-semibold text-[#1E7B7C]">{req.distance}</span>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-1">{req.title}</h3>
                 <p className="text-sm text-gray-500">Client: {req.client} • {req.duration}</p>
@@ -92,7 +92,7 @@ export default function ProviderDashboardPage() {
                 <button className="px-6 py-2.5 rounded-xl text-sm font-bold text-gray-600 bg-white border border-gray-200 hover:bg-gray-50 transition-colors">
                   Decline
                 </button>
-                <button className="px-6 py-2.5 rounded-xl text-sm font-bold text-white bg-[#12b3b6] hover:bg-[#0e9598] flex items-center gap-2 transition-colors">
+                <button className="px-6 py-2.5 rounded-xl text-sm font-bold text-white bg-[#1E7B7C] hover:bg-[#166566] flex items-center gap-2 transition-colors">
                   <Check size={16} strokeWidth={3} />
                   Accept
                 </button>
@@ -116,7 +116,7 @@ export default function ProviderDashboardPage() {
                   {event.time}
                 </div>
                 {/* Timeline Dot */}
-                <div className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-cyan-100 border-[3px] border-white ring-1 ring-[#12b3b6]" />
+                <div className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-[#E8F4F4] border-[3px] border-white ring-1 ring-[#1E7B7C]" />
 
                 <h4 className="font-bold text-gray-900 text-[15px]">{event.title}</h4>
                 <p className="text-sm text-gray-500 mt-1">{event.location} • {event.client}</p>
@@ -141,18 +141,18 @@ export default function ProviderDashboardPage() {
               { day: 'W', height: '45%', isActive: false },
               { day: 'T', height: '70%', isActive: false },
               { day: 'F', height: '85%', isActive: false },
-              { day: 'S', height: '55%', isActive: true }, /* active day styled in cyan */
+              { day: 'S', height: '55%', isActive: true }, /* active day styled in teal */
               { day: 'S', height: '30%', isActive: false },
             ].map((bar, i) => (
               <div key={i} className="flex flex-col items-center w-full group cursor-pointer">
                 <div className="w-full h-[140px] flex items-end bg-gray-50/50 rounded-t-lg overflow-hidden">
                   <div
-                    className={`w-full transition-all duration-500 rounded-t-sm ${bar.isActive ? 'bg-[#12b3b6]' : 'bg-[#eaf4f4] group-hover:bg-[#d0e9e9]'
+                    className={`w-full transition-all duration-500 rounded-t-sm ${bar.isActive ? 'bg-[#1E7B7C]' : 'bg-[#eaf4f4] group-hover:bg-[#d0e9e9]'
                       }`}
                     style={{ height: bar.height }}
                   />
                 </div>
-                <span className={`text-[10px] font-bold mt-4 transition-colors ${bar.isActive ? 'text-[#12b3b6]' : 'text-gray-400'
+                <span className={`text-[10px] font-bold mt-4 transition-colors ${bar.isActive ? 'text-[#1E7B7C]' : 'text-gray-400'
                   }`}>
                   {bar.day}
                 </span>

@@ -22,7 +22,7 @@ export function SortSelector({ value, onChange }: SortSelectorProps) {
                 <select
                     value={value}
                     onChange={(e) => onChange(e.target.value)}
-                    className="appearance-none bg-white border border-gray-200 rounded-xl px-4 py-2 pr-10 text-sm font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 focus:border-cyan-500 cursor-pointer transition-all hover:bg-gray-50 group-hover:border-gray-300 shadow-sm"
+                    className="appearance-none bg-white border border-gray-200 rounded-xl px-4 py-2 pr-10 text-sm font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] cursor-pointer transition-all hover:bg-gray-50 group-hover:border-gray-300 shadow-sm"
                 >
                     {options.map((option) => (
                         <option key={option.value} value={option.value}>

@@ -37,7 +37,7 @@ export function PaginationMinimal({
                         <button
                             onClick={() => onPageChange(Math.max(1, currentPage - 1))}
                             disabled={currentPage === 1}
-                            className="p-3 text-gray-400 hover:text-cyan-600 disabled:text-gray-200 transition-colors"
+                            className="p-3 text-gray-400 hover:text-[#1E7B7C] disabled:text-gray-200 transition-colors"
                         >
                             <ChevronLeft size={20} />
                         </button>
@@ -66,7 +66,7 @@ export function PaginationMinimal({
                         <button
                             onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
                             disabled={currentPage === totalPages}
-                            className="p-3 text-gray-400 hover:text-cyan-600 disabled:text-gray-200 transition-colors"
+                            className="p-3 text-gray-400 hover:text-[#1E7B7C] disabled:text-gray-200 transition-colors"
                         >
                             <ChevronRight size={20} />
                         </button>
@@ -75,7 +75,7 @@ export function PaginationMinimal({
                     {/* Page Indicator */}
                     <div className="flex items-center gap-2">
                         <span className="text-xs font-medium text-gray-400">Page</span>
-                        <span className="text-sm font-bold text-cyan-600">{currentPage}</span>
+                        <span className="text-sm font-bold text-[#1E7B7C]">{currentPage}</span>
                         <span className="text-xs text-gray-300">/</span>
                         <span className="text-sm text-gray-500">{totalPages}</span>
                     </div>

@@ -108,12 +108,12 @@ export default function FeaturedProfessionals() {
               {/* Content */}
               <div className="p-6">
                 <div className="flex items-start gap-3 mb-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#1E7B7C] to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
                     {pro.name.charAt(0)}
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 text-lg">{pro.name}</h3>
-                    <p className="text-xs font-semibold text-cyan-600 uppercase">{pro.title}</p>
+                    <p className="text-xs font-semibold text-[#1E7B7C] uppercase">{pro.title}</p>
                   </div>
                 </div>
 
@@ -130,7 +130,7 @@ export default function FeaturedProfessionals() {
                   </div>
                 </div>
 
-                <button className="w-full text-cyan-600 hover:text-cyan-700 font-semibold text-sm transition-colors">
+                <button className="w-full text-[#1E7B7C] hover:text-[#166566] font-semibold text-sm transition-colors">
                   View Profile →
                 </button>
               </div>

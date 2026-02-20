@@ -4,11 +4,14 @@ export interface Review {
   id: string
   author: string
   authorInitials?: string
+  authorAvatar?: string // Added for consistency with ReviewsSection
   rating: number
   comment?: string // Original had comment
   text?: string    // New mock uses text
   date: string
-  avatar?: string
+  avatar?: string  // Keeping for backward compatibility
+  helpful?: number
+  verified?: boolean
 }
 
 export interface Service {

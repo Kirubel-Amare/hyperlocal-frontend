@@ -87,7 +87,7 @@ export default function LoginPage() {
           <div className="w-full lg:w-1/2 flex flex-col items-center justify-center px-6 py-8 sm:px-8 lg:px-8">
             <div className="w-full max-w-sm">
               <h1 className="text-4xl font-bold text-gray-900 mb-2">Welcome Back</h1>
-              <p className="text-base text-blue-500 mb-8">
+              <p className="text-base text-[#166566] mb-8">
                 Enter your details to access your account.
               </p>
 
@@ -115,7 +115,7 @@ export default function LoginPage() {
                     checked={rememberMe}
                     onChange={(e) => setRememberMe(e.target.checked)}
                   />
-                  <Link href="/forgot-password" className="text-sm text-cyan-600 hover:text-cyan-700">
+                  <Link href="/forgot-password" className="text-sm text-[#1E7B7C] hover:text-[#166566]">
                     Forgot password?
                   </Link>
                 </div>
@@ -133,7 +133,7 @@ export default function LoginPage() {
 
               <p className="text-center text-sm text-gray-600 mt-8">
                 Don't have an account?{' '}
-                <Link href="/register" className="text-cyan-600 hover:text-cyan-700 font-medium">
+                <Link href="/register" className="text-[#1E7B7C] hover:text-[#166566] font-medium">
                   Create an account
                 </Link>
               </p>

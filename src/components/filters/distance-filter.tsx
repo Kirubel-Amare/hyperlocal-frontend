@@ -32,7 +32,7 @@ export function DistanceFilter({
         <select
           value={maxDistance}
           onChange={(e) => onChange(Number(e.target.value))}
-          className="w-full bg-gray-100/50 border border-gray-100 rounded-[20px] px-5 py-4 text-sm font-bold text-gray-700 appearance-none outline-none focus:ring-4 focus:ring-cyan-500/5 focus:border-cyan-400 transition-all cursor-pointer group-hover:bg-white group-hover:border-cyan-200 group-hover:shadow-md pr-10"
+          className="w-full bg-gray-100/50 border border-gray-100 rounded-[20px] px-5 py-4 text-sm font-bold text-gray-700 appearance-none outline-none focus:ring-4 focus:ring-[#1E7B7C]/5 focus:border-[#1E7B7C] transition-all cursor-pointer group-hover:bg-white group-hover:border-[#1E7B7C]/20 group-hover:shadow-md pr-10"
         >
           <option value={5}>Within 5 miles</option>
           <option value={10}>Within 10 miles</option>
@@ -40,7 +40,7 @@ export function DistanceFilter({
           <option value={25}>Within 25 miles</option>
           <option value={50}>Within 50 miles</option>
         </select>
-        <div className="absolute right-4 top-1/2 -translate-y-1/2 rotate-90 text-gray-400 pointer-events-none group-hover:text-cyan-600 transition-all transform group-hover:translate-x-1">
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 rotate-90 text-gray-400 pointer-events-none group-hover:text-[#1E7B7C] transition-all transform group-hover:translate-x-1">
           <ChevronRight size={18} />
         </div>
       </div>
@@ -50,7 +50,7 @@ export function DistanceFilter({
       {/* <div className="space-y-3">
         <div className="flex items-center justify-between">
           <span className="text-sm font-medium text-gray-500">Maximum distance</span>
-          <span className="text-sm font-bold text-cyan-600 bg-cyan-50 px-3 py-1 rounded-full">
+          <span className="text-sm font-bold text-[#1E7B7C] bg-[#E8F4F4] px-3 py-1 rounded-full">
             {maxDistance} miles
           </span>
         </div>
@@ -63,7 +63,7 @@ export function DistanceFilter({
             step={step}
             value={maxDistance}
             onChange={(e) => onChange(Number(e.target.value))}
-            className="w-full h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer accent-cyan-500"
+            className="w-full h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer accent-[#1E7B7C]"
           />
           
           <div className="flex justify-between text-xs text-gray-400 mt-2">
@@ -82,7 +82,7 @@ export function DistanceFilter({
               onClick={() => onChange(distance)}
               className={`flex-1 py-2 rounded-xl text-xs font-bold transition-all ${
                 maxDistance === distance
-                  ? 'bg-cyan-500 text-white shadow-md shadow-cyan-200'
+                  ? 'bg-[#1E7B7C] text-white shadow-md shadow-[#1E7B7C]/20'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >

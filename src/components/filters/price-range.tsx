@@ -71,7 +71,7 @@ function Slider({ min, max, minValue, maxValue, onMinChange, onMaxChange }: any)
     return (
         <div className="h-1.5 bg-gray-100 rounded-full relative mb-8">
             <div
-                className="absolute h-full bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full transition-all duration-300"
+                className="absolute h-full bg-[#1E7B7C] rounded-full transition-all duration-300"
                 style={{
                     left: `${((minValue - min) / (max - min)) * 100}%`,
                     right: `${100 - ((maxValue - min) / (max - min)) * 100}%`
@@ -102,7 +102,7 @@ function Slider({ min, max, minValue, maxValue, onMinChange, onMaxChange }: any)
 function SliderHandle({ position }: { position: number }) {
     return (
         <div
-            className="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-2 border-cyan-500 rounded-full shadow-lg z-10 pointer-events-none"
+            className="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-2 border-[#1E7B7C] rounded-full shadow-lg z-10 pointer-events-none"
             style={{ left: `calc(${position}% - 10px)` }}
         />
     )
@@ -121,7 +121,7 @@ function PriceInputs({ min, max, minValue, maxValue, onMinChange, onMaxChange }:
                     max={max}
                     value={minValue}
                     onChange={(e) => onMinChange(Number(e.target.value))}
-                    className="w-full bg-gray-50 border border-gray-100 rounded-xl pl-6 pr-2 py-2.5 text-sm font-bold text-gray-700 outline-none focus:ring-2 focus:ring-cyan-100 focus:border-cyan-400 transition-all"
+                    className="w-full bg-gray-50 border border-gray-100 rounded-xl pl-6 pr-2 py-2.5 text-sm font-bold text-gray-700 outline-none focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] transition-all"
                 />
             </div>
             <div className="h-px w-2 bg-gray-300" />
@@ -135,7 +135,7 @@ function PriceInputs({ min, max, minValue, maxValue, onMinChange, onMaxChange }:
                     max={max}
                     value={maxValue}
                     onChange={(e) => onMaxChange(Number(e.target.value))}
-                    className="w-full bg-gray-50 border border-gray-100 rounded-xl pl-6 pr-2 py-2.5 text-sm font-bold text-gray-700 outline-none focus:ring-2 focus:ring-cyan-100 focus:border-cyan-400 transition-all"
+                    className="w-full bg-gray-50 border border-gray-100 rounded-xl pl-6 pr-2 py-2.5 text-sm font-bold text-gray-700 outline-none focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] transition-all"
                 />
             </div>
         </div>

@@ -63,7 +63,7 @@ export default function ReviewsList({ reviews, rating, totalReviews }: ReviewsLi
                     ))}
                   </div>
 
-                  <p className="text-gray-600">{review.comment}</p>
+                  <p className="text-gray-600">{review.text || review.comment}</p>
                 </div>
               </div>
             </div>

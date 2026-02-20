@@ -47,7 +47,7 @@ export default function ContactPage() {
 
       <div className="max-w-[1600px] mx-auto px-8 pt-28 pb-12">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-cyan-50 via-white to-blue-50 py-20 px-6 rounded-3xl mb-12">
+        <section className="bg-gradient-to-br from-[#E8F4F4] via-white to-blue-50 py-20 px-6 rounded-3xl mb-12">
           <div className="max-w-5xl mx-auto text-center">
             <h1 className="text-6xl font-black text-gray-900 mb-6">Get in Touch</h1>
             <p className="text-2xl text-gray-600">We're here to help and answer any questions you might have.</p>
@@ -64,13 +64,13 @@ export default function ContactPage() {
                   <Link
                     key={i}
                     href={item.link}
-                    className="group bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100 hover:border-cyan-200 hover:shadow-xl transition-all"
+                    className="group bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100 hover:border-[#1E7B7C]/20 hover:shadow-xl transition-all"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-cyan-100 to-blue-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                      <Icon size={24} className="text-cyan-600" />
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#E8F4F4] to-blue-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <Icon size={24} className="text-[#1E7B7C]" />
                     </div>
                     <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
-                    <p className="text-gray-600 group-hover:text-cyan-600 transition-colors">{item.info}</p>
+                    <p className="text-gray-600 group-hover:text-[#1E7B7C] transition-colors">{item.info}</p>
                   </Link>
                 )
               })}
@@ -79,7 +79,7 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Form & FAQ */}
-        <section className="py-20 px-6 bg-gradient-to-b from-white to-cyan-50 rounded-3xl mb-12">
+        <section className="py-20 px-6 bg-gradient-to-b from-white to-[#E8F4F4] rounded-3xl mb-12">
           <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
             {/* Form */}
             <div>
@@ -94,7 +94,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     placeholder="Your name"
                     required
-                    className="w-full px-6 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 transition-all"
+                    className="w-full px-6 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#1E7B7C] focus:ring-2 focus:ring-[#1E7B7C]/20 transition-all"
                   />
                 </div>
 
@@ -107,7 +107,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     placeholder="your@email.com"
                     required
-                    className="w-full px-6 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 transition-all"
+                    className="w-full px-6 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#1E7B7C] focus:ring-2 focus:ring-[#1E7B7C]/20 transition-all"
                   />
                 </div>
 
@@ -118,7 +118,7 @@ export default function ContactPage() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-6 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 transition-all bg-white"
+                    className="w-full px-6 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#1E7B7C] focus:ring-2 focus:ring-[#1E7B7C]/20 transition-all bg-white"
                   >
                     <option value="">Select a subject</option>
                     <option value="general">General Inquiry</option>
@@ -138,13 +138,13 @@ export default function ContactPage() {
                     placeholder="Your message..."
                     rows={5}
                     required
-                    className="w-full px-6 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 transition-all resize-none"
+                    className="w-full px-6 py-3 border border-gray-300 rounded-xl focus:outline-none focus:border-[#1E7B7C] focus:ring-2 focus:ring-[#1E7B7C]/20 transition-all resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-4 rounded-xl font-bold hover:shadow-lg transition-all flex items-center justify-center gap-2 group"
+                  className="w-full bg-gradient-to-r from-[#1E7B7C] to-[#166566] text-white py-4 rounded-xl font-bold hover:shadow-lg transition-all flex items-center justify-center gap-2 group"
                 >
                   <Send size={20} />
                   Send Message
@@ -163,8 +163,8 @@ export default function ContactPage() {
               <h2 className="text-4xl font-bold mb-8 text-gray-900">Frequently Asked Questions</h2>
               <div className="space-y-4">
                 {faqs.map((faq, i) => (
-                  <details key={i} className="group bg-white rounded-xl border border-gray-200 hover:border-cyan-200 hover:shadow-lg transition-all">
-                    <summary className="flex items-center justify-between px-6 py-4 cursor-pointer font-semibold text-gray-900 hover:text-cyan-600 transition-colors">
+                  <details key={i} className="group bg-white rounded-xl border border-gray-200 hover:border--[#1E7B7C]/20 hover:shadow-lg transition-all">
+                    <summary className="flex items-center justify-between px-6 py-4 cursor-pointer font-semibold text-gray-900 hover:text-[#1E7B7C] transition-colors">
                       <span>{faq.q}</span>
                       <span className="transform group-open:rotate-180 transition-transform">
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -183,14 +183,14 @@ export default function ContactPage() {
         </section>
 
         {/* Live Chat CTA */}
-        <section className="py-20 px-6 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl">
+        <section className="py-20 px-6 bg-gradient-to-r from-[#1E7B7C] to-[#166566] rounded-3xl">
           <div className="max-w-4xl mx-auto text-center">
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
-              <MessageSquare size={32} className="text-cyan-600" />
+              <MessageSquare size={32} className="text-[#1E7B7C]" />
             </div>
             <h2 className="text-4xl font-bold text-white mb-4">Need Immediate Help?</h2>
-            <p className="text-cyan-100 text-lg mb-8">Start a live chat with our support team available 24/7</p>
-            <button className="bg-white text-cyan-600 px-10 py-4 rounded-xl font-bold hover:shadow-lg transition-all">
+            <p className="text-[#E8F4F4] text-lg mb-8">Start a live chat with our support team available 24/7</p>
+            <button className="bg-white text-[#1E7B7C] px-10 py-4 rounded-xl font-bold hover:shadow-lg transition-all">
               Start Live Chat
             </button>
           </div>

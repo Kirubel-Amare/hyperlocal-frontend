@@ -44,7 +44,7 @@ export function CategoryNav({ activeCategory }: CategoryNavProps) {
                             className={cn(
                                 "flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-xl transition-all duration-200 group",
                                 isActive
-                                    ? "bg-cyan-50 text-cyan-700 shadow-sm"
+                                    ? "bg-[#E8F4F4] text-[#166566] shadow-sm"
                                     : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
                             )}
                         >
@@ -52,7 +52,7 @@ export function CategoryNav({ activeCategory }: CategoryNavProps) {
                                 size={18}
                                 className={cn(
                                     "transition-colors duration-200",
-                                    isActive ? "text-cyan-600" : "text-gray-400 group-hover:text-gray-600"
+                                    isActive ? "text-[#1E7B7C]" : "text-gray-400 group-hover:text-gray-600"
                                 )}
                             />
                             {category.name}

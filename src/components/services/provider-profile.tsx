@@ -50,7 +50,7 @@ export default function ProviderProfile({
           {tags.map((tag, i) => (
             <div
               key={i}
-              className="flex items-center gap-1 bg-cyan-50 text-cyan-700 px-3 py-2 rounded-full text-sm font-medium border border-cyan-200"
+              className="flex items-center gap-1 bg-[#E8F4F4] text-[#166566] px-3 py-2 rounded-full text-sm font-medium border border-[#E8F4F4]"
             >
               <Check size={16} />
               {tag}
@@ -61,10 +61,10 @@ export default function ProviderProfile({
 
       {/* Action Buttons */}
       <div className="flex gap-3">
-        <button className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all">
+        <button className="flex-1 bg-gradient-to-r from-[#1E7B7C] to-[#166566] text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all">
           Book Now
         </button>
-        <button className="flex-1 border-2 border-cyan-500 text-cyan-600 py-3 rounded-xl font-semibold hover:bg-cyan-50 transition-all flex items-center justify-center gap-2">
+        <button className="flex-1 border-2 border-[#1E7B7C] text-[#1E7B7C] py-3 rounded-xl font-semibold hover:bg-[#E8F4F4] transition-all flex items-center justify-center gap-2">
           <MessageSquare size={18} />
           Message
         </button>

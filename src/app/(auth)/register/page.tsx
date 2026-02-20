@@ -43,7 +43,7 @@ export default function RegisterPage() {
           {/* Progress Bar */}
           <div className="mb-8">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-cyan-600">
+              <span className="text-sm font-medium text-[#1E7B7C]">
                 STEP {step} OF 3
               </span>
               <span className="text-sm font-medium text-gray-600">
@@ -54,7 +54,7 @@ export default function RegisterPage() {
             </div>
             <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
               <div
-                className="h-full bg-cyan-500 rounded-full transition-all"
+                className="h-full bg-[#1E7B7C] rounded-full transition-all"
                 style={{ width: `${(step / 3) * 100}%` }}
               />
             </div>

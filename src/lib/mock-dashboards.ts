@@ -120,7 +120,7 @@ export const providerDashboardData = {
             duration: "3 hours estimated",
             distance: "0.8 miles away",
             urgency: "REPEAT CLIENT",
-            urgencyColor: "bg-cyan-100 text-cyan-700",
+            urgencyColor: "bg-[#E8F4F4] text-[#166566]",
             image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500&h=300&fit=crop",
         },
     ],

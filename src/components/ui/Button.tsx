@@ -28,7 +28,7 @@ type ButtonAsLink = BaseProps &
 type ButtonProps = ButtonAsButton | ButtonAsLink
 
 const variantClasses: Record<ButtonVariant, string> = {
-  primary: 'bg-cyan-500 hover:bg-cyan-600 text-white',
+  primary: 'bg-[#1E7B7C] hover:bg-[#166566] text-white shadow-sm shadow-[#1E7B7C]/20',
   secondary: 'bg-gray-100 hover:bg-gray-200 text-gray-700',
   outline: 'border border-gray-300 hover:bg-gray-50 text-gray-700',
 }

@@ -36,7 +36,7 @@ export default function ProviderSidebar() {
                     </div>
                     <div className="min-w-0">
                         <h3 className="font-bold text-gray-900 text-[15px] truncate">{user.name}</h3>
-                        <p className="text-xs font-semibold text-cyan-500 truncate">{user.role}</p>
+                        <p className="text-xs font-semibold text-[#1E7B7C] truncate">{user.role}</p>
                     </div>
                 </div>
             </div>
@@ -51,11 +51,11 @@ export default function ProviderSidebar() {
                             key={link.name}
                             href={link.href}
                             className={`flex items-center gap-4 px-5 py-3.5 rounded-2xl text-[15px] font-semibold transition-all ${isActive
-                                ? 'bg-[#EAF6F6] text-[#12b3b6]'
+                                ? 'bg-[#E8F4F4] text-[#1E7B7C]'
                                 : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
                                 }`}
                         >
-                            <Icon size={20} className={isActive ? 'text-[#12b3b6]' : 'text-gray-400'} strokeWidth={2.5} />
+                            <Icon size={20} className={isActive ? 'text-[#1E7B7C]' : 'text-gray-400'} strokeWidth={2.5} />
                             {link.name}
                         </Link>
                     )
@@ -64,7 +64,7 @@ export default function ProviderSidebar() {
 
             {/* Bottom Action */}
             <div className="p-5 mt-auto">
-                <button className="w-full bg-[#12b3b6] hover:bg-[#0e9598] text-white py-3.5 rounded-xl text-sm font-bold transition-colors flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20 active:scale-95">
+                <button className="w-full bg-[#1E7B7C] hover:bg-[#166566] text-white py-3.5 rounded-xl text-sm font-bold transition-colors flex items-center justify-center gap-2 shadow-lg shadow-[#1E7B7C]/20 active:scale-95">
                     <Zap size={18} fill="currentColor" />
                     Go Online
                 </button>

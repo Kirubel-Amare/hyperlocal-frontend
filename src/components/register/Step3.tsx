@@ -37,7 +37,7 @@ export default function Step3({ initialData, onBack, onSubmit }: Step3Props) {
             type="file"
             accept="image/*,application/pdf"
             onChange={(e) => setIdFile(e.target.files?.[0] || null)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-cyan-50 file:text-cyan-700 hover:file:bg-cyan-100"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-[#E8F4F4] file:text-[#1E7B7C] hover:file:bg-[#D4E9E9]"
             required
           />
         </div>

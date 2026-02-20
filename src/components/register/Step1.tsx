@@ -46,11 +46,11 @@ export default function Step1({ initialData, onSubmit }: Step1Props) {
           type="button"
           onClick={() => setAccountType('hire')}
           className={`p-6 border-2 rounded-lg text-left transition-all ${accountType === 'hire'
-            ? 'border-cyan-500 bg-cyan-50'
+            ? 'border-[#1E7B7C] bg-[#E8F4F4]'
             : 'border-gray-200 bg-white hover:border-gray-300'
             }`}
         >
-          <ShoppingCart size={32} className={`mb-3 ${accountType === 'hire' ? 'text-cyan-600' : 'text-gray-600'}`} />
+          <ShoppingCart size={32} className={`mb-3 ${accountType === 'hire' ? 'text-[#1E7B7C]' : 'text-gray-600'}`} />
           <h3 className="font-bold text-gray-900 mb-2">I want to hire</h3>
           <p className="text-sm text-gray-600">
             Find top-rated local professionals for your home or business projects.
@@ -61,11 +61,11 @@ export default function Step1({ initialData, onSubmit }: Step1Props) {
           type="button"
           onClick={() => setAccountType('work')}
           className={`p-6 border-2 rounded-lg text-left transition-all ${accountType === 'work'
-            ? 'border-cyan-500 bg-cyan-50'
+            ? 'border-[#1E7B7C] bg-[#E8F4F4]'
             : 'border-gray-200 bg-white hover:border-gray-300'
             }`}
         >
-          <Briefcase size={32} className={`mb-3 ${accountType === 'work' ? 'text-cyan-600' : 'text-gray-600'}`} />
+          <Briefcase size={32} className={`mb-3 ${accountType === 'work' ? 'text-[#1E7B7C]' : 'text-gray-600'}`} />
           <h3 className="font-bold text-gray-900 mb-2">I want to work</h3>
           <p className="text-sm text-gray-600">
             Offer your skills, manage bookings, and grow your local client base.
@@ -101,7 +101,7 @@ export default function Step1({ initialData, onSubmit }: Step1Props) {
             country="us"
             value={phone}
             onChange={setPhone}
-            inputClass="px-4 py-3 border border-gray-300 rounded-lg text-gray-700 placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
+            inputClass="px-4 py-3 border border-gray-300 rounded-lg text-gray-700 placeholder-gray-400 focus:outline-none focus:border-[#1E7B7C] focus:ring-1 focus:ring-[#1E7B7C]"
             containerClass="w-full"
             enableSearch
           />

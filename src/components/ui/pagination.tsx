@@ -57,7 +57,7 @@ export function Pagination({
                 {/* Main Pagination Container */}
                 <div className="relative">
                     {/* Decorative Background */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-50 via-blue-50 to-purple-50 rounded-3xl -z-10 opacity-50" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#E8F4F4] via-blue-50 to-purple-50 rounded-3xl -z-10 opacity-50" />
 
                     <div className="bg-white/90 backdrop-blur-sm rounded-3xl border border-gray-100 shadow-xl shadow-gray-100/50 p-6 md:p-8">
                         {/* Results Info */}
@@ -72,7 +72,7 @@ export function Pagination({
                                 disabled={currentPage === 1}
                                 className={`hidden lg:flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-300 ${currentPage === 1
                                     ? 'text-gray-300 cursor-not-allowed'
-                                    : 'text-gray-600 hover:bg-gradient-to-br hover:from-cyan-500 hover:to-blue-500 hover:text-white hover:shadow-lg hover:shadow-cyan-200 active:scale-90'
+                                    : 'text-gray-600 hover:bg-gradient-to-br hover:from-[#1E7B7C] hover:to-[#166566] hover:text-white hover:shadow-lg hover:shadow-[#1E7B7C]/20 active:scale-90'
                                     }`}
                                 aria-label="First page"
                             >
@@ -85,7 +85,7 @@ export function Pagination({
                                 disabled={currentPage === 1}
                                 className={`flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-300 ${currentPage === 1
                                     ? 'text-gray-300 cursor-not-allowed'
-                                    : 'text-gray-600 hover:bg-gradient-to-br hover:from-cyan-500 hover:to-blue-500 hover:text-white hover:shadow-lg hover:shadow-cyan-200 active:scale-90'
+                                    : 'text-gray-600 hover:bg-gradient-to-br hover:from-[#1E7B7C] hover:to-[#166566] hover:text-white hover:shadow-lg hover:shadow-[#1E7B7C]/20 active:scale-90'
                                     }`}
                                 aria-label="Previous page"
                             >
@@ -107,8 +107,8 @@ export function Pagination({
                                             key={page}
                                             onClick={() => onPageChange(page as number)}
                                             className={`relative w-12 h-12 rounded-2xl font-semibold text-sm transition-all duration-300 ${currentPage === page
-                                                ? 'bg-gradient-to-br from-cyan-500 to-blue-500 text-white shadow-xl shadow-cyan-200 scale-110 hover:shadow-2xl hover:shadow-cyan-300'
-                                                : 'text-gray-600 hover:bg-gray-100 hover:text-cyan-600 hover:scale-105'
+                                                ? 'bg-gradient-to-br from-[#1E7B7C] to-[#166566] text-white shadow-xl shadow-[#1E7B7C]/20 scale-110 hover:shadow-2xl hover:shadow-[#1E7B7C]/30'
+                                                : 'text-gray-600 hover:bg-gray-100 hover:text-[#1E7B7C] hover:scale-105'
                                                 }`}
                                         >
                                             {currentPage === page && (
@@ -126,7 +126,7 @@ export function Pagination({
                                 disabled={currentPage === totalPages}
                                 className={`flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-300 ${currentPage === totalPages
                                     ? 'text-gray-300 cursor-not-allowed'
-                                    : 'text-gray-600 hover:bg-gradient-to-br hover:from-cyan-500 hover:to-blue-500 hover:text-white hover:shadow-lg hover:shadow-cyan-200 active:scale-90'
+                                    : 'text-gray-600 hover:bg-gradient-to-br hover:from-[#1E7B7C] hover:to-[#166566] hover:text-white hover:shadow-lg hover:shadow-[#1E7B7C]/20 active:scale-90'
                                     }`}
                                 aria-label="Next page"
                             >
@@ -139,7 +139,7 @@ export function Pagination({
                                 disabled={currentPage === totalPages}
                                 className={`hidden lg:flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-300 ${currentPage === totalPages
                                     ? 'text-gray-300 cursor-not-allowed'
-                                    : 'text-gray-600 hover:bg-gradient-to-br hover:from-cyan-500 hover:to-blue-500 hover:text-white hover:shadow-lg hover:shadow-cyan-200 active:scale-90'
+                                    : 'text-gray-600 hover:bg-gradient-to-br hover:from-[#1E7B7C] hover:to-[#166566] hover:text-white hover:shadow-lg hover:shadow-[#1E7B7C]/20 active:scale-90'
                                     }`}
                                 aria-label="Last page"
                             >
@@ -155,7 +155,7 @@ export function Pagination({
                                         key={page}
                                         onClick={() => onPageChange(page)}
                                         className={`h-2 rounded-full transition-all duration-300 ${currentPage === page
-                                            ? 'w-8 bg-gradient-to-r from-cyan-500 to-blue-500'
+                                            ? 'w-8 bg-gradient-to-r from-[#1E7B7C] to-[#166566]'
                                             : 'w-2 bg-gray-200 hover:bg-gray-300'
                                             }`}
                                         aria-label={`Go to page ${page}`}
@@ -192,8 +192,8 @@ export function Pagination({
                     </div>
 
                     {/* Decorative Elements */}
-                    <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full opacity-50 blur-sm" />
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full opacity-30 blur-sm" />
+                    <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-[#1E7B7C] to-[#166566] rounded-full opacity-50 blur-sm" />
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-[#1E7B7C] to-[#166566] rounded-full opacity-30 blur-sm" />
                 </div>
             </div>
         </div>

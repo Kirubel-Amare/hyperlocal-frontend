@@ -20,7 +20,7 @@ export default function PasswordField({ label, error, hint, className = '', id, 
         <input
           id={fieldId}
           type={showPassword ? 'text' : 'password'}
-          className={`w-full px-4 py-3 border ${error ? 'border-red-500' : 'border-gray-300'} rounded-lg text-gray-700 placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 ${className}`}
+          className={`w-full px-4 py-3 border ${error ? 'border-red-500' : 'border-gray-300'} rounded-lg text-gray-700 placeholder-gray-400 focus:outline-none focus:border-[#1E7B7C] focus:ring-1 focus:ring-[#1E7B7C] ${className}`}
           {...props}
         />
         <button

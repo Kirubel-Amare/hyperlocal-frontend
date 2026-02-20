@@ -48,12 +48,12 @@ export function PaginationGlass({
                 {/* Main Pagination Container with Glass Effect */}
                 <div className="relative group">
                     {/* Background Glow */}
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                    <div className="absolute -inset-0.5 bg-gradient-to-r from-[#1E7B7C]/20 to-[#166566]/20 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
 
-                    <div className="relative flex flex-col md:flex-row items-center justify-between gap-6 p-4 sm:p-6 bg-white/40 backdrop-blur-md border border-white/40 rounded-[2rem] shadow-xl shadow-blue-500/5">
+                    <div className="relative flex flex-col md:flex-row items-center justify-between gap-6 p-4 sm:p-6 bg-white/40 backdrop-blur-md border border-white/40 rounded-[2rem] shadow-xl shadow-[#166566]/5">
                         {/* Status Info */}
                         <div className="flex flex-col gap-1.5 order-2 md:order-1 text-center md:text-left">
-                            <span className="text-xs font-bold text-cyan-600 uppercase tracking-widest px-3 py-1 bg-cyan-50/50 rounded-full w-fit mx-auto md:mx-0">
+                            <span className="text-xs font-bold text-[#1E7B7C] uppercase tracking-widest px-3 py-1 bg-[#E8F4F4]/50 rounded-full w-fit mx-auto md:mx-0">
                                 Page Status
                             </span>
                             <div className="text-sm text-gray-500 font-medium">
@@ -73,7 +73,7 @@ export function PaginationGlass({
                                     className="p-2.5 rounded-xl transition-all hover:bg-white hover:shadow-sm disabled:opacity-30 disabled:cursor-not-allowed group/btn"
                                     aria-label="First page"
                                 >
-                                    <ChevronsLeft className="w-4 h-4 text-gray-600 group-hover/btn:text-cyan-600" />
+                                    <ChevronsLeft className="w-4 h-4 text-gray-600 group-hover/btn:text-[#1E7B7C]" />
                                 </button>
                                 <button
                                     onClick={() => onPageChange(currentPage - 1)}
@@ -81,7 +81,7 @@ export function PaginationGlass({
                                     className="p-2.5 rounded-xl transition-all hover:bg-white hover:shadow-sm disabled:opacity-30 disabled:cursor-not-allowed group/btn"
                                     aria-label="Previous page"
                                 >
-                                    <ChevronLeft className="w-4 h-4 text-gray-600 group-hover/btn:text-cyan-600" />
+                                    <ChevronLeft className="w-4 h-4 text-gray-600 group-hover/btn:text-[#1E7B7C]" />
                                 </button>
                             </div>
 
@@ -95,8 +95,8 @@ export function PaginationGlass({
                                             key={page}
                                             onClick={() => onPageChange(page as number)}
                                             className={`relative w-10 h-10 rounded-xl text-sm font-bold transition-all duration-300 ${currentPage === page
-                                                ? 'bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-200 scale-110'
-                                                : 'text-gray-500 hover:bg-white/80 hover:text-cyan-600'
+                                                ? 'bg-gradient-to-br from-[#1E7B7C] to-[#166566] text-white shadow-lg shadow-[#1E7B7C]/20 scale-110'
+                                                : 'text-gray-500 hover:bg-white/80 hover:text-[#1E7B7C]'
                                                 }`}
                                         >
                                             {page}
@@ -112,7 +112,7 @@ export function PaginationGlass({
                                     className="p-2.5 rounded-xl transition-all hover:bg-white hover:shadow-sm disabled:opacity-30 disabled:cursor-not-allowed group/btn"
                                     aria-label="Next page"
                                 >
-                                    <ChevronRight className="w-4 h-4 text-gray-600 group-hover/btn:text-cyan-600" />
+                                    <ChevronRight className="w-4 h-4 text-gray-600 group-hover/btn:text-[#1E7B7C]" />
                                 </button>
                                 <button
                                     onClick={() => onPageChange(totalPages)}
@@ -120,7 +120,7 @@ export function PaginationGlass({
                                     className="p-2.5 rounded-xl transition-all hover:bg-white hover:shadow-sm disabled:opacity-30 disabled:cursor-not-allowed group/btn"
                                     aria-label="Last page"
                                 >
-                                    <ChevronsRight className="w-4 h-4 text-gray-600 group-hover/btn:text-cyan-600" />
+                                    <ChevronsRight className="w-4 h-4 text-gray-600 group-hover/btn:text-[#1E7B7C]" />
                                 </button>
                             </div>
                         </div>

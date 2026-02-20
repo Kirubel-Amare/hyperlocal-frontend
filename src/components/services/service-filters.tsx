@@ -26,7 +26,7 @@ export default function ServiceFilters({
   return (
     <div className="bg-white rounded-2xl border border-gray-200 p-6 sticky top-6">
       <div className="flex items-center gap-2 mb-6">
-        <Sliders size={20} className="text-cyan-600" />
+        <Sliders size={20} className="text-[#1E7B7C]" />
         <h3 className="font-bold text-lg">Filters</h3>
       </div>
 
@@ -36,7 +36,7 @@ export default function ServiceFilters({
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-cyan-500 bg-white"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#1E7B7C] bg-white"
         >
           <option value="rating">Highest Rated</option>
           <option value="price-low">Price: Low to High</option>
@@ -58,7 +58,7 @@ export default function ServiceFilters({
               onChange={(e) => setMinPrice(Number(e.target.value))}
               className="w-20 px-2 py-1 border border-gray-300 rounded text-sm"
             />
-            <span className="text-cyan-600 font-semibold">${minPrice}</span>
+            <span className="text-[#1E7B7C] font-semibold">${minPrice}</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-xs text-gray-600">Max:</span>
@@ -68,7 +68,7 @@ export default function ServiceFilters({
               onChange={(e) => setMaxPrice(Number(e.target.value))}
               className="w-20 px-2 py-1 border border-gray-300 rounded text-sm"
             />
-            <span className="text-cyan-600 font-semibold">${maxPrice}</span>
+            <span className="text-[#1E7B7C] font-semibold">${maxPrice}</span>
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@ export default function ServiceFilters({
         <select
           value={minRating}
           onChange={(e) => setMinRating(Number(e.target.value))}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-cyan-500 bg-white"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#1E7B7C] bg-white"
         >
           <option value={0}>All Ratings</option>
           <option value={4}>4+ Stars</option>

@@ -34,11 +34,11 @@ export default function CustomerSidebar() {
                                 key={link.name}
                                 href={link.href}
                                 className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors ${isActive
-                                    ? 'bg-cyan-50 text-cyan-600 font-bold'
+                                    ? 'bg-[#E8F4F4] text-[#1E7B7C] font-bold'
                                     : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
                                     }`}
                             >
-                                <Icon size={18} className={isActive ? 'text-cyan-500' : 'text-gray-500'} />
+                                <Icon size={18} className={isActive ? 'text-[#1E7B7C]' : 'text-gray-500'} />
                                 {link.name}
                             </Link>
                         )
@@ -59,11 +59,11 @@ export default function CustomerSidebar() {
                                 key={link.name}
                                 href={link.href}
                                 className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors ${isActive
-                                    ? 'bg-cyan-50 text-cyan-600 font-bold'
+                                    ? 'bg-[#E8F4F4] text-[#1E7B7C] font-bold'
                                     : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
                                     }`}
                             >
-                                <Icon size={18} className={isActive ? 'text-cyan-500' : 'text-gray-500'} />
+                                <Icon size={18} className={isActive ? 'text-[#1E7B7C]' : 'text-gray-500'} />
                                 {link.name}
                             </Link>
                         )
@@ -82,11 +82,11 @@ export default function CustomerSidebar() {
             <div className="px-6 mt-12">
                 <div className="bg-[#0b1426] rounded-2xl p-5 text-white shadow-xl relative overflow-hidden">
                     {/* Subtle gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-[#1E7B7C]/5 pointer-events-none" />
 
                     <p className="text-xs text-gray-400 mb-1">Upgrade your plan</p>
                     <h4 className="text-sm font-bold mb-4">Get 24/7 Priority Support</h4>
-                    <button className="w-full bg-cyan-500 hover:bg-cyan-400 text-white text-sm font-bold py-2.5 rounded-lg transition-colors">
+                    <button className="w-full bg-[#1E7B7C] hover:bg-[#166566] text-white text-sm font-bold py-2.5 rounded-lg transition-colors shadow-sm shadow-[#1E7B7C]/20">
                         Go Premium
                     </button>
                 </div>

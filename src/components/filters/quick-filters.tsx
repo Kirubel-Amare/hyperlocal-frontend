@@ -23,11 +23,11 @@ export function QuickFilters({
                 className={cn(
                     "flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all border shadow-sm",
                     isVerified
-                        ? "bg-cyan-600 border-cyan-600 text-white shadow-cyan-200"
+                        ? "bg-[#1E7B7C] border-[#1E7B7C] text-white shadow-[#E8F4F4]"
                         : "bg-white border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50"
                 )}
             >
-                <ShieldCheck size={18} className={isVerified ? "text-cyan-100" : "text-cyan-600"} />
+                <ShieldCheck size={18} className={isVerified ? "text-[#E8F4F4]" : "text-[#1E7B7C]"} />
                 Verified Only
                 {isVerified && <Check size={14} className="ml-1" />}
             </button>
@@ -37,11 +37,11 @@ export function QuickFilters({
                 className={cn(
                     "flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all border shadow-sm",
                     isOpenNow
-                        ? "bg-cyan-600 border-cyan-600 text-white shadow-cyan-200"
+                        ? "bg-[#1E7B7C] border-[#1E7B7C] text-white shadow-[#E8F4F4]"
                         : "bg-white border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50"
                 )}
             >
-                <Clock size={18} className={isOpenNow ? "text-cyan-100" : "text-cyan-600"} />
+                <Clock size={18} className={isOpenNow ? "text-[#E8F4F4]" : "text-[#1E7B7C]"} />
                 Open Now
                 {isOpenNow && <Check size={14} className="ml-1" />}
             </button>

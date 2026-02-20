@@ -18,7 +18,7 @@ export default function CategoriesSection() {
   ]
 
   const colorClasses = {
-    blue: 'bg-blue-100 text-blue-600 hover:bg-blue-200',
+    blue: 'bg-blue-100 text-[#166566] hover:bg-blue-200',
     pink: 'bg-pink-100 text-pink-600 hover:bg-pink-200',
     purple: 'bg-purple-100 text-purple-600 hover:bg-purple-200',
     orange: 'bg-orange-100 text-orange-600 hover:bg-orange-200',
@@ -26,14 +26,14 @@ export default function CategoriesSection() {
     emerald: 'bg-emerald-100 text-emerald-600 hover:bg-emerald-200',
     indigo: 'bg-indigo-100 text-indigo-600 hover:bg-indigo-200',
     rose: 'bg-rose-100 text-rose-600 hover:bg-rose-200',
-    cyan: 'bg-cyan-100 text-cyan-600 hover:bg-cyan-200',
+    cyan: 'bg-[#E8F4F4] text-[#1E7B7C] hover:bg-[#E8F4F4]',
     fuchsia: 'bg-fuchsia-100 text-fuchsia-600 hover:bg-fuchsia-200',
     lime: 'bg-lime-100 text-lime-600 hover:bg-lime-200',
     sky: 'bg-sky-100 text-sky-600 hover:bg-sky-200'
   }
 
   return (
-    <section id="services" className="py-20 px-6 bg-gradient-to-b from-white to-cyan-50">
+    <section id="services" className="py-20 px-6 bg-gradient-to-b from-white to-[#E8F4F4]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-16">
@@ -41,7 +41,7 @@ export default function CategoriesSection() {
             <h2 className="text-5xl font-bold text-gray-900 mb-3">Browse by Category</h2>
             <p className="text-gray-600 text-lg">Explore services from verified professionals</p>
           </div>
-          <Link href="/services" className="text-cyan-600 hover:text-cyan-700 font-semibold text-base flex items-center gap-2 hover:gap-3 transition-all group">
+          <Link href="/services" className="text-[#1E7B7C] hover:text-[#166566] font-semibold text-base flex items-center gap-2 hover:gap-3 transition-all group">
             View All
             <span className="transform group-hover:translate-x-1 transition-transform">→</span>
           </Link>
@@ -56,11 +56,11 @@ export default function CategoriesSection() {
               <Link
                 key={index}
                 href={`/services?category=${category.name}`}
-                className="group bg-white rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 hover:border-cyan-200 overflow-hidden relative"
+                className="group bg-white rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 hover:border-[#E8F4F4] overflow-hidden relative"
               >
 
                 {/* Gradient background on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#E8F4F4] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                 <div className="relative z-10">
                   <div className={`w-16 h-16 ${colorClass} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md group-hover:shadow-lg`}>

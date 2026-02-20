@@ -13,7 +13,7 @@ export default function CustomerHeader() {
             <div className="flex items-center gap-12">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center">
+                    <div className="w-8 h-8 bg-[#1E7B7C] rounded-lg flex items-center justify-center">
                         <div className="grid grid-cols-2 gap-0.5 w-4 h-4">
                             <div className="bg-white rounded-sm" />
                             <div className="bg-white rounded-sm" />
@@ -32,7 +32,7 @@ export default function CustomerHeader() {
                     <input
                         type="text"
                         placeholder="Search for services..."
-                        className="w-full bg-gray-50 border-none outline-none rounded-xl py-2.5 pl-11 pr-4 text-sm text-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-cyan-500/20 transition-all"
+                        className="w-full bg-gray-50 border-none outline-none rounded-xl py-2.5 pl-11 pr-4 text-sm text-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-[#1E7B7C]/20 transition-all"
                     />
                 </div>
             </div>
@@ -40,11 +40,11 @@ export default function CustomerHeader() {
             {/* Right Actions */}
             <div className="flex items-center gap-6">
                 <div className="flex items-center gap-4 border-r border-gray-200 pr-6">
-                    <button className="relative p-2 text-gray-600 hover:text-cyan-600 transition-colors">
+                    <button className="relative p-2 text-gray-600 hover:text-[#1E7B7C] transition-colors">
                         <Bell size={20} />
                         <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 border-2 border-white rounded-full" />
                     </button>
-                    <button className="p-2 text-gray-600 hover:text-cyan-600 transition-colors bg-gray-100/50 rounded-full">
+                    <button className="p-2 text-gray-600 hover:text-[#1E7B7C] transition-colors bg-gray-100/50 rounded-full">
                         <HelpCircle size={20} className="text-gray-500" />
                     </button>
                 </div>

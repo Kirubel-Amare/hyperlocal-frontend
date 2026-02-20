@@ -14,7 +14,7 @@ export default function FormField({ label, error, className = '', id, ...props }
       </label>
       <input
         id={fieldId}
-        className={`w-full px-4 py-3 border ${error ? 'border-red-300' : 'border-gray-300'} rounded-lg text-gray-700 placeholder-gray-400 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 ${className}`}
+        className={`w-full px-4 py-3 border ${error ? 'border-red-300' : 'border-gray-300'} rounded-lg text-gray-700 placeholder-gray-400 focus:outline-none focus:border-[#1E7B7C] focus:ring-1 focus:ring-[#1E7B7C] ${className}`}
         {...props}
       />
       {error && <p className="mt-1 text-sm text-red-600">{error}</p>}

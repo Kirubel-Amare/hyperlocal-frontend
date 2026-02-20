@@ -42,7 +42,7 @@ export function FilterSidebar({
                 {/* Filters Section */}
                 <div className="bg-white rounded-3xl border border-gray-100 p-6 shadow-sm space-y-8">
                     <div className="flex items-center gap-2 mb-2">
-                        <Sliders size={20} className="text-cyan-600" />
+                        <Sliders size={20} className="text-[#1E7B7C]" />
                         <h3 className="font-bold text-lg text-gray-900">Refine Search</h3>
                     </div>
 
@@ -63,7 +63,7 @@ export function FilterSidebar({
                                         type="number"
                                         value={minPrice}
                                         onChange={(e) => onMinPriceChange(Number(e.target.value))}
-                                        className="w-full pl-7 pr-3 py-2 bg-gray-50 border border-transparent rounded-xl text-sm font-semibold focus:bg-white focus:border-cyan-500 focus:outline-none transition-all"
+                                        className="w-full pl-7 pr-3 py-2 bg-gray-50 border border-transparent rounded-xl text-sm font-semibold focus:bg-white focus:border-[#1E7B7C] focus:outline-none transition-all"
                                     />
                                 </div>
                             </div>
@@ -75,7 +75,7 @@ export function FilterSidebar({
                                         type="number"
                                         value={maxPrice}
                                         onChange={(e) => onMaxPriceChange(Number(e.target.value))}
-                                        className="w-full pl-7 pr-3 py-2 bg-gray-50 border border-transparent rounded-xl text-sm font-semibold focus:bg-white focus:border-cyan-500 focus:outline-none transition-all"
+                                        className="w-full pl-7 pr-3 py-2 bg-gray-50 border border-transparent rounded-xl text-sm font-semibold focus:bg-white focus:border-[#1E7B7C] focus:outline-none transition-all"
                                     />
                                 </div>
                             </div>
@@ -89,7 +89,7 @@ export function FilterSidebar({
                                 <MapPin size={16} className="text-gray-400" />
                                 Distance
                             </label>
-                            <span className="text-xs font-bold text-cyan-600 bg-cyan-50 px-2 py-0.5 rounded-full">
+                            <span className="text-xs font-bold text-[#1E7B7C] bg-[#E8F4F4] px-2 py-0.5 rounded-full">
                                 {maxDistance} miles
                             </span>
                         </div>
@@ -99,7 +99,7 @@ export function FilterSidebar({
                             max="100"
                             value={maxDistance}
                             onChange={(e) => onMaxDistanceChange(Number(e.target.value))}
-                            className="w-full h-1.5 bg-gray-100 rounded-lg appearance-none cursor-pointer accent-cyan-600"
+                            className="w-full h-1.5 bg-gray-100 rounded-lg appearance-none cursor-pointer accent-[#1E7B7C]"
                         />
                         <div className="flex justify-between text-[10px] font-bold text-gray-400 uppercase tracking-tighter">
                             <span>1 mi</span>
@@ -121,7 +121,7 @@ export function FilterSidebar({
                                     className={cn(
                                         "flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-semibold transition-all group",
                                         minRating === rating
-                                            ? "bg-cyan-600 text-white shadow-lg shadow-cyan-100"
+                                            ? "bg-[#1E7B7C] text-white shadow-lg shadow-[#E8F4F4]"
                                             : "bg-gray-50 text-gray-600 hover:bg-gray-100"
                                     )}
                                 >

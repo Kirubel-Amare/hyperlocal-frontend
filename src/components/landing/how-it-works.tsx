@@ -36,7 +36,7 @@ export default function HowItWorks() {
 
   return (
     <section id="how-it-works" className="relative w-full py-24 bg-white">
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#E8F4F4] rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative">
         {/* Header */}
@@ -55,7 +55,7 @@ export default function HowItWorks() {
         {/* Steps */}
         <div className="grid md:grid-cols-4 gap-8 relative">
           {/* Connection Line */}
-          <div className="hidden md:block absolute top-20 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 -z-10"></div>
+          <div className="hidden md:block absolute top-20 left-0 right-0 h-1 bg-gradient-to-r from-[#1E7B7C] via-blue-400 to-purple-400 -z-10"></div>
 
           {steps.map((step, i) => {
             const Icon = step.icon
@@ -67,7 +67,7 @@ export default function HowItWorks() {
                 </div>
 
                 {/* Card */}
-                <div className="bg-white rounded-2xl p-6 border-2 border-gray-100 group-hover:border-cyan-300 group-hover:shadow-lg transition-all text-center h-full">
+                <div className="bg-white rounded-2xl p-6 border-2 border-gray-100 group-hover:border-[#1E7B7C] group-hover:shadow-lg transition-all text-center h-full">
                   <div className="flex justify-center mb-4">
                     <div className={`p-3 bg-${step.color}-100 rounded-lg`}>
                       <Icon size={28} className={`text-${step.color}-600`} />

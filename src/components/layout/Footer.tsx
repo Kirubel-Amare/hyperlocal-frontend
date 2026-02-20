@@ -20,16 +20,16 @@ export default function Footer() {
               Building stronger communities by connecting neighbors with the best local service professionals.
             </p>
             <div className="flex gap-4">
-              <Link href="#" className="text-gray-400 hover:text-cyan-500 transition-colors">
+              <Link href="#" className="text-gray-400 hover:text-[#1E7B7C] transition-colors">
                 <Facebook size={20} />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-cyan-500 transition-colors">
+              <Link href="#" className="text-gray-400 hover:text-[#1E7B7C] transition-colors">
                 <Twitter size={20} />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-cyan-500 transition-colors">
+              <Link href="#" className="text-gray-400 hover:text-[#1E7B7C] transition-colors">
                 <Instagram size={20} />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-cyan-500 transition-colors">
+              <Link href="#" className="text-gray-400 hover:text-[#1E7B7C] transition-colors">
                 <Linkedin size={20} />
               </Link>
             </div>
@@ -41,7 +41,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {['Plumbing', 'Cleaning', 'Electrical', 'Tutoring', 'Pet Care', 'Gardening'].map((service) => (
                 <li key={service}>
-                  <Link href="#" className="text-sm text-gray-400 hover:text-cyan-500 transition-colors">
+                  <Link href="#" className="text-sm text-gray-400 hover:text-[#1E7B7C] transition-colors">
                     {service}
                   </Link>
                 </li>
@@ -55,7 +55,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {['About Us', 'Careers', 'Press', 'Impact'].map((item) => (
                 <li key={item}>
-                  <Link href="#" className="text-sm text-gray-400 hover:text-cyan-500 transition-colors">
+                  <Link href="#" className="text-sm text-gray-400 hover:text-[#1E7B7C] transition-colors">
                     {item}
                   </Link>
                 </li>
@@ -69,7 +69,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {['Help Center', 'Safety', 'Contact', 'Terms'].map((item) => (
                 <li key={item}>
-                  <Link href="#" className="text-sm text-gray-400 hover:text-cyan-500 transition-colors">
+                  <Link href="#" className="text-sm text-gray-400 hover:text-[#1E7B7C] transition-colors">
                     {item}
                   </Link>
                 </li>
@@ -87,13 +87,13 @@ export default function Footer() {
             © 2024 LocalExpert Technologies. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link href="#" className="text-sm text-gray-400 hover:text-cyan-500 transition-colors">
+            <Link href="#" className="text-sm text-gray-400 hover:text-[#1E7B7C] transition-colors">
               Privacy Policy
             </Link>
-            <Link href="#" className="text-sm text-gray-400 hover:text-cyan-500 transition-colors">
+            <Link href="#" className="text-sm text-gray-400 hover:text-[#1E7B7C] transition-colors">
               Terms of Service
             </Link>
-            <Link href="#" className="text-sm text-gray-400 hover:text-cyan-500 transition-colors">
+            <Link href="#" className="text-sm text-gray-400 hover:text-[#1E7B7C] transition-colors">
               Cookie Policy
             </Link>
           </div>

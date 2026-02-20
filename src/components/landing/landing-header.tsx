@@ -7,7 +7,7 @@ export default function LandingHeader() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-teal-600 rounded flex items-center justify-center">
+          <div className="w-8 h-8 bg-[#1E7B7C] rounded flex items-center justify-center">
             <span className="text-white font-bold text-lg">L</span>
           </div>
           <span className="text-xl font-bold text-gray-900">LocalExpert</span>
@@ -15,13 +15,13 @@ export default function LandingHeader() {
 
         {/* Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          <Link href="#" className="text-gray-700 hover:text-cyan-600 font-medium text-sm transition-colors">
+          <Link href="#" className="text-gray-700 hover:text-[#1E7B7C] font-medium text-sm transition-colors">
             Find Services
           </Link>
-          <Link href="#" className="text-gray-700 hover:text-cyan-600 font-medium text-sm transition-colors">
+          <Link href="#" className="text-gray-700 hover:text-[#1E7B7C] font-medium text-sm transition-colors">
             List a Service
           </Link>
-          <Link href="#" className="text-gray-700 hover:text-cyan-600 font-medium text-sm transition-colors">
+          <Link href="#" className="text-gray-700 hover:text-[#1E7B7C] font-medium text-sm transition-colors">
             How it Works
           </Link>
         </nav>
@@ -32,10 +32,10 @@ export default function LandingHeader() {
             <Globe size={18} />
             <span className="text-sm font-medium">EN</span>
           </button>
-          <Link href="/login" className="text-gray-700 hover:text-cyan-600 font-medium text-sm transition-colors">
+          <Link href="/login" className="text-gray-700 hover:text-[#1E7B7C] font-medium text-sm transition-colors">
             Login
           </Link>
-          <Link href="/register" className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-2 rounded-lg font-medium text-sm transition-colors">
+          <Link href="/register" className="bg-[#1E7B7C] hover:bg-[#166566] text-white px-6 py-2 rounded-lg font-medium text-sm transition-colors shadow-sm">
             Sign Up
           </Link>
         </div>

@@ -16,7 +16,7 @@ export default function CTASection() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/register"
-            className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors transform hover:scale-105"
+            className="bg-[#1E7B7C] hover:bg-[#166566] text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors transform hover:scale-105 shadow-lg shadow-[#1E7B7C]/20"
           >
             Become a Partner
           </Link>
