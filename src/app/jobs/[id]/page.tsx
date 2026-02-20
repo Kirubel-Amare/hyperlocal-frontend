@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useParams } from 'next/navigation'
+import Link from 'next/link'
 import Image from 'next/image'
 import { mockJobsData } from '@/lib/jobs-data'
 import Header from '@/components/layout/header'
@@ -19,7 +20,8 @@ import {
     Heart,
     AlertCircle,
     ShieldCheck,
-    Zap
+    Zap,
+    Navigation as NavigationIcon
 } from 'lucide-react'
 
 export default function JobPostPage() {
@@ -98,14 +100,20 @@ export default function JobPostPage() {
                                     <h1 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">{job.title}</h1>
                                     <div className="flex flex-wrap items-center gap-4 text-sm font-bold">
                                         <span className="px-3 py-1 bg-[#E8F4F4] text-[#1E7B7C] rounded-lg">{job.category}</span>
-                                        <span className="flex items-center gap-1.5 text-gray-400">
-                                            <Clock size={16} />
-                                            Posted {job.postedTime}
-                                        </span>
-                                        <span className="flex items-center gap-1.5 text-amber-600">
-                                            <MapPin size={16} />
-                                            {job.specificLocation || 'On-site Service'}
-                                        </span>
+                                        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 font-medium">
+                                            <span className="flex items-center gap-1.5 text-amber-600 font-bold bg-amber-50 px-2.5 py-1 rounded-xl">
+                                                <NavigationIcon size={16} />
+                                                {job.distance || '0.5 miles away'}
+                                            </span>
+                                            <span className="flex items-center gap-1.5 text-gray-500 bg-gray-50 px-2.5 py-1 rounded-xl">
+                                                <MapPin size={16} />
+                                                {job.specificLocation || 'On-site Service'}
+                                            </span>
+                                            <span className="flex items-center gap-1.5 text-gray-500 bg-gray-50 px-2.5 py-1 rounded-xl">
+                                                <Clock size={16} />
+                                                Posted {job.postedTime}
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -177,10 +185,13 @@ export default function JobPostPage() {
 
                         {/* Action Card */}
                         <div className="bg-[#1E7B7C] rounded-3xl p-8 shadow-2xl shadow-[#1E7B7C]/20 text-white sticky top-28">
-                            <button className="w-full py-5 bg-white text-[#1E7B7C] font-black rounded-2xl hover:scale-[1.02] transition-all flex items-center justify-center gap-2 mb-4 group shadow-lg">
+                            <Link
+                                href="/messages"
+                                className="w-full py-5 bg-white text-[#1E7B7C] font-black rounded-2xl hover:scale-[1.02] transition-all flex items-center justify-center gap-2 mb-4 group shadow-lg transition-transform"
+                            >
                                 Submit a Proposal
                                 <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                            </button>
+                            </Link>
                             <button className="w-full py-5 border-2 border-white/20 text-white font-black rounded-2xl hover:bg-white/10 transition-all mb-8">
                                 Save Listing
                             </button>
@@ -242,6 +253,14 @@ export default function JobPostPage() {
                                     <div className="flex justify-between">
                                         <span className="text-gray-500 font-medium">Member Since</span>
                                         <span className="font-bold text-gray-900">{job.client.memberSince}</span>
+                                    </div>
+                                    <div className="pt-4">
+                                        <Link
+                                            href="/messages"
+                                            className="block w-full py-3 bg-gray-900 text-white text-center font-bold rounded-xl hover:bg-gray-800 transition-all text-sm"
+                                        >
+                                            Contact Client
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

@@ -41,6 +41,8 @@ export interface Job {
     proposalsRange: string;
     locationType: 'On-site' | 'Remote';
     specificLocation?: string;
+    distance?: string; // e.g., "0.5 miles away"
+    coordinates?: { lat: number; lng: number };
 }
 
 export const mockUserAccount: UserAccount = {
@@ -70,6 +72,8 @@ export const mockJobsData: Record<string, Job> = {
         proposalsRange: "0 to 5",
         locationType: "On-site",
         specificLocation: "Downtown, Manhattan",
+        distance: "0.2 miles away",
+        coordinates: { lat: 40.7128, lng: -74.0060 },
         client: {
             id: "client-1",
             name: "Residential Property Mgmt",
@@ -101,6 +105,8 @@ export const mockJobsData: Record<string, Job> = {
         proposalsRange: "10 to 15",
         locationType: "On-site",
         specificLocation: "Greenwich, CT",
+        distance: "5.4 miles away",
+        coordinates: { lat: 41.0262, lng: -73.6282 },
         client: {
             id: "client-2",
             name: "The Miller Family",
@@ -130,6 +136,8 @@ export const mockJobsData: Record<string, Job> = {
         proposalsRange: "15 to 20",
         locationType: "On-site",
         specificLocation: "Williamsburg, Brooklyn",
+        distance: "1.8 miles away",
+        coordinates: { lat: 40.7128, lng: -73.9626 },
         client: {
             id: "client-3",
             name: "David Chen",
@@ -160,6 +168,8 @@ export const mockJobsData: Record<string, Job> = {
         proposalsRange: "5 to 10",
         locationType: "On-site",
         specificLocation: "Santa Monica, CA",
+        distance: "12.5 miles away",
+        coordinates: { lat: 34.0195, lng: -118.4912 },
         client: {
             id: "client-4",
             name: "Sarah Jenkins",
@@ -190,6 +200,8 @@ export const mockJobsData: Record<string, Job> = {
         proposalsRange: "10 to 15",
         locationType: "On-site",
         specificLocation: "Austin, TX",
+        distance: "3.2 miles away",
+        coordinates: { lat: 30.2672, lng: -97.7431 },
         client: {
             id: "client-5",
             name: "Mark Thompson",
@@ -220,6 +232,8 @@ export const mockJobsData: Record<string, Job> = {
         proposalsRange: "2 to 5",
         locationType: "On-site",
         specificLocation: "Miami, FL",
+        distance: "8.7 miles away",
+        coordinates: { lat: 25.7617, lng: -80.1918 },
         client: {
             id: "client-6",
             name: "Coconut Grove Estates",
@@ -251,6 +265,8 @@ export const mockJobsData: Record<string, Job> = {
         proposalsRange: "20+",
         locationType: "On-site",
         specificLocation: "Lincoln Park, Chicago",
+        distance: "2.1 miles away",
+        coordinates: { lat: 41.9214, lng: -87.6513 },
         client: {
             id: "client-7",
             name: "Emily Watson",
