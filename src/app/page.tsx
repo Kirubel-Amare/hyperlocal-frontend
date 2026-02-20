@@ -14,13 +14,15 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <HeroSection />
-      <CategoriesSection />
-      <HowItWorks />
-      <FeaturedProfessionals />
-      <TestimonialsSection />
-      <FAQSection />
-      <CTASection />
+      <div className="max-w-[1600px] mx-auto px-8 pt-28 pb-12">
+        <HeroSection />
+        <CategoriesSection />
+        <HowItWorks />
+        <FeaturedProfessionals />
+        <TestimonialsSection />
+        <FAQSection />
+        <CTASection />
+      </div>
       <Footer />
     </div>
   )

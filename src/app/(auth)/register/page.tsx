@@ -38,53 +38,55 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      <main className="max-w-2xl mx-auto px-4 md:px-6 py-8 md:py-12 ">
-        {/* Progress Bar */}
-        <div className="mb-8 mt-16">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-medium text-cyan-600">
-              STEP {step} OF 3
-            </span>
-            <span className="text-sm font-medium text-gray-600">
-              {step === 1 && 'Account Type'}
-              {step === 2 && 'Personal Details'}
-              {step === 3 && 'Verification'}
-            </span>
+      <main className="max-w-[1600px] mx-auto px-8 pt-28 pb-12 flex justify-center">
+        <div className="w-full max-w-2xl">
+          {/* Progress Bar */}
+          <div className="mb-8">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm font-medium text-cyan-600">
+                STEP {step} OF 3
+              </span>
+              <span className="text-sm font-medium text-gray-600">
+                {step === 1 && 'Account Type'}
+                {step === 2 && 'Personal Details'}
+                {step === 3 && 'Verification'}
+              </span>
+            </div>
+            <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-cyan-500 rounded-full transition-all"
+                style={{ width: `${(step / 3) * 100}%` }}
+              />
+            </div>
+            <p className="text-sm text-gray-600 mt-2">
+              {step === 1 && 'Next: Personal Details & Verification'}
+              {step === 2 && 'Next: Final Verification'}
+              {step === 3 && 'Almost done!'}
+            </p>
           </div>
-          <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
-            <div
-              className="h-full bg-cyan-500 rounded-full transition-all"
-              style={{ width: `${(step / 3) * 100}%` }}
-            />
-          </div>
-          <p className="text-sm text-gray-600 mt-2">
-            {step === 1 && 'Next: Personal Details & Verification'}
-            {step === 2 && 'Next: Final Verification'}
-            {step === 3 && 'Almost done!'}
-          </p>
-        </div>
 
-        {/* Step Components */}
-        {step === 1 && (
-          <Step1
-            initialData={formData}
-            onSubmit={handleStep1Submit}
-          />
-        )}
-        {step === 2 && (
-          <Step2
-            initialData={formData}
-            onBack={prevStep}
-            onSubmit={handleStep2Submit}
-          />
-        )}
-        {step === 3 && (
-          <Step3
-            initialData={formData}
-            onBack={prevStep}
-            onSubmit={handleFinalSubmit}
-          />
-        )}
+          {/* Step Components */}
+          {step === 1 && (
+            <Step1
+              initialData={formData}
+              onSubmit={handleStep1Submit}
+            />
+          )}
+          {step === 2 && (
+            <Step2
+              initialData={formData}
+              onBack={prevStep}
+              onSubmit={handleStep2Submit}
+            />
+          )}
+          {step === 3 && (
+            <Step3
+              initialData={formData}
+              onBack={prevStep}
+              onSubmit={handleFinalSubmit}
+            />
+          )}
+        </div>
       </main>
     </div>
   )

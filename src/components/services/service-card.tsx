@@ -67,7 +67,7 @@ export default function ServiceCard({ service, categorySlug }: ServiceCardProps)
             <span className="text-xs font-semibold">{service.distance} miles away</span>
           </div>
           <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-2.5 rounded-xl text-sm font-bold transition-all shadow-lg shadow-cyan-500/20 active:scale-95">
-            Book Now
+            Details
           </button>
         </div>
       </div>
