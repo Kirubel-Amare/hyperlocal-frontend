@@ -37,6 +37,7 @@ interface HeaderProps {
 const navLinks = [
   { name: 'Home', href: '/', icon: <Home size={16} /> },
   { name: 'Services', href: '/services/all', icon: <Briefcase size={16} /> },
+  { name: 'Jobs', href: '/jobs', icon: <Briefcase size={16} /> },
   { name: 'How it Works', href: '/#how-it-works', icon: <Info size={16} /> },
   { name: 'FAQ', href: '/#faq', icon: <HelpCircle size={16} /> },
   { name: 'About', href: '/about', icon: <Info size={16} /> },
