@@ -1,6 +1,6 @@
 'use client'
 
-import { Wallet2, TrendingUp, ArrowUpRight, ArrowDownRight, Download, Calendar, DollarSign, Wallet } from 'lucide-react'
+import { Wallet2, TrendingUp, ArrowUpRight, ArrowDownRight, Download, Calendar, DollarSign, Wallet, ChevronRight } from 'lucide-react'
 import { providerDashboardData } from '@/lib/mock-dashboards'
 
 export default function ProviderEarningsPage() {
