@@ -3,10 +3,12 @@ import { ReactNode } from "react"
 export interface Review {
   id: string
   author: string
+  authorInitials?: string
   rating: number
-  comment: string
+  comment?: string // Original had comment
+  text?: string    // New mock uses text
   date: string
-  avatar: string
+  avatar?: string
 }
 
 export interface Service {
@@ -907,3 +909,60 @@ export const servicesData: Record<string, Service[]> = {
     }
   ]
 }
+
+export interface DetailedProfile {
+  id: string;
+  name: string;
+  isAvailableNow: boolean;
+  role: string;
+  location: string;
+  rating: number;
+  reviewsCount: number;
+  experience: string;
+  image: string;
+  hourlyRate: number;
+  typicalResponse: string;
+  about: string;
+  skills: string[];
+  portfolio: string[];
+  reviews: Review[];
+}
+
+export const mockProfileData: DetailedProfile = {
+  id: "sarah-jenkins",
+  name: "Sarah Jenkins",
+  isAvailableNow: true,
+  role: "Master Interior Designer",
+  location: "New York, NY",
+  rating: 4.9,
+  reviewsCount: 124,
+  experience: "8+ Years Exp.",
+  image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&h=500&fit=crop",
+  hourlyRate: 85,
+  typicalResponse: "1 HOUR",
+  about: "I specialize in creating modern, minimalist spaces that balance aesthetic beauty with functional everyday living. With a background in architectural history and a passion for sustainable materials, I help New Yorkers transform their apartments into serene sanctuaries.",
+  skills: ["MoodBoarding", "SpacePlanning", "3DRendering", "TextileSourcing", "VintageRestoration"],
+  portfolio: [
+    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=500&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=500&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=500&h=600&fit=crop"
+  ],
+  reviews: [
+    {
+      id: "r1",
+      author: "Michael J.",
+      authorInitials: "MJ",
+      date: "October 12, 2023",
+      rating: 5,
+      text: '"Sarah was absolutely incredible. She transformed our tiny studio into a place that feels massive and cohesive. Truly a professional with an eye for detail!"'
+    },
+    {
+      id: "r2",
+      author: "Lauren R.",
+      authorInitials: "LR",
+      date: "September 28, 2023",
+      rating: 5,
+      text: '"Punctual and very creative! Loved her color palette suggestions. The project took slightly longer than expected but the result was worth it."'
+    }
+  ]
+};

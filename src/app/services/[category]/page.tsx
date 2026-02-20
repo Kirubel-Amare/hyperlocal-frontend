@@ -70,8 +70,8 @@ export default function CategoryPage({ params }: CategoryPageProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-white border-b border-gray-100">
-        <div className="max-w-[1400px] mx-auto px-6 py-3 flex items-center justify-between">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 h-20 flex items-center">
+        <div className="max-w-[1600px] mx-auto px-8 w-full flex items-center justify-between">
           <div className="flex items-center gap-12">
             <Link href="/" className="flex items-center gap-2">
               <Image
@@ -127,11 +127,11 @@ export default function CategoryPage({ params }: CategoryPageProps) {
       </header>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <div className="max-w-[1600px] mx-auto px-8 pt-28 pb-16">
+        <div className="flex flex-col lg:flex-row gap-12 xl:gap-20">
           {/* Sidebar Filters */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-20">
+          <div className="w-full lg:w-[280px] flex-shrink-0">
+            <div className="sticky top-28 h-[calc(100vh-120px)] overflow-y-auto pr-4 pb-12 sidebar-scroll">
               <h3 className="text-xl font-bold text-gray-900 mb-1">Filters</h3>
               <p className="text-sm text-gray-500 mb-8">Refine your results</p>
 
@@ -231,7 +231,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
           </div>
 
           {/* Services List */}
-          <div className="lg:col-span-3">
+          <div className="flex-1 min-w-0">
             {/* Top Bar */}
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
               <h2 className="text-2xl font-bold text-gray-900 tracking-tight">
@@ -275,7 +275,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
             {/* Services Grid */}
             {filteredServices.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8">
                 {filteredServices.map((service) => (
                   <ServiceCard
                     key={service.id}

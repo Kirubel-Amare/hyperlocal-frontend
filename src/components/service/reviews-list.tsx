@@ -41,7 +41,7 @@ export default function ReviewsList({ reviews, rating, totalReviews }: ReviewsLi
             <div key={review.id} className="pb-6 border-b border-gray-200 last:border-b-0">
               <div className="flex items-start gap-4">
                 <Image
-                  src={review.avatar}
+                  src={review.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${review.author}`}
                   alt={review.author}
                   width={48}
                   height={48}
