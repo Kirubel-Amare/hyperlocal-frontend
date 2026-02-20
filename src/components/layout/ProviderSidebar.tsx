@@ -3,19 +3,46 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { LayoutDashboard, Calendar, DollarSign, Star, Settings, Zap } from 'lucide-react'
+import { LayoutDashboard, Calendar, DollarSign, Star, Settings, Zap, Search, MessageSquare, LogOut, FileText, Briefcase, User, ZapOff, Inbox } from 'lucide-react'
 import { providerDashboardData } from '@/lib/mock-dashboards'
 
 export default function ProviderSidebar() {
     const pathname = usePathname()
     const { user } = providerDashboardData
 
-    const links = [
-        { name: 'Dashboard', href: '/provider/dashboard', icon: LayoutDashboard },
-        { name: 'Schedule', href: '/provider/schedule', icon: Calendar },
-        { name: 'Earnings', href: '/provider/earnings', icon: DollarSign },
-        { name: 'Reviews', href: '/provider/reviews', icon: Star },
-        { name: 'Settings', href: '/provider/settings', icon: Settings },
+    const menuGroups = [
+        {
+            title: 'MAIN',
+            links: [
+                { name: 'Dashboard', href: '/provider/dashboard', icon: LayoutDashboard },
+                { name: 'Browse Jobs', href: '/jobs', icon: Search },
+                { name: 'Messages', href: '/messages', icon: MessageSquare },
+            ]
+        },
+        {
+            title: 'MANAGE',
+            links: [
+                { name: 'Service Requests', href: '/provider/requests', icon: Inbox },
+                { name: 'My Quotes', href: '/provider/quotes', icon: FileText },
+                { name: 'Ongoing Jobs', href: '/provider/jobs/active', icon: Briefcase },
+                { name: 'Service Credits', href: '/provider/connects', icon: Zap },
+            ]
+        },
+        {
+            title: 'PROFESSIONAL',
+            links: [
+                { name: 'Public Profile', href: '/provider/profile', icon: User },
+                { name: 'Schedule', href: '/provider/schedule', icon: Calendar },
+                { name: 'Earnings', href: '/provider/earnings', icon: DollarSign },
+                { name: 'Reviews', href: '/provider/reviews', icon: Star },
+            ]
+        },
+        {
+            title: 'ACCOUNT',
+            links: [
+                { name: 'Settings', href: '/provider/settings', icon: Settings },
+            ]
+        }
     ]
 
     return (
@@ -42,25 +69,42 @@ export default function ProviderSidebar() {
             </div>
 
             {/* Navigation */}
-            <nav className="flex-1 px-4 space-y-1">
-                {links.map((link) => {
-                    const isActive = pathname === link.href || (link.href === '/provider/dashboard' && pathname === '/provider')
-                    const Icon = link.icon
-                    return (
-                        <Link
-                            key={link.name}
-                            href={link.href}
-                            className={`flex items-center gap-4 px-5 py-3.5 rounded-2xl text-[15px] font-semibold transition-all ${isActive
-                                ? 'bg-[#E8F4F4] text-[#1E7B7C]'
-                                : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
-                                }`}
-                        >
-                            <Icon size={20} className={isActive ? 'text-[#1E7B7C]' : 'text-gray-400'} strokeWidth={2.5} />
-                            {link.name}
-                        </Link>
-                    )
-                })}
+            <nav className="flex-1 px-4 space-y-8 pb-8">
+                {menuGroups.map((group) => (
+                    <div key={group.title}>
+                        <h4 className="px-5 mb-3 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
+                            {group.title}
+                        </h4>
+                        <div className="space-y-1">
+                            {group.links.map((link) => {
+                                const isActive = pathname === link.href || (link.href === '/provider/dashboard' && (pathname === '/provider' || pathname === '/provider/dashboard'))
+                                const Icon = link.icon
+                                return (
+                                    <Link
+                                        key={link.name}
+                                        href={link.href}
+                                        className={`flex items-center gap-4 px-5 py-3 rounded-2xl text-[14px] font-semibold transition-all ${isActive
+                                            ? 'bg-[#E8F4F4] text-[#1E7B7C]'
+                                            : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
+                                            }`}
+                                    >
+                                        <Icon size={18} className={isActive ? 'text-[#1E7B7C]' : 'text-gray-400'} strokeWidth={2.5} />
+                                        {link.name}
+                                    </Link>
+                                )
+                            })}
+                        </div>
+                    </div>
+                ))}
             </nav>
+
+            {/* Logout Section */}
+            <div className="px-4 mb-4">
+                <button className="w-full flex items-center gap-4 px-5 py-3.5 rounded-2xl text-[15px] font-semibold text-red-500 hover:bg-red-50 transition-all active:scale-95">
+                    <LogOut size={20} strokeWidth={2.5} />
+                    Logout
+                </button>
+            </div>
 
             {/* Bottom Action */}
             <div className="p-5 mt-auto">

@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Star, Navigation, Check } from 'lucide-react'
+import { Star, Navigation as NavigationIcon, Check } from 'lucide-react'
 import { Service } from '@/lib/services-data'
 
 interface ServiceCardProps {
@@ -63,7 +63,7 @@ export default function ServiceCard({ service, categorySlug }: ServiceCardProps)
         {/* Footer */}
         <div className="flex items-center justify-between gap-4 pt-1 mt-auto">
           <div className="flex items-center gap-2 text-gray-400">
-            <Navigation size={14} className="-rotate-45" />
+            <NavigationIcon size={14} className="-rotate-45" />
             <span className="text-xs font-semibold">{service.distance} miles away</span>
           </div>
           <button className="bg-[#1E7B7C] hover:bg-[#1E7B7C] text-white px-6 py-2.5 rounded-xl text-sm font-bold transition-all shadow-lg shadow-[#1E7B7C]/20 active:scale-95">
