@@ -62,13 +62,6 @@ export function Pagination({
                     <div className="bg-white/90 backdrop-blur-sm rounded-3xl border border-gray-100 shadow-xl shadow-gray-100/50 p-6 md:p-8">
                         {/* Results Info */}
                         <div className="text-center mb-6">
-                            <p className="text-sm text-gray-500">
-                                Showing <span className="font-semibold text-cyan-600 bg-cyan-50 px-2 py-0.5 rounded-lg">{start}</span>
-                                <span className="mx-1">to</span>
-                                <span className="font-semibold text-cyan-600 bg-cyan-50 px-2 py-0.5 rounded-lg">{end}</span>
-                                <span className="mx-1">of</span>
-                                <span className="font-semibold text-gray-900">{totalItems}</span> results
-                            </p>
                         </div>
 
                         {/* Page Numbers */}

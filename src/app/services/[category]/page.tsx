@@ -140,11 +140,8 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
               <div className="space-y-1">
                 <h2 className="text-2xl font-bold text-gray-900 tracking-tight">
-                  Showing {filteredServices.length} professionals {category !== 'all' ? `in ${categoryNames[category]}` : 'near San Francisco'}
+                  Showing {filteredServices.length} professionals {category !== 'all' ? `in ${categoryNames[category]}` : ''}
                 </h2>
-                <p className="text-sm text-gray-500 font-medium">
-                  Page {currentPage} of {totalPages || 1}
-                </p>
               </div>
               <SortSelector value={sortBy} onChange={setSortBy} />
             </div>

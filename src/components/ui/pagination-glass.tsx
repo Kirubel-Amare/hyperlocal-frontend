@@ -127,19 +127,6 @@ export function PaginationGlass({
                     </div>
                 </div>
 
-                {/* Glass Progress Indicator */}
-                <div className="mt-8 max-w-xs mx-auto">
-                    <div className="flex items-center justify-between mb-2 px-1">
-                        <span className="text-[10px] uppercase tracking-tighter font-bold text-gray-400">Progress</span>
-                        <span className="text-[10px] font-black text-cyan-600">{Math.round((currentPage / totalPages) * 100)}%</span>
-                    </div>
-                    <div className="h-1.5 w-full bg-gray-100/50 backdrop-blur-sm rounded-full overflow-hidden border border-white/20">
-                        <div
-                            className="h-full bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 transition-all duration-700 ease-out rounded-full shadow-[0_0_8px_rgba(6,182,212,0.4)]"
-                            style={{ width: `${(currentPage / totalPages) * 100}%` }}
-                        />
-                    </div>
-                </div>
             </div>
         </div>
     )
