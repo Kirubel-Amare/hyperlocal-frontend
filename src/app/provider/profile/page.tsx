@@ -4,6 +4,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { User, MapPin, Star, Award, Settings, Edit3, Camera, CheckCircle2, ShieldCheck, Zap, Plus } from 'lucide-react'
 import { providerDashboardData } from '@/lib/mock-dashboards'
+import AvailabilityCalendar from '@/components/profile/availability-calendar'
+import TrustBadge from '@/components/shared/trust-badge'
 
 export default function ProviderProfilePage() {
   const { user } = providerDashboardData
@@ -63,6 +65,11 @@ export default function ProviderProfilePage() {
                 Identity Verified
               </div>
             </div>
+
+            <div className="mt-8 flex flex-wrap justify-center gap-2">
+              <TrustBadge type="top-rated" size="sm" />
+              <TrustBadge type="fast-responder" size="sm" />
+            </div>
           </div>
 
           <div className="bg-white/60 backdrop-blur-md rounded-[32px] p-8 border border-white shadow-xl shadow-gray-200/10">
@@ -121,6 +128,8 @@ export default function ProviderProfilePage() {
               ))}
             </div>
           </div>
+
+          <AvailabilityCalendar />
 
           <div className="bg-white/60 backdrop-blur-md rounded-[40px] p-10 border border-white shadow-xl shadow-gray-200/10 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#1E7B7C]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />

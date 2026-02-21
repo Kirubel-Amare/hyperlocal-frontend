@@ -1,8 +1,9 @@
 'use client'
 
 import Image from 'next/image'
-import { Wallet2, UserPlus, Eye, Check, Zap, ChevronRight } from 'lucide-react'
+import { Wallet2, UserPlus, Eye, Check, Zap, ChevronRight, Award } from 'lucide-react'
 import { providerDashboardData } from '@/lib/mock-dashboards'
+import AnalyticsChart from '@/components/dashboard/analytics-chart'
 
 export default function ProviderDashboardPage() {
   const { user, stats, newRequests, upcomingToday } = providerDashboardData
@@ -141,37 +142,22 @@ export default function ProviderDashboardPage() {
           </div>
         </div>
 
-        {/* Weekly Performance */}
-        <div className="bg-white/60 backdrop-blur-md rounded-[32px] p-10 shadow-xl shadow-gray-200/10 border border-white flex flex-col">
-          <h2 className="text-xl font-black text-gray-900 mb-2">Weekly Impact</h2>
-          <p className="text-sm text-gray-400 font-medium mb-12">Your localized service reach and earnings.</p>
-
-          <div className="flex-1 flex items-end justify-between px-2 gap-4 mt-auto min-h-[160px]">
-            {[
-              { day: 'M', height: '35%', isActive: false },
-              { day: 'T', height: '60%', isActive: false },
-              { day: 'W', height: '45%', isActive: false },
-              { day: 'T', height: '70%', isActive: false },
-              { day: 'F', height: '85%', isActive: false },
-              { day: 'S', height: '55%', isActive: true },
-              { day: 'S', height: '30%', isActive: false },
-            ].map((bar, i) => (
-              <div key={i} className="flex flex-col items-center w-full group cursor-pointer">
-                <div className="w-full h-full flex items-end bg-gray-50/30 rounded-2xl overflow-hidden shadow-inner">
-                  <div
-                    className={`w-full transition-all duration-700 rounded-t-xl ${bar.isActive
-                      ? 'bg-gradient-to-t from-[#1E7B7C] to-[#166566] shadow-lg shadow-[#1E7B7C]/20'
-                      : 'bg-gray-200 group-hover:bg-[#1E7B7C]/20'
-                      }`}
-                    style={{ height: bar.height }}
-                  />
-                </div>
-                <span className={`text-[10px] font-black mt-4 transition-colors ${bar.isActive ? 'text-[#1E7B7C]' : 'text-gray-400'}`}>
-                  {bar.day}
-                </span>
-              </div>
-            ))}
-          </div>
+        {/* Weekly Performance - Advanced Analytics */}
+        <div className="lg:col-span-2">
+          <AnalyticsChart
+            title="Weekly Impact"
+            subtitle="Your localized service reach and earnings analysis."
+            type="revenue"
+            data={[
+              { label: 'Mon', value: 350 },
+              { label: 'Tue', value: 600 },
+              { label: 'Wed', value: 450 },
+              { label: 'Thu', value: 700 },
+              { label: 'Fri', value: 850 },
+              { label: 'Sat', value: 550 },
+              { label: 'Sun', value: 300 }
+            ]}
+          />
         </div>
 
       </div>

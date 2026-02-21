@@ -1,5 +1,5 @@
-import { Client, Job } from '@/types/job';
-import { UserAccount } from '@/types/user';
+export type { Client, Job } from '@/types/job';
+export type { UserAccount } from '@/types/user';
 
 export const mockUserAccount: UserAccount = {
     name: "Kirubel Amare",

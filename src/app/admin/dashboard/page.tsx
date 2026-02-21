@@ -11,8 +11,10 @@ import {
   CheckCircle2,
   Clock,
   AlertCircle,
-  Lock
+  Lock,
+  Stars
 } from 'lucide-react';
+import AnalyticsChart from '@/components/dashboard/analytics-chart'
 
 const stats = [
   {
@@ -99,38 +101,21 @@ export default function AdminDashboardPage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Main Chart Placeholder */}
-        <div className="lg:col-span-2 bg-white/70 backdrop-blur-xl border border-gray-100 p-8 rounded-[2.5rem] shadow-sm flex flex-col min-h-[450px]">
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h3 className="text-xl font-black text-gray-900 tracking-tight italic">Revenue Growth</h3>
-              <p className="text-sm text-gray-500 font-medium italic">Monthly revenue analysis vs previous year</p>
-            </div>
-            <select className="bg-gray-50 border-none rounded-xl px-4 py-2 text-sm font-bold text-gray-600 outline-none ring-1 ring-gray-100 focus:ring-[#1E7B7C]/20 italic">
-              <option>Last 12 Months</option>
-              <option>Last 6 Months</option>
-              <option>Last 30 Days</option>
-            </select>
-          </div>
-
-          <div className="flex-1 flex items-center justify-center relative">
-            {/* Visual representation of a chart */}
-            <div className="absolute inset-0 flex items-end justify-between px-4 pb-4">
-              {[40, 65, 45, 80, 55, 90, 70, 85, 60, 95, 75, 100].map((height, i) => (
-                <div
-                  key={i}
-                  className="w-[6%] bg-gradient-to-t from-[#1E7B7C] to-[#1E7B7C]/40 rounded-t-xl transition-all duration-1000 animate-in slide-in-from-bottom"
-                  style={{ height: `${height}%`, animationDelay: `${i * 50}ms` }}
-                />
-              ))}
-            </div>
-            <div className="absolute inset-0 grid grid-rows-4 pointer-events-none">
-              <div className="border-b border-gray-50" />
-              <div className="border-b border-gray-100" />
-              <div className="border-b border-gray-100" />
-              <div className="border-b border-gray-100" />
-            </div>
-          </div>
+        {/* Main Chart - Advanced Analytics */}
+        <div className="lg:col-span-2">
+          <AnalyticsChart
+            title="Revenue Growth"
+            subtitle="Monthly revenue analysis vs previous year"
+            type="revenue"
+            data={[
+              { label: 'Jan', value: 4000 },
+              { label: 'Feb', value: 6500 },
+              { label: 'Mar', value: 4500 },
+              { label: 'Apr', value: 8000 },
+              { label: 'May', value: 5500 },
+              { label: 'Jun', value: 9000 }
+            ]}
+          />
         </div>
 
         {/* Activity Feed */}

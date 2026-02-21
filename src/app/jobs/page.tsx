@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { mockJobsData, Job, mockUserAccount } from '@/lib/jobs-data'
 import Header from '@/components/layout/header'
 import Footer from '@/components/layout/Footer'
+import TrustBadge from '@/components/shared/trust-badge'
 import {
     Search,
     MapPin,
@@ -283,15 +284,16 @@ export default function AllJobsPage() {
                                                         </div>
 
                                                         <div className="mt-6 pt-6 border-t border-gray-50">
-                                                            <div className="flex items-center gap-2 mb-2">
+                                                            <div className="flex items-center gap-3">
                                                                 <span className="text-sm font-bold text-gray-900 leading-none">{job.client.name}</span>
-                                                                <div className="flex">
-                                                                    {[...Array(5)].map((_, i) => (
-                                                                        <Star key={i} size={10} className={i < Math.round(job.client.rating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-200'} />
-                                                                    ))}
-                                                                </div>
+                                                                <TrustBadge type="verified" size="sm" showLabel={false} />
                                                             </div>
-                                                            <p className="text-[10px] text-gray-400">Verified Partner · {job.client.history}</p>
+                                                            <div className="flex mt-1">
+                                                                {[...Array(5)].map((_, i) => (
+                                                                    <Star key={i} size={10} className={i < Math.round(job.client.rating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-200'} />
+                                                                ))}
+                                                            </div>
+                                                            <p className="text-[10px] text-gray-400 mt-2">Verified Partner · {job.client.history}</p>
                                                         </div>
                                                     </div>
                                                 </div>

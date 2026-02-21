@@ -17,7 +17,8 @@ import {
     ArrowLeft,
     Image as ImageIcon,
     X,
-    FileText
+    FileText,
+    Stars
 } from 'lucide-react'
 
 export default function MessagesPage() {
@@ -285,6 +286,28 @@ export default function MessagesPage() {
                                 </div>
                             </div>
                         )}
+
+                        {/* AI Concierge Suggestions */}
+                        <div className="px-6 py-2 bg-white/80 backdrop-blur-sm border-t border-gray-100 flex items-center gap-2 overflow-x-auto no-scrollbar">
+                            <div className="flex-shrink-0 flex items-center gap-2 px-3 py-1.5 bg-[#1E7B7C]/10 rounded-full border border-[#1E7B7C]/20">
+                                <Stars size={14} className="text-[#1E7B7C]" />
+                                <span className="text-[10px] font-bold text-[#1E7B7C] uppercase tracking-wider">AI Concierge</span>
+                            </div>
+                            {[
+                                "When can you start?",
+                                "Can you provide a quote?",
+                                "Do you have references?",
+                                "Is there a travel fee?"
+                            ].map((suggestion, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => setNewMessage(suggestion)}
+                                    className="flex-shrink-0 px-4 py-1.5 bg-gray-50 hover:bg-[#1E7B7C]/5 hover:border-[#1E7B7C]/30 border border-gray-200 rounded-full text-xs font-medium text-gray-600 transition-all"
+                                >
+                                    {suggestion}
+                                </button>
+                            ))}
+                        </div>
 
                         {/* Input Area */}
                         <div className="p-6 border-t border-gray-100 bg-white relative z-20">
