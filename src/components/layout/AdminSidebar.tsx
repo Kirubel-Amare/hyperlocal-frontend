@@ -40,6 +40,7 @@ export default function AdminSidebar() {
 
     const systemLinks = [
         { name: 'Analytics', href: '/admin/analytics', icon: BarChart3 },
+        { name: 'Audit Log', href: '/admin/audit-log', icon: ShieldCheck },
         { name: 'System Settings', href: '/admin/settings', icon: Settings },
     ]
 
