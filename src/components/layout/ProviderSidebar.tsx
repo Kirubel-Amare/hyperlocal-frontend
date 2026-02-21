@@ -46,27 +46,10 @@ export default function ProviderSidebar() {
     ]
 
     return (
-        <aside className="w-[280px] h-screen bg-white border-r border-gray-100 flex flex-col fixed left-0 top-0 z-50 overflow-y-auto hidden md:flex">
+        <aside className="w-[280px] h-screen bg-white border-r border-gray-100 flex flex-col fixed left-0 mt-28 overflow-y-auto hidden md:flex">
 
             {/* Profile Header section */}
-            <div className="p-8 mb-4">
-                <div className="flex items-center gap-4">
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
-                        <Image
-                            src={user.avatar}
-                            alt={user.name}
-                            fill
-                            className="object-cover"
-                        />
-                        {/* Online indicator dot */}
-                        <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full z-10" />
-                    </div>
-                    <div className="min-w-0">
-                        <h3 className="font-bold text-gray-900 text-[15px] truncate">{user.name}</h3>
-                        <p className="text-xs font-semibold text-[#1E7B7C] truncate">{user.role}</p>
-                    </div>
-                </div>
-            </div>
+          
 
             {/* Navigation */}
             <nav className="flex-1 px-4 space-y-8 pb-8">
