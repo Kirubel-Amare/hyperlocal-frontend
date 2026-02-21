@@ -114,7 +114,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-950">
       <Header />
 
       {/* Main Content */}
@@ -139,7 +139,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             {/* Top Bar */}
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
               <div className="space-y-1">
-                <h2 className="text-2xl font-bold text-gray-900 tracking-tight">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">
                   Showing {filteredServices.length} professionals {category !== 'all' ? `in ${categoryNames[category]}` : ''}
                 </h2>
               </div>

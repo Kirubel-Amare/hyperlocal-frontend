@@ -90,18 +90,18 @@ export default function CategoriesManagementPage() {
       {/* Page Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-black text-gray-900 tracking-tight mb-2 italic">Service Categories</h1>
-          <p className="text-gray-500 font-medium italic">Manage the structure of services offered on the platform.</p>
+          <h1 className="text-3xl font-black text-gray-900 dark:text-gray-100 tracking-tight mb-2 italic">Service Categories</h1>
+          <p className="text-gray-500 dark:text-gray-400 font-medium italic">Manage the structure of services offered on the platform.</p>
         </div>
         <div className="flex items-center gap-3">
           <div className="relative group max-w-md hidden sm:block">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#1E7B7C] transition-colors" size={18} />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 group-focus-within:text-[#1E7B7C] transition-colors" size={18} />
             <input
               type="text"
               placeholder="Search categories..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-11 pr-4 py-2.5 bg-white border border-gray-100 rounded-2xl outline-none focus:border-[#1E7B7C]/20 focus:ring-4 focus:ring-[#1E7B7C]/5 transition-all text-sm font-medium w-64 shadow-sm italic"
+              className="pl-11 pr-4 py-2.5 bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 rounded-2xl outline-none focus:border-[#1E7B7C]/20 focus:ring-4 focus:ring-[#1E7B7C]/5 transition-all text-sm font-medium w-64 shadow-sm italic"
             />
           </div>
           <button
@@ -117,23 +117,23 @@ export default function CategoriesManagementPage() {
       {/* Grid View */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {isAdding && (
-          <div className="bg-white/90 backdrop-blur-xl border-2 border-[#1E7B7C]/20 p-6 rounded-[2.5rem] shadow-xl animate-in zoom-in-95 duration-300">
+          <div className="bg-white dark:bg-gray-950/90 backdrop-blur-xl border-2 border-[#1E7B7C]/20 p-6 rounded-[2.5rem] shadow-xl animate-in zoom-in-95 duration-300">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-black text-gray-900 italic">New Category</h3>
+              <h3 className="text-lg font-black text-gray-900 dark:text-gray-100 italic">New Category</h3>
               <button onClick={() => setIsAdding(false)} className="p-1.5 hover:bg-gray-100 rounded-full transition-colors">
-                <X size={18} className="text-gray-400" />
+                <X size={18} className="text-gray-400 dark:text-gray-500" />
               </button>
             </div>
             <form onSubmit={handleAdd} className="space-y-4">
               <div>
-                <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest block mb-1.5 ml-1">Name</label>
+                <label className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest block mb-1.5 ml-1">Name</label>
                 <input
                   autoFocus
                   type="text"
                   value={newCatName}
                   onChange={(e) => setNewCatName(e.target.value)}
                   placeholder="e.g. Interior Design"
-                  className="w-full px-4 py-2.5 bg-gray-50 border border-transparent rounded-xl outline-none focus:bg-white focus:border-[#1E7B7C]/20 transition-all text-sm font-medium italic"
+                  className="w-full px-4 py-2.5 bg-gray-50 dark:bg-gray-900 border border-transparent rounded-xl outline-none focus:bg-white dark:bg-gray-950 focus:border-[#1E7B7C]/20 transition-all text-sm font-medium italic"
                 />
               </div>
               <button
@@ -148,7 +148,7 @@ export default function CategoriesManagementPage() {
         )}
 
         {filteredCategories.map((cat) => (
-          <div key={cat.id} className="bg-white/70 backdrop-blur-xl border border-gray-100 p-6 rounded-[2.5rem] shadow-sm hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-500 group relative overflow-hidden">
+          <div key={cat.id} className="bg-white dark:bg-gray-950/70 backdrop-blur-xl border border-gray-100 dark:border-gray-800 p-6 rounded-[2.5rem] shadow-sm hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-500 group relative overflow-hidden">
             {/* Background Icon */}
             <div className="absolute -right-4 -bottom-4 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity duration-500 group-hover:scale-110 group-hover:-rotate-12 transform">
               <cat.icon size={120} />
@@ -162,14 +162,14 @@ export default function CategoriesManagementPage() {
                 <button
                   onClick={() => toggleStatus(cat.id)}
                   title="Toggle Status"
-                  className="p-2 text-gray-400 hover:text-[#1E7B7C] hover:bg-white rounded-xl shadow-sm transition-all border border-transparent hover:border-gray-100"
+                  className="p-2 text-gray-400 dark:text-gray-500 hover:text-[#1E7B7C] hover:bg-white dark:bg-gray-950 rounded-xl shadow-sm transition-all border border-transparent hover:border-gray-100 dark:border-gray-800"
                 >
                   <Edit2 size={16} />
                 </button>
                 <button
                   onClick={() => handleDelete(cat.id)}
                   title="Delete Category"
-                  className="p-2 text-gray-400 hover:text-red-500 hover:bg-white rounded-xl shadow-sm transition-all border border-transparent hover:border-gray-100"
+                  className="p-2 text-gray-400 dark:text-gray-500 hover:text-red-500 hover:bg-white dark:bg-gray-950 rounded-xl shadow-sm transition-all border border-transparent hover:border-gray-100 dark:border-gray-800"
                 >
                   <Trash2 size={16} />
                 </button>
@@ -178,27 +178,27 @@ export default function CategoriesManagementPage() {
 
             <div className="relative z-10">
               <div className="flex items-center gap-2 mb-1">
-                <h3 className="text-lg font-black text-gray-900 group-hover:text-[#1E7B7C] transition-colors italic">{cat.name}</h3>
+                <h3 className="text-lg font-black text-gray-900 dark:text-gray-100 group-hover:text-[#1E7B7C] transition-colors italic">{cat.name}</h3>
                 <span className={`px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider italic ${cat.status === 'Active' ? 'bg-emerald-50 text-emerald-600' : 'bg-amber-50 text-amber-600'
                   }`}>
                   {cat.status}
                 </span>
               </div>
-              <p className="text-xs text-gray-400 font-bold tracking-tight uppercase mb-4 italic">slug: {cat.slug}</p>
+              <p className="text-xs text-gray-400 dark:text-gray-500 font-bold tracking-tight uppercase mb-4 italic">slug: {cat.slug}</p>
 
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-50">
                 <div>
-                  <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1 italic">Providers</p>
-                  <p className="text-sm font-black text-gray-900 italic">{cat.providers}</p>
+                  <p className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-1 italic">Providers</p>
+                  <p className="text-sm font-black text-gray-900 dark:text-gray-100 italic">{cat.providers}</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1 italic">Total Jobs</p>
-                  <p className="text-sm font-black text-gray-900 italic">{cat.jobs}</p>
+                  <p className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-1 italic">Total Jobs</p>
+                  <p className="text-sm font-black text-gray-900 dark:text-gray-100 italic">{cat.jobs}</p>
                 </div>
               </div>
             </div>
 
-            <button className="w-full mt-6 flex items-center justify-center gap-2 text-xs font-black text-gray-400 uppercase tracking-widest hover:text-[#1E7B7C] transition-colors group/btn italic">
+            <button className="w-full mt-6 flex items-center justify-center gap-2 text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest hover:text-[#1E7B7C] transition-colors group/btn italic">
               View Analytics
               <ChevronRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
             </button>
@@ -211,12 +211,12 @@ export default function CategoriesManagementPage() {
             onClick={() => setIsAdding(true)}
             className="border-2 border-dashed border-gray-200 rounded-[2.5rem] p-6 flex flex-col items-center justify-center gap-4 hover:border-[#1E7B7C]/30 hover:bg-[#E8F4F4]/20 transition-all duration-300 group min-h-[280px]"
           >
-            <div className="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-white group-hover:text-[#1E7B7C] group-hover:scale-110 transition-all duration-300 shadow-sm group-hover:shadow-md">
+            <div className="w-16 h-16 rounded-full bg-gray-50 dark:bg-gray-900 flex items-center justify-center text-gray-400 dark:text-gray-500 group-hover:bg-white dark:bg-gray-950 group-hover:text-[#1E7B7C] group-hover:scale-110 transition-all duration-300 shadow-sm group-hover:shadow-md">
               <Plus size={32} />
             </div>
             <div className="text-center">
-              <h3 className="text-lg font-black text-gray-900 italic">Create New</h3>
-              <p className="text-sm text-gray-500 font-medium italic">Add a service category</p>
+              <h3 className="text-lg font-black text-gray-900 dark:text-gray-100 italic">Create New</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400 font-medium italic">Add a service category</p>
             </div>
           </button>
         )}

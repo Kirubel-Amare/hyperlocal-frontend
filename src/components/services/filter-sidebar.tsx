@@ -35,47 +35,47 @@ export function FilterSidebar({
         <aside className="hidden lg:block w-80 shrink-0">
             <div className="sticky top-28 space-y-8">
                 {/* Categories Section */}
-                <div className="bg-white rounded-3xl border border-gray-100 p-6 shadow-sm">
+                <div className="bg-white dark:bg-gray-950 rounded-3xl border border-gray-100 dark:border-gray-800 p-6 shadow-sm">
                     <CategoryNav activeCategory={currentCategory} />
                 </div>
 
                 {/* Filters Section */}
-                <div className="bg-white rounded-3xl border border-gray-100 p-6 shadow-sm space-y-8">
+                <div className="bg-white dark:bg-gray-950 rounded-3xl border border-gray-100 dark:border-gray-800 p-6 shadow-sm space-y-8">
                     <div className="flex items-center gap-2 mb-2">
                         <Sliders size={20} className="text-[#1E7B7C]" />
-                        <h3 className="font-bold text-lg text-gray-900">Refine Search</h3>
+                        <h3 className="font-bold text-lg text-gray-900 dark:text-gray-100">Refine Search</h3>
                     </div>
 
                     {/* Price Range */}
                     <div className="space-y-4">
                         <div className="flex items-center justify-between">
-                            <label className="text-sm font-bold text-gray-900 flex items-center gap-2">
-                                <DollarSign size={16} className="text-gray-400" />
+                            <label className="text-sm font-bold text-gray-900 dark:text-gray-100 flex items-center gap-2">
+                                <DollarSign size={16} className="text-gray-400 dark:text-gray-500" />
                                 Price Range
                             </label>
                         </div>
                         <div className="grid grid-cols-2 gap-3">
                             <div className="space-y-1.5">
-                                <span className="text-[10px] uppercase tracking-wider font-bold text-gray-400 ml-1">Min</span>
+                                <span className="text-[10px] uppercase tracking-wider font-bold text-gray-400 dark:text-gray-500 ml-1">Min</span>
                                 <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 text-sm">$</span>
                                     <input
                                         type="number"
                                         value={minPrice}
                                         onChange={(e) => onMinPriceChange(Number(e.target.value))}
-                                        className="w-full pl-7 pr-3 py-2 bg-gray-50 border border-transparent rounded-xl text-sm font-semibold focus:bg-white focus:border-[#1E7B7C] focus:outline-none transition-all"
+                                        className="w-full pl-7 pr-3 py-2 bg-gray-50 dark:bg-gray-900 border border-transparent rounded-xl text-sm font-semibold focus:bg-white dark:bg-gray-950 focus:border-[#1E7B7C] focus:outline-none transition-all"
                                     />
                                 </div>
                             </div>
                             <div className="space-y-1.5">
-                                <span className="text-[10px] uppercase tracking-wider font-bold text-gray-400 ml-1">Max</span>
+                                <span className="text-[10px] uppercase tracking-wider font-bold text-gray-400 dark:text-gray-500 ml-1">Max</span>
                                 <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">$</span>
+                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 text-sm">$</span>
                                     <input
                                         type="number"
                                         value={maxPrice}
                                         onChange={(e) => onMaxPriceChange(Number(e.target.value))}
-                                        className="w-full pl-7 pr-3 py-2 bg-gray-50 border border-transparent rounded-xl text-sm font-semibold focus:bg-white focus:border-[#1E7B7C] focus:outline-none transition-all"
+                                        className="w-full pl-7 pr-3 py-2 bg-gray-50 dark:bg-gray-900 border border-transparent rounded-xl text-sm font-semibold focus:bg-white dark:bg-gray-950 focus:border-[#1E7B7C] focus:outline-none transition-all"
                                     />
                                 </div>
                             </div>
@@ -85,8 +85,8 @@ export function FilterSidebar({
                     {/* Distance Filter */}
                     <div className="space-y-4">
                         <div className="flex items-center justify-between">
-                            <label className="text-sm font-bold text-gray-900 flex items-center gap-2">
-                                <MapPin size={16} className="text-gray-400" />
+                            <label className="text-sm font-bold text-gray-900 dark:text-gray-100 flex items-center gap-2">
+                                <MapPin size={16} className="text-gray-400 dark:text-gray-500" />
                                 Distance
                             </label>
                             <span className="text-xs font-bold text-[#1E7B7C] bg-[#E8F4F4] px-2 py-0.5 rounded-full">
@@ -101,7 +101,7 @@ export function FilterSidebar({
                             onChange={(e) => onMaxDistanceChange(Number(e.target.value))}
                             className="w-full h-1.5 bg-gray-100 rounded-lg appearance-none cursor-pointer accent-[#1E7B7C]"
                         />
-                        <div className="flex justify-between text-[10px] font-bold text-gray-400 uppercase tracking-tighter">
+                        <div className="flex justify-between text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-tighter">
                             <span>1 mi</span>
                             <span>100 mi</span>
                         </div>
@@ -109,8 +109,8 @@ export function FilterSidebar({
 
                     {/* Rating Filter */}
                     <div className="space-y-4">
-                        <label className="text-sm font-bold text-gray-900 flex items-center gap-2">
-                            <Star size={16} className="text-gray-400" />
+                        <label className="text-sm font-bold text-gray-900 dark:text-gray-100 flex items-center gap-2">
+                            <Star size={16} className="text-gray-400 dark:text-gray-500" />
                             Minimum Rating
                         </label>
                         <div className="flex flex-col gap-2">
@@ -122,7 +122,7 @@ export function FilterSidebar({
                                         "flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-semibold transition-all group",
                                         minRating === rating
                                             ? "bg-[#1E7B7C] text-white shadow-lg shadow-[#E8F4F4]"
-                                            : "bg-gray-50 text-gray-600 hover:bg-gray-100"
+                                            : "bg-gray-50 dark:bg-gray-900 text-gray-600 hover:bg-gray-100"
                                     )}
                                 >
                                     <div className="flex items-center gap-2">
@@ -136,7 +136,7 @@ export function FilterSidebar({
                                         <span>{rating === 0 ? 'Any Rating' : `${rating}+ Stars`}</span>
                                     </div>
                                     {minRating === rating && (
-                                        <div className="w-1.5 h-1.5 rounded-full bg-white shadow-sm" />
+                                        <div className="w-1.5 h-1.5 rounded-full bg-white dark:bg-gray-950 shadow-sm" />
                                     )}
                                 </button>
                             ))}

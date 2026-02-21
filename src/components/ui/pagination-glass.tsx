@@ -50,38 +50,38 @@ export function PaginationGlass({
                     {/* Background Glow */}
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-[#1E7B7C]/20 to-[#166566]/20 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
 
-                    <div className="relative flex flex-col md:flex-row items-center justify-between gap-6 p-4 sm:p-6 bg-white/40 backdrop-blur-md border border-white/40 rounded-[2rem] shadow-xl shadow-[#166566]/5">
+                    <div className="relative flex flex-col md:flex-row items-center justify-between gap-6 p-4 sm:p-6 bg-white/40 dark:bg-gray-900/40 backdrop-blur-md border border-white/40 dark:border-gray-800 rounded-[2rem] shadow-xl shadow-[#166566]/5 dark:shadow-none">
                         {/* Status Info */}
                         <div className="flex flex-col gap-1.5 order-2 md:order-1 text-center md:text-left">
-                            <span className="text-xs font-bold text-[#1E7B7C] uppercase tracking-widest px-3 py-1 bg-[#E8F4F4]/50 rounded-full w-fit mx-auto md:mx-0">
+                            <span className="text-xs font-bold text-[#1E7B7C] dark:text-cyan-400 uppercase tracking-widest px-3 py-1 bg-[#E8F4F4]/50 dark:bg-cyan-900/30 rounded-full w-fit mx-auto md:mx-0">
                                 Page Status
                             </span>
-                            <div className="text-sm text-gray-500 font-medium">
-                                Showing <span className="text-gray-900 font-bold italic">{start}-{end}</span>
-                                <span className="mx-2 text-gray-300">|</span>
-                                Total <span className="text-gray-900 font-bold italic">{totalItems}</span> results
+                            <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">
+                                Showing <span className="text-gray-900 dark:text-gray-100 font-bold italic">{start}-{end}</span>
+                                <span className="mx-2 text-gray-300 dark:text-gray-700">|</span>
+                                Total <span className="text-gray-900 dark:text-gray-100 font-bold italic">{totalItems}</span> results
                             </div>
                         </div>
 
                         {/* Controls */}
                         <div className="flex items-center gap-2 order-1 md:order-2">
                             {/* Navigation Buttons */}
-                            <div className="flex items-center gap-1 bg-white/50 p-1 rounded-2xl border border-white/60">
+                            <div className="flex items-center gap-1 bg-white/50 dark:bg-gray-800/50 p-1 rounded-2xl border border-white/60 dark:border-gray-700">
                                 <button
                                     onClick={() => onPageChange(1)}
                                     disabled={currentPage === 1}
-                                    className="p-2.5 rounded-xl transition-all hover:bg-white hover:shadow-sm disabled:opacity-30 disabled:cursor-not-allowed group/btn"
+                                    className="p-2.5 rounded-xl transition-all hover:bg-white dark:hover:bg-gray-700 hover:shadow-sm disabled:opacity-30 disabled:cursor-not-allowed group/btn"
                                     aria-label="First page"
                                 >
-                                    <ChevronsLeft className="w-4 h-4 text-gray-600 group-hover/btn:text-[#1E7B7C]" />
+                                    <ChevronsLeft className="w-4 h-4 text-gray-600 dark:text-gray-400 group-hover/btn:text-[#1E7B7C] dark:group-hover/btn:text-cyan-400" />
                                 </button>
                                 <button
                                     onClick={() => onPageChange(currentPage - 1)}
                                     disabled={currentPage === 1}
-                                    className="p-2.5 rounded-xl transition-all hover:bg-white hover:shadow-sm disabled:opacity-30 disabled:cursor-not-allowed group/btn"
+                                    className="p-2.5 rounded-xl transition-all hover:bg-white dark:hover:bg-gray-700 hover:shadow-sm disabled:opacity-30 disabled:cursor-not-allowed group/btn"
                                     aria-label="Previous page"
                                 >
-                                    <ChevronLeft className="w-4 h-4 text-gray-600 group-hover/btn:text-[#1E7B7C]" />
+                                    <ChevronLeft className="w-4 h-4 text-gray-600 dark:text-gray-400 group-hover/btn:text-[#1E7B7C] dark:group-hover/btn:text-cyan-400" />
                                 </button>
                             </div>
 
@@ -89,14 +89,14 @@ export function PaginationGlass({
                             <div className="flex items-center gap-1.5 px-2">
                                 {getPageNumbers().map((page, index) => (
                                     page === '...' ? (
-                                        <span key={`dots-${index}`} className="w-8 text-center text-gray-300 font-bold">···</span>
+                                        <span key={`dots-${index}`} className="w-8 text-center text-gray-300 dark:text-gray-600 font-bold">···</span>
                                     ) : (
                                         <button
                                             key={page}
                                             onClick={() => onPageChange(page as number)}
                                             className={`relative w-10 h-10 rounded-xl text-sm font-bold transition-all duration-300 ${currentPage === page
                                                 ? 'bg-gradient-to-br from-[#1E7B7C] to-[#166566] text-white shadow-lg shadow-[#1E7B7C]/20 scale-110'
-                                                : 'text-gray-500 hover:bg-white/80 hover:text-[#1E7B7C]'
+                                                : 'text-gray-500 dark:text-gray-400 hover:bg-white/80 dark:hover:bg-gray-800 hover:text-[#1E7B7C] dark:hover:text-cyan-400'
                                                 }`}
                                         >
                                             {page}
@@ -105,22 +105,22 @@ export function PaginationGlass({
                                 ))}
                             </div>
 
-                            <div className="flex items-center gap-1 bg-white/50 p-1 rounded-2xl border border-white/60">
+                            <div className="flex items-center gap-1 bg-white/50 dark:bg-gray-800/50 p-1 rounded-2xl border border-white/60 dark:border-gray-700">
                                 <button
                                     onClick={() => onPageChange(currentPage + 1)}
                                     disabled={currentPage === totalPages}
-                                    className="p-2.5 rounded-xl transition-all hover:bg-white hover:shadow-sm disabled:opacity-30 disabled:cursor-not-allowed group/btn"
+                                    className="p-2.5 rounded-xl transition-all hover:bg-white dark:hover:bg-gray-700 hover:shadow-sm disabled:opacity-30 disabled:cursor-not-allowed group/btn"
                                     aria-label="Next page"
                                 >
-                                    <ChevronRight className="w-4 h-4 text-gray-600 group-hover/btn:text-[#1E7B7C]" />
+                                    <ChevronRight className="w-4 h-4 text-gray-600 dark:text-gray-400 group-hover/btn:text-[#1E7B7C] dark:group-hover/btn:text-cyan-400" />
                                 </button>
                                 <button
                                     onClick={() => onPageChange(totalPages)}
                                     disabled={currentPage === totalPages}
-                                    className="p-2.5 rounded-xl transition-all hover:bg-white hover:shadow-sm disabled:opacity-30 disabled:cursor-not-allowed group/btn"
+                                    className="p-2.5 rounded-xl transition-all hover:bg-white dark:hover:bg-gray-700 hover:shadow-sm disabled:opacity-30 disabled:cursor-not-allowed group/btn"
                                     aria-label="Last page"
                                 >
-                                    <ChevronsRight className="w-4 h-4 text-gray-600 group-hover/btn:text-[#1E7B7C]" />
+                                    <ChevronsRight className="w-4 h-4 text-gray-600 dark:text-gray-400 group-hover/btn:text-[#1E7B7C] dark:group-hover/btn:text-cyan-400" />
                                 </button>
                             </div>
                         </div>

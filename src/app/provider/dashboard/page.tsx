@@ -75,8 +75,8 @@ export default function ProviderDashboardPage() {
       {/* New Requests */}
       <div className="mb-14">
         <div className="flex justify-between items-end mb-8">
-          <h2 className="text-2xl font-black text-gray-900">{t('dashboard.provider.newRequests')}</h2>
-          <button className="text-[#1E7B7C] font-black text-sm hover:underline flex items-center gap-1">
+          <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100 dark:text-gray-100">{t('dashboard.provider.newRequests')}</h2>
+          <button className="text-[#1E7B7C] dark:text-cyan-400 font-black text-sm hover:underline flex items-center gap-1">
             {t('dashboard.provider.viewCatalog')}
             <ChevronRight size={16} />
           </button>
@@ -104,15 +104,15 @@ export default function ProviderDashboardPage() {
           title={t('dashboard.provider.activeSchedule')}
           innerClassName="p-10 pt-4"
         >
-          <div className="relative border-l-2 border-gray-100/50 ml-[47px] space-y-10 pb-4">
+          <div className="relative border-l-2 border-gray-100/50 dark:border-gray-800/50 ml-[47px] space-y-10 pb-4">
             {upcomingToday.map((event: any) => (
               <div key={event.id} className="relative pl-10 group">
-                <div className="absolute -left-[64px] bg-white/80 backdrop-blur-sm text-[10px] font-black text-[#1E7B7C] py-1.5 px-3 rounded-lg border border-gray-50 shadow-sm w-[60px] text-center">
+                <div className="absolute -left-[64px] bg-white dark:bg-gray-950/80 dark:bg-gray-800/80 backdrop-blur-sm text-[10px] font-black text-[#1E7B7C] dark:text-cyan-400 py-1.5 px-3 rounded-lg border border-gray-50 dark:border-gray-700 shadow-sm w-[60px] text-center">
                   {event.time}
                 </div>
-                <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-white border-[4px] border-[#1E7B7C] shadow-md z-10 group-hover:scale-125 transition-transform" />
-                <h4 className="font-black text-gray-900 text-[16px] group-hover:text-[#1E7B7C] transition-colors">{event.title}</h4>
-                <p className="text-sm text-gray-500 font-medium mt-1">{event.location} • Client: {event.client}</p>
+                <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-gray-950 dark:bg-gray-900 border-[4px] border-[#1E7B7C] dark:border-cyan-500 shadow-md z-10 group-hover:scale-125 transition-transform" />
+                <h4 className="font-black text-gray-900 dark:text-gray-100 dark:text-gray-100 text-[16px] group-hover:text-[#1E7B7C] dark:group-hover:text-cyan-400 transition-colors">{event.title}</h4>
+                <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-400 font-medium mt-1">{event.location} • Client: {event.client}</p>
               </div>
             ))}
           </div>

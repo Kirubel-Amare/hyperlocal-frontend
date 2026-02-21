@@ -21,7 +21,7 @@ export default function ProviderProfile({
   tags
 }: ProviderProfileProps) {
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 p-8">
+    <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-200 p-8">
       <h3 className="text-2xl font-bold mb-6">About the Professional</h3>
 
       <div className="flex gap-6 mb-6">
@@ -33,7 +33,7 @@ export default function ProviderProfile({
           className="rounded-full"
         />
         <div className="flex-1">
-          <h4 className="text-xl font-bold text-gray-900 mb-2">{name}</h4>
+          <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{name}</h4>
           <div className="flex items-center gap-2 mb-3">
             <Star size={18} className="fill-yellow-400 text-yellow-400" />
             <span className="font-semibold">{rating}</span>
@@ -45,7 +45,7 @@ export default function ProviderProfile({
 
       {/* Tags/Credentials */}
       <div className="mb-6">
-        <p className="text-sm font-semibold text-gray-900 mb-3">Credentials & Specialties</p>
+        <p className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3">Credentials & Specialties</p>
         <div className="flex flex-wrap gap-2">
           {tags.map((tag, i) => (
             <div

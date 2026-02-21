@@ -37,19 +37,19 @@ export default function HowItWorks() {
   ]
 
   return (
-    <section id="how-it-works" className="relative w-full py-24 bg-white">
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#E8F4F4] rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+    <section id="how-it-works" className="relative w-full py-24 bg-white dark:bg-gray-950 dark:bg-background">
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#E8F4F4] dark:bg-[#1E7B7C]/10 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative">
         {/* Header */}
         <div className="text-center mb-20">
-          <div className="inline-block bg-blue-100 border border-blue-300 rounded-full px-4 py-2 mb-6">
-            <span className="text-blue-700 font-semibold text-sm">{t('howItWorks.badge')}</span>
+          <div className="inline-block bg-blue-100 dark:bg-blue-900/30 border border-blue-300 dark:border-blue-800 rounded-full px-4 py-2 mb-6">
+            <span className="text-blue-700 dark:text-blue-400 font-semibold text-sm">{t('howItWorks.badge')}</span>
           </div>
-          <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-4">
+          <h2 className="text-5xl lg:text-6xl font-black text-gray-900 dark:text-gray-100 dark:text-gray-100 mb-4">
             {t('howItWorks.title')}
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             {t('howItWorks.description')}
           </p>
         </div>
@@ -69,14 +69,14 @@ export default function HowItWorks() {
                 </div>
 
                 {/* Card */}
-                <div className="bg-white rounded-2xl p-6 border-2 border-gray-100 group-hover:border-[#1E7B7C] group-hover:shadow-lg transition-all text-center h-full">
+                <div className="bg-white dark:bg-gray-950 dark:bg-gray-800 rounded-2xl p-6 border-2 border-gray-100 dark:border-gray-800 dark:border-gray-700 group-hover:border-[#1E7B7C] dark:group-hover:border-cyan-600 group-hover:shadow-lg transition-all text-center h-full">
                   <div className="flex justify-center mb-4">
-                    <div className={`p-3 bg-${step.color}-100 rounded-lg`}>
-                      <Icon size={28} className={`text-${step.color}-600`} />
+                    <div className={`p-3 bg-${step.color}-100 dark:bg-${step.color}-900/30 rounded-lg`}>
+                      <Icon size={28} className={`text-${step.color}-600 dark:text-${step.color}-400`} />
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 dark:text-gray-100 mb-3">{step.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{step.description}</p>
                 </div>
               </div>
             )

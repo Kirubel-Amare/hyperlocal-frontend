@@ -52,14 +52,14 @@ export default function ProviderJobsActivePage() {
     <div className="max-w-6xl relative pb-24">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
         <div>
-          <h1 className="text-4xl font-black text-gray-900 tracking-tight mb-2">Active Jobs</h1>
-          <p className="text-lg text-gray-500 font-medium">Manage your ongoing projects and upcoming schedule.</p>
+          <h1 className="text-4xl font-black text-gray-900 dark:text-gray-100 tracking-tight mb-2">Active Jobs</h1>
+          <p className="text-lg text-gray-500 dark:text-gray-400 font-medium">Manage your ongoing projects and upcoming schedule.</p>
         </div>
-        <div className="flex p-1 bg-gray-100/50 backdrop-blur-md rounded-2xl border border-gray-100 shadow-inner w-fit">
-          <button className="px-6 py-2.5 bg-white text-[#1E7B7C] shadow-md rounded-xl text-sm font-black transition-all flex items-center gap-2">
+        <div className="flex p-1 bg-gray-100/50 backdrop-blur-md rounded-2xl border border-gray-100 dark:border-gray-800 shadow-inner w-fit">
+          <button className="px-6 py-2.5 bg-white dark:bg-gray-950 text-[#1E7B7C] shadow-md rounded-xl text-sm font-black transition-all flex items-center gap-2">
             Active (3)
           </button>
-          <Link href="/provider/jobs/completed" className="px-6 py-2.5 text-gray-400 hover:text-gray-600 rounded-xl text-sm font-bold transition-all">
+          <Link href="/provider/jobs/completed" className="px-6 py-2.5 text-gray-400 dark:text-gray-500 hover:text-gray-600 rounded-xl text-sm font-bold transition-all">
             Completed
           </Link>
         </div>
@@ -67,14 +67,14 @@ export default function ProviderJobsActivePage() {
 
       <div className="space-y-6">
         {activeJobs.map((job) => (
-          <div key={job.id} className="bg-white/60 backdrop-blur-md rounded-[32px] p-8 shadow-xl shadow-gray-200/10 border border-white hover:shadow-2xl transition-all duration-300 group flex flex-col xl:flex-row gap-8">
+          <div key={job.id} className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 shadow-xl shadow-gray-200/10 border border-white hover:shadow-2xl transition-all duration-300 group flex flex-col xl:flex-row gap-8">
 
             {/* Image / Visual Status */}
-            <div className="w-full xl:w-64 h-48 rounded-2xl overflow-hidden relative flex-shrink-0 border border-gray-100">
+            <div className="w-full xl:w-64 h-48 rounded-2xl overflow-hidden relative flex-shrink-0 border border-gray-100 dark:border-gray-800">
               <Image src={job.image} alt={job.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-between p-4">
                 <div className="flex justify-between items-start">
-                  <div className={`px-2.5 py-1 text-[10px] font-black uppercase tracking-widest rounded-lg backdrop-blur-md ${job.status === 'In Progress' ? 'bg-[#1E7B7C]/90 text-white' : 'bg-white/90 text-gray-900'
+                  <div className={`px-2.5 py-1 text-[10px] font-black uppercase tracking-widest rounded-lg backdrop-blur-md ${job.status === 'In Progress' ? 'bg-[#1E7B7C]/90 text-white' : 'bg-white dark:bg-gray-950/90 text-gray-900 dark:text-gray-100'
                     }`}>
                     {job.status}
                   </div>
@@ -90,33 +90,33 @@ export default function ProviderJobsActivePage() {
             <div className="flex-1 flex flex-col justify-between">
               <div>
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-2xl font-black text-gray-900 group-hover:text-[#1E7B7C] transition-colors">{job.title}</h3>
-                  <button className="p-2 text-gray-400 hover:bg-gray-50 rounded-xl transition-colors">
+                  <h3 className="text-2xl font-black text-gray-900 dark:text-gray-100 group-hover:text-[#1E7B7C] transition-colors">{job.title}</h3>
+                  <button className="p-2 text-gray-400 dark:text-gray-500 hover:bg-gray-50 dark:bg-gray-900 rounded-xl transition-colors">
                     <MoreHorizontal size={20} />
                   </button>
                 </div>
 
-                <p className="text-sm font-bold text-gray-500 mb-6 flex items-center gap-2">
-                  Client: <span className="text-gray-900">{job.client}</span>
+                <p className="text-sm font-bold text-gray-500 dark:text-gray-400 mb-6 flex items-center gap-2">
+                  Client: <span className="text-gray-900 dark:text-gray-100">{job.client}</span>
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                   <div className="flex items-start gap-3">
-                    <div className="p-2 bg-gray-50 text-gray-400 rounded-lg">
+                    <div className="p-2 bg-gray-50 dark:bg-gray-900 text-gray-400 dark:text-gray-500 rounded-lg">
                       <MapPin size={16} />
                     </div>
                     <div>
-                      <div className="text-xs font-black text-gray-400 uppercase tracking-widest mb-0.5">Location</div>
-                      <div className="text-sm font-bold text-gray-900">{job.location}</div>
+                      <div className="text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-0.5">Location</div>
+                      <div className="text-sm font-bold text-gray-900 dark:text-gray-100">{job.location}</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="p-2 bg-gray-50 text-gray-400 rounded-lg">
+                    <div className="p-2 bg-gray-50 dark:bg-gray-900 text-gray-400 dark:text-gray-500 rounded-lg">
                       <Calendar size={16} />
                     </div>
                     <div>
-                      <div className="text-xs font-black text-gray-400 uppercase tracking-widest mb-0.5">Schedule</div>
-                      <div className="text-sm font-bold text-gray-900">{job.date} • {job.time}</div>
+                      <div className="text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-0.5">Schedule</div>
+                      <div className="text-sm font-bold text-gray-900 dark:text-gray-100">{job.date} • {job.time}</div>
                     </div>
                   </div>
                 </div>
@@ -135,7 +135,7 @@ export default function ProviderJobsActivePage() {
                 <div className="mb-6">
                   <div className="flex justify-between text-xs font-black mb-2">
                     <span className="text-[#1E7B7C] uppercase tracking-widest">Job Progress</span>
-                    <span className="text-gray-900">{job.progress}%</span>
+                    <span className="text-gray-900 dark:text-gray-100">{job.progress}%</span>
                   </div>
                   <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
                     <div
@@ -152,7 +152,7 @@ export default function ProviderJobsActivePage() {
                   <Briefcase size={16} />
                   Manage Job
                 </button>
-                <button className="px-6 py-3.5 bg-gray-50 text-gray-600 rounded-xl font-bold text-sm hover:bg-gray-100 transition-all flex items-center gap-2 border border-gray-100">
+                <button className="px-6 py-3.5 bg-gray-50 dark:bg-gray-900 text-gray-600 rounded-xl font-bold text-sm hover:bg-gray-100 transition-all flex items-center gap-2 border border-gray-100 dark:border-gray-800">
                   <MessageSquare size={16} />
                   Message
                 </button>

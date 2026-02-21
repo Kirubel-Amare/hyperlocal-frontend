@@ -29,7 +29,7 @@ export default function ProviderProfilePage() {
           label: "Edit Profile",
           href: ROUTES.PROVIDER.EDIT_PROFILE,
           icon: Edit3,
-          className: "px-6 py-3 bg-white border border-gray-100 rounded-2xl font-bold flex items-center gap-2 hover:bg-gray-50 transition-all shadow-sm"
+          className: "px-6 py-3 bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 rounded-2xl font-bold flex items-center gap-2 hover:bg-gray-50 dark:bg-gray-900 transition-all shadow-sm"
         }}
       />
 
@@ -37,7 +37,7 @@ export default function ProviderProfilePage() {
 
         {/* Left Column: Essential Info */}
         <div className="lg:col-span-1 space-y-6">
-          <div className="bg-white/60 backdrop-blur-md rounded-[40px] p-10 border border-white shadow-xl shadow-gray-200/10 flex flex-col items-center text-center">
+          <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 border border-white shadow-xl shadow-gray-200/10 flex flex-col items-center text-center">
             <div className="relative group mb-6">
               <div className="w-40 h-40 rounded-[48px] overflow-hidden border-8 border-white shadow-2xl relative">
                 <Image src={user.avatar} alt={user.name} fill className="object-cover" />
@@ -47,26 +47,26 @@ export default function ProviderProfilePage() {
               </button>
             </div>
 
-            <h2 className="text-2xl font-black text-gray-900 mb-1">{user.name}</h2>
+            <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100 mb-1">{user.name}</h2>
             <p className="text-[#1E7B7C] font-black uppercase tracking-widest text-xs mb-6 px-4 py-1.5 bg-[#E8F4F4] rounded-xl">{user.role}</p>
 
             <div className="flex items-center gap-6 mb-8">
               <div className="text-center">
-                <div className="flex items-center gap-1 text-gray-900 font-black text-xl justify-center">
+                <div className="flex items-center gap-1 text-gray-900 dark:text-gray-100 font-black text-xl justify-center">
                   <Star size={20} className="fill-yellow-400 text-yellow-400" />
                   4.9
                 </div>
-                <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mt-1">Rating</p>
+                <p className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest mt-1">Rating</p>
               </div>
               <div className="w-px h-8 bg-gray-100" />
               <div className="text-center">
-                <div className="text-gray-900 font-black text-xl">124</div>
-                <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mt-1">Jobs Done</p>
+                <div className="text-gray-900 dark:text-gray-100 font-black text-xl">124</div>
+                <p className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest mt-1">Jobs Done</p>
               </div>
             </div>
 
             <div className="w-full space-y-4 pt-8 border-t border-gray-50">
-              <div className="flex items-center gap-3 text-sm text-gray-500 font-bold justify-center">
+              <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400 font-bold justify-center">
                 <MapPin size={16} className="text-[#1E7B7C]" />
                 New York, NY (0.8 mi)
               </div>
@@ -87,22 +87,22 @@ export default function ProviderProfilePage() {
             innerClassName="p-8 pt-6 space-y-4"
           >
             <div className="space-y-4">
-              <div className="flex items-center gap-4 p-4 bg-gray-50/50 rounded-2xl">
+              <div className="flex items-center gap-4 p-4 bg-gray-50/50 dark:bg-gray-900/50 rounded-2xl">
                 <div className="w-10 h-10 bg-[#E8F4F4] rounded-xl flex items-center justify-center text-[#1E7B7C]">
                   <Zap size={20} fill="currentColor" />
                 </div>
                 <div>
-                  <p className="text-sm font-black text-gray-900">Fast Responder</p>
-                  <p className="text-[10px] font-bold text-gray-400">Replies within 15 mins</p>
+                  <p className="text-sm font-black text-gray-900 dark:text-gray-100">Fast Responder</p>
+                  <p className="text-[10px] font-bold text-gray-400 dark:text-gray-500">Replies within 15 mins</p>
                 </div>
               </div>
-              <div className="flex items-center gap-4 p-4 bg-gray-50/50 rounded-2xl">
+              <div className="flex items-center gap-4 p-4 bg-gray-50/50 dark:bg-gray-900/50 rounded-2xl">
                 <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
                   <CheckCircle2 size={20} />
                 </div>
                 <div>
-                  <p className="text-sm font-black text-gray-900">Top Overall Rated</p>
-                  <p className="text-[10px] font-bold text-gray-400">Top 5% in New York</p>
+                  <p className="text-sm font-black text-gray-900 dark:text-gray-100">Top Overall Rated</p>
+                  <p className="text-[10px] font-bold text-gray-400 dark:text-gray-500">Top 5% in New York</p>
                 </div>
               </div>
             </div>
@@ -118,7 +118,7 @@ export default function ProviderProfilePage() {
               every time, ensuring your space is not just clean, but transformed."
             </p>
 
-            <h4 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-4">Service Specialties</h4>
+            <h4 className="text-sm font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-4">Service Specialties</h4>
             <div className="flex flex-wrap gap-3">
               {[
                 { label: 'Deep Kitchen Cleaning', icon: '🍽️' },
@@ -128,7 +128,7 @@ export default function ProviderProfilePage() {
               ].map(tag => (
                 <div
                   key={tag.label}
-                  className="px-5 py-3 bg-white hover:bg-[#E8F4F4] text-gray-600 hover:text-[#1E7B7C] font-black text-xs rounded-2xl border border-gray-100 hover:border-[#1E7B7C]/20 transition-all flex items-center gap-2 cursor-default group"
+                  className="px-5 py-3 bg-white dark:bg-gray-950 hover:bg-[#E8F4F4] text-gray-600 hover:text-[#1E7B7C] font-black text-xs rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-[#1E7B7C]/20 transition-all flex items-center gap-2 cursor-default group"
                 >
                   <span className="group-hover:scale-125 transition-transform">{tag.icon}</span>
                   {tag.label}
@@ -156,7 +156,7 @@ export default function ProviderProfilePage() {
                 "https://images.unsplash.com/photo-1556911220-e15224bbaf39?w=400&h=400&fit=crop",
                 "https://images.unsplash.com/photo-1603673073727-401fcc43878b?w=400&h=400&fit=crop"
               ].map((src, i) => (
-                <div key={i} className="aspect-square relative rounded-[32px] overflow-hidden shadow-inner group cursor-pointer border border-gray-100/50">
+                <div key={i} className="aspect-square relative rounded-[32px] overflow-hidden shadow-inner group cursor-pointer border border-gray-100/50 dark:border-gray-800/50">
                   <Image
                     src={src}
                     alt={`Portfolio task ${i + 1}`}
@@ -169,11 +169,11 @@ export default function ProviderProfilePage() {
                   </div>
                 </div>
               ))}
-              <div className="aspect-square rounded-[32px] border-2 border-dashed border-gray-200 flex flex-col items-center justify-center text-center p-6 hover:bg-white hover:border-[#1E7B7C]/30 transition-all cursor-pointer group">
-                <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 mb-4 group-hover:bg-[#E8F4F4] group-hover:text-[#1E7B7C] transition-colors">
+              <div className="aspect-square rounded-[32px] border-2 border-dashed border-gray-200 flex flex-col items-center justify-center text-center p-6 hover:bg-white dark:bg-gray-950 hover:border-[#1E7B7C]/30 transition-all cursor-pointer group">
+                <div className="w-12 h-12 bg-gray-50 dark:bg-gray-900 rounded-2xl flex items-center justify-center text-gray-400 dark:text-gray-500 mb-4 group-hover:bg-[#E8F4F4] group-hover:text-[#1E7B7C] transition-colors">
                   <Plus size={24} />
                 </div>
-                <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest group-hover:text-gray-900">Add Project</p>
+                <p className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest group-hover:text-gray-900 dark:text-gray-100">Add Project</p>
               </div>
             </div>
           </GlassCard>

@@ -76,13 +76,13 @@ export default function FeaturedProfessionals() {
   ]
 
   return (
-    <section className="py-20 px-6 bg-white">
+    <section className="py-20 px-6 bg-white dark:bg-gray-950 dark:bg-background">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-12">
           <div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-2">{t('featured.title')}</h2>
-            <p className="text-gray-600">{t('featured.description')}</p>
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 dark:text-gray-100 mb-2">{t('featured.title')}</h2>
+            <p className="text-gray-600 dark:text-gray-400">{t('featured.description')}</p>
           </div>
         </div>
 
@@ -91,19 +91,19 @@ export default function FeaturedProfessionals() {
           {professionals.map((pro) => (
             <div
               key={pro.id}
-              className="bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              className="bg-white dark:bg-gray-950 dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
               {/* Image */}
-              <div className="relative h-64 bg-gray-200 overflow-hidden">
+              <div className="relative h-64 bg-gray-200 dark:bg-gray-700 overflow-hidden">
                 <Image
                   src={pro.image}
                   alt={pro.name}
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute top-4 right-4 bg-white rounded-full px-3 py-1 flex items-center gap-1 shadow-md">
+                <div className="absolute top-4 right-4 bg-white dark:bg-gray-950 dark:bg-gray-900 rounded-full px-3 py-1 flex items-center gap-1 shadow-md">
                   <Star size={16} className="text-yellow-400 fill-yellow-400" />
-                  <span className="font-semibold text-sm text-gray-900">{pro.rating}</span>
+                  <span className="font-semibold text-sm text-gray-900 dark:text-gray-100 dark:text-gray-100">{pro.rating}</span>
                 </div>
               </div>
 
@@ -114,21 +114,21 @@ export default function FeaturedProfessionals() {
                     {pro.name.charAt(0)}
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 text-lg">{pro.name}</h3>
-                    <p className="text-xs font-semibold text-[#1E7B7C] uppercase">{pro.title}</p>
+                    <h3 className="font-bold text-gray-900 dark:text-gray-100 dark:text-gray-100 text-lg">{pro.name}</h3>
+                    <p className="text-xs font-semibold text-[#1E7B7C] dark:text-cyan-400 uppercase">{pro.title}</p>
                   </div>
                 </div>
 
-                <h4 className="font-semibold text-gray-900 mb-2 text-sm">{pro.description}</h4>
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">{pro.details}</p>
+                <h4 className="font-semibold text-gray-900 dark:text-gray-100 dark:text-gray-100 mb-2 text-sm">{pro.description}</h4>
+                <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed">{pro.details}</p>
 
-                <div className="flex items-center justify-between mb-4 pb-4 border-b border-gray-200">
+                <div className="flex items-center justify-between mb-4 pb-4 border-b border-gray-200 dark:border-gray-700">
                   <div>
-                    <p className="text-xs text-gray-600">{t('featured.startingAt')}</p>
-                    <p className="text-2xl font-bold text-gray-900">{pro.price}</p>
+                    <p className="text-xs text-gray-600 dark:text-gray-400">{t('featured.startingAt')}</p>
+                    <p className="text-2xl font-bold text-gray-900 dark:text-gray-100 dark:text-gray-100">{pro.price}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-xs text-gray-600">{t('featured.reviews').replace('{count}', pro.reviews.toString())}</p>
+                    <p className="text-xs text-gray-600 dark:text-gray-400">{t('featured.reviews').replace('{count}', pro.reviews.toString())}</p>
                   </div>
                 </div>
 

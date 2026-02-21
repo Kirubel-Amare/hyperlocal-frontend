@@ -3,7 +3,7 @@ import ProviderSidebar from '@/components/layout/ProviderSidebar'
 
 export default function ProviderLayout({ children }: { children: React.ReactNode }) {
     return (
-        <div className="min-h-screen bg-white font-sans text-gray-900 flex">
+        <div className="min-h-screen bg-white dark:bg-gray-950 font-sans text-gray-900 dark:text-gray-100 dark:text-gray-100 flex">
             <Header userType="provider" />
             {/* Background Elements */}
             <div className="fixed inset-0 pointer-events-none overflow-hidden">

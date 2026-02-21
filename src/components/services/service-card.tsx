@@ -13,7 +13,7 @@ interface ServiceCardProps {
 export default function ServiceCard({ service, categorySlug }: ServiceCardProps) {
   return (
     <Link href={`/services/${categorySlug}/${service.id}`} className="block group">
-      <div className="bg-white rounded-2xl border border-gray-100 p-6 transition-all hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:border-[#E8F4F4] relative">
+      <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-100 dark:border-gray-800 p-6 transition-all hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:border-[#E8F4F4] relative">
         {/* Header with Avatar and Price */}
         <div className="flex items-start justify-between mb-4">
           <div className="relative">
@@ -31,7 +31,7 @@ export default function ServiceCard({ service, categorySlug }: ServiceCardProps)
             </div>
           </div>
           <div className="text-right">
-            <p className="text-[10px] font-bold text-gray-400 tracking-widest uppercase mb-1">STARTING AT</p>
+            <p className="text-[10px] font-bold text-gray-400 dark:text-gray-500 tracking-widest uppercase mb-1">STARTING AT</p>
             <p className="text-2xl font-bold text-[#1E7B7C]">
               ${service.price}<span className="text-sm text-[#1E7B7C]/60 font-medium lowercase">/hr</span>
             </p>
@@ -40,7 +40,7 @@ export default function ServiceCard({ service, categorySlug }: ServiceCardProps)
 
         {/* Info */}
         <div className="mb-4">
-          <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#1E7B7C] transition-colors mb-0.5">
+          <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 group-hover:text-[#1E7B7C] transition-colors mb-0.5">
             {service.name}
           </h3>
           <p className="text-[11px] font-bold text-[#1E7B7C] uppercase tracking-wider mb-3">
@@ -50,19 +50,19 @@ export default function ServiceCard({ service, categorySlug }: ServiceCardProps)
           <div className="flex items-center gap-2 mb-4">
             <div className="flex items-center gap-0.5">
               <Star size={14} className="fill-[#1E7B7C] text-[#1E7B7C]" />
-              <span className="text-sm font-bold text-gray-900">{service.rating}</span>
+              <span className="text-sm font-bold text-gray-900 dark:text-gray-100">{service.rating}</span>
             </div>
-            <span className="text-xs font-semibold text-gray-400">({service.totalReviews} reviews)</span>
+            <span className="text-xs font-semibold text-gray-400 dark:text-gray-500">({service.totalReviews} reviews)</span>
           </div>
 
-          <p className="text-sm text-gray-500 line-clamp-2 leading-relaxed mb-6 h-10">
+          <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2 leading-relaxed mb-6 h-10">
             {service.description}
           </p>
         </div>
 
         {/* Footer */}
         <div className="flex items-center justify-between gap-4 pt-1 mt-auto">
-          <div className="flex items-center gap-2 text-gray-400">
+          <div className="flex items-center gap-2 text-gray-400 dark:text-gray-500">
             <NavigationIcon size={14} className="-rotate-45" />
             <span className="text-xs font-semibold">{service.distance} miles away</span>
           </div>

@@ -59,21 +59,21 @@ export default function ProfessionalProfilePage() {
           <>
             {/* About Section */}
             <section className="mb-14">
-              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-100">
+              <div className="bg-white dark:bg-gray-950/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-100 dark:border-gray-800">
                 <p className="text-gray-600 leading-relaxed text-lg">{profile.about}</p>
 
                 {/* Additional Info Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
                   <div className="bg-gradient-to-br from-[#E8F4F4] to-blue-50 p-4 rounded-xl">
-                    <h4 className="text-sm font-bold text-gray-900 mb-2">Languages</h4>
+                    <h4 className="text-sm font-bold text-gray-900 dark:text-gray-100 mb-2">Languages</h4>
                     <p className="text-gray-600">English, Spanish, French</p>
                   </div>
                   <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-4 rounded-xl">
-                    <h4 className="text-sm font-bold text-gray-900 mb-2">Education</h4>
+                    <h4 className="text-sm font-bold text-gray-900 dark:text-gray-100 mb-2">Education</h4>
                     <p className="text-gray-600">BFA in Interior Design, RISD</p>
                   </div>
                   <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-4 rounded-xl">
-                    <h4 className="text-sm font-bold text-gray-900 mb-2">Certifications</h4>
+                    <h4 className="text-sm font-bold text-gray-900 dark:text-gray-100 mb-2">Certifications</h4>
                     <p className="text-gray-600">NCIDQ Certified, LEED AP</p>
                   </div>
                 </div>
@@ -98,8 +98,8 @@ export default function ProfessionalProfilePage() {
 
       case 'Experience':
         return (
-          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-100">
-            <h3 className="text-xl font-bold text-gray-900 mb-6">Work Experience</h3>
+          <div className="bg-white dark:bg-gray-950/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-100 dark:border-gray-800">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-6">Work Experience</h3>
 
             <div className="space-y-6">
               {[1, 2, 3].map((item) => (
@@ -108,8 +108,8 @@ export default function ProfessionalProfilePage() {
                     {item}
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900">Senior Interior Designer</h4>
-                    <p className="text-sm text-gray-500 mb-2">Design Studio • 2020 - Present</p>
+                    <h4 className="font-bold text-gray-900 dark:text-gray-100">Senior Interior Designer</h4>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">Design Studio • 2020 - Present</p>
                     <p className="text-gray-600">Led multiple high-end residential projects, managed team of 5 designers, and maintained client relationships.</p>
                   </div>
                 </div>
@@ -124,7 +124,7 @@ export default function ProfessionalProfilePage() {
   }
 
   return (
-    <div className="min-h-screen bg-white font-sans">
+    <div className="min-h-screen bg-white dark:bg-gray-950 font-sans">
       {/* Background Elements */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[-10%] right-[-10%] w-[70%] h-[70%] bg-gradient-to-br from-[#1E7B7C]/5 via-[#166566]/5 to-purple-500/5 rounded-full blur-[120px]" />

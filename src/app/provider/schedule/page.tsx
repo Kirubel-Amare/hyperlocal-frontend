@@ -93,11 +93,11 @@ export default function ProviderSchedulePage() {
         <div className="max-w-6xl relative pb-24 animate-in fade-in duration-700">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
                 <div>
-                    <h1 className="text-4xl font-black text-gray-900 tracking-tight mb-2 italic">Smart Scheduling</h1>
-                    <p className="text-lg text-gray-500 font-medium italic">AI-driven availability management & auto-booking engine.</p>
+                    <h1 className="text-4xl font-black text-gray-900 dark:text-gray-100 tracking-tight mb-2 italic">Smart Scheduling</h1>
+                    <p className="text-lg text-gray-500 dark:text-gray-400 font-medium italic">AI-driven availability management & auto-booking engine.</p>
                 </div>
                 <div className="flex items-center gap-3">
-                    <button className="px-6 py-3 bg-white border border-gray-100 text-gray-900 rounded-2xl font-black flex items-center gap-2 hover:bg-gray-50 transition-all shadow-sm">
+                    <button className="px-6 py-3 bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 text-gray-900 dark:text-gray-100 rounded-2xl font-black flex items-center gap-2 hover:bg-gray-50 dark:bg-gray-900 transition-all shadow-sm">
                         <Settings size={18} />
                         Calendar Sync
                     </button>
@@ -114,24 +114,24 @@ export default function ProviderSchedulePage() {
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                 {/* Main Calendar View */}
                 <div className="lg:col-span-3 space-y-8">
-                    <div className="bg-white/60 backdrop-blur-xl border border-white rounded-[40px] p-8 lg:p-10 shadow-2xl shadow-gray-200/20">
+                    <div className="bg-white dark:bg-gray-950/60 backdrop-blur-xl border border-white rounded-[40px] p-8 lg:p-10 shadow-2xl shadow-gray-200/20">
                         {/* Calendar Header */}
                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
                             <div className="flex items-center gap-4">
-                                <div className="flex bg-gray-50 rounded-2xl p-1 border border-gray-100">
-                                    <button className="p-2.5 text-gray-400 hover:text-gray-900 hover:bg-white rounded-xl transition-all shadow-sm">
+                                <div className="flex bg-gray-50 dark:bg-gray-900 rounded-2xl p-1 border border-gray-100 dark:border-gray-800">
+                                    <button className="p-2.5 text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:text-gray-100 hover:bg-white dark:bg-gray-950 rounded-xl transition-all shadow-sm">
                                         <ChevronLeft size={20} />
                                     </button>
-                                    <button className="p-2.5 text-gray-400 hover:text-gray-900 hover:bg-white rounded-xl transition-all shadow-sm">
+                                    <button className="p-2.5 text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:text-gray-100 hover:bg-white dark:bg-gray-950 rounded-xl transition-all shadow-sm">
                                         <ChevronRight size={20} />
                                     </button>
                                 </div>
-                                <h2 className="text-xl font-black text-gray-900 italic tracking-tighter">{currentWeek}</h2>
+                                <h2 className="text-xl font-black text-gray-900 dark:text-gray-100 italic tracking-tighter">{currentWeek}</h2>
                             </div>
-                            <div className="flex p-1 bg-gray-100/50 rounded-2xl border border-gray-100 w-fit">
-                                <button className="px-5 py-2 text-gray-400 hover:text-gray-600 rounded-xl text-sm font-bold transition-all">Day</button>
-                                <button className="px-5 py-2 bg-white text-[#1E7B7C] shadow-md rounded-xl text-sm font-black transition-all italic">Week</button>
-                                <button className="px-5 py-2 text-gray-400 hover:text-gray-600 rounded-xl text-sm font-bold transition-all">Month</button>
+                            <div className="flex p-1 bg-gray-100/50 rounded-2xl border border-gray-100 dark:border-gray-800 w-fit">
+                                <button className="px-5 py-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 rounded-xl text-sm font-bold transition-all">Day</button>
+                                <button className="px-5 py-2 bg-white dark:bg-gray-950 text-[#1E7B7C] shadow-md rounded-xl text-sm font-black transition-all italic">Week</button>
+                                <button className="px-5 py-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 rounded-xl text-sm font-bold transition-all">Month</button>
                             </div>
                         </div>
 
@@ -143,13 +143,13 @@ export default function ProviderSchedulePage() {
                                     onClick={() => setSelectedDate(d.date)}
                                     className={`flex flex-col items-center justify-center p-5 rounded-3xl border-2 cursor-pointer transition-all duration-300 ${d.date === selectedDate
                                         ? 'border-[#1E7B7C] bg-[#E8F4F4] scale-105 shadow-lg'
-                                        : 'border-transparent bg-gray-50 hover:bg-gray-100'
+                                        : 'border-transparent bg-gray-50 dark:bg-gray-900 hover:bg-gray-100'
                                         }`}
                                 >
-                                    <span className={`text-[10px] font-black uppercase tracking-widest mb-1 ${d.date === selectedDate ? 'text-[#1E7B7C]' : 'text-gray-400'}`}>
+                                    <span className={`text-[10px] font-black uppercase tracking-widest mb-1 ${d.date === selectedDate ? 'text-[#1E7B7C]' : 'text-gray-400 dark:text-gray-500'}`}>
                                         {d.day}
                                     </span>
-                                    <span className={`text-2xl font-black ${d.date === selectedDate ? 'text-[#1E7B7C]' : 'text-gray-900'}`}>
+                                    <span className={`text-2xl font-black ${d.date === selectedDate ? 'text-[#1E7B7C]' : 'text-gray-900 dark:text-gray-100'}`}>
                                         {d.date}
                                     </span>
                                     {d.date === selectedDate && <div className="w-1.5 h-1.5 rounded-full bg-[#1E7B7C] mt-2 animate-bounce" />}
@@ -158,10 +158,10 @@ export default function ProviderSchedulePage() {
                         </div>
 
                         {/* Daily Schedule Timeline */}
-                        <div className="relative border-l border-gray-100/50 ml-16 space-y-10 pb-4">
+                        <div className="relative border-l border-gray-100/50 dark:border-gray-800/50 ml-16 space-y-10 pb-4">
                             {scheduleEvents.map((event) => (
                                 <div key={event.id} className="relative pl-10 group animate-in slide-in-from-left-4 duration-500">
-                                    <div className="absolute -left-[80px] top-6 text-xs font-black text-gray-400 w-16 text-right italic">
+                                    <div className="absolute -left-[80px] top-6 text-xs font-black text-gray-400 dark:text-gray-500 w-16 text-right italic">
                                         {event.time}
                                     </div>
                                     {/* Timeline Dot */}
@@ -179,27 +179,27 @@ export default function ProviderSchedulePage() {
                                                     </span>
                                                     {event.status === 'Pending' && <AlertTriangle size={14} className="text-amber-500 animate-pulse" />}
                                                 </div>
-                                                <h4 className={`text-xl font-black tracking-tight ${event.type === 'Job' ? 'text-gray-900' : 'text-gray-600 italic'}`}>
+                                                <h4 className={`text-xl font-black tracking-tight ${event.type === 'Job' ? 'text-gray-900 dark:text-gray-100' : 'text-gray-600 italic'}`}>
                                                     {event.title}
                                                 </h4>
                                             </div>
-                                            <button className="p-2 text-gray-400 hover:text-gray-900 bg-white/50 rounded-xl transition-all">
+                                            <button className="p-2 text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-950/50 rounded-xl transition-all">
                                                 <MoreHorizontal size={20} />
                                             </button>
                                         </div>
 
-                                        <div className="flex flex-wrap items-center gap-6 text-xs font-black text-gray-500 italic">
+                                        <div className="flex flex-wrap items-center gap-6 text-xs font-black text-gray-500 dark:text-gray-400 italic">
                                             <div className="flex items-center gap-2">
                                                 <Clock size={16} className="text-[#1E7B7C]" /> {event.duration}
                                             </div>
                                             {event.client && (
-                                                <div className="flex items-center gap-2 text-gray-900">
+                                                <div className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
                                                     <User size={16} className="text-purple-600" /> {event.client}
                                                 </div>
                                             )}
                                             {event.location && (
                                                 <div className="flex items-center gap-2">
-                                                    <MapPin size={16} className="text-gray-400" /> {event.location}
+                                                    <MapPin size={16} className="text-gray-400 dark:text-gray-500" /> {event.location}
                                                 </div>
                                             )}
                                         </div>
@@ -211,7 +211,7 @@ export default function ProviderSchedulePage() {
                             <div className="relative pl-10 group opacity-40 hover:opacity-100 transition-opacity">
                                 <div className="absolute -left-[80px] top-4 text-xs font-bold text-gray-300 w-16 text-right italic">06:00 PM</div>
                                 <div className="absolute -left-[5px] top-4 w-2.5 h-2.5 rounded-full bg-gray-200 border-2 border-white" />
-                                <button className="w-full py-6 border-2 border-dashed border-gray-100 rounded-[32px] flex items-center justify-center gap-2 text-gray-400 font-black italic hover:border-[#1E7B7C] hover:text-[#1E7B7C] transition-all">
+                                <button className="w-full py-6 border-2 border-dashed border-gray-100 dark:border-gray-800 rounded-[32px] flex items-center justify-center gap-2 text-gray-400 dark:text-gray-500 font-black italic hover:border-[#1E7B7C] hover:text-[#1E7B7C] transition-all">
                                     <Plus size={20} /> Add Assignment
                                 </button>
                             </div>
@@ -238,13 +238,13 @@ export default function ProviderSchedulePage() {
                                     onClick={() => setAutoBooking(!autoBooking)}
                                     className={`w-14 h-7 rounded-full relative transition-colors duration-500 ${autoBooking ? 'bg-emerald-500' : 'bg-gray-700'}`}
                                 >
-                                    <div className={`absolute top-1 w-5 h-5 bg-white rounded-full transition-transform duration-500 shadow-md ${autoBooking ? 'translate-x-8' : 'translate-x-1'}`} />
+                                    <div className={`absolute top-1 w-5 h-5 bg-white dark:bg-gray-950 rounded-full transition-transform duration-500 shadow-md ${autoBooking ? 'translate-x-8' : 'translate-x-1'}`} />
                                 </button>
                             </div>
-                            <p className="text-xs text-gray-400 font-medium leading-relaxed italic">
+                            <p className="text-xs text-gray-400 dark:text-gray-500 font-medium leading-relaxed italic">
                                 Automatically accept jobs that match your availability and preferred category settings.
                             </p>
-                            <div className="h-px bg-white/10" />
+                            <div className="h-px bg-white dark:bg-gray-950/10" />
                             <div className="flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-emerald-400 italic">
                                 <span>Engine Active</span>
                                 <CheckCircle2 size={16} />
@@ -253,8 +253,8 @@ export default function ProviderSchedulePage() {
                     </div>
 
                     {/* Conflict & Smart Detection */}
-                    <div className="bg-white border border-gray-100 p-8 rounded-[2.5rem] shadow-sm space-y-6">
-                        <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Availability Conflicts</h4>
+                    <div className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 p-8 rounded-[2.5rem] shadow-sm space-y-6">
+                        <h4 className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest">Availability Conflicts</h4>
 
                         <div className="space-y-4">
                             <div className="p-4 bg-amber-50 rounded-2xl border border-amber-100 flex items-start gap-4">
@@ -273,7 +273,7 @@ export default function ProviderSchedulePage() {
                             </div>
                         </div>
 
-                        <button className="w-full py-4 bg-gray-50 border border-gray-100 text-gray-900 rounded-2xl font-black text-xs flex items-center justify-center gap-2 hover:bg-[#1E7B7C] hover:text-white hover:border-transparent transition-all">
+                        <button className="w-full py-4 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 text-gray-900 dark:text-gray-100 rounded-2xl font-black text-xs flex items-center justify-center gap-2 hover:bg-[#1E7B7C] hover:text-white hover:border-transparent transition-all">
                             <RotateCcw size={16} />
                             Optimize Schedule
                         </button>
@@ -286,7 +286,7 @@ export default function ProviderSchedulePage() {
                                 <span>Mon - Fri</span>
                                 <span>09:00 - 18:00</span>
                             </div>
-                            <div className="flex justify-between text-xs font-bold text-gray-400">
+                            <div className="flex justify-between text-xs font-bold text-gray-400 dark:text-gray-500">
                                 <span>Sat - Sun</span>
                                 <span className="italic uppercase text-[10px]">Away</span>
                             </div>

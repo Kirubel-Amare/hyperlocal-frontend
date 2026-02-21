@@ -35,13 +35,13 @@ export default function CategoriesSection() {
   }
 
   return (
-    <section id="services" className="py-20 px-6 bg-gradient-to-b from-white to-[#E8F4F4]">
+    <section id="services" className="py-20 px-6 bg-gradient-to-b from-white to-[#E8F4F4] dark:from-background dark:to-[#1E7B7C]/10">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-16">
           <div>
-            <h2 className="text-5xl font-bold text-gray-900 mb-3">{t('categories.title')}</h2>
-            <p className="text-gray-600 text-lg">{t('categories.description')}</p>
+            <h2 className="text-5xl font-bold text-gray-900 dark:text-gray-100 dark:text-gray-100 mb-3">{t('categories.title')}</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">{t('categories.description')}</p>
           </div>
           <Link href="/services" className="text-[#1E7B7C] hover:text-[#166566] font-semibold text-base flex items-center gap-2 hover:gap-3 transition-all group">
             {t('categories.viewAll')}
@@ -58,7 +58,7 @@ export default function CategoriesSection() {
               <Link
                 key={index}
                 href={`/services?category=${category.name}`}
-                className="group bg-white rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 hover:border-[#E8F4F4] overflow-hidden relative"
+                className="group bg-white dark:bg-gray-950 dark:bg-gray-800 rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-800 dark:border-gray-700 hover:border-[#E8F4F4] dark:hover:border-gray-600 overflow-hidden relative"
               >
 
                 {/* Gradient background on hover */}
@@ -68,8 +68,8 @@ export default function CategoriesSection() {
                   <div className={`w-16 h-16 ${colorClass} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md group-hover:shadow-lg`}>
                     <Icon size={32} strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-bold text-gray-900 text-base mb-2">{category.name}</h3>
-                  <p className="text-xs text-gray-500 font-medium">{category.count}</p>
+                  <h3 className="font-bold text-gray-900 dark:text-gray-100 dark:text-gray-100 text-base mb-2">{category.name}</h3>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 dark:text-gray-400 font-medium">{category.count}</p>
                 </div>
               </Link>
             )

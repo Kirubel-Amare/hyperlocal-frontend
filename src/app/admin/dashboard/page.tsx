@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import {
   Users,
@@ -77,7 +79,7 @@ export default function AdminDashboardPage() {
             trendUp={stat.trendUp}
             icon={getIcon(stat.iconType)}
             iconColorClass={stat.iconType === 'shopping' ? 'text-[#1E7B7C]' : stat.iconType === 'dollar' ? 'text-emerald-500' : 'text-blue-500'}
-            iconBgClass={stat.iconType === 'shopping' ? 'bg-[#E8F4F4]' : 'bg-gray-50'}
+            iconBgClass={stat.iconType === 'shopping' ? 'bg-[#E8F4F4]' : 'bg-gray-50 dark:bg-gray-900'}
           />
         ))}
       </div>
@@ -117,7 +119,7 @@ export default function AdminDashboardPage() {
               />
             ))}
           </div>
-          <button className="w-full mt-6 py-3.5 rounded-2xl border-2 border-gray-100 text-gray-500 text-sm font-bold hover:bg-gray-50 hover:border-gray-200 transition-all italic">
+          <button className="w-full mt-6 py-3.5 rounded-2xl border-2 border-gray-100 dark:border-gray-800 text-gray-500 dark:text-gray-400 text-sm font-bold hover:bg-gray-50 dark:bg-gray-900 hover:border-gray-200 transition-all italic">
             View All Activities
           </button>
         </GlassCard>

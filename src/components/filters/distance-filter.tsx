@@ -22,8 +22,8 @@ export function DistanceFilter({
   const [isExpanded, setIsExpanded] = useState(false)
 
   return (
-    <div className="mb-10 text-gray-900">
-      <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">
+    <div className="mb-10 text-gray-900 dark:text-gray-100">
+      <h4 className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-4">
         DISTANCE
       </h4>
 
@@ -32,7 +32,7 @@ export function DistanceFilter({
         <select
           value={maxDistance}
           onChange={(e) => onChange(Number(e.target.value))}
-          className="w-full bg-gray-100/50 border border-gray-100 rounded-[20px] px-5 py-4 text-sm font-bold text-gray-700 appearance-none outline-none focus:ring-4 focus:ring-[#1E7B7C]/5 focus:border-[#1E7B7C] transition-all cursor-pointer group-hover:bg-white group-hover:border-[#1E7B7C]/20 group-hover:shadow-md pr-10"
+          className="w-full bg-gray-100/50 border border-gray-100 dark:border-gray-800 rounded-[20px] px-5 py-4 text-sm font-bold text-gray-700 dark:text-gray-300 appearance-none outline-none focus:ring-4 focus:ring-[#1E7B7C]/5 focus:border-[#1E7B7C] transition-all cursor-pointer group-hover:bg-white dark:bg-gray-950 group-hover:border-[#1E7B7C]/20 group-hover:shadow-md pr-10"
         >
           <option value={5}>Within 5 miles</option>
           <option value={10}>Within 10 miles</option>
@@ -40,7 +40,7 @@ export function DistanceFilter({
           <option value={25}>Within 25 miles</option>
           <option value={50}>Within 50 miles</option>
         </select>
-        <div className="absolute right-4 top-1/2 -translate-y-1/2 rotate-90 text-gray-400 pointer-events-none group-hover:text-[#1E7B7C] transition-all transform group-hover:translate-x-1">
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 rotate-90 text-gray-400 dark:text-gray-500 pointer-events-none group-hover:text-[#1E7B7C] transition-all transform group-hover:translate-x-1">
           <ChevronRight size={18} />
         </div>
       </div>
@@ -49,7 +49,7 @@ export function DistanceFilter({
 
       {/* <div className="space-y-3">
         <div className="flex items-center justify-between">
-          <span className="text-sm font-medium text-gray-500">Maximum distance</span>
+          <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Maximum distance</span>
           <span className="text-sm font-bold text-[#1E7B7C] bg-[#E8F4F4] px-3 py-1 rounded-full">
             {maxDistance} miles
           </span>
@@ -66,7 +66,7 @@ export function DistanceFilter({
             className="w-full h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer accent-[#1E7B7C]"
           />
           
-          <div className="flex justify-between text-xs text-gray-400 mt-2">
+          <div className="flex justify-between text-xs text-gray-400 dark:text-gray-500 mt-2">
             <span className="flex items-center gap-1">
               <MapPin size={12} />
               {min} mile

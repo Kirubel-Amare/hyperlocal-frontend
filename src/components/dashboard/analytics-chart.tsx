@@ -31,13 +31,13 @@ export default function AnalyticsChart({ title, subtitle, data, type }: Analytic
     }
 
     return (
-        <div className="bg-white/60 backdrop-blur-md rounded-[40px] p-8 border border-white shadow-xl shadow-gray-200/10 flex flex-col h-full">
+        <div className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-md rounded-[40px] p-8 border border-white dark:border-gray-800 shadow-xl shadow-gray-200/10 dark:shadow-none flex flex-col h-full">
             <div className="flex items-center justify-between mb-8">
                 <div>
-                    <h3 className="text-xl font-black text-gray-900 tracking-tight">{title}</h3>
-                    <p className="text-sm text-gray-500 font-medium">{subtitle}</p>
+                    <h3 className="text-xl font-black text-gray-900 dark:text-gray-100 tracking-tight">{title}</h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">{subtitle}</p>
                 </div>
-                <div className={`p-3 rounded-2xl bg-[#E8F4F4] text-[#1E7B7C]`}>
+                <div className={`p-3 rounded-2xl bg-[#E8F4F4] dark:bg-cyan-900/30 text-[#1E7B7C] dark:text-cyan-400`}>
                     {icons[type]}
                 </div>
             </div>
@@ -52,7 +52,7 @@ export default function AnalyticsChart({ title, subtitle, data, type }: Analytic
                                 {type === 'revenue' ? '$' : ''}{point.value}{type === 'users' ? 'u' : ''}
                             </div>
 
-                            <div className="w-full h-full flex items-end bg-gray-50/50 rounded-2xl overflow-hidden shadow-inner">
+                            <div className="w-full h-full flex items-end bg-gray-50/50 dark:bg-gray-800/50 rounded-2xl overflow-hidden shadow-inner">
                                 <motion.div
                                     initial={{ height: 0 }}
                                     animate={{ height: `${height}%` }}
@@ -60,7 +60,7 @@ export default function AnalyticsChart({ title, subtitle, data, type }: Analytic
                                     className={`w-full bg-gradient-to-t ${colors[type]} rounded-t-xl group-hover:opacity-80 transition-opacity`}
                                 />
                             </div>
-                            <span className="text-[10px] font-black text-gray-400 mt-4 group-hover:text-gray-900 transition-colors uppercase">
+                            <span className="text-[10px] font-black text-gray-400 dark:text-gray-500 mt-4 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors uppercase">
                                 {point.label}
                             </span>
                         </div>
@@ -68,12 +68,12 @@ export default function AnalyticsChart({ title, subtitle, data, type }: Analytic
                 })}
             </div>
 
-            <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between">
-                <div className="flex items-center gap-2 text-[#1E7B7C]">
+            <div className="mt-8 pt-6 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                <div className="flex items-center gap-2 text-[#1E7B7C] dark:text-cyan-400">
                     <TrendingUp size={16} />
                     <span className="text-[10px] font-black uppercase tracking-widest">+14.2% Growth</span>
                 </div>
-                <button className="text-[10px] font-black text-gray-400 hover:text-gray-900 uppercase tracking-widest transition-colors">
+                <button className="text-[10px] font-black text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 uppercase tracking-widest transition-colors">
                     View Full Report
                 </button>
             </div>

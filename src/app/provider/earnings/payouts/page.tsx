@@ -38,12 +38,12 @@ export default function PayoutsPage() {
             {/* Header Area */}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
-                    <h1 className="text-4xl font-black text-gray-900 tracking-tight mb-2">Payouts & Wallet</h1>
-                    <p className="text-lg text-gray-500 font-medium italic">Manage your earnings and instant withdrawals.</p>
+                    <h1 className="text-4xl font-black text-gray-900 dark:text-gray-100 tracking-tight mb-2">Payouts & Wallet</h1>
+                    <p className="text-lg text-gray-500 dark:text-gray-400 font-medium italic">Manage your earnings and instant withdrawals.</p>
                 </div>
-                <div className="flex bg-gray-100/50 p-1 rounded-2xl border border-gray-100">
-                    <button className="px-6 py-2 bg-white text-gray-900 rounded-xl text-sm font-black shadow-sm">Earnings</button>
-                    <button className="px-6 py-2 text-gray-400 hover:text-gray-600 rounded-xl text-sm font-bold transition-all">Tax Reports</button>
+                <div className="flex bg-gray-100/50 p-1 rounded-2xl border border-gray-100 dark:border-gray-800">
+                    <button className="px-6 py-2 bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 rounded-xl text-sm font-black shadow-sm">Earnings</button>
+                    <button className="px-6 py-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 rounded-xl text-sm font-bold transition-all">Tax Reports</button>
                 </div>
             </div>
 
@@ -57,10 +57,10 @@ export default function PayoutsPage() {
                         </div>
                         <div className="relative z-10 space-y-8">
                             <div className="flex items-center gap-3">
-                                <div className="p-3 bg-white/10 rounded-2xl backdrop-blur-md border border-white/10">
+                                <div className="p-3 bg-white dark:bg-gray-950/10 rounded-2xl backdrop-blur-md border border-white/10">
                                     <CreditCard size={24} className="text-emerald-400" />
                                 </div>
-                                <span className="text-xs font-black uppercase tracking-[0.2em] text-gray-400">Available for Payout</span>
+                                <span className="text-xs font-black uppercase tracking-[0.2em] text-gray-400 dark:text-gray-500">Available for Payout</span>
                             </div>
 
                             <div>
@@ -75,7 +75,7 @@ export default function PayoutsPage() {
                                     Withdraw Now
                                     <ArrowUpRight size={20} />
                                 </button>
-                                <button className="px-8 py-4 bg-white/10 border border-white/10 text-white rounded-[2rem] font-black hover:bg-white/20 transition-all">
+                                <button className="px-8 py-4 bg-white dark:bg-gray-950/10 border border-white/10 text-white rounded-[2rem] font-black hover:bg-white dark:bg-gray-950/20 transition-all">
                                     Auto-Payout Settings
                                 </button>
                             </div>
@@ -84,30 +84,30 @@ export default function PayoutsPage() {
 
                     {/* Stats Tiles */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-white/70 backdrop-blur-md border border-gray-100 p-8 rounded-[2.5rem] shadow-sm flex items-center gap-6 group hover:border-[#1E7B7C]/30 transition-all">
+                        <div className="bg-white dark:bg-gray-950/70 backdrop-blur-md border border-gray-100 dark:border-gray-800 p-8 rounded-[2.5rem] shadow-sm flex items-center gap-6 group hover:border-[#1E7B7C]/30 transition-all">
                             <div className="w-16 h-16 rounded-3xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
                                 <HistoryIcon size={28} />
                             </div>
                             <div>
-                                <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Total Earned (YTD)</p>
-                                <h4 className="text-2xl font-black text-gray-900">$24,850.00</h4>
+                                <p className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-1">Total Earned (YTD)</p>
+                                <h4 className="text-2xl font-black text-gray-900 dark:text-gray-100">$24,850.00</h4>
                             </div>
                         </div>
-                        <div className="bg-white/70 backdrop-blur-md border border-gray-100 p-8 rounded-[2.5rem] shadow-sm flex items-center gap-6 group hover:border-emerald-500/30 transition-all">
+                        <div className="bg-white dark:bg-gray-950/70 backdrop-blur-md border border-gray-100 dark:border-gray-800 p-8 rounded-[2.5rem] shadow-sm flex items-center gap-6 group hover:border-emerald-500/30 transition-all">
                             <div className="w-16 h-16 rounded-3xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
                                 <CheckCircle2 size={28} />
                             </div>
                             <div>
-                                <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Paid Out</p>
-                                <h4 className="text-2xl font-black text-gray-900">$23,609.20</h4>
+                                <p className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-1">Paid Out</p>
+                                <h4 className="text-2xl font-black text-gray-900 dark:text-gray-100">$23,609.20</h4>
                             </div>
                         </div>
                     </div>
 
                     {/* Transaction History */}
-                    <div className="bg-white border border-gray-100 rounded-[2.5rem] shadow-sm overflow-hidden">
-                        <div className="p-8 border-b border-gray-100 flex items-center justify-between">
-                            <h3 className="text-xl font-black text-gray-900 italic">Recent Transactions</h3>
+                    <div className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 rounded-[2.5rem] shadow-sm overflow-hidden">
+                        <div className="p-8 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                            <h3 className="text-xl font-black text-gray-900 dark:text-gray-100 italic">Recent Transactions</h3>
                             <button className="text-sm font-black text-[#1E7B7C] hover:underline flex items-center gap-1">
                                 View Full History <ChevronRight size={16} />
                             </button>
@@ -116,20 +116,20 @@ export default function PayoutsPage() {
                             <table className="w-full">
                                 <tbody className="divide-y divide-gray-50">
                                     {transactions.map((tx) => (
-                                        <tr key={tx.id} className="group hover:bg-gray-50/50 transition-colors">
+                                        <tr key={tx.id} className="group hover:bg-gray-50/50 dark:bg-gray-900/50 transition-colors">
                                             <td className="px-8 py-5">
                                                 <div className="flex items-center gap-4">
                                                     <div className={`p-2.5 rounded-xl ${tx.type === 'Payout' ? 'bg-amber-50 text-amber-600' : 'bg-emerald-50 text-emerald-600'}`}>
                                                         {tx.type === 'Payout' ? <ArrowUpRight size={18} /> : <ArrowDownLeft size={18} />}
                                                     </div>
                                                     <div>
-                                                        <p className="text-sm font-black text-gray-900">{tx.type} #{tx.id}</p>
-                                                        <p className="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">{tx.job || tx.method}</p>
+                                                        <p className="text-sm font-black text-gray-900 dark:text-gray-100">{tx.type} #{tx.id}</p>
+                                                        <p className="text-[10px] text-gray-400 dark:text-gray-500 font-bold uppercase tracking-tighter">{tx.job || tx.method}</p>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td className="px-8 py-5">
-                                                <span className="text-xs font-bold text-gray-500">{tx.date}</span>
+                                                <span className="text-xs font-bold text-gray-500 dark:text-gray-400">{tx.date}</span>
                                             </td>
                                             <td className="px-8 py-5">
                                                 <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase ${tx.status === 'Completed' ? 'bg-emerald-50 text-emerald-600' : 'bg-amber-50 text-amber-600'
@@ -137,7 +137,7 @@ export default function PayoutsPage() {
                                                     {tx.status}
                                                 </span>
                                             </td>
-                                            <td className="px-8 py-5 text-right font-black text-gray-900">
+                                            <td className="px-8 py-5 text-right font-black text-gray-900 dark:text-gray-100">
                                                 {tx.type === 'Payout' ? '-' : '+'}${tx.amount.toFixed(2)}
                                             </td>
                                         </tr>
@@ -151,7 +151,7 @@ export default function PayoutsPage() {
                 {/* Account & Onboarding */}
                 <div className="space-y-6">
                     {/* Stripe Connectivity Card */}
-                    <div className="bg-white/70 backdrop-blur-md border border-gray-100 p-8 rounded-[3rem] shadow-sm space-y-6 relative overflow-hidden">
+                    <div className="bg-white dark:bg-gray-950/70 backdrop-blur-md border border-gray-100 dark:border-gray-800 p-8 rounded-[3rem] shadow-sm space-y-6 relative overflow-hidden">
                         <div className="flex items-center gap-3">
                             <div className="p-3 bg-indigo-50 text-indigo-600 rounded-2xl">
                                 <ShieldCheck size={24} />
@@ -161,7 +161,7 @@ export default function PayoutsPage() {
 
                         {status === 'not_connected' && (
                             <div className="space-y-6 animate-in fade-in zoom-in duration-500">
-                                <p className="text-sm text-gray-500 font-medium leading-relaxed">
+                                <p className="text-sm text-gray-500 dark:text-gray-400 font-medium leading-relaxed">
                                     Secure your earnings by connecting with <span className="text-[#1E7B7C] font-black">Stripe Connect</span>. It takes less than 2 minutes.
                                 </p>
                                 <div className="space-y-3">
@@ -188,7 +188,7 @@ export default function PayoutsPage() {
                         {status === 'connecting' && (
                             <div className="flex flex-col items-center justify-center py-10 space-y-4 animate-in fade-in duration-500">
                                 <Loader2 className="w-12 h-12 text-[#1E7B7C] animate-spin" />
-                                <p className="text-sm font-black text-gray-900 italic">Redirecting to Stripe...</p>
+                                <p className="text-sm font-black text-gray-900 dark:text-gray-100 italic">Redirecting to Stripe...</p>
                             </div>
                         )}
 
@@ -199,16 +199,16 @@ export default function PayoutsPage() {
                                     <h4 className="text-lg font-black text-emerald-900 uppercase tracking-tighter italic">Stripe Connected</h4>
                                     <p className="text-[10px] text-emerald-700 font-bold mt-1">Verified: Chase Bank (**** 8291)</p>
                                 </div>
-                                <div className="p-4 bg-gray-50 rounded-2xl border border-gray-100">
-                                    <h5 className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3">Settings</h5>
+                                <div className="p-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800">
+                                    <h5 className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-3">Settings</h5>
                                     <div className="flex items-center justify-between">
                                         <span className="text-xs font-bold text-gray-600">Instant Payouts</span>
                                         <div className="w-12 h-6 bg-emerald-500 rounded-full relative p-1">
-                                            <div className="absolute right-1 w-4 h-4 bg-white rounded-full" />
+                                            <div className="absolute right-1 w-4 h-4 bg-white dark:bg-gray-950 rounded-full" />
                                         </div>
                                     </div>
                                 </div>
-                                <button className="w-full border-2 border-gray-100 py-4 rounded-3xl text-xs font-black text-gray-400 hover:bg-gray-50 transition-all italic">
+                                <button className="w-full border-2 border-gray-100 dark:border-gray-800 py-4 rounded-3xl text-xs font-black text-gray-400 dark:text-gray-500 hover:bg-gray-50 dark:bg-gray-900 transition-all italic">
                                     Manage Stripe Account
                                 </button>
                             </div>
@@ -226,12 +226,12 @@ export default function PayoutsPage() {
                         </p>
                     </div>
 
-                    <div className="p-8 bg-white border border-gray-100 rounded-[3rem] space-y-4">
+                    <div className="p-8 bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 rounded-[3rem] space-y-4">
                         <div className="flex items-center gap-2 text-amber-600">
                             <Info size={18} />
                             <h4 className="text-xs font-black uppercase tracking-widest">Help & Support</h4>
                         </div>
-                        <p className="text-xs text-gray-500 font-medium leading-relaxed italic">
+                        <p className="text-xs text-gray-500 dark:text-gray-400 font-medium leading-relaxed italic">
                             Missing a payout? Visit our help center or contact financial support.
                         </p>
                         <button className="text-xs font-black text-[#1E7B7C] hover:underline">Support Center →</button>

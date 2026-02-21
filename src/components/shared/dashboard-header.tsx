@@ -19,10 +19,10 @@ export default function DashboardHeader({ title, subtitle, action }: DashboardHe
     return (
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div>
-                <h1 className="text-4xl font-black text-gray-900 tracking-tight mb-2">
+                <h1 className="text-4xl font-black text-gray-900 dark:text-gray-100 dark:text-gray-100 tracking-tight mb-2">
                     {title}
                 </h1>
-                <div className="text-lg text-gray-500 font-medium">
+                <div className="text-lg text-gray-500 dark:text-gray-400 dark:text-gray-400 font-medium">
                     {subtitle}
                 </div>
             </div>

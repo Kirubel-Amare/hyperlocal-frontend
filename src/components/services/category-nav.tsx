@@ -31,7 +31,7 @@ interface CategoryNavProps {
 export function CategoryNav({ activeCategory }: CategoryNavProps) {
     return (
         <div className="space-y-1">
-            <h3 className="text-sm font-semibold text-gray-900 mb-4 px-3">Categories</h3>
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-4 px-3">Categories</h3>
             <nav className="space-y-1">
                 {categories.map((category) => {
                     const Icon = category.icon
@@ -45,14 +45,14 @@ export function CategoryNav({ activeCategory }: CategoryNavProps) {
                                 "flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-xl transition-all duration-200 group",
                                 isActive
                                     ? "bg-[#E8F4F4] text-[#166566] shadow-sm"
-                                    : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                                    : "text-gray-600 hover:bg-gray-50 dark:bg-gray-900 hover:text-gray-900 dark:text-gray-100"
                             )}
                         >
                             <Icon
                                 size={18}
                                 className={cn(
                                     "transition-colors duration-200",
-                                    isActive ? "text-[#1E7B7C]" : "text-gray-400 group-hover:text-gray-600"
+                                    isActive ? "text-[#1E7B7C]" : "text-gray-400 dark:text-gray-500 group-hover:text-gray-600"
                                 )}
                             />
                             {category.name}

@@ -76,40 +76,40 @@ export default function OnboardingWizard({ isOpen, onClose }: OnboardingWizardPr
 
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 className="absolute inset-0 bg-black/40 backdrop-blur-sm"
                 onClick={onClose}
             />
-            
-            <motion.div 
+
+            <motion.div
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                className="relative w-full max-w-2xl bg-white/80 backdrop-blur-xl rounded-[40px] border border-white/20 shadow-2xl overflow-hidden flex flex-col md:flex-row h-[500px]"
+                className="relative w-full max-w-2xl bg-white dark:bg-gray-950/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-[40px] border border-white/20 dark:border-gray-800/50 shadow-2xl dark:shadow-black/50 overflow-hidden flex flex-col md:flex-row h-[500px]"
             >
                 {/* Visual Side */}
                 <div className="hidden md:block w-5/12 relative bg-[#1E7B7C]/10 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-[#1E7B7C]/20 to-transparent" />
                     {step.image ? (
-                        <Image 
-                            src={step.image} 
-                            alt="Onboarding" 
-                            fill 
+                        <Image
+                            src={step.image}
+                            alt="Onboarding"
+                            fill
                             className="object-cover opacity-60 mix-blend-overlay"
                         />
                     ) : (
                         <div className="absolute inset-0 flex items-center justify-center p-8">
-                             <div className="relative">
+                            <div className="relative">
                                 <div className="w-32 h-32 bg-[#1E7B7C]/10 rounded-full animate-pulse flex items-center justify-center">
                                     <Shield className="w-12 h-12 text-[#1E7B7C]" />
                                 </div>
-                                <div className="absolute -top-4 -right-4 w-12 h-12 bg-white rounded-2xl shadow-lg flex items-center justify-center">
+                                <div className="absolute -top-4 -right-4 w-12 h-12 bg-white dark:bg-gray-950 rounded-2xl shadow-lg flex items-center justify-center">
                                     <Check className="w-6 h-6 text-emerald-500" />
                                 </div>
-                             </div>
+                            </div>
                         </div>
                     )}
                     <div className="absolute bottom-6 left-6 right-6">
@@ -120,9 +120,9 @@ export default function OnboardingWizard({ isOpen, onClose }: OnboardingWizardPr
 
                 {/* Content Side */}
                 <div className="flex-1 p-8 md:p-12 flex flex-col border-l border-white/20">
-                    <button 
+                    <button
                         onClick={onClose}
-                        className="absolute top-6 right-6 p-2 text-gray-400 hover:text-gray-600 transition-colors"
+                        className="absolute top-6 right-6 p-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 transition-colors"
                     >
                         <X size={20} />
                     </button>
@@ -138,8 +138,8 @@ export default function OnboardingWizard({ isOpen, onClose }: OnboardingWizardPr
                             >
                                 <div className="space-y-2">
                                     {step.icon && <div className="mb-4">{step.icon}</div>}
-                                    <h2 className="text-2xl font-black text-gray-900 leading-tight">{step.title}</h2>
-                                    <p className="text-gray-500 text-sm leading-relaxed">{step.description}</p>
+                                    <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100 dark:text-gray-100 leading-tight">{step.title}</h2>
+                                    <p className="text-gray-500 dark:text-gray-400 dark:text-gray-400 text-sm leading-relaxed">{step.description}</p>
                                 </div>
 
                                 {step.options && (
@@ -147,20 +147,19 @@ export default function OnboardingWizard({ isOpen, onClose }: OnboardingWizardPr
                                         {step.options.map(opt => (
                                             <button
                                                 key={opt.id}
-                                                onClick={() => setSelections({...selections, role: opt.id})}
-                                                className={`p-4 rounded-2xl border-2 text-left transition-all ${
-                                                    selections.role === opt.id 
-                                                        ? 'border-[#1E7B7C] bg-[#1E7B7C]/5 shadow-lg shadow-[#1E7B7C]/5' 
-                                                        : 'border-gray-50 bg-gray-50/50 hover:bg-white hover:border-gray-100'
-                                                }`}
+                                                onClick={() => setSelections({ ...selections, role: opt.id })}
+                                                className={`p-4 rounded-2xl border-2 text-left transition-all ${selections.role === opt.id
+                                                        ? 'border-[#1E7B7C] bg-[#1E7B7C]/5 shadow-lg shadow-[#1E7B7C]/5'
+                                                        : 'border-gray-50 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50 dark:bg-gray-800/50 hover:bg-white dark:bg-gray-950 dark:hover:bg-gray-800 hover:border-gray-100 dark:border-gray-800 dark:hover:border-gray-700'
+                                                    }`}
                                             >
                                                 <div className="flex items-center gap-4">
-                                                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${selections.role === opt.id ? 'bg-[#1E7B7C] text-white' : 'bg-white text-[#1E7B7C]'}`}>
+                                                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${selections.role === opt.id ? 'bg-[#1E7B7C] text-white' : 'bg-white dark:bg-gray-950 dark:bg-gray-700 text-[#1E7B7C] dark:text-cyan-400'}`}>
                                                         {opt.icon}
                                                     </div>
                                                     <div>
-                                                        <h4 className="font-bold text-sm text-gray-900">{opt.title}</h4>
-                                                        <p className="text-[10px] text-gray-500 font-medium">{opt.description}</p>
+                                                        <h4 className="font-bold text-sm text-gray-900 dark:text-gray-100 dark:text-gray-100">{opt.title}</h4>
+                                                        <p className="text-[10px] text-gray-500 dark:text-gray-400 dark:text-gray-400 font-medium">{opt.description}</p>
                                                     </div>
                                                 </div>
                                             </button>
@@ -171,12 +170,12 @@ export default function OnboardingWizard({ isOpen, onClose }: OnboardingWizardPr
                                 {step.checkboxes && (
                                     <div className="space-y-3">
                                         {step.checkboxes.map(cb => (
-                                            <label key={cb.id} className="flex items-center gap-3 p-4 bg-gray-50/50 rounded-2xl cursor-pointer hover:bg-white transition-all group">
-                                                <input 
-                                                    type="checkbox" 
-                                                    className="w-5 h-5 rounded-lg border-2 border-gray-200 text-[#1E7B7C] focus:ring-[#1E7B7C]/20 transition-all cursor-pointer"
+                                            <label key={cb.id} className="flex items-center gap-3 p-4 bg-gray-50/50 dark:bg-gray-900/50 dark:bg-gray-800/50 rounded-2xl cursor-pointer hover:bg-white dark:bg-gray-950 dark:hover:bg-gray-800 transition-all group border-2 border-transparent hover:border-gray-100 dark:border-gray-800 dark:hover:border-gray-700">
+                                                <input
+                                                    type="checkbox"
+                                                    className="w-5 h-5 rounded-lg border-2 border-gray-200 dark:border-gray-700 text-[#1E7B7C] dark:text-cyan-600 focus:ring-[#1E7B7C]/20 transition-all cursor-pointer dark:bg-gray-900"
                                                 />
-                                                <span className="text-sm font-bold text-gray-700 group-hover:text-gray-900 transition-colors">{cb.label}</span>
+                                                <span className="text-sm font-bold text-gray-700 dark:text-gray-300 dark:text-gray-300 group-hover:text-gray-900 dark:text-gray-100 dark:group-hover:text-gray-100 transition-colors">{cb.label}</span>
                                             </label>
                                         ))}
                                     </div>
@@ -186,11 +185,11 @@ export default function OnboardingWizard({ isOpen, onClose }: OnboardingWizardPr
                     </div>
 
                     {/* Footer / Controls */}
-                    <div className="mt-8 pt-8 border-t border-gray-100 flex items-center justify-between">
+                    <div className="mt-8 pt-8 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
                         <div className="flex-1 mr-8">
-                            <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
-                                <motion.div 
-                                    className="h-full bg-[#1E7B7C]" 
+                            <div className="h-1.5 w-full bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+                                <motion.div
+                                    className="h-full bg-[#1E7B7C] dark:bg-cyan-600"
                                     initial={{ width: 0 }}
                                     animate={{ width: `${progress}%` }}
                                 />
@@ -199,14 +198,14 @@ export default function OnboardingWizard({ isOpen, onClose }: OnboardingWizardPr
 
                         <div className="flex items-center gap-3">
                             {currentStep > 0 && (
-                                <button 
+                                <button
                                     onClick={handleBack}
-                                    className="p-3 text-gray-400 hover:text-gray-600 transition-colors"
+                                    className="p-3 text-gray-400 dark:text-gray-500 hover:text-gray-600 transition-colors"
                                 >
                                     <ChevronLeft size={20} />
                                 </button>
                             )}
-                            <button 
+                            <button
                                 onClick={handleNext}
                                 className="px-6 py-3 bg-[#1E7B7C] text-white rounded-2xl font-black text-sm shadow-xl shadow-[#1E7B7C]/20 hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
                             >

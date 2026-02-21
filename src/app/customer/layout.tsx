@@ -3,7 +3,7 @@ import CustomerSidebar from '@/components/layout/CustomerSidebar'
 
 export default function CustomerLayout({ children }: { children: React.ReactNode }) {
     return (
-        <div className="min-h-screen bg-white font-sans text-gray-900 flex">
+        <div className="min-h-screen bg-white dark:bg-gray-950 font-sans text-gray-900 dark:text-gray-100 dark:text-gray-100 flex">
             <Header userType="customer" />
 
             {/* Background Elements */}

@@ -30,6 +30,7 @@ import {
 } from 'lucide-react'
 import { useTranslation } from '@/i18n/LanguageContext'
 import LanguageSelector from './LanguageSelector'
+import { ThemeToggle } from '../shared/theme-toggle'
 
 interface HeaderProps {
   showLoginLink?: boolean
@@ -126,7 +127,7 @@ export default function Header({
     if (variant === 'transparent' && !isScrolled) {
       return 'bg-transparent border-transparent shadow-none'
     }
-    return 'bg-white/90 backdrop-blur-xl border-gray-100/80 shadow-lg shadow-gray-200/20'
+    return 'bg-white/90 dark:bg-gray-950/90 backdrop-blur-xl border-gray-100/80 dark:border-gray-800/80 shadow-lg shadow-gray-200/20 dark:shadow-black/40'
   }
 
   return (
@@ -163,7 +164,7 @@ export default function Header({
                     alt="Logo"
                   />
                 </div>
-                <span className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent hidden sm:inline-block group-hover:from-[#1E7B7C] group-hover:to-[#166566] transition-all duration-300">
+                <span className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent hidden sm:inline-block group-hover:from-[#1E7B7C] group-hover:to-[#166566] transition-all duration-300">
                   {t('brand.name') || 'LocalService'}
                 </span>
               </Link>
@@ -185,7 +186,7 @@ export default function Header({
                   className="relative px-4 py-2 rounded-xl text-gray-600 hover:text-[#1E7B7C] font-medium transition-all duration-300 group"
                 >
                   <span className="relative z-10 flex items-center gap-2">
-                    <span className="text-gray-400 group-hover:text-[#1E7B7C] transition-colors duration-300">
+                    <span className="text-gray-400 dark:text-gray-500 group-hover:text-[#1E7B7C] transition-colors duration-300">
                       {link.icon}
                     </span>
                     {link.name}
@@ -197,6 +198,7 @@ export default function Header({
               ))}
             </nav>
 
+
             {/* Right side elements */}
             <div className="hidden md:flex items-center gap-4">
               {/* Search Button */}
@@ -204,6 +206,7 @@ export default function Header({
                 <Search size={20} className="group-hover:scale-110 transition-transform duration-300" />
               </button>
 
+              <ThemeToggle />
               <LanguageSelector />
 
               {rightElement ? (
@@ -211,7 +214,7 @@ export default function Header({
               ) : userType === 'guest' ? (
                 showLoginLink && (
                   <div className="flex items-center gap-4">
-                    <span className="text-gray-500 hidden lg:inline text-sm">
+                    <span className="text-gray-500 dark:text-gray-400 hidden lg:inline text-sm">
                       {t('header.readyToStart')}
                     </span>
                     <Link
@@ -238,9 +241,9 @@ export default function Header({
                   <div className="relative">
                     <button
                       onClick={() => setShowProfileMenu(!showProfileMenu)}
-                      className="flex items-center gap-3 hover:bg-gray-50 p-1.5 pl-3 rounded-full border border-gray-100 transition-colors"
+                      className="flex items-center gap-3 hover:bg-gray-50 dark:bg-gray-900 p-1.5 pl-3 rounded-full border border-gray-100 dark:border-gray-800 transition-colors"
                     >
-                      <span className="text-sm font-bold text-gray-700 hidden sm:block">
+                      <span className="text-sm font-bold text-gray-700 dark:text-gray-300 hidden sm:block">
                         {userType === 'customer' ? 'Alex J.' : 'Sarah Miller'}
                       </span>
                       <div className="w-9 h-9 rounded-full bg-gradient-to-r from-[#1E7B7C] to-[#166566] p-[2px]">
@@ -249,22 +252,22 @@ export default function Header({
                           alt="User"
                           width={32}
                           height={32}
-                          className="rounded-full bg-white object-cover"
+                          className="rounded-full bg-white dark:bg-gray-950 object-cover"
                         />
                       </div>
                     </button>
 
                     {showProfileMenu && (
-                      <div className="absolute right-0 top-full mt-2 w-64 bg-white/95 backdrop-blur-xl border border-gray-100 shadow-xl rounded-2xl py-2 animate-in fade-in slide-in-from-top-2 duration-200">
-                        <div className="px-4 py-3 border-b border-gray-100 mb-2">
-                          <p className="text-sm font-bold text-gray-900">{userType === 'customer' ? 'Alex Johnson' : 'Sarah Miller'}</p>
-                          <p className="text-xs text-gray-500 font-medium">{userType === 'customer' ? t('header.customerProfile') : t('header.providerProfile')}</p>
+                      <div className="absolute right-0 top-full mt-2 w-64 bg-white dark:bg-gray-950/95 dark:bg-gray-900/95 backdrop-blur-xl border border-gray-100 dark:border-gray-800 shadow-xl rounded-2xl py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                        <div className="px-4 py-3 border-b border-gray-100 dark:border-gray-800 mb-2">
+                          <p className="text-sm font-bold text-gray-900 dark:text-gray-100 dark:text-gray-100">{userType === 'customer' ? 'Alex Johnson' : 'Sarah Miller'}</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">{userType === 'customer' ? t('header.customerProfile') : t('header.providerProfile')}</p>
                         </div>
-                        <Link onClick={() => setShowProfileMenu(false)} href={userType === 'customer' ? '/customer/dashboard' : '/provider/profile/edit'} className="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-sm font-medium text-gray-700 transition-colors">
-                          <User size={16} className="text-gray-400" /> {t('header.viewProfile')}
+                        <Link onClick={() => setShowProfileMenu(false)} href={userType === 'customer' ? '/customer/dashboard' : '/provider/profile/edit'} className="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 dark:bg-gray-900 text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors">
+                          <User size={16} className="text-gray-400 dark:text-gray-500" /> {t('header.viewProfile')}
                         </Link>
-                        <Link onClick={() => setShowProfileMenu(false)} href={userType === 'customer' ? '/customer/settings' : '/provider/settings'} className="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-sm font-medium text-gray-700 transition-colors">
-                          <Settings size={16} className="text-gray-400" /> {t('header.settings')}
+                        <Link onClick={() => setShowProfileMenu(false)} href={userType === 'customer' ? '/customer/settings' : '/provider/settings'} className="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 dark:bg-gray-900 text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors">
+                          <Settings size={16} className="text-gray-400 dark:text-gray-500" /> {t('header.settings')}
                         </Link>
                         <div className="h-px bg-gray-100 my-2" />
                         <Link onClick={() => setShowProfileMenu(false)} href="/" className="flex items-center gap-3 px-4 py-2 hover:bg-red-50 text-sm font-bold text-red-600 transition-colors">
@@ -310,25 +313,25 @@ export default function Header({
         </div>
 
         {/* Language selector for mobile */}
-        <div className="md:hidden border-t border-gray-50 bg-gray-50/50 px-4 py-3 flex justify-end">
+        <div className="md:hidden border-t border-gray-50 bg-gray-50/50 dark:bg-gray-900/50 px-4 py-3 flex justify-end">
           <LanguageSelector />
         </div>
 
         {/* Mobile Menu with animations */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-2xl animate-in slide-in-from-top duration-500">
+          <div className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-gray-950/95 dark:bg-gray-900/95 backdrop-blur-xl border-t border-gray-100 dark:border-gray-800 shadow-2xl animate-in slide-in-from-top duration-500">
             <div className="max-h-[calc(100vh-5rem)] overflow-y-auto">
               {/* User Profile Section */}
-              <div className="p-6 bg-gradient-to-r from-[#E8F4F4] to-blue-50 border-b border-gray-100">
+              <div className="p-6 bg-gradient-to-r from-[#E8F4F4] dark:from-[#1E7B7C]/10 to-blue-50 dark:to-indigo-900/10 border-b border-gray-100 dark:border-gray-800">
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#1E7B7C] to-[#166566] p-[2px]">
-                    <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                    <div className="w-full h-full rounded-full bg-white dark:bg-gray-950 dark:bg-gray-900 flex items-center justify-center">
                       <User size={24} className="text-[#1E7B7C]" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900">{t('header.guestUser')}</h3>
-                    <p className="text-sm text-gray-500">{t('header.signInBetterExperience')}</p>
+                    <h3 className="font-bold text-gray-900 dark:text-gray-100 dark:text-gray-100">{t('header.guestUser')}</h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-400">{t('header.signInBetterExperience')}</p>
                   </div>
                 </div>
               </div>
@@ -337,7 +340,7 @@ export default function Header({
                 {/* Categories Dropdown with animation */}
                 <button
                   onClick={() => setShowCategories(!showCategories)}
-                  className="flex items-center justify-between w-full px-4 py-3.5 rounded-xl bg-gray-50 text-gray-900 hover:bg-[#E8F4F4] hover:text-[#1E7B7C] transition-all duration-300 group"
+                  className="flex items-center justify-between w-full px-4 py-3.5 rounded-xl bg-gray-50 dark:bg-gray-900 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100 dark:text-gray-100 hover:bg-[#E8F4F4] dark:hover:bg-[#1E7B7C]/20 hover:text-[#1E7B7C] transition-all duration-300 group"
                 >
                   <span className="flex items-center gap-3 font-medium">
                     <LayoutGrid size={18} className="text-[#1E7B7C]" />
@@ -345,13 +348,13 @@ export default function Header({
                   </span>
                   <ChevronRight
                     size={18}
-                    className={`transform transition-all duration-300 ${showCategories ? 'rotate-90 text-[#1E7B7C]' : 'text-gray-400 group-hover:text-[#1E7B7C]'}`}
+                    className={`transform transition-all duration-300 ${showCategories ? 'rotate-90 text-[#1E7B7C]' : 'text-gray-400 dark:text-gray-500 group-hover:text-[#1E7B7C]'}`}
                   />
                 </button>
 
                 {/* Categories Submenu with grid layout */}
                 {showCategories && (
-                  <div className="grid grid-cols-2 gap-2 p-2 bg-gray-50/50 rounded-xl animate-in slide-in-from-left fade-in duration-300">
+                  <div className="grid grid-cols-2 gap-2 p-2 bg-gray-50/50 dark:bg-gray-900/50 dark:bg-gray-800/30 rounded-xl animate-in slide-in-from-left fade-in duration-300">
                     {getCategoryLinks(t).map((cat: any) => (
                       <Link
                         key={cat.id}
@@ -360,12 +363,12 @@ export default function Header({
                           setIsMenuOpen(false)
                           setShowCategories(false)
                         }}
-                        className="flex flex-col items-center gap-2 p-3 rounded-lg text-center hover:bg-white transition-all duration-300 group"
+                        className="flex flex-col items-center gap-2 p-3 rounded-lg text-center hover:bg-white dark:bg-gray-950 dark:hover:bg-gray-800 transition-all duration-300 group"
                       >
                         <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${cat.color} flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                           {cat.icon}
                         </div>
-                        <span className="text-xs font-medium text-gray-700 group-hover:text-[#1E7B7C]">
+                        <span className="text-xs font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 group-hover:text-[#1E7B7C]">
                           {cat.name}
                         </span>
                       </Link>
@@ -385,9 +388,9 @@ export default function Header({
                       key={link.name}
                       href={link.href}
                       onClick={() => setIsMenuOpen(false)}
-                      className="flex items-center gap-3 px-4 py-3.5 rounded-xl text-gray-700 hover:text-[#1E7B7C] hover:bg-[#E8F4F4] transition-all duration-300 group"
+                      className="flex items-center gap-3 px-4 py-3.5 rounded-xl text-gray-700 dark:text-gray-300 dark:text-gray-300 hover:text-[#1E7B7C] hover:bg-[#E8F4F4] dark:hover:bg-gray-800 transition-all duration-300 group"
                     >
-                      <span className="text-gray-400 group-hover:text-[#1E7B7C] transition-colors">
+                      <span className="text-gray-400 dark:text-gray-500 dark:text-gray-500 group-hover:text-[#1E7B7C] transition-colors">
                         {link.icon}
                       </span>
                       <span className="font-medium">{link.name}</span>
@@ -398,7 +401,7 @@ export default function Header({
                 {/* Login Section */}
                 {userType === 'guest' ? (
                   showLoginLink && !rightElement && (
-                    <div className="pt-4 mt-2 border-t border-gray-100">
+                    <div className="pt-4 mt-2 border-t border-gray-100 dark:border-gray-800">
                       <Link
                         href={loginHref}
                         onClick={() => setIsMenuOpen(false)}
@@ -407,7 +410,7 @@ export default function Header({
                         <LogIn size={18} className="group-hover:translate-x-1 transition-transform" />
                         {t('header.signInAccount')}
                       </Link>
-                      <p className="text-center text-xs text-gray-400 mt-4">
+                      <p className="text-center text-xs text-gray-400 dark:text-gray-500 mt-4">
                         {t('header.noAccount')}{' '}
                         <Link href="/signup" className="text-[#1E7B7C] font-medium hover:underline">
                           {t('header.signUp')}
@@ -416,11 +419,11 @@ export default function Header({
                     </div>
                   )
                 ) : (
-                  <div className="pt-4 mt-2 border-t border-gray-100">
+                  <div className="pt-4 mt-2 border-t border-gray-100 dark:border-gray-800">
                     <Link
                       href="/"
                       onClick={() => setIsMenuOpen(false)}
-                      className="flex items-center justify-center gap-2 w-full px-4 py-4 rounded-xl bg-red-50 text-red-600 font-black hover:bg-red-100 transition-all duration-300 group"
+                      className="flex items-center justify-center gap-2 w-full px-4 py-4 rounded-xl bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 font-black hover:bg-red-100 dark:hover:bg-red-900/40 transition-all duration-300 group"
                     >
                       <LogOut size={18} />
                       {t('header.signOut')}
@@ -430,7 +433,7 @@ export default function Header({
 
                 {/* Custom Right Element */}
                 {rightElement && (
-                  <div className="pt-4 mt-2 border-t border-gray-100">
+                  <div className="pt-4 mt-2 border-t border-gray-100 dark:border-gray-800">
                     {rightElement}
                   </div>
                 )}
@@ -450,7 +453,7 @@ export default function Header({
           />
 
           {/* Sidebar */}
-          <div className="fixed top-0 left-0 h-full w-80 bg-white/95 backdrop-blur-xl z-50 shadow-2xl animate-in slide-in-from-left duration-500 lg:hidden overflow-y-auto">
+          <div className="fixed top-0 left-0 h-full w-80 bg-white/95 dark:bg-gray-950/95 backdrop-blur-xl z-50 shadow-2xl animate-in slide-in-from-left duration-500 lg:hidden overflow-y-auto">
             <div className="p-6">
               {/* Sidebar Header with gradient */}
               <div className="flex items-center justify-between mb-8">
@@ -458,13 +461,13 @@ export default function Header({
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-[#1E7B7C] to-[#166566] flex items-center justify-center">
                     <LayoutGrid size={20} className="text-white" />
                   </div>
-                  <h3 className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+                  <h3 className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">
                     {t('nav.categories')}
                   </h3>
                 </div>
                 <button
                   onClick={toggleSidebar}
-                  className="p-2.5 rounded-xl text-gray-600 hover:text-[#1E7B7C] hover:bg-[#E8F4F4] transition-all duration-300"
+                  className="p-2.5 rounded-xl text-gray-600 dark:text-gray-400 hover:text-[#1E7B7C] hover:bg-[#E8F4F4] dark:hover:bg-gray-800 transition-all duration-300"
                 >
                   <X size={20} />
                 </button>
@@ -483,28 +486,28 @@ export default function Header({
                     <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${cat.color} flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                       {cat.icon}
                     </div>
-                    <span className="font-medium text-gray-700 group-hover:text-[#1E7B7C]">
+                    <span className="font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 group-hover:text-[#1E7B7C]">
                       {cat.name}
                     </span>
-                    <ChevronRight size={16} className="ml-auto text-gray-400 group-hover:text-[#1E7B7C] group-hover:translate-x-1 transition-all" />
+                    <ChevronRight size={16} className="ml-auto text-gray-400 dark:text-gray-500 dark:text-gray-500 group-hover:text-[#1E7B7C] group-hover:translate-x-1 transition-all" />
                   </Link>
                 ))}
               </div>
 
               {/* Quick Filters Section with modern design */}
-              <div className="mt-8 pt-8 border-t border-gray-100">
-                <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+              <div className="mt-8 pt-8 border-t border-gray-100 dark:border-gray-800">
+                <h4 className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-4 flex items-center gap-2">
                   <span className="w-8 h-[2px] bg-gradient-to-r from-[#1E7B7C] to-[#166566]" />
                   {t('header.quickFilters')}
                 </h4>
                 <div className="space-y-2">
-                  <button className="flex items-center gap-3 w-full px-4 py-4 rounded-xl border-2 border-transparent hover:border-[#E8F4F4] bg-gray-50 hover:bg-white transition-all duration-300 group">
-                    <div className="w-5 h-5 border-2 border-gray-300 rounded-md group-hover:border-[#1E7B7C] group-hover:bg-[#E8F4F4] transition-all" />
-                    <span className="font-medium text-gray-700 group-hover:text-[#1E7B7C]">{t('header.verifiedOnly')}</span>
+                  <button className="flex items-center gap-3 w-full px-4 py-4 rounded-xl border-2 border-transparent hover:border-[#E8F4F4] bg-gray-50 dark:bg-gray-900 dark:bg-gray-800/50 hover:bg-white dark:bg-gray-950 dark:hover:bg-gray-800 transition-all duration-300 group">
+                    <div className="w-5 h-5 border-2 border-gray-300 dark:border-gray-600 rounded-md group-hover:border-[#1E7B7C] group-hover:bg-[#E8F4F4] dark:group-hover:bg-gray-700 transition-all" />
+                    <span className="font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 group-hover:text-[#1E7B7C]">{t('header.verifiedOnly')}</span>
                   </button>
-                  <button className="flex items-center gap-3 w-full px-4 py-4 rounded-xl border-2 border-transparent hover:border-[#E8F4F4] bg-gray-50 hover:bg-white transition-all duration-300 group">
-                    <div className="w-5 h-5 border-2 border-gray-300 rounded-md group-hover:border-[#1E7B7C] group-hover:bg-[#E8F4F4] transition-all" />
-                    <span className="font-medium text-gray-700 group-hover:text-[#1E7B7C]">{t('header.openNow')}</span>
+                  <button className="flex items-center gap-3 w-full px-4 py-4 rounded-xl border-2 border-transparent hover:border-[#E8F4F4] bg-gray-50 dark:bg-gray-900 dark:bg-gray-800/50 hover:bg-white dark:bg-gray-950 dark:hover:bg-gray-800 transition-all duration-300 group">
+                    <div className="w-5 h-5 border-2 border-gray-300 dark:border-gray-600 rounded-md group-hover:border-[#1E7B7C] group-hover:bg-[#E8F4F4] dark:group-hover:bg-gray-700 transition-all" />
+                    <span className="font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 group-hover:text-[#1E7B7C]">{t('header.openNow')}</span>
                   </button>
                 </div>
               </div>

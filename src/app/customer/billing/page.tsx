@@ -72,43 +72,43 @@ export default function CustomerBillingPage() {
             {showAddCard && (
                 <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
                     <div className="absolute inset-0 bg-gray-900/40 backdrop-blur-md" onClick={() => !isProcessing && setShowAddCard(false)} />
-                    <div className="bg-white/90 backdrop-blur-2xl w-full max-w-lg rounded-[48px] p-10 shadow-2xl relative z-10 border border-white animate-in zoom-in-95 duration-300">
+                    <div className="bg-white dark:bg-gray-950/90 backdrop-blur-2xl w-full max-w-lg rounded-[48px] p-10 shadow-2xl relative z-10 border border-white animate-in zoom-in-95 duration-300">
                         <button
                             onClick={() => setShowAddCard(false)}
                             disabled={isProcessing}
-                            className="absolute top-8 right-8 p-2 text-gray-400 hover:text-gray-900 transition-colors"
+                            className="absolute top-8 right-8 p-2 text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:text-gray-100 transition-colors"
                         >
                             <X size={24} />
                         </button>
 
                         <div className="mb-8 font-sans">
                             <span className="text-[10px] font-black text-[#1E7B7C] uppercase tracking-widest bg-[#E8F4F4] px-3 py-1 rounded-full mb-4 inline-block">Secure Checkout</span>
-                            <h2 className="text-3xl font-black text-gray-900 tracking-tight">Add Payment Method</h2>
-                            <p className="text-gray-500 font-medium mt-1">Link a new card to your account securely.</p>
+                            <h2 className="text-3xl font-black text-gray-900 dark:text-gray-100 tracking-tight">Add Payment Method</h2>
+                            <p className="text-gray-500 dark:text-gray-400 font-medium mt-1">Link a new card to your account securely.</p>
                         </div>
 
                         <form onSubmit={handleAddCard} className="space-y-6">
                             <div>
-                                <label className="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-2 ml-1">Cardholder Name</label>
+                                <label className="block text-[11px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-2 ml-1">Cardholder Name</label>
                                 <input
                                     type="text"
                                     required
                                     placeholder="Full Name"
-                                    className="w-full bg-white border border-gray-100 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/5 rounded-2xl px-5 py-4 text-gray-900 outline-none transition-all font-bold placeholder:text-gray-300 shadow-sm"
+                                    className="w-full bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/5 rounded-2xl px-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all font-bold placeholder:text-gray-300 shadow-sm"
                                 />
                             </div>
 
                             <div>
-                                <label className="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-2 ml-1">Card Number</label>
+                                <label className="block text-[11px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-2 ml-1">Card Number</label>
                                 <div className="relative">
                                     <input
                                         type="text"
                                         required
                                         placeholder="0000 0000 0000 0000"
-                                        className="w-full bg-white border border-gray-100 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/5 rounded-2xl px-5 py-4 text-gray-900 outline-none transition-all font-bold placeholder:text-gray-300 shadow-sm"
+                                        className="w-full bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/5 rounded-2xl px-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all font-bold placeholder:text-gray-300 shadow-sm"
                                     />
                                     <div className="absolute right-5 top-1/2 -translate-y-1/2 flex gap-1">
-                                        <div className="w-8 h-5 bg-gray-100 rounded shadow-sm overflow-hidden flex items-center justify-center"><CreditCard size={12} className="text-gray-400" /></div>
+                                        <div className="w-8 h-5 bg-gray-100 rounded shadow-sm overflow-hidden flex items-center justify-center"><CreditCard size={12} className="text-gray-400 dark:text-gray-500" /></div>
                                         <div className="w-8 h-5 bg-gray-100 rounded shadow-sm" />
                                     </div>
                                 </div>
@@ -116,26 +116,26 @@ export default function CustomerBillingPage() {
 
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
-                                    <label className="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-2 ml-1">Expiry Date</label>
+                                    <label className="block text-[11px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-2 ml-1">Expiry Date</label>
                                     <input
                                         type="text"
                                         required
                                         placeholder="MM/YY"
-                                        className="w-full bg-white border border-gray-100 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/5 rounded-2xl px-5 py-4 text-gray-900 outline-none transition-all font-bold placeholder:text-gray-300 shadow-sm"
+                                        className="w-full bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/5 rounded-2xl px-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all font-bold placeholder:text-gray-300 shadow-sm"
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-2 ml-1">CVV</label>
+                                    <label className="block text-[11px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-2 ml-1">CVV</label>
                                     <input
                                         type="text"
                                         required
                                         placeholder="123"
-                                        className="w-full bg-white border border-gray-100 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/5 rounded-2xl px-5 py-4 text-gray-900 outline-none transition-all font-bold placeholder:text-gray-300 shadow-sm"
+                                        className="w-full bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/5 rounded-2xl px-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all font-bold placeholder:text-gray-300 shadow-sm"
                                     />
                                 </div>
                             </div>
 
-                            <div className="flex items-center gap-2 text-[10px] font-bold text-gray-400 bg-gray-50/50 p-3 rounded-xl border border-gray-100/50 mb-2 justify-center">
+                            <div className="flex items-center gap-2 text-[10px] font-bold text-gray-400 dark:text-gray-500 bg-gray-50/50 dark:bg-gray-900/50 p-3 rounded-xl border border-gray-100/50 dark:border-gray-800/50 mb-2 justify-center">
                                 <Lock size={12} />
                                 Encrypted by Stripe. No card info stored.
                             </div>
@@ -163,10 +163,10 @@ export default function CustomerBillingPage() {
             )}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
                 <div>
-                    <h1 className="text-4xl font-black text-gray-900 tracking-tight mb-2">
+                    <h1 className="text-4xl font-black text-gray-900 dark:text-gray-100 tracking-tight mb-2">
                         Billing & Payments
                     </h1>
-                    <p className="text-lg text-gray-500 font-medium">
+                    <p className="text-lg text-gray-500 dark:text-gray-400 font-medium">
                         Manage your payment methods and view transaction history.
                     </p>
                 </div>
@@ -183,7 +183,7 @@ export default function CustomerBillingPage() {
                             onClick={() => setActiveTab(tab.id)}
                             className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-bold text-sm transition-all duration-300 ${isActive
                                 ? 'bg-gradient-to-r from-[#1E7B7C] to-[#166566] text-white shadow-lg shadow-[#1E7B7C]/20 scale-105'
-                                : 'bg-white/60 backdrop-blur-md text-gray-500 hover:bg-white hover:text-gray-900 hover:shadow-md'
+                                : 'bg-white dark:bg-gray-950/60 backdrop-blur-md text-gray-500 dark:text-gray-400 hover:bg-white dark:bg-gray-950 hover:text-gray-900 dark:text-gray-100 hover:shadow-md'
                                 }`}
                         >
                             <Icon size={16} />
@@ -201,7 +201,7 @@ export default function CustomerBillingPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                             {/* Stats */}
                             <div className="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-[32px] p-8 shadow-xl shadow-emerald-500/20 text-white relative overflow-hidden flex flex-col justify-between min-h-[180px]">
-                                <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl" />
+                                <div className="absolute -top-10 -right-10 w-40 h-40 bg-white dark:bg-gray-950/10 rounded-full blur-2xl" />
                                 <div className="relative z-10 flex items-center justify-between mb-4">
                                     <span className="text-xs font-black text-emerald-100 uppercase tracking-widest">Available Credit</span>
                                     <Wallet size={24} className="text-emerald-100" />
@@ -212,33 +212,33 @@ export default function CustomerBillingPage() {
                                 </div>
                             </div>
 
-                            <div className="bg-white/60 backdrop-blur-md rounded-[32px] p-8 border border-gray-100 shadow-xl shadow-gray-200/10 flex flex-col justify-between min-h-[180px]">
+                            <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-200/10 flex flex-col justify-between min-h-[180px]">
                                 <div className="flex items-center justify-between mb-4">
-                                    <span className="text-xs font-black text-gray-400 uppercase tracking-widest">Total Spent (YTD)</span>
-                                    <div className="p-2 bg-gray-50 rounded-xl"><ArrowUpRight size={20} className="text-gray-400" /></div>
+                                    <span className="text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest">Total Spent (YTD)</span>
+                                    <div className="p-2 bg-gray-50 dark:bg-gray-900 rounded-xl"><ArrowUpRight size={20} className="text-gray-400 dark:text-gray-500" /></div>
                                 </div>
                                 <div>
-                                    <div className="text-5xl font-black text-gray-900 mb-1">$1,240.00</div>
-                                    <p className="text-xs font-bold text-gray-500">+12% from last year</p>
+                                    <div className="text-5xl font-black text-gray-900 dark:text-gray-100 mb-1">$1,240.00</div>
+                                    <p className="text-xs font-bold text-gray-500 dark:text-gray-400">+12% from last year</p>
                                 </div>
                             </div>
 
-                            <div className="bg-white/60 backdrop-blur-md rounded-[32px] p-8 border border-gray-100 shadow-xl shadow-gray-200/10 flex flex-col justify-between min-h-[180px]">
+                            <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-200/10 flex flex-col justify-between min-h-[180px]">
                                 <div className="flex items-center justify-between mb-4">
-                                    <span className="text-xs font-black text-gray-400 uppercase tracking-widest">Next Payment</span>
-                                    <div className="p-2 bg-gray-50 rounded-xl"><Clock size={20} className="text-gray-400" /></div>
+                                    <span className="text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest">Next Payment</span>
+                                    <div className="p-2 bg-gray-50 dark:bg-gray-900 rounded-xl"><Clock size={20} className="text-gray-400 dark:text-gray-500" /></div>
                                 </div>
                                 <div>
-                                    <div className="text-5xl font-black text-gray-900 mb-1">$0.00</div>
-                                    <p className="text-xs font-bold text-gray-500">No upcoming charges</p>
+                                    <div className="text-5xl font-black text-gray-900 dark:text-gray-100 mb-1">$0.00</div>
+                                    <p className="text-xs font-bold text-gray-500 dark:text-gray-400">No upcoming charges</p>
                                 </div>
                             </div>
                         </div>
 
                         {/* Recent Transactions List */}
-                        <div className="bg-white/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/10 border border-white">
+                        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/10 border border-white">
                             <div className="flex items-center justify-between mb-8">
-                                <h2 className="text-2xl font-black text-gray-900">Recent Transactions</h2>
+                                <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100">Recent Transactions</h2>
                                 <button className="text-[#1E7B7C] font-black text-sm hover:underline">View All</button>
                             </div>
 
@@ -247,19 +247,19 @@ export default function CustomerBillingPage() {
                                     <div
                                         key={tx.id}
                                         onClick={() => setSelectedTx(tx)}
-                                        className="flex items-center justify-between p-5 bg-white rounded-2xl border border-gray-100/50 hover:shadow-md transition-shadow group cursor-pointer"
+                                        className="flex items-center justify-between p-5 bg-white dark:bg-gray-950 rounded-2xl border border-gray-100/50 dark:border-gray-800/50 hover:shadow-md transition-shadow group cursor-pointer"
                                     >
                                         <div className="flex items-center gap-4">
-                                            <div className={`p-4 rounded-2xl ${tx.status === 'refunded' ? 'bg-emerald-50 text-emerald-500' : 'bg-gray-50 text-gray-500'}`}>
+                                            <div className={`p-4 rounded-2xl ${tx.status === 'refunded' ? 'bg-emerald-50 text-emerald-500' : 'bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400'}`}>
                                                 {tx.status === 'refunded' ? <ArrowDownRight size={20} /> : <ArrowUpRight size={20} />}
                                             </div>
                                             <div>
-                                                <h4 className="font-black text-gray-900 mb-1">{tx.title}</h4>
-                                                <p className="text-sm font-bold text-gray-500 uppercase tracking-widest text-[10px]">{tx.status} • {tx.date}</p>
+                                                <h4 className="font-black text-gray-900 dark:text-gray-100 mb-1">{tx.title}</h4>
+                                                <p className="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest text-[10px]">{tx.status} • {tx.date}</p>
                                             </div>
                                         </div>
                                         <div className="text-right">
-                                            <div className={`text-lg font-black mb-1 ${tx.status === 'refunded' ? 'text-emerald-600' : 'text-gray-900'}`}>
+                                            <div className={`text-lg font-black mb-1 ${tx.status === 'refunded' ? 'text-emerald-600' : 'text-gray-900 dark:text-gray-100'}`}>
                                                 {tx.status === 'refunded' ? '+' : '-'}{tx.amount}
                                             </div>
                                             <button className="text-xs font-bold text-[#1E7B7C] hover:underline flex items-center justify-end gap-1 w-full opacity-0 group-hover:opacity-100 transition-opacity">
@@ -277,32 +277,32 @@ export default function CustomerBillingPage() {
                 {activeTab === 'methods' && (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {paymentMethods.map(method => (
-                            <div key={method.id} className="bg-white/60 backdrop-blur-md rounded-[32px] p-8 border border-gray-100 shadow-xl shadow-gray-200/10 relative group">
+                            <div key={method.id} className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-200/10 relative group">
                                 {method.isDefault && (
                                     <span className="absolute top-0 right-0 translate-x-1/4 -translate-y-1/4 bg-emerald-100 text-emerald-700 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-xl shadow-sm border border-emerald-200 z-10">
                                         Default
                                     </span>
                                 )}
                                 <div className="flex justify-between items-start mb-8">
-                                    <div className="p-4 bg-gray-50 rounded-2xl text-3xl">
+                                    <div className="p-4 bg-gray-50 dark:bg-gray-900 rounded-2xl text-3xl">
                                         {method.icon}
                                     </div>
-                                    <button className="p-2 hover:bg-gray-100 rounded-xl transition-colors text-gray-400 opacity-0 group-hover:opacity-100">
+                                    <button className="p-2 hover:bg-gray-100 rounded-xl transition-colors text-gray-400 dark:text-gray-500 opacity-0 group-hover:opacity-100">
                                         <MoreVertical size={20} />
                                     </button>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-black text-gray-900 mb-1">{method.type} ending in {method.last4}</h3>
-                                    <p className="text-sm font-bold text-gray-400">Expires {method.expiry}</p>
+                                    <h3 className="text-xl font-black text-gray-900 dark:text-gray-100 mb-1">{method.type} ending in {method.last4}</h3>
+                                    <p className="text-sm font-bold text-gray-400 dark:text-gray-500">Expires {method.expiry}</p>
                                 </div>
                             </div>
                         ))}
 
                         <button
                             onClick={() => setShowAddCard(true)}
-                            className="bg-gray-50/50 hover:bg-white rounded-[32px] p-8 border-2 border-dashed border-gray-200 hover:border-[#1E7B7C] hover:text-[#1E7B7C] text-gray-400 transition-all flex flex-col justify-center items-center min-h-[220px] group cursor-pointer shadow-none hover:shadow-xl"
+                            className="bg-gray-50/50 dark:bg-gray-900/50 hover:bg-white dark:bg-gray-950 rounded-[32px] p-8 border-2 border-dashed border-gray-200 hover:border-[#1E7B7C] hover:text-[#1E7B7C] text-gray-400 dark:text-gray-500 transition-all flex flex-col justify-center items-center min-h-[220px] group cursor-pointer shadow-none hover:shadow-xl"
                         >
-                            <div className="p-4 bg-white group-hover:bg-[#E8F4F4] rounded-2xl mb-4 transition-colors">
+                            <div className="p-4 bg-white dark:bg-gray-950 group-hover:bg-[#E8F4F4] rounded-2xl mb-4 transition-colors">
                                 <Plus size={24} className="group-hover:scale-125 transition-transform" />
                             </div>
                             <span className="font-bold text-sm">Add New Payment Method</span>
@@ -322,14 +322,14 @@ export default function CustomerBillingPage() {
 
                 {/* Invoices Tab Content */}
                 {activeTab === 'invoices' && (
-                    <div className="bg-white/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/10 border border-white">
+                    <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/10 border border-white">
                         <table className="w-full text-left border-collapse">
                             <thead>
                                 <tr>
-                                    <th className="pb-4 text-xs font-black text-gray-400 uppercase tracking-widest border-b border-gray-100">Date</th>
-                                    <th className="pb-4 text-xs font-black text-gray-400 uppercase tracking-widest border-b border-gray-100">Description</th>
-                                    <th className="pb-4 text-xs font-black text-gray-400 uppercase tracking-widest border-b border-gray-100">Amount</th>
-                                    <th className="pb-4 text-xs font-black text-gray-400 uppercase tracking-widest border-b border-gray-100 text-right">Action</th>
+                                    <th className="pb-4 text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest border-b border-gray-100 dark:border-gray-800">Date</th>
+                                    <th className="pb-4 text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest border-b border-gray-100 dark:border-gray-800">Description</th>
+                                    <th className="pb-4 text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest border-b border-gray-100 dark:border-gray-800">Amount</th>
+                                    <th className="pb-4 text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest border-b border-gray-100 dark:border-gray-800 text-right">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -337,14 +337,14 @@ export default function CustomerBillingPage() {
                                     <tr
                                         key={tx.id}
                                         onClick={() => setSelectedTx(tx)}
-                                        className="group border-b border-gray-50/50 hover:bg-white transition-colors cursor-pointer"
+                                        className="group border-b border-gray-50/50 hover:bg-white dark:bg-gray-950 transition-colors cursor-pointer"
                                     >
                                         <td className="py-5 font-bold text-sm text-gray-600">{tx.date}</td>
                                         <td className="py-5">
-                                            <div className="font-black text-gray-900 text-sm">{tx.title}</div>
-                                            <div className="font-bold text-xs text-gray-500">{tx.id}</div>
+                                            <div className="font-black text-gray-900 dark:text-gray-100 text-sm">{tx.title}</div>
+                                            <div className="font-bold text-xs text-gray-500 dark:text-gray-400">{tx.id}</div>
                                         </td>
-                                        <td className="py-5 font-black text-gray-900">{tx.amount}</td>
+                                        <td className="py-5 font-black text-gray-900 dark:text-gray-100">{tx.amount}</td>
                                         <td className="py-5 text-right">
                                             <button className="p-2 hover:bg-gray-100 rounded-xl transition-colors text-[#1E7B7C] inline-flex items-center justify-center">
                                                 <Download size={18} />

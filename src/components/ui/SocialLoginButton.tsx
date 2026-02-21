@@ -26,11 +26,11 @@ export default function SocialLoginButton({ provider, className = '', ...props }
   return (
     <button
       type="button"
-      className={`flex items-center justify-center gap-2 px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors ${className}`}
+      className={`flex items-center justify-center gap-2 px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors ${className}`}
       {...props}
     >
       <Icon />
-      <span className="text-sm font-medium text-gray-700">{label}</span>
+      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{label}</span>
     </button>
   );
 }

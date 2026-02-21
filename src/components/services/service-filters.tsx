@@ -24,7 +24,7 @@ export default function ServiceFilters({
   setMinRating
 }: ServiceFiltersProps) {
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 p-6 sticky top-6">
+    <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-200 p-6 sticky top-6">
       <div className="flex items-center gap-2 mb-6">
         <Sliders size={20} className="text-[#1E7B7C]" />
         <h3 className="font-bold text-lg">Filters</h3>
@@ -32,11 +32,11 @@ export default function ServiceFilters({
 
       {/* Sort */}
       <div className="mb-6">
-        <label className="block text-sm font-semibold text-gray-900 mb-3">Sort By</label>
+        <label className="block text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3">Sort By</label>
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#1E7B7C] bg-white"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#1E7B7C] bg-white dark:bg-gray-950"
         >
           <option value="rating">Highest Rated</option>
           <option value="price-low">Price: Low to High</option>
@@ -48,7 +48,7 @@ export default function ServiceFilters({
 
       {/* Price Range */}
       <div className="mb-6 pb-6 border-b border-gray-200">
-        <label className="block text-sm font-semibold text-gray-900 mb-3">Price Range</label>
+        <label className="block text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3">Price Range</label>
         <div className="space-y-2">
           <div className="flex items-center gap-2">
             <span className="text-xs text-gray-600">Min:</span>
@@ -75,11 +75,11 @@ export default function ServiceFilters({
 
       {/* Rating */}
       <div>
-        <label className="block text-sm font-semibold text-gray-900 mb-3">Minimum Rating</label>
+        <label className="block text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3">Minimum Rating</label>
         <select
           value={minRating}
           onChange={(e) => setMinRating(Number(e.target.value))}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#1E7B7C] bg-white"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#1E7B7C] bg-white dark:bg-gray-950"
         >
           <option value={0}>All Ratings</option>
           <option value={4}>4+ Stars</option>

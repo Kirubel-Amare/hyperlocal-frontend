@@ -43,7 +43,7 @@ export function BookingWidget({ hourlyRate, responseTime, name }: BookingWidgetP
 
     return (
         <div className="sticky top-28">
-            <div className="bg-white/80 backdrop-blur-2xl rounded-[2rem] border border-white/80 shadow-2xl shadow-gray-200/50 overflow-hidden">
+            <div className="bg-white/80 dark:bg-gray-950/80 backdrop-blur-2xl rounded-[2rem] border border-white/80 dark:border-gray-800 shadow-2xl shadow-gray-200/50 dark:shadow-none overflow-hidden">
                 {/* Header */}
                 <div className="bg-gradient-to-r from-[#1E7B7C] to-[#166566] p-6 text-white">
                     <div className="flex items-center justify-between mb-2">
@@ -89,11 +89,11 @@ export function BookingWidget({ hourlyRate, responseTime, name }: BookingWidgetP
                 {/* Date Selection */}
                 <div className="p-6">
                     <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-sm font-bold text-gray-900 flex items-center gap-2">
-                            <Calendar size={16} className="text-[#1E7B7C]" />
+                        <h3 className="text-sm font-bold text-gray-900 dark:text-gray-100 flex items-center gap-2">
+                            <Calendar size={16} className="text-[#1E7B7C] dark:text-cyan-400" />
                             Select Date
                         </h3>
-                        <span className="text-xs font-medium text-[#1E7B7C] bg-[#E8F4F4] px-3 py-1 rounded-full">
+                        <span className="text-xs font-medium text-[#1E7B7C] dark:text-cyan-400 bg-[#E8F4F4] dark:bg-cyan-900/30 px-3 py-1 rounded-full">
                             November 2023
                         </span>
                     </div>
@@ -115,8 +115,8 @@ export function BookingWidget({ hourlyRate, responseTime, name }: BookingWidgetP
                                 className={`relative p-2 rounded-xl text-sm transition-all ${selectedDate === i
                                     ? 'bg-gradient-to-br from-[#1E7B7C] to-[#166566] text-white shadow-lg shadow-[#1E7B7C]/20 scale-105'
                                     : d.disabled
-                                        ? 'text-gray-300 cursor-not-allowed'
-                                        : 'text-gray-700 hover:bg-gray-100 hover:scale-105'
+                                        ? 'text-gray-300 dark:text-gray-700 cursor-not-allowed'
+                                        : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:scale-105'
                                     }`}
                             >
                                 <span className="font-bold">{d.date}</span>
@@ -130,8 +130,8 @@ export function BookingWidget({ hourlyRate, responseTime, name }: BookingWidgetP
 
                     {/* Time Slots */}
                     <div className="mb-6">
-                        <h3 className="text-sm font-bold text-gray-900 flex items-center gap-2 mb-4">
-                            <Clock size={16} className="text-[#1E7B7C]" />
+                        <h3 className="text-sm font-bold text-gray-900 dark:text-gray-100 flex items-center gap-2 mb-4">
+                            <Clock size={16} className="text-[#1E7B7C] dark:text-cyan-400" />
                             Available Time Slots
                         </h3>
 
@@ -144,8 +144,8 @@ export function BookingWidget({ hourlyRate, responseTime, name }: BookingWidgetP
                                     className={`p-3 rounded-xl text-xs font-medium transition-all ${selectedTime === slot.time
                                         ? 'bg-[#1E7B7C] text-white shadow-lg shadow-[#1E7B7C]/20 scale-105'
                                         : slot.available
-                                            ? 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-105'
-                                            : 'bg-gray-50 text-gray-300 cursor-not-allowed line-through'
+                                            ? 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:scale-105'
+                                            : 'bg-gray-50 dark:bg-gray-900/50 text-gray-300 dark:text-gray-700 cursor-not-allowed line-through'
                                         }`}
                                 >
                                     {slot.time}
@@ -155,19 +155,19 @@ export function BookingWidget({ hourlyRate, responseTime, name }: BookingWidgetP
                     </div>
 
                     {/* Price Breakdown */}
-                    <div className="bg-gray-50 rounded-xl p-4 mb-6">
+                    <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4 mb-6">
                         <div className="space-y-2 text-sm">
                             <div className="flex justify-between">
-                                <span className="text-gray-600">Service fee ({hourlyRate}/hr × 2hrs)</span>
+                                <span className="text-gray-600 dark:text-gray-400">Service fee ({hourlyRate}/hr × 2hrs)</span>
                                 <span className="font-medium">${calculateTotal()}</span>
                             </div>
                             <div className="flex justify-between">
-                                <span className="text-gray-600">Platform fee</span>
+                                <span className="text-gray-600 dark:text-gray-400">Platform fee</span>
                                 <span className="font-medium">$5.00</span>
                             </div>
-                            <div className="flex justify-between pt-2 border-t border-gray-200">
-                                <span className="font-bold text-gray-900">Total</span>
-                                <span className="font-black text-[#1E7B7C]">${calculateTotal() + 5}</span>
+                            <div className="flex justify-between pt-2 border-t border-gray-200 dark:border-gray-700">
+                                <span className="font-bold text-gray-900 dark:text-gray-100">Total</span>
+                                <span className="font-black text-[#1E7B7C] dark:text-cyan-400">${calculateTotal() + 5}</span>
                             </div>
                         </div>
                     </div>
@@ -182,30 +182,30 @@ export function BookingWidget({ hourlyRate, responseTime, name }: BookingWidgetP
                             </div>
                         </button>
 
-                        <button className="w-full py-4 border border-gray-200 text-gray-700 rounded-xl font-bold hover:bg-gray-50 transition-all flex items-center justify-center gap-2">
+                        <button className="w-full py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-xl font-bold hover:bg-gray-50 dark:hover:bg-gray-700 transition-all flex items-center justify-center gap-2">
                             <MessageCircle size={16} />
                             Message {name.split(' ')[0]}
                         </button>
                     </div>
 
                     {/* Guarantees */}
-                    <div className="mt-6 pt-6 border-t border-gray-100">
+                    <div className="mt-6 pt-6 border-t border-gray-100 dark:border-gray-800">
                         <div className="grid grid-cols-2 gap-4">
                             <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600">
+                                <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
                                     <Shield size={16} />
                                 </div>
                                 <div>
-                                    <p className="text-xs font-bold text-gray-900">Secure Payment</p>
+                                    <p className="text-xs font-bold text-gray-900 dark:text-gray-100">Secure Payment</p>
                                     <p className="text-[10px] text-gray-500">Protected</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-[#166566]">
+                                <div className="w-8 h-8 rounded-lg bg-blue-100 dark:bg-cyan-900/30 flex items-center justify-center text-[#166566] dark:text-cyan-400">
                                     <RefreshCcw size={16} />
                                 </div>
                                 <div>
-                                    <p className="text-xs font-bold text-gray-900">Free Cancellation</p>
+                                    <p className="text-xs font-bold text-gray-900 dark:text-gray-100">Free Cancellation</p>
                                     <p className="text-[10px] text-gray-500">Within 24h</p>
                                 </div>
                             </div>
@@ -214,9 +214,9 @@ export function BookingWidget({ hourlyRate, responseTime, name }: BookingWidgetP
 
                     {/* Payment Methods */}
                     <div className="mt-4 flex items-center justify-center gap-2">
-                        <div className="w-8 h-5 bg-gray-200 rounded" />
-                        <div className="w-8 h-5 bg-gray-200 rounded" />
-                        <div className="w-8 h-5 bg-gray-200 rounded" />
+                        <div className="w-8 h-5 bg-gray-200 dark:bg-gray-800 rounded" />
+                        <div className="w-8 h-5 bg-gray-200 dark:bg-gray-800 rounded" />
+                        <div className="w-8 h-5 bg-gray-200 dark:bg-gray-800 rounded" />
                         <span className="text-xs text-gray-400 ml-2">+ more</span>
                     </div>
                 </div>

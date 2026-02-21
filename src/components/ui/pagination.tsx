@@ -57,9 +57,9 @@ export function Pagination({
                 {/* Main Pagination Container */}
                 <div className="relative">
                     {/* Decorative Background */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#E8F4F4] via-blue-50 to-purple-50 rounded-3xl -z-10 opacity-50" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#E8F4F4] dark:from-[#1E7B7C]/10 via-blue-50 dark:via-blue-900/10 to-purple-50 dark:to-purple-900/10 rounded-3xl -z-10 opacity-50" />
 
-                    <div className="bg-white/90 backdrop-blur-sm rounded-3xl border border-gray-100 shadow-xl shadow-gray-100/50 p-6 md:p-8">
+                    <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl shadow-gray-100/50 dark:shadow-none p-6 md:p-8">
                         {/* Results Info */}
                         <div className="text-center mb-6">
                         </div>
@@ -71,8 +71,8 @@ export function Pagination({
                                 onClick={() => onPageChange(1)}
                                 disabled={currentPage === 1}
                                 className={`hidden lg:flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-300 ${currentPage === 1
-                                    ? 'text-gray-300 cursor-not-allowed'
-                                    : 'text-gray-600 hover:bg-gradient-to-br hover:from-[#1E7B7C] hover:to-[#166566] hover:text-white hover:shadow-lg hover:shadow-[#1E7B7C]/20 active:scale-90'
+                                    ? 'text-gray-300 dark:text-gray-700 cursor-not-allowed'
+                                    : 'text-gray-600 dark:text-gray-400 hover:bg-gradient-to-br hover:from-[#1E7B7C] hover:to-[#166566] hover:text-white hover:shadow-lg hover:shadow-[#1E7B7C]/20 active:scale-90'
                                     }`}
                                 aria-label="First page"
                             >
@@ -84,8 +84,8 @@ export function Pagination({
                                 onClick={() => onPageChange(Math.max(1, currentPage - 1))}
                                 disabled={currentPage === 1}
                                 className={`flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-300 ${currentPage === 1
-                                    ? 'text-gray-300 cursor-not-allowed'
-                                    : 'text-gray-600 hover:bg-gradient-to-br hover:from-[#1E7B7C] hover:to-[#166566] hover:text-white hover:shadow-lg hover:shadow-[#1E7B7C]/20 active:scale-90'
+                                    ? 'text-gray-300 dark:text-gray-700 cursor-not-allowed'
+                                    : 'text-gray-600 dark:text-gray-400 hover:bg-gradient-to-br hover:from-[#1E7B7C] hover:to-[#166566] hover:text-white hover:shadow-lg hover:shadow-[#1E7B7C]/20 active:scale-90'
                                     }`}
                                 aria-label="Previous page"
                             >
@@ -98,7 +98,7 @@ export function Pagination({
                                     page === '...' ? (
                                         <span
                                             key={`dots-${index}`}
-                                            className="w-12 h-12 flex items-center justify-center text-gray-400 font-medium"
+                                            className="w-12 h-12 flex items-center justify-center text-gray-400 dark:text-gray-600 font-medium"
                                         >
                                             ⋯
                                         </span>
@@ -108,7 +108,7 @@ export function Pagination({
                                             onClick={() => onPageChange(page as number)}
                                             className={`relative w-12 h-12 rounded-2xl font-semibold text-sm transition-all duration-300 ${currentPage === page
                                                 ? 'bg-gradient-to-br from-[#1E7B7C] to-[#166566] text-white shadow-xl shadow-[#1E7B7C]/20 scale-110 hover:shadow-2xl hover:shadow-[#1E7B7C]/30'
-                                                : 'text-gray-600 hover:bg-gray-100 hover:text-[#1E7B7C] hover:scale-105'
+                                                : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-[#1E7B7C] dark:hover:text-cyan-400 hover:scale-105'
                                                 }`}
                                         >
                                             {currentPage === page && (
@@ -125,8 +125,8 @@ export function Pagination({
                                 onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
                                 disabled={currentPage === totalPages}
                                 className={`flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-300 ${currentPage === totalPages
-                                    ? 'text-gray-300 cursor-not-allowed'
-                                    : 'text-gray-600 hover:bg-gradient-to-br hover:from-[#1E7B7C] hover:to-[#166566] hover:text-white hover:shadow-lg hover:shadow-[#1E7B7C]/20 active:scale-90'
+                                    ? 'text-gray-300 dark:text-gray-700 cursor-not-allowed'
+                                    : 'text-gray-600 dark:text-gray-400 hover:bg-gradient-to-br hover:from-[#1E7B7C] hover:to-[#166566] hover:text-white hover:shadow-lg hover:shadow-[#1E7B7C]/20 active:scale-90'
                                     }`}
                                 aria-label="Next page"
                             >
@@ -138,8 +138,8 @@ export function Pagination({
                                 onClick={() => onPageChange(totalPages)}
                                 disabled={currentPage === totalPages}
                                 className={`hidden lg:flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-300 ${currentPage === totalPages
-                                    ? 'text-gray-300 cursor-not-allowed'
-                                    : 'text-gray-600 hover:bg-gradient-to-br hover:from-[#1E7B7C] hover:to-[#166566] hover:text-white hover:shadow-lg hover:shadow-[#1E7B7C]/20 active:scale-90'
+                                    ? 'text-gray-300 dark:text-gray-700 cursor-not-allowed'
+                                    : 'text-gray-600 dark:text-gray-400 hover:bg-gradient-to-br hover:from-[#1E7B7C] hover:to-[#166566] hover:text-white hover:shadow-lg hover:shadow-[#1E7B7C]/20 active:scale-90'
                                     }`}
                                 aria-label="Last page"
                             >
@@ -156,7 +156,7 @@ export function Pagination({
                                         onClick={() => onPageChange(page)}
                                         className={`h-2 rounded-full transition-all duration-300 ${currentPage === page
                                             ? 'w-8 bg-gradient-to-r from-[#1E7B7C] to-[#166566]'
-                                            : 'w-2 bg-gray-200 hover:bg-gray-300'
+                                            : 'w-2 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700'
                                             }`}
                                         aria-label={`Go to page ${page}`}
                                     />
@@ -172,18 +172,18 @@ export function Pagination({
                             <button
                                 onClick={() => onPageChange(Math.max(1, currentPage - 1))}
                                 disabled={currentPage === 1}
-                                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gray-50 rounded-xl text-sm font-medium text-gray-600 disabled:opacity-50 disabled:cursor-not-allowed active:bg-gray-100"
+                                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gray-50 dark:bg-gray-800 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-400 disabled:opacity-50 disabled:cursor-not-allowed active:bg-gray-100 dark:active:bg-gray-700"
                             >
                                 <ChevronLeft size={18} />
                                 Previous
                             </button>
-                            <span className="text-sm font-medium text-gray-900">
+                            <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
                                 {currentPage}/{totalPages}
                             </span>
                             <button
                                 onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
                                 disabled={currentPage === totalPages}
-                                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gray-50 rounded-xl text-sm font-medium text-gray-600 disabled:opacity-50 disabled:cursor-not-allowed active:bg-gray-100"
+                                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gray-50 dark:bg-gray-800 rounded-xl text-sm font-medium text-gray-600 dark:text-gray-400 disabled:opacity-50 disabled:cursor-not-allowed active:bg-gray-100 dark:active:bg-gray-700"
                             >
                                 Next
                                 <ChevronRight size={18} />

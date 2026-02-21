@@ -94,8 +94,8 @@ export default function ServiceRequestPage() {
                 <div className="w-24 h-24 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-8 shadow-xl shadow-emerald-500/20">
                     <CheckCircle2 size={48} className="text-emerald-500" />
                 </div>
-                <h2 className="text-4xl font-black text-gray-900 mb-4">Request Submitted!</h2>
-                <p className="text-gray-500 text-lg mb-8 max-w-lg mx-auto">
+                <h2 className="text-4xl font-black text-gray-900 dark:text-gray-100 mb-4">Request Submitted!</h2>
+                <p className="text-gray-500 dark:text-gray-400 text-lg mb-8 max-w-lg mx-auto">
                     Your service request "{formData.title}" has been successfully posted. Local providers will start quoting soon.
                 </p>
                 <div className="flex items-center justify-center gap-2 text-[#1E7B7C] font-bold">
@@ -110,28 +110,28 @@ export default function ServiceRequestPage() {
         <div className="max-w-4xl mx-auto relative pb-24">
             {/* Header Content */}
             <div className="mb-10 text-center md:text-left">
-                <h1 className="text-4xl font-black text-gray-900 tracking-tight mb-3">
+                <h1 className="text-4xl font-black text-gray-900 dark:text-gray-100 tracking-tight mb-3">
                     Post a Service Request
                 </h1>
-                <p className="text-lg text-gray-500 font-medium">
+                <p className="text-lg text-gray-500 dark:text-gray-400 font-medium">
                     Provide the details of your project to get accurate quotes from verified local professionals.
                 </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-8">
                 {/* Main Details Card */}
-                <div className="bg-white/60 backdrop-blur-xl rounded-[40px] p-8 md:p-10 shadow-2xl shadow-gray-200/20 border border-white">
+                <div className="bg-white dark:bg-gray-950/60 backdrop-blur-xl rounded-[40px] p-8 md:p-10 shadow-2xl shadow-gray-200/20 border border-white">
                     <div className="flex items-center gap-4 mb-8">
                         <div className="w-12 h-12 bg-[#E8F4F4] rounded-2xl flex items-center justify-center text-[#1E7B7C]">
                             <FileText size={24} />
                         </div>
-                        <h2 className="text-2xl font-black text-gray-900">Project Essentials</h2>
+                        <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100">Project Essentials</h2>
                     </div>
 
                     <div className="space-y-6">
                         {/* Title */}
                         <div>
-                            <label className="block text-sm font-bold text-gray-700 mb-2">Service Title</label>
+                            <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Service Title</label>
                             <input
                                 type="text"
                                 name="title"
@@ -139,33 +139,33 @@ export default function ServiceRequestPage() {
                                 value={formData.title}
                                 onChange={handleChange}
                                 placeholder="e.g. Need a plumber to fix a leaking under-sink pipe"
-                                className="w-full bg-white/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl px-5 py-4 text-gray-900 outline-none transition-all placeholder:text-gray-400 font-medium"
+                                className="w-full bg-white dark:bg-gray-950/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl px-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all placeholder:text-gray-400 dark:text-gray-500 font-medium"
                             />
                         </div>
 
                         {/* Category */}
                         <div>
-                            <label className="block text-sm font-bold text-gray-700 mb-2">Category</label>
+                            <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Category</label>
                             <div className="relative">
                                 <select
                                     name="category"
                                     required
                                     value={formData.category}
                                     onChange={handleChange}
-                                    className="w-full bg-white/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl px-5 py-4 text-gray-900 outline-none transition-all appearance-none font-medium text-base"
+                                    className="w-full bg-white dark:bg-gray-950/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl px-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all appearance-none font-medium text-base"
                                 >
                                     <option value="" disabled>Select the best category</option>
                                     {CATEGORIES.map(cat => (
                                         <option key={cat} value={cat}>{cat}</option>
                                     ))}
                                 </select>
-                                <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" size={20} />
+                                <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 pointer-events-none" size={20} />
                             </div>
                         </div>
 
                         {/* Description */}
                         <div>
-                            <label className="block text-sm font-bold text-gray-700 mb-2">Detailed Description</label>
+                            <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Detailed Description</label>
                             <textarea
                                 name="description"
                                 required
@@ -173,25 +173,25 @@ export default function ServiceRequestPage() {
                                 onChange={handleChange}
                                 rows={5}
                                 placeholder="Describe the job in detail. Include dimensions, specific materials needed, or any relevant history..."
-                                className="w-full bg-white/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl px-5 py-4 text-gray-900 outline-none transition-all placeholder:text-gray-400 font-medium resize-none shadow-inner"
+                                className="w-full bg-white dark:bg-gray-950/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl px-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all placeholder:text-gray-400 dark:text-gray-500 font-medium resize-none shadow-inner"
                             />
                         </div>
                     </div>
                 </div>
 
                 {/* Logistics Card */}
-                <div className="bg-white/60 backdrop-blur-xl rounded-[40px] p-8 md:p-10 shadow-xl shadow-gray-200/10 border border-white">
+                <div className="bg-white dark:bg-gray-950/60 backdrop-blur-xl rounded-[40px] p-8 md:p-10 shadow-xl shadow-gray-200/10 border border-white">
                     <div className="flex items-center gap-4 mb-8">
                         <div className="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-500">
                             <MapPin size={24} />
                         </div>
-                        <h2 className="text-2xl font-black text-gray-900">Location & Timing</h2>
+                        <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100">Location & Timing</h2>
                     </div>
 
                     <div className="space-y-8">
                         {/* Location */}
                         <div>
-                            <label className="block text-sm font-bold text-gray-700 mb-2">Service Address or Area</label>
+                            <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Service Address or Area</label>
                             <div className="relative">
                                 <input
                                     type="text"
@@ -200,15 +200,15 @@ export default function ServiceRequestPage() {
                                     value={formData.location}
                                     onChange={handleChange}
                                     placeholder="e.g. 123 Main St, Brooklyn, NY or Online"
-                                    className="w-full bg-white/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl pl-12 pr-5 py-4 text-gray-900 outline-none transition-all placeholder:text-gray-400 font-medium"
+                                    className="w-full bg-white dark:bg-gray-950/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl pl-12 pr-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all placeholder:text-gray-400 dark:text-gray-500 font-medium"
                                 />
-                                <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
+                                <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" size={20} />
                             </div>
                         </div>
 
                         {/* Urgency */}
                         <div>
-                            <label className="block text-sm font-bold text-gray-700 mb-4">Urgency Level</label>
+                            <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-4">Urgency Level</label>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 {[
                                     { level: 'Flexible', desc: 'Sometime next week', icon: Calendar, color: 'text-blue-600', bg: 'bg-blue-50', border: 'border-blue-200' },
@@ -224,15 +224,15 @@ export default function ServiceRequestPage() {
                                             onClick={() => handleUrgencySelect(item.level)}
                                             className={`p-6 rounded-3xl border-2 transition-all flex flex-col items-start gap-4 text-left ${isSelected
                                                     ? `${item.border} ${item.bg} shadow-md`
-                                                    : 'border-transparent bg-gray-50 hover:bg-white hover:border-gray-200'
+                                                    : 'border-transparent bg-gray-50 dark:bg-gray-900 hover:bg-white dark:bg-gray-950 hover:border-gray-200'
                                                 }`}
                                         >
-                                            <div className={`p-3 rounded-2xl ${isSelected ? 'bg-white shadow-sm' : item.bg} ${item.color}`}>
+                                            <div className={`p-3 rounded-2xl ${isSelected ? 'bg-white dark:bg-gray-950 shadow-sm' : item.bg} ${item.color}`}>
                                                 <Icon size={24} />
                                             </div>
                                             <div>
-                                                <div className={`font-black tracking-wide ${isSelected ? 'text-gray-900' : 'text-gray-700'}`}>{item.level}</div>
-                                                <div className={`text-xs font-bold mt-1 ${isSelected ? item.color : 'text-gray-500'}`}>{item.desc}</div>
+                                                <div className={`font-black tracking-wide ${isSelected ? 'text-gray-900 dark:text-gray-100' : 'text-gray-700 dark:text-gray-300'}`}>{item.level}</div>
+                                                <div className={`text-xs font-bold mt-1 ${isSelected ? item.color : 'text-gray-500 dark:text-gray-400'}`}>{item.desc}</div>
                                             </div>
                                         </button>
                                     )
@@ -243,12 +243,12 @@ export default function ServiceRequestPage() {
                 </div>
 
                 {/* Budget Card */}
-                <div className="bg-white/60 backdrop-blur-xl rounded-[40px] p-8 md:p-10 shadow-xl shadow-gray-200/10 border border-white">
+                <div className="bg-white dark:bg-gray-950/60 backdrop-blur-xl rounded-[40px] p-8 md:p-10 shadow-xl shadow-gray-200/10 border border-white">
                     <div className="flex items-center gap-4 mb-8">
                         <div className="w-12 h-12 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600">
                             <DollarSign size={24} />
                         </div>
-                        <h2 className="text-2xl font-black text-gray-900">Budget Estimate</h2>
+                        <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100">Budget Estimate</h2>
                     </div>
 
                     <div className="space-y-8">
@@ -256,7 +256,7 @@ export default function ServiceRequestPage() {
                             <button
                                 type="button"
                                 onClick={() => handleBudgetSelect('Fixed')}
-                                className={`px-8 py-3 rounded-xl text-sm font-bold transition-all ${formData.budgetType === 'Fixed' ? 'bg-white text-purple-600 shadow-md' : 'text-gray-500 hover:text-gray-900'
+                                className={`px-8 py-3 rounded-xl text-sm font-bold transition-all ${formData.budgetType === 'Fixed' ? 'bg-white dark:bg-gray-950 text-purple-600 shadow-md' : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:text-gray-100'
                                     }`}
                             >
                                 Fixed Price
@@ -264,7 +264,7 @@ export default function ServiceRequestPage() {
                             <button
                                 type="button"
                                 onClick={() => handleBudgetSelect('Hourly')}
-                                className={`px-8 py-3 rounded-xl text-sm font-bold transition-all ${formData.budgetType === 'Hourly' ? 'bg-white text-purple-600 shadow-md' : 'text-gray-500 hover:text-gray-900'
+                                className={`px-8 py-3 rounded-xl text-sm font-bold transition-all ${formData.budgetType === 'Hourly' ? 'bg-white dark:bg-gray-950 text-purple-600 shadow-md' : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:text-gray-100'
                                     }`}
                             >
                                 Budget Range
@@ -272,8 +272,8 @@ export default function ServiceRequestPage() {
                         </div>
 
                         {formData.budgetType === 'Fixed' ? (
-                            <div className="max-w-xs relative bg-white rounded-2xl">
-                                <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
+                            <div className="max-w-xs relative bg-white dark:bg-gray-950 rounded-2xl">
+                                <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" size={20} />
                                 <input
                                     type="number"
                                     name="budgetAmount"
@@ -281,13 +281,13 @@ export default function ServiceRequestPage() {
                                     value={formData.budgetAmount}
                                     onChange={handleChange}
                                     placeholder="e.g. 150"
-                                    className="w-full bg-transparent border border-gray-200 focus:border-purple-300 focus:ring-4 focus:ring-purple-100 rounded-2xl pl-12 pr-5 py-4 text-gray-900 outline-none transition-all text-xl font-black"
+                                    className="w-full bg-transparent border border-gray-200 focus:border-purple-300 focus:ring-4 focus:ring-purple-100 rounded-2xl pl-12 pr-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all text-xl font-black"
                                 />
                             </div>
                         ) : (
                             <div className="flex items-center gap-4 max-w-lg">
-                                <div className="relative flex-1 bg-white rounded-2xl">
-                                    <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
+                                <div className="relative flex-1 bg-white dark:bg-gray-950 rounded-2xl">
+                                    <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" size={20} />
                                     <input
                                         type="number"
                                         name="budgetMin"
@@ -295,12 +295,12 @@ export default function ServiceRequestPage() {
                                         value={formData.budgetMin}
                                         onChange={handleChange}
                                         placeholder="Min"
-                                        className="w-full bg-transparent border border-gray-200 focus:border-purple-300 focus:ring-4 focus:ring-purple-100 rounded-2xl pl-12 pr-5 py-4 text-gray-900 outline-none transition-all text-xl font-black"
+                                        className="w-full bg-transparent border border-gray-200 focus:border-purple-300 focus:ring-4 focus:ring-purple-100 rounded-2xl pl-12 pr-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all text-xl font-black"
                                     />
                                 </div>
-                                <span className="font-bold text-gray-400">to</span>
-                                <div className="relative flex-1 bg-white rounded-2xl">
-                                    <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
+                                <span className="font-bold text-gray-400 dark:text-gray-500">to</span>
+                                <div className="relative flex-1 bg-white dark:bg-gray-950 rounded-2xl">
+                                    <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" size={20} />
                                     <input
                                         type="number"
                                         name="budgetMax"
@@ -308,7 +308,7 @@ export default function ServiceRequestPage() {
                                         value={formData.budgetMax}
                                         onChange={handleChange}
                                         placeholder="Max"
-                                        className="w-full bg-transparent border border-gray-200 focus:border-purple-300 focus:ring-4 focus:ring-purple-100 rounded-2xl pl-12 pr-5 py-4 text-gray-900 outline-none transition-all text-xl font-black"
+                                        className="w-full bg-transparent border border-gray-200 focus:border-purple-300 focus:ring-4 focus:ring-purple-100 rounded-2xl pl-12 pr-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all text-xl font-black"
                                     />
                                 </div>
                             </div>
@@ -317,12 +317,12 @@ export default function ServiceRequestPage() {
                 </div>
 
                 {/* Media Upload */}
-                <div className="bg-white/60 backdrop-blur-xl rounded-[40px] p-8 md:p-10 shadow-xl shadow-gray-200/10 border border-white">
+                <div className="bg-white dark:bg-gray-950/60 backdrop-blur-xl rounded-[40px] p-8 md:p-10 shadow-xl shadow-gray-200/10 border border-white">
                     <div className="flex items-center gap-4 mb-8">
                         <div className="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-500">
                             <ImageIcon size={24} />
                         </div>
-                        <h2 className="text-2xl font-black text-gray-900">Reference Images <span className="text-sm text-gray-400 font-medium">(Optional)</span></h2>
+                        <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100">Reference Images <span className="text-sm text-gray-400 dark:text-gray-500 font-medium">(Optional)</span></h2>
                     </div>
 
                     <div className="border-2 border-dashed border-gray-200 rounded-[32px] p-10 text-center hover:border-[#1E7B7C] hover:bg-[#1E7B7C]/5 transition-all group relative">
@@ -333,11 +333,11 @@ export default function ServiceRequestPage() {
                             onChange={handleImageUpload}
                             className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                         />
-                        <div className="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform group-hover:bg-white shadow-sm">
-                            <UploadCloud size={32} className="text-gray-400 group-hover:text-[#1E7B7C] transition-colors" />
+                        <div className="w-20 h-20 bg-gray-50 dark:bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform group-hover:bg-white dark:bg-gray-950 shadow-sm">
+                            <UploadCloud size={32} className="text-gray-400 dark:text-gray-500 group-hover:text-[#1E7B7C] transition-colors" />
                         </div>
-                        <h4 className="font-bold text-gray-900 text-lg mb-2">Click to upload or drag images here</h4>
-                        <p className="text-sm font-medium text-gray-500">SVG, PNG, JPG or GIF (max. 5MB)</p>
+                        <h4 className="font-bold text-gray-900 dark:text-gray-100 text-lg mb-2">Click to upload or drag images here</h4>
+                        <p className="text-sm font-medium text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (max. 5MB)</p>
                     </div>
 
                     {/* Image Previews */}
@@ -351,7 +351,7 @@ export default function ServiceRequestPage() {
                                     <button
                                         type="button"
                                         onClick={() => removeImage(i)}
-                                        className="absolute top-1 right-1 p-1 bg-white/80 rounded-full text-red-500 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white hover:scale-110 shadow-sm"
+                                        className="absolute top-1 right-1 p-1 bg-white dark:bg-gray-950/80 rounded-full text-red-500 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white dark:bg-gray-950 hover:scale-110 shadow-sm"
                                     >
                                         <X size={14} />
                                     </button>
@@ -363,7 +363,7 @@ export default function ServiceRequestPage() {
 
                 {/* Submit Action */}
                 <div className="flex items-center justify-end gap-6 pt-6">
-                    <button type="button" onClick={() => router.back()} className="px-8 py-4 rounded-2xl font-bold text-gray-500 hover:bg-gray-100 transition-all">
+                    <button type="button" onClick={() => router.back()} className="px-8 py-4 rounded-2xl font-bold text-gray-500 dark:text-gray-400 hover:bg-gray-100 transition-all">
                         Cancel
                     </button>
                     <button

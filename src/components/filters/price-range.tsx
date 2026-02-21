@@ -42,7 +42,7 @@ export function PriceRange({
 
     return (
         <div className="mb-10">
-            <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">
+            <h4 className="text-xs font-bold text-gray-400 dark:text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-4">
                 PRICE RANGE
             </h4>
             <div className="px-2">
@@ -69,7 +69,7 @@ export function PriceRange({
 
 function Slider({ min, max, minValue, maxValue, onMinChange, onMaxChange }: any) {
     return (
-        <div className="h-1.5 bg-gray-100 rounded-full relative mb-8">
+        <div className="h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full relative mb-8">
             <div
                 className="absolute h-full bg-[#1E7B7C] rounded-full transition-all duration-300"
                 style={{
@@ -102,7 +102,7 @@ function Slider({ min, max, minValue, maxValue, onMinChange, onMaxChange }: any)
 function SliderHandle({ position }: { position: number }) {
     return (
         <div
-            className="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-2 border-[#1E7B7C] rounded-full shadow-lg z-10 pointer-events-none"
+            className="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white dark:bg-gray-950 dark:bg-gray-900 border-2 border-[#1E7B7C] dark:border-[#1E7B7C] rounded-full shadow-lg z-10 pointer-events-none"
             style={{ left: `calc(${position}% - 10px)` }}
         />
     )
@@ -112,7 +112,7 @@ function PriceInputs({ min, max, minValue, maxValue, onMinChange, onMaxChange }:
     return (
         <div className="flex items-center justify-between gap-4">
             <div className="flex-1 relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs font-bold">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 dark:text-gray-500 text-xs font-bold">
                     $
                 </span>
                 <input
@@ -121,12 +121,12 @@ function PriceInputs({ min, max, minValue, maxValue, onMinChange, onMaxChange }:
                     max={max}
                     value={minValue}
                     onChange={(e) => onMinChange(Number(e.target.value))}
-                    className="w-full bg-gray-50 border border-gray-100 rounded-xl pl-6 pr-2 py-2.5 text-sm font-bold text-gray-700 outline-none focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] transition-all"
+                    className="w-full bg-gray-50 dark:bg-gray-900 dark:bg-gray-800 border border-gray-100 dark:border-gray-800 dark:border-gray-700 rounded-xl pl-6 pr-2 py-2.5 text-sm font-bold text-gray-700 dark:text-gray-300 dark:text-gray-300 outline-none focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] transition-all"
                 />
             </div>
-            <div className="h-px w-2 bg-gray-300" />
+            <div className="h-px w-2 bg-gray-300 dark:bg-gray-700" />
             <div className="flex-1 relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs font-bold">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 dark:text-gray-500 text-xs font-bold">
                     $
                 </span>
                 <input
@@ -135,7 +135,7 @@ function PriceInputs({ min, max, minValue, maxValue, onMinChange, onMaxChange }:
                     max={max}
                     value={maxValue}
                     onChange={(e) => onMaxChange(Number(e.target.value))}
-                    className="w-full bg-gray-50 border border-gray-100 rounded-xl pl-6 pr-2 py-2.5 text-sm font-bold text-gray-700 outline-none focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] transition-all"
+                    className="w-full bg-gray-50 dark:bg-gray-900 dark:bg-gray-800 border border-gray-100 dark:border-gray-800 dark:border-gray-700 rounded-xl pl-6 pr-2 py-2.5 text-sm font-bold text-gray-700 dark:text-gray-300 dark:text-gray-300 outline-none focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] transition-all"
                 />
             </div>
         </div>

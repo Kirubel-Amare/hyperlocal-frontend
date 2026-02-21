@@ -10,13 +10,13 @@ export default function ProviderRequestsPage() {
   return (
     <div className="max-w-6xl relative">
       <div className="mb-10">
-        <h1 className="text-4xl font-black text-gray-900 tracking-tight mb-2">Service Requests</h1>
-        <p className="text-lg text-gray-500 font-medium">Manage and respond to new job opportunities in your area.</p>
+        <h1 className="text-4xl font-black text-gray-900 dark:text-gray-100 tracking-tight mb-2">Service Requests</h1>
+        <p className="text-lg text-gray-500 dark:text-gray-400 font-medium">Manage and respond to new job opportunities in your area.</p>
       </div>
 
       <div className="grid grid-cols-1 gap-6">
         {newRequests.map((req) => (
-          <div key={req.id} className="group bg-white/60 backdrop-blur-md rounded-[32px] p-8 shadow-xl shadow-gray-200/10 border border-white flex flex-col lg:flex-row lg:items-center gap-10 hover:shadow-2xl transition-all duration-500">
+          <div key={req.id} className="group bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 shadow-xl shadow-gray-200/10 border border-white flex flex-col lg:flex-row lg:items-center gap-10 hover:shadow-2xl transition-all duration-500">
             {/* Image Section */}
             <div className="w-full lg:w-72 h-48 rounded-2xl overflow-hidden flex-shrink-0 relative shadow-inner">
               <Image src={req.image} alt={req.title} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
@@ -40,14 +40,14 @@ export default function ProviderRequestsPage() {
                 </span>
               </div>
 
-              <h3 className="text-3xl font-black text-gray-900 mb-3">{req.title}</h3>
+              <h3 className="text-3xl font-black text-gray-900 dark:text-gray-100 mb-3">{req.title}</h3>
               <p className="text-gray-600 mb-6 leading-relaxed max-w-2xl">
-                Requested by <span className="font-bold text-gray-900">{req.client}</span>.
+                Requested by <span className="font-bold text-gray-900 dark:text-gray-100">{req.client}</span>.
                 This is a high-priority service request for a residential property. Please review the details and respond promptly.
               </p>
 
               <div className="flex flex-wrap items-center gap-4 border-t border-gray-50 pt-6">
-                <div className="flex items-center gap-2 text-sm text-gray-500 font-bold">
+                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 font-bold">
                   <Calendar size={16} />
                   Posted 2h ago
                 </div>
@@ -64,11 +64,11 @@ export default function ProviderRequestsPage() {
                 <Check size={18} strokeWidth={4} />
                 Accept Job
               </button>
-              <button className="flex-1 lg:w-full py-4 px-6 rounded-2xl bg-white border border-gray-100 text-gray-500 font-black flex items-center justify-center gap-2 hover:bg-gray-50 hover:text-gray-900 transition-all">
+              <button className="flex-1 lg:w-full py-4 px-6 rounded-2xl bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 text-gray-500 dark:text-gray-400 font-black flex items-center justify-center gap-2 hover:bg-gray-50 dark:bg-gray-900 hover:text-gray-900 dark:text-gray-100 transition-all">
                 <MessageSquare size={18} />
                 Message Client
               </button>
-              <button className="flex-1 lg:w-full py-4 px-6 rounded-2xl bg-gray-50/50 text-gray-400 font-black flex items-center justify-center gap-2 hover:bg-red-50 hover:text-red-500 transition-all text-sm">
+              <button className="flex-1 lg:w-full py-4 px-6 rounded-2xl bg-gray-50/50 dark:bg-gray-900/50 text-gray-400 dark:text-gray-500 font-black flex items-center justify-center gap-2 hover:bg-red-50 hover:text-red-500 transition-all text-sm">
                 <X size={18} strokeWidth={3} />
                 Decline
               </button>
@@ -77,8 +77,8 @@ export default function ProviderRequestsPage() {
         ))}
 
         {/* Empty State / Bottom Note */}
-        <div className="mt-8 p-8 text-center bg-gray-50/50 rounded-[32px] border-2 border-dashed border-gray-200">
-          <p className="text-gray-400 font-bold flex items-center justify-center gap-2">
+        <div className="mt-8 p-8 text-center bg-gray-50/50 dark:bg-gray-900/50 rounded-[32px] border-2 border-dashed border-gray-200">
+          <p className="text-gray-400 dark:text-gray-500 font-bold flex items-center justify-center gap-2">
             <ChevronRight size={16} />
             Showing all active service requests in your area
           </p>

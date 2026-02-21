@@ -42,10 +42,10 @@ export default function ProviderReviewsPage() {
         <div className="max-w-6xl relative pb-24">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
                 <div>
-                    <h1 className="text-4xl font-black text-gray-900 tracking-tight mb-2">My Reviews</h1>
-                    <p className="text-lg text-gray-500 font-medium">See what clients are saying about your provided services.</p>
+                    <h1 className="text-4xl font-black text-gray-900 dark:text-gray-100 tracking-tight mb-2">My Reviews</h1>
+                    <p className="text-lg text-gray-500 dark:text-gray-400 font-medium">See what clients are saying about your provided services.</p>
                 </div>
-                <button className="px-6 py-3 bg-white border border-gray-100 rounded-2xl font-bold flex items-center gap-2 hover:bg-gray-50 transition-all shadow-sm text-gray-500">
+                <button className="px-6 py-3 bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 rounded-2xl font-bold flex items-center gap-2 hover:bg-gray-50 dark:bg-gray-900 transition-all shadow-sm text-gray-500 dark:text-gray-400">
                     <MessageSquare size={18} />
                     Request Testimonial
                 </button>
@@ -55,7 +55,7 @@ export default function ProviderReviewsPage() {
 
                 {/* Overall Score */}
                 <div className="bg-gradient-to-br from-[#1E7B7C] to-[#166566] rounded-[40px] p-10 shadow-3xl shadow-[#1E7B7C]/20 text-white flex flex-col items-center justify-center text-center border border-white/10 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-white dark:bg-gray-950/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
 
                     <div className="relative z-10">
                         <h2 className="text-sm font-black text-white/60 uppercase tracking-widest mb-6 block">Overall Rating</h2>
@@ -67,8 +67,8 @@ export default function ProviderReviewsPage() {
                 </div>
 
                 {/* Rating Breakdown */}
-                <div className="lg:col-span-2 bg-white/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/10 border border-white flex flex-col justify-center">
-                    <h2 className="text-xl font-black text-gray-900 mb-6 flex items-center gap-2">
+                <div className="lg:col-span-2 bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/10 border border-white flex flex-col justify-center">
+                    <h2 className="text-xl font-black text-gray-900 dark:text-gray-100 mb-6 flex items-center gap-2">
                         <TrendingUp size={20} className="text-[#1E7B7C]" />
                         Score Breakdown
                     </h2>
@@ -82,7 +82,7 @@ export default function ProviderReviewsPage() {
                             { stars: 1, pct: 0, count: 0 }
                         ].map((row) => (
                             <div key={row.stars} className="flex items-center gap-4">
-                                <div className="flex items-center gap-1 w-12 text-sm font-black text-gray-500">
+                                <div className="flex items-center gap-1 w-12 text-sm font-black text-gray-500 dark:text-gray-400">
                                     {row.stars} <Star size={14} className="fill-gray-300 text-gray-300" />
                                 </div>
                                 <div className="flex-1 h-3 bg-gray-100 rounded-full overflow-hidden">
@@ -91,7 +91,7 @@ export default function ProviderReviewsPage() {
                                         style={{ width: `${row.pct}%` }}
                                     />
                                 </div>
-                                <div className="w-8 text-right text-xs font-bold text-gray-400">{row.count}</div>
+                                <div className="w-8 text-right text-xs font-bold text-gray-400 dark:text-gray-500">{row.count}</div>
                             </div>
                         ))}
                     </div>
@@ -99,15 +99,15 @@ export default function ProviderReviewsPage() {
             </div>
 
             {/* Reviews List */}
-            <div className="bg-white/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/10 border border-white">
+            <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/10 border border-white">
 
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-8 border-b border-gray-100/50">
-                    <h2 className="text-2xl font-black text-gray-900">Recent Feedback</h2>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-8 border-b border-gray-100/50 dark:border-gray-800/50">
+                    <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100">Recent Feedback</h2>
                     <div className="flex items-center gap-3">
-                        <button className="px-5 py-2.5 bg-gray-50 text-gray-500 font-bold rounded-xl text-sm hover:bg-gray-100 transition-colors flex items-center gap-2">
+                        <button className="px-5 py-2.5 bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 font-bold rounded-xl text-sm hover:bg-gray-100 transition-colors flex items-center gap-2">
                             <Filter size={16} /> All Ratings
                         </button>
-                        <button className="px-5 py-2.5 bg-gray-50 text-gray-500 font-bold rounded-xl text-sm hover:bg-gray-100 transition-colors flex items-center gap-2">
+                        <button className="px-5 py-2.5 bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 font-bold rounded-xl text-sm hover:bg-gray-100 transition-colors flex items-center gap-2">
                             Most Recent <ChevronDown size={16} />
                         </button>
                     </div>
@@ -115,7 +115,7 @@ export default function ProviderReviewsPage() {
 
                 <div className="space-y-8">
                     {reviews.map((review) => (
-                        <div key={review.id} className="group p-6 rounded-3xl border border-transparent hover:border-gray-100 hover:bg-white/50 transition-all duration-300 relative">
+                        <div key={review.id} className="group p-6 rounded-3xl border border-transparent hover:border-gray-100 dark:border-gray-800 hover:bg-white dark:bg-gray-950/50 transition-all duration-300 relative">
 
                             <div className="flex flex-col sm:flex-row gap-6">
                                 <div className="flex-shrink-0">
@@ -127,7 +127,7 @@ export default function ProviderReviewsPage() {
                                 <div className="flex-1">
                                     <div className="flex flex-wrap items-start justify-between gap-4 mb-3">
                                         <div>
-                                            <h4 className="font-black text-lg text-gray-900 flex items-center gap-2">
+                                            <h4 className="font-black text-lg text-gray-900 dark:text-gray-100 flex items-center gap-2">
                                                 {review.client}
                                                 {review.verified && (
                                                     <div className="flex items-center gap-1 text-[10px] uppercase font-black tracking-widest text-[#1E7B7C] bg-[#E8F4F4] px-2 py-0.5 rounded-lg">
@@ -135,10 +135,10 @@ export default function ProviderReviewsPage() {
                                                     </div>
                                                 )}
                                             </h4>
-                                            <p className="text-xs font-bold text-gray-400 mt-1">{review.date} • {review.jobTitle}</p>
+                                            <p className="text-xs font-bold text-gray-400 dark:text-gray-500 mt-1">{review.date} • {review.jobTitle}</p>
                                         </div>
 
-                                        <div className="flex items-center gap-1 bg-gray-50 px-3 py-1.5 rounded-xl border border-gray-100">
+                                        <div className="flex items-center gap-1 bg-gray-50 dark:bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-100 dark:border-gray-800">
                                             {[1, 2, 3, 4, 5].map((star) => (
                                                 <Star
                                                     key={star}
@@ -149,7 +149,7 @@ export default function ProviderReviewsPage() {
                                         </div>
                                     </div>
 
-                                    <p className="text-gray-700 font-medium leading-relaxed mb-4">
+                                    <p className="text-gray-700 dark:text-gray-300 font-medium leading-relaxed mb-4">
                                         "{review.text}"
                                     </p>
 

@@ -33,13 +33,13 @@ export default function AnalyticsPage() {
             {/* Page Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
-                    <h1 className="text-3xl font-black text-gray-900 tracking-tight mb-2">Platform Insights</h1>
-                    <p className="text-gray-500 font-medium">Deep dive into platform performance, user trends, and revenue distribution.</p>
+                    <h1 className="text-3xl font-black text-gray-900 dark:text-gray-100 tracking-tight mb-2">Platform Insights</h1>
+                    <p className="text-gray-500 dark:text-gray-400 font-medium">Deep dive into platform performance, user trends, and revenue distribution.</p>
                 </div>
                 <div className="flex items-center gap-3">
-                    <div className="bg-white border border-gray-100 rounded-2xl px-4 py-2.5 shadow-sm flex items-center gap-2">
-                        <Calendar size={18} className="text-gray-400" />
-                        <span className="text-sm font-bold text-gray-700">Last 30 Days</span>
+                    <div className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 rounded-2xl px-4 py-2.5 shadow-sm flex items-center gap-2">
+                        <Calendar size={18} className="text-gray-400 dark:text-gray-500" />
+                        <span className="text-sm font-bold text-gray-700 dark:text-gray-300">Last 30 Days</span>
                     </div>
                     <button className="bg-[#1E7B7C] text-white px-6 py-2.5 rounded-2xl font-bold text-sm shadow-lg shadow-[#1E7B7C]/20 hover:scale-[1.02] transition-all">
                         Download Report
@@ -50,10 +50,10 @@ export default function AnalyticsPage() {
             {/* Top Metrics Row */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 {growthStats.map((stat, i) => (
-                    <div key={i} className="bg-white border border-gray-100 p-6 rounded-[2.5rem] shadow-sm">
-                        <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1 underline decoration-indigo-500/30">{stat.label}</p>
+                    <div key={i} className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 p-6 rounded-[2.5rem] shadow-sm">
+                        <p className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-1 underline decoration-indigo-500/30">{stat.label}</p>
                         <div className="flex items-center justify-between">
-                            <h3 className="text-2xl font-black text-gray-900">{stat.value}</h3>
+                            <h3 className="text-2xl font-black text-gray-900 dark:text-gray-100">{stat.value}</h3>
                             <div className={`flex items-center text-[10px] font-black px-2 py-1 rounded-full ${stat.isPositive ? 'bg-emerald-50 text-emerald-600' : 'bg-red-50 text-red-600'}`}>
                                 {stat.isPositive ? <TrendingUp size={12} /> : <TrendingDown size={12} />}
                                 {stat.isPositive ? '+5.2%' : '-1.4%'}
@@ -65,21 +65,21 @@ export default function AnalyticsPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Revenue by Category (Visual Chart) */}
-                <div className="lg:col-span-1 bg-white/70 backdrop-blur-xl border border-gray-100 p-8 rounded-[2.5rem] shadow-sm">
+                <div className="lg:col-span-1 bg-white dark:bg-gray-950/70 backdrop-blur-xl border border-gray-100 dark:border-gray-800 p-8 rounded-[2.5rem] shadow-sm">
                     <div className="flex items-center justify-between mb-8">
                         <div>
-                            <h3 className="text-xl font-black text-gray-900 tracking-tight">Revenue Mix</h3>
-                            <p className="text-xs text-gray-500 font-medium">Distribution by category</p>
+                            <h3 className="text-xl font-black text-gray-900 dark:text-gray-100 tracking-tight">Revenue Mix</h3>
+                            <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">Distribution by category</p>
                         </div>
-                        <Layers size={20} className="text-gray-400" />
+                        <Layers size={20} className="text-gray-400 dark:text-gray-500" />
                     </div>
 
                     <div className="space-y-6">
                         {categoryRevenue.map((cat, i) => (
                             <div key={i} className="space-y-2">
                                 <div className="flex items-center justify-between">
-                                    <span className="text-sm font-bold text-gray-700">{cat.name}</span>
-                                    <span className="text-sm font-black text-gray-900">${(cat.value / 1000).toFixed(1)}k</span>
+                                    <span className="text-sm font-bold text-gray-700 dark:text-gray-300">{cat.name}</span>
+                                    <span className="text-sm font-black text-gray-900 dark:text-gray-100">${(cat.value / 1000).toFixed(1)}k</span>
                                 </div>
                                 <div className="h-2.5 w-full bg-gray-100 rounded-full overflow-hidden">
                                     <div
@@ -91,26 +91,26 @@ export default function AnalyticsPage() {
                         ))}
                     </div>
 
-                    <button className="w-full mt-8 py-3 rounded-2xl border-2 border-gray-50 text-gray-400 text-xs font-black uppercase hover:bg-gray-50 transition-all">
+                    <button className="w-full mt-8 py-3 rounded-2xl border-2 border-gray-50 text-gray-400 dark:text-gray-500 text-xs font-black uppercase hover:bg-gray-50 dark:bg-gray-900 transition-all">
                         View Detailed Breakdown
                     </button>
                 </div>
 
                 {/* Growth Trends */}
-                <div className="lg:col-span-2 bg-white/70 backdrop-blur-xl border border-gray-100 p-8 rounded-[2.5rem] shadow-sm">
+                <div className="lg:col-span-2 bg-white dark:bg-gray-950/70 backdrop-blur-xl border border-gray-100 dark:border-gray-800 p-8 rounded-[2.5rem] shadow-sm">
                     <div className="flex items-center justify-between mb-8">
                         <div>
-                            <h3 className="text-xl font-black text-gray-900 tracking-tight">Growth Trends</h3>
-                            <p className="text-xs text-gray-500 font-medium">Provider vs Customer registrations</p>
+                            <h3 className="text-xl font-black text-gray-900 dark:text-gray-100 tracking-tight">Growth Trends</h3>
+                            <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">Provider vs Customer registrations</p>
                         </div>
                         <div className="flex items-center gap-4">
                             <div className="flex items-center gap-1.5">
                                 <div className="w-2.5 h-2.5 rounded-full bg-[#1E7B7C]" />
-                                <span className="text-[10px] font-black text-gray-400 uppercase">Providers</span>
+                                <span className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase">Providers</span>
                             </div>
                             <div className="flex items-center gap-1.5">
                                 <div className="w-2.5 h-2.5 rounded-full bg-indigo-500" />
-                                <span className="text-[10px] font-black text-gray-400 uppercase">Customers</span>
+                                <span className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase">Customers</span>
                             </div>
                         </div>
                     </div>
@@ -134,7 +134,7 @@ export default function AnalyticsPage() {
                         ))}
                     </div>
 
-                    <div className="mt-6 flex items-center justify-between text-[10px] font-black text-gray-400 uppercase tracking-widest px-2">
+                    <div className="mt-6 flex items-center justify-between text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest px-2">
                         <span>Week 1</span>
                         <span>Week 2</span>
                         <span>Week 3</span>
@@ -149,31 +149,31 @@ export default function AnalyticsPage() {
 
             {/* Performance KPIs */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="bg-white border border-gray-100 p-8 rounded-[2.5rem] shadow-sm flex items-center gap-6 group hover:shadow-xl transition-all duration-500">
+                <div className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 p-8 rounded-[2.5rem] shadow-sm flex items-center gap-6 group hover:shadow-xl transition-all duration-500">
                     <div className="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                         <Target size={28} />
                     </div>
                     <div>
-                        <h4 className="text-2xl font-black text-gray-900">92%</h4>
-                        <p className="text-xs font-bold text-gray-400">Goals Met</p>
+                        <h4 className="text-2xl font-black text-gray-900 dark:text-gray-100">92%</h4>
+                        <p className="text-xs font-bold text-gray-400 dark:text-gray-500">Goals Met</p>
                     </div>
                 </div>
-                <div className="bg-white border border-gray-100 p-8 rounded-[2.5rem] shadow-sm flex items-center gap-6 group hover:shadow-xl transition-all duration-500">
+                <div className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 p-8 rounded-[2.5rem] shadow-sm flex items-center gap-6 group hover:shadow-xl transition-all duration-500">
                     <div className="w-16 h-16 rounded-2xl bg-[#E8F4F4] text-[#1E7B7C] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                         <ShoppingBag size={28} />
                     </div>
                     <div>
-                        <h4 className="text-2xl font-black text-gray-900">2,481</h4>
-                        <p className="text-xs font-bold text-gray-400">Orders Today</p>
+                        <h4 className="text-2xl font-black text-gray-900 dark:text-gray-100">2,481</h4>
+                        <p className="text-xs font-bold text-gray-400 dark:text-gray-500">Orders Today</p>
                     </div>
                 </div>
-                <div className="bg-white border border-gray-100 p-8 rounded-[2.5rem] shadow-sm flex items-center gap-6 group hover:shadow-xl transition-all duration-500">
+                <div className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 p-8 rounded-[2.5rem] shadow-sm flex items-center gap-6 group hover:shadow-xl transition-all duration-500">
                     <div className="w-16 h-16 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                         <Briefcase size={28} />
                     </div>
                     <div>
-                        <h4 className="text-2xl font-black text-gray-900">$126.5k</h4>
-                        <p className="text-xs font-bold text-gray-400">Net Volume</p>
+                        <h4 className="text-2xl font-black text-gray-900 dark:text-gray-100">$126.5k</h4>
+                        <p className="text-xs font-bold text-gray-400 dark:text-gray-500">Net Volume</p>
                     </div>
                 </div>
             </div>

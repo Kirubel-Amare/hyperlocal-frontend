@@ -108,24 +108,24 @@ export default function MessagesPage() {
     }
 
     return (
-        <div className="min-h-screen bg-white font-sans flex flex-col">
+        <div className="min-h-screen bg-white dark:bg-gray-950 font-sans flex flex-col">
             <Header showSidebar={false} />
 
             <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 pt-28 pb-10 flex flex-col">
 
                 {/* Chat Container */}
-                <div className="flex-1 bg-white/60 backdrop-blur-md rounded-[40px] border border-gray-100 shadow-2xl overflow-hidden flex flex-col md:flex-row">
+                <div className="flex-1 bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] border border-gray-100 dark:border-gray-800 shadow-2xl overflow-hidden flex flex-col md:flex-row">
 
                     {/* Threads Sidebar */}
-                    <div className="w-full md:w-80 lg:w-96 border-r border-gray-100 flex flex-col bg-gray-50/30">
+                    <div className="w-full md:w-80 lg:w-96 border-r border-gray-100 dark:border-gray-800 flex flex-col bg-gray-50/30 dark:bg-gray-900/30">
                         <div className="p-6">
-                            <h2 className="text-2xl font-black text-gray-900 mb-6 font-sans">Messages</h2>
+                            <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100 mb-6 font-sans">Messages</h2>
                             <div className="relative">
-                                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+                                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" size={18} />
                                 <input
                                     type="text"
                                     placeholder="Search chats..."
-                                    className="w-full pl-11 pr-4 py-3 bg-white border border-transparent focus:border-[#1E7B7C]/20 rounded-2xl shadow-sm outline-none transition-all text-sm"
+                                    className="w-full pl-11 pr-4 py-3 bg-white dark:bg-gray-950 border border-transparent focus:border-[#1E7B7C]/20 rounded-2xl shadow-sm outline-none transition-all text-sm"
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
                                 />
@@ -138,8 +138,8 @@ export default function MessagesPage() {
                                     key={thread.id}
                                     onClick={() => setActiveThreadId(thread.id)}
                                     className={`w-full p-4 rounded-3xl flex items-start gap-4 transition-all ${activeThreadId === thread.id
-                                        ? 'bg-white shadow-lg shadow-[#1E7B7C]/5 border border-[#1E7B7C]/10'
-                                        : 'hover:bg-white/50 border border-transparent'
+                                        ? 'bg-white dark:bg-gray-950 shadow-lg shadow-[#1E7B7C]/5 border border-[#1E7B7C]/10'
+                                        : 'hover:bg-white dark:bg-gray-950/50 border border-transparent'
                                         }`}
                                 >
                                     <div className="relative flex-shrink-0">
@@ -159,10 +159,10 @@ export default function MessagesPage() {
 
                                     <div className="flex-1 text-left overflow-hidden">
                                         <div className="flex justify-between items-start mb-1">
-                                            <h4 className="font-bold text-gray-900 truncate text-sm">{thread.participant.name}</h4>
-                                            <span className="text-[10px] text-gray-400 font-bold uppercase">{thread.lastTimestamp}</span>
+                                            <h4 className="font-bold text-gray-900 dark:text-gray-100 truncate text-sm">{thread.participant.name}</h4>
+                                            <span className="text-[10px] text-gray-400 dark:text-gray-500 font-bold uppercase">{thread.lastTimestamp}</span>
                                         </div>
-                                        <p className={`text-xs truncate ${thread.unreadCount > 0 ? 'text-gray-900 font-bold' : 'text-gray-500'}`}>
+                                        <p className={`text-xs truncate ${thread.unreadCount > 0 ? 'text-gray-900 dark:text-gray-100 font-bold' : 'text-gray-500 dark:text-gray-400'}`}>
                                             {thread.lastMessage}
                                         </p>
                                     </div>
@@ -178,12 +178,12 @@ export default function MessagesPage() {
                     </div>
 
                     {/* Chat Main Area */}
-                    <div className="flex-1 flex flex-col bg-white">
+                    <div className="flex-1 flex flex-col bg-white dark:bg-gray-950">
 
                         {/* Header */}
-                        <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+                        <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
                             <div className="flex items-center gap-4">
-                                <button className="md:hidden p-2 -ml-2 text-gray-400">
+                                <button className="md:hidden p-2 -ml-2 text-gray-400 dark:text-gray-500">
                                     <ArrowLeft size={20} />
                                 </button>
                                 <div className="w-10 h-10 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
@@ -197,7 +197,7 @@ export default function MessagesPage() {
                                 </div>
                                 <div>
                                     <div className="flex items-center gap-2">
-                                        <h3 className="font-bold text-gray-900 text-sm">{activeThread.participant.name}</h3>
+                                        <h3 className="font-bold text-gray-900 dark:text-gray-100 text-sm">{activeThread.participant.name}</h3>
                                         {activeThread.participant.id === 'client-1' && (
                                             <span className="bg-emerald-50 text-emerald-600 text-[8px] font-black uppercase px-2 py-0.5 rounded-full border border-emerald-100">Verified Client</span>
                                         )}
@@ -209,14 +209,14 @@ export default function MessagesPage() {
                             </div>
 
                             <div className="flex items-center gap-2">
-                                <button className="p-2 text-gray-400 hover:text-[#1E7B7C] hover:bg-gray-50 rounded-xl transition-all">
+                                <button className="p-2 text-gray-400 dark:text-gray-500 hover:text-[#1E7B7C] hover:bg-gray-50 dark:bg-gray-900 rounded-xl transition-all">
                                     <Phone size={18} />
                                 </button>
-                                <button className="p-2 text-gray-400 hover:text-[#1E7B7C] hover:bg-gray-50 rounded-xl transition-all">
+                                <button className="p-2 text-gray-400 dark:text-gray-500 hover:text-[#1E7B7C] hover:bg-gray-50 dark:bg-gray-900 rounded-xl transition-all">
                                     <Video size={18} />
                                 </button>
                                 <div className="w-px h-6 bg-gray-100 mx-2" />
-                                <button className="p-2 text-gray-400 hover:text-[#1E7B7C] hover:bg-gray-50 rounded-xl transition-all">
+                                <button className="p-2 text-gray-400 dark:text-gray-500 hover:text-[#1E7B7C] hover:bg-gray-50 dark:bg-gray-900 rounded-xl transition-all">
                                     <MoreVertical size={18} />
                                 </button>
                             </div>
@@ -225,10 +225,10 @@ export default function MessagesPage() {
                         {/* Messages List */}
                         <div
                             ref={scrollRef}
-                            className="flex-1 overflow-y-auto p-6 space-y-6 bg-white scroll-smooth"
+                            className="flex-1 overflow-y-auto p-6 space-y-6 bg-white dark:bg-gray-950 scroll-smooth"
                         >
                             <div className="flex justify-center">
-                                <span className="px-3 py-1 bg-gray-50 text-[10px] font-bold text-gray-400 uppercase tracking-widest rounded-full">Conversation Started</span>
+                                <span className="px-3 py-1 bg-gray-50 dark:bg-gray-900 text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest rounded-full">Conversation Started</span>
                             </div>
 
                             {activeThread.messages.map((msg, idx) => {
@@ -238,12 +238,12 @@ export default function MessagesPage() {
                                         <div className={`max-w-[70%] space-y-1 ${isMe ? 'items-end' : 'items-start'} flex flex-col`}>
                                             <div className={`px-4 py-3 rounded-2xl text-sm leading-relaxed shadow-sm ${isMe
                                                 ? 'bg-[#1E7B7C] text-white rounded-tr-none'
-                                                : 'bg-gray-100 text-gray-900 rounded-tl-none'
+                                                : 'bg-gray-100 text-gray-900 dark:text-gray-100 rounded-tl-none'
                                                 }`}>
                                                 {msg.text}
                                             </div>
                                             <div className="flex items-center gap-1.5 px-1 text-[9px] font-black uppercase tracking-tighter">
-                                                <span className="text-gray-400">{msg.timestamp}</span>
+                                                <span className="text-gray-400 dark:text-gray-500">{msg.timestamp}</span>
                                                 {isMe && (
                                                     msg.isRead || idx < activeThread.messages.length - 1 ? <CheckCheck size={12} className="text-[#1E7B7C]" /> : <Check size={12} className="text-gray-300" />
                                                 )}
@@ -266,14 +266,14 @@ export default function MessagesPage() {
 
                         {/* Attachment Preview */}
                         {attachedFile && (
-                            <div className="px-6 py-4 bg-gray-50 border-t border-gray-100 animate-in slide-in-from-bottom-4">
+                            <div className="px-6 py-4 bg-gray-50 dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 animate-in slide-in-from-bottom-4">
                                 <div className="relative w-32 group">
                                     {attachedFile.type.startsWith('image/') ? (
                                         <div className="relative h-20 w-32 rounded-xl overflow-hidden border-2 border-white shadow-md">
                                             <Image src={attachedFile.url} alt="preview" fill className="object-cover" />
                                         </div>
                                     ) : (
-                                        <div className="h-20 w-32 rounded-xl bg-white border border-gray-200 flex flex-col items-center justify-center p-2 text-center">
+                                        <div className="h-20 w-32 rounded-xl bg-white dark:bg-gray-950 border border-gray-200 flex flex-col items-center justify-center p-2 text-center">
                                             <FileText size={24} className="text-indigo-500 mb-1" />
                                             <span className="text-[8px] font-bold truncate w-full">{attachedFile.name}</span>
                                         </div>
@@ -289,7 +289,7 @@ export default function MessagesPage() {
                         )}
 
                         {/* AI Concierge Suggestions */}
-                        <div className="px-6 py-2 bg-white/80 backdrop-blur-sm border-t border-gray-100 flex items-center gap-2 overflow-x-auto no-scrollbar">
+                        <div className="px-6 py-2 bg-white dark:bg-gray-950/80 backdrop-blur-sm border-t border-gray-100 dark:border-gray-800 flex items-center gap-2 overflow-x-auto no-scrollbar">
                             <div className="flex-shrink-0 flex items-center gap-2 px-3 py-1.5 bg-[#1E7B7C]/10 rounded-full border border-[#1E7B7C]/20">
                                 <Stars size={14} className="text-[#1E7B7C]" />
                                 <span className="text-[10px] font-bold text-[#1E7B7C] uppercase tracking-wider">AI Concierge</span>
@@ -303,7 +303,7 @@ export default function MessagesPage() {
                                 <button
                                     key={i}
                                     onClick={() => setNewMessage(suggestion)}
-                                    className="flex-shrink-0 px-4 py-1.5 bg-gray-50 hover:bg-[#1E7B7C]/5 hover:border-[#1E7B7C]/30 border border-gray-200 rounded-full text-xs font-medium text-gray-600 transition-all"
+                                    className="flex-shrink-0 px-4 py-1.5 bg-gray-50 dark:bg-gray-900 hover:bg-[#1E7B7C]/5 hover:border-[#1E7B7C]/30 border border-gray-200 rounded-full text-xs font-medium text-gray-600 transition-all"
                                 >
                                     {suggestion}
                                 </button>
@@ -311,7 +311,7 @@ export default function MessagesPage() {
                         </div>
 
                         {/* Input Area */}
-                        <div className="p-6 border-t border-gray-100 bg-white relative z-20">
+                        <div className="p-6 border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950 relative z-20">
                             <form onSubmit={handleSendMessage} className="relative">
                                 <div className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center gap-1">
                                     <input
@@ -323,11 +323,11 @@ export default function MessagesPage() {
                                     <button
                                         type="button"
                                         onClick={() => fileInputRef.current?.click()}
-                                        className="p-2 text-gray-400 hover:text-[#1E7B7C] hover:bg-emerald-50 rounded-xl transition-all"
+                                        className="p-2 text-gray-400 dark:text-gray-500 hover:text-[#1E7B7C] hover:bg-emerald-50 rounded-xl transition-all"
                                     >
                                         <Paperclip size={18} />
                                     </button>
-                                    <button type="button" className="p-2 text-gray-400 hover:text-amber-500 hover:bg-amber-50 rounded-xl transition-all">
+                                    <button type="button" className="p-2 text-gray-400 dark:text-gray-500 hover:text-amber-500 hover:bg-amber-50 rounded-xl transition-all">
                                         <Smile size={18} />
                                     </button>
                                 </div>
@@ -335,7 +335,7 @@ export default function MessagesPage() {
                                 <input
                                     type="text"
                                     placeholder="Type a message..."
-                                    className="w-full pl-24 pr-16 py-4 bg-gray-50 border border-transparent focus:border-[#1E7B7C]/20 rounded-2xl outline-none transition-all text-sm font-medium"
+                                    className="w-full pl-24 pr-16 py-4 bg-gray-50 dark:bg-gray-900 border border-transparent focus:border-[#1E7B7C]/20 rounded-2xl outline-none transition-all text-sm font-medium"
                                     value={newMessage}
                                     onChange={(e) => setNewMessage(e.target.value)}
                                 />
