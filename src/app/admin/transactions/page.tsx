@@ -12,15 +12,17 @@ import {
   CheckCircle2,
   Clock,
   XCircle,
-  FileText
+  FileText,
+  Lock,
+  Unlock
 } from 'lucide-react';
 
 const transactions = [
   { id: 'TRX-8291', customer: 'Alex Johnson', provider: 'Sparkle Cleaners', amount: 250.00, fee: 37.50, status: 'Completed', date: 'Feb 20, 2024', type: 'Payment' },
-  { id: 'TRX-8292', customer: 'Emma Davis', provider: 'FixIt Services', amount: 120.00, fee: 18.00, status: 'Pending', date: 'Feb 20, 2024', type: 'Payment' },
-  { id: 'TRX-8293', customer: 'Michael Chen', provider: 'Green Thumb', amount: 450.00, fee: 67.50, status: 'Completed', date: 'Feb 19, 2024', type: 'Deposit' },
+  { id: 'TRX-8292', customer: 'Emma Davis', provider: 'FixIt Services', amount: 120.00, fee: 18.00, status: 'Escrow Held', date: 'Feb 20, 2024', type: 'Payment' },
+  { id: 'TRX-8293', customer: 'Michael Chen', provider: 'Green Thumb', amount: 450.00, fee: 67.50, status: 'Escrow Held', date: 'Feb 19, 2024', type: 'Payment' },
   { id: 'TRX-8294', customer: 'Sarah Miller', provider: 'Alex Johnson', amount: 80.00, fee: 12.00, status: 'Refunded', date: 'Feb 19, 2024', type: 'Refund' },
-  { id: 'TRX-8295', customer: 'John Doe', provider: 'Elite Tutors', amount: 300.00, fee: 45.00, status: 'Completed', date: 'Feb 18, 2024', type: 'Payment' },
+  { id: 'TRX-8295', customer: 'John Doe', provider: 'Elite Tutors', amount: 300.00, fee: 45.00, status: 'Escrow Released', date: 'Feb 18, 2024', type: 'Payment' },
 ];
 
 export default function TransactionsPage() {
@@ -89,8 +91,8 @@ export default function TransactionsPage() {
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
                 className={`px-5 py-2 rounded-xl text-sm font-bold transition-all ${activeFilter === filter
-                    ? 'bg-white text-gray-900 shadow-sm'
-                    : 'text-gray-500 hover:text-gray-700'
+                  ? 'bg-white text-gray-900 shadow-sm'
+                  : 'text-gray-500 hover:text-gray-700'
                   }`}
               >
                 {filter}
@@ -149,11 +151,13 @@ export default function TransactionsPage() {
                     </div>
                   </td>
                   <td className="px-6 py-5">
-                    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-tighter ${trx.status === 'Completed' ? 'bg-emerald-50 text-emerald-600' :
-                        trx.status === 'Pending' ? 'bg-amber-50 text-amber-600' : 'bg-red-50 text-red-600'
+                    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-tighter ${trx.status === 'Completed' || trx.status === 'Escrow Released' ? 'bg-emerald-50 text-emerald-600' :
+                        trx.status === 'Escrow Held' ? 'bg-indigo-50 text-indigo-600' :
+                          trx.status === 'Pending' ? 'bg-amber-50 text-amber-600' : 'bg-red-50 text-red-600'
                       }`}>
-                      {trx.status === 'Completed' ? <CheckCircle2 size={12} /> :
-                        trx.status === 'Pending' ? <Clock size={12} /> : <XCircle size={12} />}
+                      {trx.status === 'Completed' || trx.status === 'Escrow Released' ? <CheckCircle2 size={12} /> :
+                        trx.status === 'Escrow Held' ? <Lock size={12} /> :
+                          trx.status === 'Pending' ? <Clock size={12} /> : <XCircle size={12} />}
                       {trx.status}
                     </span>
                   </td>
@@ -162,7 +166,13 @@ export default function TransactionsPage() {
                   </td>
                   <td className="px-6 py-5 text-right">
                     <div className="flex items-center justify-end gap-2">
-                      <button className="p-2 text-gray-400 hover:text-[#1E7B7C] hover:bg-white rounded-xl shadow-sm transition-all border border-transparent hover:border-gray-100">
+                      {trx.status === 'Escrow Held' && (
+                        <button title="Release Funds to Provider" className="p-2 text-indigo-600 hover:bg-indigo-50 rounded-xl shadow-sm transition-all border border-indigo-100 flex items-center gap-2 px-3">
+                          <Unlock size={16} />
+                          <span className="text-[10px] font-black uppercase">Release</span>
+                        </button>
+                      )}
+                      <button title="View Transaction Details" className="p-2 text-gray-400 hover:text-[#1E7B7C] hover:bg-white rounded-xl shadow-sm transition-all border border-transparent hover:border-gray-100">
                         <FileText size={18} />
                       </button>
                       <button className="p-2 text-gray-400 hover:text-gray-900 hover:bg-white rounded-xl shadow-sm transition-all border border-transparent hover:border-gray-100">

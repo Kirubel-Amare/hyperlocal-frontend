@@ -16,7 +16,10 @@ import {
     Calendar,
     MapPin,
     ChevronLeft,
-    ChevronRight
+    ChevronRight,
+    Lock,
+    Unlock,
+    ShieldCheck
 } from 'lucide-react';
 
 const jobs = [
@@ -29,7 +32,8 @@ const jobs = [
         priority: 'Normal',
         amount: 150.00,
         date: 'Feb 21, 2024',
-        location: 'Downtown, NY'
+        location: 'Downtown, NY',
+        escrow: 'Held'
     },
     {
         id: 'JOB-2042',
@@ -40,7 +44,8 @@ const jobs = [
         priority: 'High',
         amount: 85.00,
         date: 'Feb 21, 2024',
-        location: 'Brooklyn, NY'
+        location: 'Brooklyn, NY',
+        escrow: 'Held'
     },
     {
         id: 'JOB-2043',
@@ -51,7 +56,8 @@ const jobs = [
         priority: 'Normal',
         amount: 60.00,
         date: 'Feb 20, 2024',
-        location: 'Queens, NY'
+        location: 'Queens, NY',
+        escrow: 'Released'
     },
     {
         id: 'JOB-2044',
@@ -62,7 +68,8 @@ const jobs = [
         priority: 'Low',
         amount: 120.00,
         date: 'Feb 19, 2024',
-        location: 'Staten Island, NY'
+        location: 'Staten Island, NY',
+        escrow: 'N/A'
     },
     {
         id: 'JOB-2045',
@@ -73,7 +80,8 @@ const jobs = [
         priority: 'High',
         amount: 450.00,
         date: 'Feb 19, 2024',
-        location: 'Manhattan, NY'
+        location: 'Manhattan, NY',
+        escrow: 'Held'
     },
 ];
 
@@ -110,7 +118,7 @@ export default function AdminJobsPage() {
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-5 gap-6">
                 <div className="bg-white border border-gray-100 p-6 rounded-[2rem] shadow-sm">
                     <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Total Jobs</p>
                     <h3 className="text-2xl font-black text-gray-900">4,821</h3>
@@ -120,7 +128,11 @@ export default function AdminJobsPage() {
                     <h3 className="text-2xl font-black text-gray-900">142</h3>
                 </div>
                 <div className="bg-white border border-gray-100 p-6 rounded-[2rem] shadow-sm">
-                    <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1 underline decoration-amber-500/30">Pending Approval</p>
+                    <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1 underline decoration-indigo-500/30">Escrow Held</p>
+                    <h3 className="text-2xl font-black text-indigo-600">$18,420</h3>
+                </div>
+                <div className="bg-white border border-gray-100 p-6 rounded-[2rem] shadow-sm">
+                    <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1 underline decoration-amber-500/30">Pending</p>
                     <h3 className="text-2xl font-black text-gray-900">28</h3>
                 </div>
                 <div className="bg-white border border-gray-100 p-6 rounded-[2rem] shadow-sm">
@@ -138,8 +150,8 @@ export default function AdminJobsPage() {
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}
                                 className={`px-5 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap ${activeTab === tab
-                                        ? 'bg-white text-gray-900 shadow-sm'
-                                        : 'text-gray-500 hover:text-gray-700'
+                                    ? 'bg-white text-gray-900 shadow-sm'
+                                    : 'text-gray-500 hover:text-gray-700'
                                     }`}
                             >
                                 {tab}
@@ -176,7 +188,16 @@ export default function AdminJobsPage() {
                                         <div className="flex flex-col">
                                             <span className="text-sm font-black text-gray-900 group-hover:text-[#1E7B7C] transition-colors">{job.id}</span>
                                             <span className="text-xs text-gray-500 font-bold">{job.service}</span>
-                                            <span className="text-[10px] font-black text-[#1E7B7C] mt-1">${job.amount.toFixed(2)}</span>
+                                            <div className="flex items-center gap-2 mt-1">
+                                                <span className="text-[10px] font-black text-[#1E7B7C]">${job.amount.toFixed(2)}</span>
+                                                {job.escrow !== 'N/A' && (
+                                                    <span className={`flex items-center gap-1 text-[8px] font-black uppercase px-1.5 py-0.5 rounded-md ${job.escrow === 'Held' ? 'bg-indigo-50 text-indigo-600 border border-indigo-100' : 'bg-emerald-50 text-emerald-600 border border-emerald-100'
+                                                        }`}>
+                                                        {job.escrow === 'Held' ? <Lock size={8} /> : <Unlock size={8} />}
+                                                        Escrow {job.escrow}
+                                                    </span>
+                                                )}
+                                            </div>
                                         </div>
                                     </td>
                                     <td className="px-6 py-5">
@@ -194,8 +215,8 @@ export default function AdminJobsPage() {
                                     <td className="px-6 py-5">
                                         <div className="flex flex-col gap-2">
                                             <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-tighter w-fit ${job.status === 'Completed' ? 'bg-emerald-50 text-emerald-600' :
-                                                    job.status === 'In Progress' ? 'bg-blue-50 text-blue-600' :
-                                                        job.status === 'Pending' ? 'bg-amber-50 text-amber-600' : 'bg-red-50 text-red-600'
+                                                job.status === 'In Progress' ? 'bg-blue-50 text-blue-600' :
+                                                    job.status === 'Pending' ? 'bg-amber-50 text-amber-600' : 'bg-red-50 text-red-600'
                                                 }`}>
                                                 {job.status === 'Completed' ? <CheckCircle2 size={12} /> :
                                                     job.status === 'In Progress' ? <Clock size={12} /> :

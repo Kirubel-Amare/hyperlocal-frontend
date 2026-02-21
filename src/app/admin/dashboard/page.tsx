@@ -10,7 +10,8 @@ import {
   Activity,
   CheckCircle2,
   Clock,
-  AlertCircle
+  AlertCircle,
+  Lock
 } from 'lucide-react';
 
 const stats = [
@@ -31,11 +32,11 @@ const stats = [
     color: 'bg-[#1E7B7C]'
   },
   {
-    label: 'Registered Customers',
-    value: '15,420',
-    trend: '+18.4%',
+    label: 'Funds in Escrow',
+    value: '$18,420.00',
+    trend: '+2.4%',
     trendUp: true,
-    icon: Users,
+    icon: Lock,
     color: 'bg-indigo-500'
   },
   {
