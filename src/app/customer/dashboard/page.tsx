@@ -3,10 +3,8 @@
 
 import { useState } from 'react'
 import { ClipboardList, FileText, Wallet, Plus } from 'lucide-react'
+import Link from 'next/link'
 import { customerDashboardData } from '@/lib/mock-dashboards'
-import { StatCard } from '@/components/dashboard/stat-card'
-import { TabNavigation } from '@/components/dashboard/tab-navigation'
-import { JobCard } from '@/components/dashboard/job-card'
 
 export default function CustomerDashboardPage() {
   const { user, stats, ongoingServices, postedJobs, serviceHistory } = customerDashboardData
@@ -39,10 +37,10 @@ export default function CustomerDashboardPage() {
             You have <span className="text-[#1E7B7C] font-bold">{user.upcomingJobsCount} services</span> scheduled for this week.
           </p>
         </div>
-        <button className="px-6 py-3 bg-gradient-to-r from-[#1E7B7C] to-[#166566] text-white rounded-2xl font-black flex items-center gap-2 hover:shadow-xl hover:shadow-[#1E7B7C]/20 transition-all active:scale-95 group">
+        <Link href="/customer/request" className="px-6 py-3 bg-gradient-to-r from-[#1E7B7C] to-[#166566] text-white rounded-2xl font-black flex items-center gap-2 hover:shadow-xl hover:shadow-[#1E7B7C]/20 transition-all active:scale-95 group">
           <Plus size={18} className="group-hover:rotate-90 transition-transform" />
           Request a Service
-        </button>
+        </Link>
       </div>
 
       {/* Primary KPI Hero Section */}
