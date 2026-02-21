@@ -44,35 +44,35 @@ interface HeaderProps {
 const getNavLinks = (t: (key: string) => string) => [
   { name: t('nav.home'), href: '/', icon: <Home size={16} /> },
   { name: t('nav.services'), href: '/services/all', icon: <Briefcase size={16} /> },
-  { name: t('nav.jobs'), href: t('nav.jobs'), icon: <Briefcase size={16} /> },
+  { name: t('nav.jobs'), href: '/jobs', icon: <Briefcase size={16} /> },
   { name: t('nav.howItWorks'), href: '/#how-it-works', icon: <Info size={16} /> },
   { name: t('nav.faq'), href: '/#faq', icon: <HelpCircle size={16} /> },
   { name: t('nav.about'), href: '/about', icon: <Info size={16} /> },
   { name: t('nav.contact'), href: '/contact', icon: <Phone size={16} /> },
 ]
 
-const customerLinks = [
-  { name: 'Dashboard', href: '/customer/dashboard', icon: <Home size={16} /> },
-  { name: 'My Jobs', href: '/customer/jobs', icon: <Briefcase size={16} /> },
-  { name: 'Messages', href: '/messages', icon: <Phone size={16} /> },
+const getCustomerLinks = (t: (key: string) => string) => [
+  { name: t('sidebar.dashboard'), href: '/customer/dashboard', icon: <Home size={16} /> },
+  { name: t('sidebar.jobs'), href: '/customer/jobs', icon: <Briefcase size={16} /> },
+  { name: t('sidebar.links.messages'), href: '/messages', icon: <Phone size={16} /> },
 ]
 
-const providerLinks = [
-  { name: 'Dashboard', href: '/provider/dashboard', icon: <Home size={16} /> },
-  { name: 'Find Work', href: '/jobs', icon: <Search size={16} /> },
-  { name: 'My Jobs', href: '/provider/jobs/active', icon: <Briefcase size={16} /> },
-  { name: 'Messages', href: '/messages', icon: <Phone size={16} /> },
+const getProviderLinks = (t: (key: string) => string) => [
+  { name: t('sidebar.dashboard'), href: '/provider/dashboard', icon: <Home size={16} /> },
+  { name: t('sidebar.links.browseJobs'), href: '/jobs', icon: <Search size={16} /> },
+  { name: t('sidebar.links.ongoingJobs'), href: '/provider/jobs/active', icon: <Briefcase size={16} /> },
+  { name: t('sidebar.links.messages'), href: '/messages', icon: <Phone size={16} /> },
 ]
 
-const categoryLinks = [
-  { name: 'All Categories', id: 'all', icon: <LayoutGrid size={18} />, href: '/services/all', color: 'from-gray-500 to-gray-600' },
-  { name: 'Home Repair', id: 'repairs', icon: <Hammer size={18} />, href: '/services/repairs', color: 'from-amber-500 to-orange-500' },
-  { name: 'Plumbing', id: 'plumbing', icon: <Droplets size={18} />, href: '/services/plumbing', color: 'from-[#166566] to-[#1E7B7C]' },
-  { name: 'Cleaning', id: 'cleaning', icon: <Sparkles size={18} />, href: '/services/cleaning', color: 'from-emerald-500 to-teal-500' },
-  { name: 'Tutoring', id: 'tutoring', icon: <GraduationCap size={18} />, href: '/services/tutoring', color: 'from-purple-500 to-pink-500' },
-  { name: 'Pet Care', id: 'pet-care', icon: <Dog size={18} />, href: '/services/pet-care', color: 'from-amber-500 to-yellow-500' },
-  { name: 'Electrical', id: 'electrical', icon: <Zap size={18} />, href: '/services/electrical', color: 'from-yellow-500 to-orange-500' },
-  { name: 'Gardening', id: 'gardening', icon: <Flower2 size={18} />, href: '/services/gardening', color: 'from-green-500 to-emerald-500' },
+const getCategoryLinks = (t: (key: string) => string) => [
+  { name: t('categories.viewAll'), id: 'all', icon: <LayoutGrid size={18} />, href: '/services/all', color: 'from-gray-500 to-gray-600' },
+  { name: t('categories.list.repairs'), id: 'repairs', icon: <Hammer size={18} />, href: '/services/repairs', color: 'from-amber-500 to-orange-500' },
+  { name: t('categories.list.plumbing'), id: 'plumbing', icon: <Droplets size={18} />, href: '/services/plumbing', color: 'from-[#166566] to-[#1E7B7C]' },
+  { name: t('categories.list.cleaning'), id: 'cleaning', icon: <Sparkles size={18} />, href: '/services/cleaning', color: 'from-emerald-500 to-teal-500' },
+  { name: t('categories.list.tutoring'), id: 'tutoring', icon: <GraduationCap size={18} />, href: '/services/tutoring', color: 'from-purple-500 to-pink-500' },
+  { name: t('categories.list.petCare'), id: 'pet-care', icon: <Dog size={18} />, href: '/services/pet-care', color: 'from-amber-500 to-yellow-500' },
+  { name: t('categories.list.electrical'), id: 'electrical', icon: <Zap size={18} />, href: '/services/electrical', color: 'from-yellow-500 to-orange-500' },
+  { name: t('categories.list.gardening'), id: 'gardening', icon: <Flower2 size={18} />, href: '/services/gardening', color: 'from-green-500 to-emerald-500' },
 ]
 
 export default function Header({
@@ -171,7 +171,12 @@ export default function Header({
 
             {/* Desktop Navigation with icons */}
             <nav className="hidden md:flex items-center gap-1">
-              {(userType === 'customer' ? customerLinks : userType === 'provider' ? providerLinks : getNavLinks(t)).map((link) => (
+              {(userType === 'customer'
+                ? getCustomerLinks(t)
+                : userType === 'provider'
+                  ? getProviderLinks(t)
+                  : getNavLinks(t)
+              ).map((link: any) => (
                 <Link
                   key={link.name}
                   href={link.href}
@@ -207,7 +212,7 @@ export default function Header({
                 showLoginLink && (
                   <div className="flex items-center gap-4">
                     <span className="text-gray-500 hidden lg:inline text-sm">
-                      Ready to start?
+                      {t('header.readyToStart')}
                     </span>
                     <Link
                       href={loginHref}
@@ -215,7 +220,7 @@ export default function Header({
                     >
                       <span className="relative z-10 flex items-center gap-2">
                         <LogIn size={16} />
-                        Log in
+                        {t('header.login')}
                       </span>
                       <span className="absolute inset-0 bg-gradient-to-r from-[#166566] to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </Link>
@@ -253,17 +258,17 @@ export default function Header({
                       <div className="absolute right-0 top-full mt-2 w-64 bg-white/95 backdrop-blur-xl border border-gray-100 shadow-xl rounded-2xl py-2 animate-in fade-in slide-in-from-top-2 duration-200">
                         <div className="px-4 py-3 border-b border-gray-100 mb-2">
                           <p className="text-sm font-bold text-gray-900">{userType === 'customer' ? 'Alex Johnson' : 'Sarah Miller'}</p>
-                          <p className="text-xs text-gray-500 font-medium">{userType === 'customer' ? 'Customer Profile' : 'Provider Profile'}</p>
+                          <p className="text-xs text-gray-500 font-medium">{userType === 'customer' ? t('header.customerProfile') : t('header.providerProfile')}</p>
                         </div>
                         <Link onClick={() => setShowProfileMenu(false)} href={userType === 'customer' ? '/customer/dashboard' : '/provider/profile/edit'} className="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-sm font-medium text-gray-700 transition-colors">
-                          <User size={16} className="text-gray-400" /> View Profile
+                          <User size={16} className="text-gray-400" /> {t('header.viewProfile')}
                         </Link>
                         <Link onClick={() => setShowProfileMenu(false)} href={userType === 'customer' ? '/customer/settings' : '/provider/settings'} className="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-sm font-medium text-gray-700 transition-colors">
-                          <Settings size={16} className="text-gray-400" /> Settings
+                          <Settings size={16} className="text-gray-400" /> {t('header.settings')}
                         </Link>
                         <div className="h-px bg-gray-100 my-2" />
                         <Link onClick={() => setShowProfileMenu(false)} href="/" className="flex items-center gap-3 px-4 py-2 hover:bg-red-50 text-sm font-bold text-red-600 transition-colors">
-                          <LogOut size={16} /> Sign Out
+                          <LogOut size={16} /> {t('header.signOut')}
                         </Link>
                       </div>
                     )}
@@ -322,8 +327,8 @@ export default function Header({
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900">Guest User</h3>
-                    <p className="text-sm text-gray-500">Sign in for better experience</p>
+                    <h3 className="font-bold text-gray-900">{t('header.guestUser')}</h3>
+                    <p className="text-sm text-gray-500">{t('header.signInBetterExperience')}</p>
                   </div>
                 </div>
               </div>
@@ -336,7 +341,7 @@ export default function Header({
                 >
                   <span className="flex items-center gap-3 font-medium">
                     <LayoutGrid size={18} className="text-[#1E7B7C]" />
-                    Browse Categories
+                    {t('header.browseCategories')}
                   </span>
                   <ChevronRight
                     size={18}
@@ -347,7 +352,7 @@ export default function Header({
                 {/* Categories Submenu with grid layout */}
                 {showCategories && (
                   <div className="grid grid-cols-2 gap-2 p-2 bg-gray-50/50 rounded-xl animate-in slide-in-from-left fade-in duration-300">
-                    {categoryLinks.map((cat) => (
+                    {getCategoryLinks(t).map((cat: any) => (
                       <Link
                         key={cat.id}
                         href={cat.href}
@@ -370,7 +375,12 @@ export default function Header({
 
                 {/* Navigation Links with icons */}
                 <div className="space-y-1 pt-2">
-                  {(userType === 'customer' ? customerLinks : userType === 'provider' ? providerLinks : navLinks).map((link) => (
+                  {(userType === 'customer'
+                    ? getCustomerLinks(t)
+                    : userType === 'provider'
+                      ? getProviderLinks(t)
+                      : getNavLinks(t)
+                  ).map((link: any) => (
                     <Link
                       key={link.name}
                       href={link.href}
@@ -395,12 +405,12 @@ export default function Header({
                         className="flex items-center justify-center gap-2 w-full px-4 py-4 rounded-xl bg-gradient-to-r from-[#1E7B7C] to-[#166566] text-white font-medium hover:shadow-xl hover:shadow-[#E8F4F4]/50 transition-all duration-300 group"
                       >
                         <LogIn size={18} className="group-hover:translate-x-1 transition-transform" />
-                        Sign In to Your Account
+                        {t('header.signInAccount')}
                       </Link>
                       <p className="text-center text-xs text-gray-400 mt-4">
-                        Don't have an account?{' '}
+                        {t('header.noAccount')}{' '}
                         <Link href="/signup" className="text-[#1E7B7C] font-medium hover:underline">
-                          Sign up
+                          {t('header.signUp')}
                         </Link>
                       </p>
                     </div>
@@ -413,7 +423,7 @@ export default function Header({
                       className="flex items-center justify-center gap-2 w-full px-4 py-4 rounded-xl bg-red-50 text-red-600 font-black hover:bg-red-100 transition-all duration-300 group"
                     >
                       <LogOut size={18} />
-                      Sign Out
+                      {t('header.signOut')}
                     </Link>
                   </div>
                 )}
@@ -449,7 +459,7 @@ export default function Header({
                     <LayoutGrid size={20} className="text-white" />
                   </div>
                   <h3 className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
-                    Categories
+                    {t('nav.categories')}
                   </h3>
                 </div>
                 <button
@@ -462,7 +472,7 @@ export default function Header({
 
               {/* Category Links with gradient backgrounds */}
               <div className="space-y-2">
-                {categoryLinks.map((cat) => (
+                {getCategoryLinks(t).map((cat: any) => (
                   <Link
                     key={cat.id}
                     href={cat.href}
@@ -485,16 +495,16 @@ export default function Header({
               <div className="mt-8 pt-8 border-t border-gray-100">
                 <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
                   <span className="w-8 h-[2px] bg-gradient-to-r from-[#1E7B7C] to-[#166566]" />
-                  QUICK FILTERS
+                  {t('header.quickFilters')}
                 </h4>
                 <div className="space-y-2">
                   <button className="flex items-center gap-3 w-full px-4 py-4 rounded-xl border-2 border-transparent hover:border-[#E8F4F4] bg-gray-50 hover:bg-white transition-all duration-300 group">
                     <div className="w-5 h-5 border-2 border-gray-300 rounded-md group-hover:border-[#1E7B7C] group-hover:bg-[#E8F4F4] transition-all" />
-                    <span className="font-medium text-gray-700 group-hover:text-[#1E7B7C]">Verified Only</span>
+                    <span className="font-medium text-gray-700 group-hover:text-[#1E7B7C]">{t('header.verifiedOnly')}</span>
                   </button>
                   <button className="flex items-center gap-3 w-full px-4 py-4 rounded-xl border-2 border-transparent hover:border-[#E8F4F4] bg-gray-50 hover:bg-white transition-all duration-300 group">
                     <div className="w-5 h-5 border-2 border-gray-300 rounded-md group-hover:border-[#1E7B7C] group-hover:bg-[#E8F4F4] transition-all" />
-                    <span className="font-medium text-gray-700 group-hover:text-[#1E7B7C]">Open Now</span>
+                    <span className="font-medium text-gray-700 group-hover:text-[#1E7B7C]">{t('header.openNow')}</span>
                   </button>
                 </div>
               </div>

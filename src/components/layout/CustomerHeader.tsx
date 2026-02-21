@@ -4,9 +4,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Search, Bell, HelpCircle } from 'lucide-react'
 import { customerDashboardData } from '@/lib/mock-dashboards'
+import { useTranslation } from '@/i18n/LanguageContext'
+import LanguageSelector from './LanguageSelector'
 
 export default function CustomerHeader() {
     const { user } = customerDashboardData
+    const { t } = useTranslation()
 
     return (
         <header className="h-20 bg-white/80 backdrop-blur-xl border-b border-gray-100 flex items-center justify-between px-8 fixed top-0 left-0 right-0 z-50">
@@ -21,7 +24,7 @@ export default function CustomerHeader() {
                             <div className="bg-white rounded-sm" />
                         </div>
                     </div>
-                    <span className="text-gray-900 font-bold text-xl tracking-tight">HyperLocal</span>
+                    <span className="text-gray-900 font-bold text-xl tracking-tight">{t('brand.name')}</span>
                 </Link>
             </div>
 
@@ -31,7 +34,7 @@ export default function CustomerHeader() {
                     <Search size={18} className="absolute left-4 text-gray-400" />
                     <input
                         type="text"
-                        placeholder="Search for services..."
+                        placeholder={t('header.searchPlaceholder')}
                         className="w-full bg-gray-50 border-none outline-none rounded-xl py-2.5 pl-11 pr-4 text-sm text-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-[#1E7B7C]/20 transition-all"
                     />
                 </div>
@@ -39,6 +42,8 @@ export default function CustomerHeader() {
 
             {/* Right Actions */}
             <div className="flex items-center gap-6">
+                <LanguageSelector />
+
                 <div className="flex items-center gap-4 border-r border-gray-200 pr-6">
                     <button className="relative p-2 text-gray-600 hover:text-[#1E7B7C] transition-colors">
                         <Bell size={20} />

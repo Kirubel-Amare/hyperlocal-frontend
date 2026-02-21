@@ -3,8 +3,11 @@
 import React from 'react'
 import Header from './header'
 import { Search, Bell, Settings } from 'lucide-react'
+import { useTranslation } from '@/i18n/LanguageContext'
 
 export default function AdminHeader() {
+    const { t } = useTranslation()
+
     return (
         <Header
             userType="customer" // Using customer layout as base for profile menu
@@ -17,7 +20,7 @@ export default function AdminHeader() {
                         <Search size={18} className="text-gray-400" />
                         <input
                             type="text"
-                            placeholder="Search everything..."
+                            placeholder={t('header.searchEverything')}
                             className="bg-transparent border-none outline-none text-sm w-full font-medium placeholder:text-gray-400"
                         />
                     </div>

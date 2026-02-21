@@ -270,5 +270,93 @@
             "weeklyImpact": "Dhiibbaa Torbee",
             "impactSubtitle": "Tajaajila naannoo keetii fi qaaccessa galii keetii."
         }
+    },
+    "jobs": {
+        "title": "Hojiiwwan Koo",
+        "description": "Gaaffiiwwan tajaajilaa hojii irra jiranii fi hojiiwwan darban bulchi.",
+        "tabs": {
+            "active": "Hojiiwwan Hojii Irra Jiran",
+            "pending": "Gaaffiiwwan Eegamaa Jiran",
+            "completed": "Kan Xumurame"
+        },
+        "searchPlaceholder": "Hojiiwwan {tab} barbaadi...",
+        "filters": "Filtara",
+        "message": "Ergaa",
+        "jobId": "Eenyummeessaa: #{id}",
+        "dateTime": "Guyyaa fi Sa'aatii",
+        "agreedPrice": "Gatii Waliigalame",
+        "location": "Bakka",
+        "reschedule": "Sagaantaa jijjiiri",
+        "viewDetails": "Ilaali",
+        "pendingTitle": "Gaaffii Eegamaa Jiru {count}",
+        "pendingDescription": "Waliigaltee gatii \"{title}\" gaافattee jirta. Ogeessotni gaaffii kee ilaalaa jiru.",
+        "viewRequestDetails": "Zabaa Gaaffii Ilaali",
+        "finishedBy": "{name} guyyaa {date} irratti xumure",
+        "receipt": "Nagahee",
+        "bookAgain": "Ammas Ajaji"
+    },
+    "profile": {
+        "title": "Qindaa'ina Proofayilii",
+        "description": "Odeeffannoo dhuunfaakee, nageenyaa fi filannoowwan kee bulchi.",
+        "cancel": "Haqi",
+        "saveChanges": "Jijjiirama Olkaayi",
+        "nav": {
+            "personal": "Odeeffannoo Dhuunfaa",
+            "security": "Jecha iccitii fi Nageenya",
+            "notifications": "Beeksisa"
+        },
+        "personal": {
+            "title": "Odeeffannoo Dhuunfaa",
+            "photo": "Suuraa Proofayilii",
+            "photoHint": "JPG, GIF yookiin PNG. Hangii guddaan 2MB",
+            "uploadNew": "Haaraa Galchi",
+            "remove": "Haqi",
+            "firstName": "Maqaa Jalqabaa",
+            "lastName": "Maqaa Akaakayyuu",
+            "email": "Teessoo Imeelii",
+            "phone": "Lakkofsa Bilbilaa",
+            "address": "Teessoo Jalqabaa",
+            "addNewAddress": "Teessoo Haaraa Naqi"
+        },
+        "security": {
+            "title": "Qindaa'ina Nageenyaa",
+            "changePassword": "Jecha Iccitii Jijjiiri",
+            "currentPassword": "Jecha Iccitii Ammaa",
+            "newPassword": "Jecha Iccitii Haaraa",
+            "updatePassword": "Jecha Iccitii Haaromsi",
+            "twoFactor": "Mirkaneessa Sadarkaa Lammaffaa",
+            "twoFactorDesc": "Herrega keetiif dabalata nageenyaa dabali."
+        },
+        "notifications": {
+            "title": "Filannoo Beeksisaa",
+            "email": "Beeksisa Imeelii",
+            "push": "Beeksisa Push",
+            "sms": "Beeksisa SMS",
+            "marketing": "Imeelii Maarketiingii",
+            "desc": "Waa'ee {type} haaromsa argadhu."
+        }
+    },
+    "brand": {
+        "name": "HyperLocal"
+    },
+    "header": {
+        "searchPlaceholder": "Tajaajila barbaadi...",
+        "searchEverything": "Hunda barbaadi...",
+        "readyToStart": "Eegaluuf qophiidhaa?",
+        "login": "Seeni",
+        "signUp": "Galmee'i",
+        "noAccount": "Herrega hin qabduu?",
+        "browseCategories": "Ramaddii Ilaali",
+        "quickFilters": "Filtara Ariifachiisaa",
+        "verifiedOnly": "Mirkanaa'e Qofa",
+        "openNow": "Amma kan Baname",
+        "viewProfile": "Proofayilii Ilaali",
+        "settings": "Qindaa'ina",
+        "signOut": "Ba'i",
+        "customerProfile": "Proofayilii Maamiltootaa",
+        "providerProfile": "Proofayilii Ogeessotaa",
+        "guestUser": "Keessummaa",
+        "signInBetterExperience": "Muuxannoo gaarii argachuuf seeni",
+        "signInAccount": "Herrega keetti seeni"
     }
 }

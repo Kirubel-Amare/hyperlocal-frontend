@@ -270,5 +270,93 @@
             "weeklyImpact": "ሳምንታዊ ተጽዕኖ",
             "impactSubtitle": "የአካባቢዎ የአገልግሎት ተደራሽነት እና የገቢ ትንተና።"
         }
+    },
+    "jobs": {
+        "title": "የእኔ ስራዎች",
+        "description": "የእርስዎን ንቁ የአገልግሎት ጥያቄዎች እና ያለፉ ስራዎችን ያስተዳድሩ።",
+        "tabs": {
+            "active": "ንቁ ስራዎች",
+            "pending": "በተጠባባቂ ላይ ያሉ ጥያቄዎች",
+            "completed": "የተጠናቀቁ"
+        },
+        "searchPlaceholder": "{tab} ስራዎችን ይፈልጉ...",
+        "filters": "ማጣሪያዎች",
+        "message": "መልዕክት",
+        "jobId": "መለያ: #{id}",
+        "dateTime": "ቀን እና ሰዓት",
+        "agreedPrice": "የተስማሙበት ዋጋ",
+        "location": "አድራሻ",
+        "reschedule": "ቀጠሮ ይለውጡ",
+        "viewDetails": "ዝርዝሩን ይመልከቱ",
+        "pendingTitle": "{count} በተጠባባቂ ላይ ያለ ጥያቄ",
+        "pendingDescription": "ለ\"{title}\" የዋጋ ጥያቄ አቅርበዋል። ባለሙያዎች ጥያቄዎን በመገምገም ላይ ናቸው።",
+        "viewRequestDetails": "የጥያቄ ዝርዝሮችን ይመልከቱ",
+        "finishedBy": "በ {name} በ {date} ተጠናቋል",
+        "receipt": "ደረሰኝ",
+        "bookAgain": "እንደገና ይዘዙ"
+    },
+    "profile": {
+        "title": "የመገለጫ ቅንብሮች",
+        "description": "የእርስዎን ግላዊ መረጃ፣ ደህንነት እና ምርጫዎች ያስተዳድሩ።",
+        "cancel": "ሰርዝ",
+        "saveChanges": "ለውጦችን አስቀምጥ",
+        "nav": {
+            "personal": "ግላዊ መረጃ",
+            "security": "የይለፍ ቃል እና ደህንነት",
+            "notifications": "ማሳወቂያዎች"
+        },
+        "personal": {
+            "title": "ግላዊ መረጃ",
+            "photo": "የመገለጫ ፎቶ",
+            "photoHint": "JPG፣ GIF ወይም PNG። ከፍተኛ መጠን 2 ሜባ",
+            "uploadNew": "አዲስ ይጫኑ",
+            "remove": "አስወግድ",
+            "firstName": "የመጀመሪያ ስም",
+            "lastName": "የአያት ስም",
+            "email": "የኢሜል አድራሻ",
+            "phone": "የስልክ ቁጥር",
+            "address": "ዋና አድራሻ",
+            "addNewAddress": "አዲስ አድራሻ ያክሉ"
+        },
+        "security": {
+            "title": "የደህንነት ቅንብሮች",
+            "changePassword": "የይለፍ ቃል ይቀይሩ",
+            "currentPassword": "የአሁኑ የይለፍ ቃል",
+            "newPassword": "አዲስ የይለፍ ቃል",
+            "updatePassword": "የይለፍ ቃል ያዘምኑ",
+            "twoFactor": "ባለ ሁለት ደረጃ ማረጋገጫ",
+            "twoFactorDesc": "ለመለያዎ ተጨማሪ የደህንነት ንብርብር ያክሉ።"
+        },
+        "notifications": {
+            "title": "የማሳወቂያ ምርጫዎች",
+            "email": "የኢሜል ማሳወቂያዎች",
+            "push": "የፑሽ ማሳወቂያዎች",
+            "sms": "የኤስኤምኤስ ማንቂያዎች",
+            "marketing": "የማርኬቲንግ ኢሜይሎች",
+            "desc": "ስለ {type} ዝመናዎችን ያግኙ።"
+        }
+    },
+    "brand": {
+        "name": "ሀይፐርሎካል"
+    },
+    "header": {
+        "searchPlaceholder": "አገልግሎቶችን ይፈልጉ...",
+        "searchEverything": "ሁሉንም ይፈልጉ...",
+        "readyToStart": "ለመጀመር ዝግጁ ነዎት?",
+        "login": "ይግቡ",
+        "signUp": "ይመዝገቡ",
+        "noAccount": "መለያ የለዎትም?",
+        "browseCategories": "ምድቦችን ያስሱ",
+        "quickFilters": "ፈጣን ማጣሪያዎች",
+        "verifiedOnly": "የተረጋገጡ ብቻ",
+        "openNow": "አሁን ክፍት የሆኑ",
+        "viewProfile": "መገለጫ ይመልከቱ",
+        "settings": "ቅንብሮች",
+        "signOut": "ይውጡ",
+        "customerProfile": "የደንበኛ መገለጫ",
+        "providerProfile": "የባለሙያ መገለጫ",
+        "guestUser": "እንግዳ ተጠቃሚ",
+        "signInBetterExperience": "ለተሻለ ተሞክሮ ይግቡ",
+        "signInAccount": "ወደ መለያዎ ይግቡ"
     }
 }

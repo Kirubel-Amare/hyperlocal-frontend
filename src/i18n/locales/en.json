@@ -270,5 +270,93 @@
             "weeklyImpact": "Weekly Impact",
             "impactSubtitle": "Your localized service reach and earnings analysis."
         }
+    },
+    "jobs": {
+        "title": "My Jobs",
+        "description": "Manage your active service requests and past jobs.",
+        "tabs": {
+            "active": "Active Jobs",
+            "pending": "Pending Requests",
+            "completed": "Completed"
+        },
+        "searchPlaceholder": "Search {tab} jobs...",
+        "filters": "Filters",
+        "message": "Message",
+        "jobId": "ID: #{id}",
+        "dateTime": "Date & Time",
+        "agreedPrice": "Agreed Price",
+        "location": "Location",
+        "reschedule": "Reschedule",
+        "viewDetails": "View Details",
+        "pendingTitle": "{count} Pending Request",
+        "pendingDescription": "You have requested a quote for \"{title}\". Providers are currently reviewing your request.",
+        "viewRequestDetails": "View Request Details",
+        "finishedBy": "Finished by {name} on {date}",
+        "receipt": "Receipt",
+        "bookAgain": "Book Again"
+    },
+    "profile": {
+        "title": "Profile Settings",
+        "description": "Manage your personal information, security, and preferences.",
+        "cancel": "Cancel",
+        "saveChanges": "Save Changes",
+        "nav": {
+            "personal": "Personal Info",
+            "security": "Password & Security",
+            "notifications": "Notifications"
+        },
+        "personal": {
+            "title": "Personal Information",
+            "photo": "Profile Photo",
+            "photoHint": "JPG, GIF or PNG. Max size 2MB",
+            "uploadNew": "Upload New",
+            "remove": "Remove",
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "email": "Email Address",
+            "phone": "Phone Number",
+            "address": "Primary Address",
+            "addNewAddress": "Add New Address"
+        },
+        "security": {
+            "title": "Security Settings",
+            "changePassword": "Change Password",
+            "currentPassword": "Current Password",
+            "newPassword": "New Password",
+            "updatePassword": "Update Password",
+            "twoFactor": "Two-Factor Authentication",
+            "twoFactorDesc": "Add an extra layer of security to your account."
+        },
+        "notifications": {
+            "title": "Notification Preferences",
+            "email": "Email Notifications",
+            "push": "Push Notifications",
+            "sms": "SMS Alerts",
+            "marketing": "Marketing Emails",
+            "desc": "Receive updates regarding {type}."
+        }
+    },
+    "brand": {
+        "name": "HyperLocal"
+    },
+    "header": {
+        "searchPlaceholder": "Search for services...",
+        "searchEverything": "Search everything...",
+        "readyToStart": "Ready to start?",
+        "login": "Log in",
+        "signUp": "Sign up",
+        "noAccount": "Don't have an account?",
+        "browseCategories": "Browse Categories",
+        "quickFilters": "QUICK FILTERS",
+        "verifiedOnly": "Verified Only",
+        "openNow": "Open Now",
+        "viewProfile": "View Profile",
+        "settings": "Settings",
+        "signOut": "Sign Out",
+        "customerProfile": "Customer Profile",
+        "providerProfile": "Provider Profile",
+        "guestUser": "Guest User",
+        "signInBetterExperience": "Sign in for better experience",
+        "signInAccount": "Sign In to Your Account"
     }
 }
