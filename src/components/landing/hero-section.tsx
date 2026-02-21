@@ -14,7 +14,7 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section className="relative w-full bg-gradient-to-br from-white via-[#E8F4F4] to-white pt-20 pb-24 mt-16">
+    <section className="relative w-full bg-gradient-to-br from-white via-[#E8F4F4] to-white pt-20 pb-24 mt-16 rounded-tl-2xl rounded-tr-2xl rounded-br-2xl rounded-bl-2xl">
       {/* Animated background elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-[#E8F4F4] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
       <div className="absolute top-40 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '2s' }}></div>
