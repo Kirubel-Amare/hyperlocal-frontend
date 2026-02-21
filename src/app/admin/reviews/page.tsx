@@ -15,7 +15,8 @@ import {
     ThumbsUp,
     MessageSquare,
     ShieldCheck,
-    ShieldAlert
+    ShieldAlert,
+    Clock
 } from 'lucide-react';
 
 const reviews = [
@@ -132,8 +133,8 @@ export default function AdminReviewsPage() {
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}
                                 className={`px-5 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap ${activeTab === tab
-                                        ? 'bg-white text-gray-900 shadow-sm'
-                                        : 'text-gray-500 hover:text-gray-700'
+                                    ? 'bg-white text-gray-900 shadow-sm'
+                                    : 'text-gray-500 hover:text-gray-700'
                                     }`}
                             >
                                 {tab}
@@ -190,7 +191,7 @@ export default function AdminReviewsPage() {
                                     </td>
                                     <td className="px-6 py-5">
                                         <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-tighter ${rev.status === 'Published' ? 'bg-emerald-50 text-emerald-600' :
-                                                rev.status === 'Flagged' ? 'bg-red-50 text-red-600 underline' : 'bg-amber-50 text-amber-600'
+                                            rev.status === 'Flagged' ? 'bg-red-50 text-red-600 underline' : 'bg-amber-50 text-amber-600'
                                             }`}>
                                             {rev.status === 'Published' ? <CheckCircle2 size={12} /> :
                                                 rev.status === 'Flagged' ? <AlertCircle size={12} /> : <Clock size={12} />}

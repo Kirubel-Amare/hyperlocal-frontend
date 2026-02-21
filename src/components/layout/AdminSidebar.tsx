@@ -15,7 +15,10 @@ import {
     Briefcase,
     MessageSquare,
     Star,
-    Wallet
+    Wallet,
+    Mail,
+    Bell,
+    Megaphone
 } from 'lucide-react'
 
 export default function AdminSidebar() {
@@ -28,6 +31,8 @@ export default function AdminSidebar() {
         { name: 'Categories', href: '/admin/categories', icon: Layers },
         { name: 'Chats & Messages', href: '/admin/chats', icon: MessageSquare },
         { name: 'Reviews & Ratings', href: '/admin/reviews', icon: Star },
+        { name: 'Guest Inquiries', href: '/admin/inquiries', icon: Mail },
+        { name: 'System Notifications', href: '/admin/notifications', icon: Megaphone },
         { name: 'Payment Methods', href: '/admin/payments', icon: Wallet },
         { name: 'Transactions', href: '/admin/transactions', icon: CreditCard },
         { name: 'Disputes', href: '/admin/disputes', icon: AlertCircle },
