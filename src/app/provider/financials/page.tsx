@@ -3,16 +3,132 @@
 import React, { useState } from 'react'
 import {
     Wallet2, TrendingUp, Download, ArrowUpRight, ArrowDownRight,
-    DollarSign, FileText, Landmark, Clock, ChevronRight, CheckCircle2
+    DollarSign, FileText, Landmark, Clock, ChevronRight, CheckCircle2,
+    X, Plus, ShieldCheck, Lock, Building2
 } from 'lucide-react'
 import { providerDashboardData } from '@/lib/mock-dashboards'
 
 export default function ProviderFinancialsPage() {
     const { stats } = providerDashboardData
     const [activeTab, setActiveTab] = useState('overview')
+    const [showAddMethod, setShowAddMethod] = useState(false)
+    const [isProcessing, setIsProcessing] = useState(false)
+    const [showSuccess, setShowSuccess] = useState(false)
+
+    const handleAddMethod = (e: React.FormEvent) => {
+        e.preventDefault()
+        setIsProcessing(true)
+
+        // Simulate Linking Bank Account
+        setTimeout(() => {
+            setIsProcessing(false)
+            setShowAddMethod(false)
+            setShowSuccess(true)
+
+            // Hide success message after 4 seconds
+            setTimeout(() => setShowSuccess(false), 4000)
+        }, 2000)
+    }
 
     return (
         <div className="max-w-6xl relative pb-24">
+            {/* Success Banner */}
+            {showSuccess && (
+                <div className="fixed top-24 left-1/2 -translate-x-1/2 z-[100] w-full max-w-md animate-in fade-in slide-in-from-top-4 duration-500">
+                    <div className="bg-emerald-500 text-white p-4 rounded-3xl shadow-2xl flex items-center gap-4 border-2 border-white/20 backdrop-blur-xl">
+                        <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                            <CheckCircle2 size={20} strokeWidth={3} />
+                        </div>
+                        <div>
+                            <p className="font-black">Method Linked Successfully!</p>
+                            <p className="text-xs font-bold opacity-80">Your bank account is now verified for withdrawals.</p>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Add Withdrawal Method Modal */}
+            {showAddMethod && (
+                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+                    <div className="absolute inset-0 bg-gray-900/40 backdrop-blur-md" onClick={() => !isProcessing && setShowAddMethod(false)} />
+                    <div className="bg-white/90 backdrop-blur-2xl w-full max-w-lg rounded-[48px] p-10 shadow-2xl relative z-10 border border-white animate-in zoom-in-95 duration-300">
+                        <button
+                            onClick={() => setShowAddMethod(false)}
+                            disabled={isProcessing}
+                            className="absolute top-8 right-8 p-2 text-gray-400 hover:text-gray-900 transition-colors"
+                        >
+                            <X size={24} />
+                        </button>
+
+                        <div className="mb-8 font-sans">
+                            <span className="text-[10px] font-black text-[#1E7B7C] uppercase tracking-widest bg-[#E8F4F4] px-3 py-1 rounded-full mb-4 inline-block">Security First</span>
+                            <h2 className="text-3xl font-black text-gray-900 tracking-tight">Link Bank Account</h2>
+                            <p className="text-gray-500 font-medium mt-1">Funds will be deposited directly to your bank.</p>
+                        </div>
+
+                        <form onSubmit={handleAddMethod} className="space-y-6">
+                            <div>
+                                <label className="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-2 ml-1">Bank Name</label>
+                                <div className="relative">
+                                    <input
+                                        type="text"
+                                        required
+                                        placeholder="e.g. Chase, Wells Fargo"
+                                        className="w-full bg-white border border-gray-100 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/5 rounded-2xl px-5 py-4 text-gray-900 outline-none transition-all font-bold placeholder:text-gray-300 shadow-sm pl-12"
+                                    />
+                                    <Building2 size={18} className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400" />
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label className="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-2 ml-1">Routing Number</label>
+                                    <input
+                                        type="text"
+                                        required
+                                        placeholder="9 digits"
+                                        maxLength={9}
+                                        className="w-full bg-white border border-gray-100 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/5 rounded-2xl px-5 py-4 text-gray-900 outline-none transition-all font-bold placeholder:text-gray-300 shadow-sm"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-[11px] font-black text-gray-400 uppercase tracking-widest mb-2 ml-1">Account Number</label>
+                                    <input
+                                        type="text"
+                                        required
+                                        placeholder="Bank account #"
+                                        className="w-full bg-white border border-gray-100 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/5 rounded-2xl px-5 py-4 text-gray-900 outline-none transition-all font-bold placeholder:text-gray-300 shadow-sm"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="flex items-center gap-2 text-[10px] font-bold text-gray-400 bg-gray-50/50 p-3 rounded-xl border border-gray-100/50 mb-2 justify-center">
+                                <Lock size={12} />
+                                Linked securely via encrypted handshake
+                            </div>
+
+                            <button
+                                type="submit"
+                                disabled={isProcessing}
+                                className="w-full py-5 bg-gradient-to-r from-[#1E7B7C] to-[#166566] text-white rounded-[24px] font-black text-lg hover:shadow-2xl hover:shadow-[#1E7B7C]/30 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-3 disabled:opacity-70"
+                            >
+                                {isProcessing ? (
+                                    <>
+                                        <div className="w-5 h-5 rounded-full border-2 border-white border-t-transparent animate-spin" />
+                                        Verifying Account...
+                                    </>
+                                ) : (
+                                    <>
+                                        <ShieldCheck size={22} />
+                                        Verify & Account
+                                    </>
+                                )}
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            )}
+
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
                 <div>
                     <h1 className="text-4xl font-black text-gray-900 tracking-tight mb-2">Financial Management</h1>
@@ -36,8 +152,8 @@ export default function ProviderFinancialsPage() {
                         key={tab.id}
                         onClick={() => setActiveTab(tab.id)}
                         className={`px-6 py-3 rounded-xl font-bold text-sm whitespace-nowrap transition-all ${activeTab === tab.id
-                                ? 'bg-[#1E7B7C] text-white shadow-md'
-                                : 'text-gray-500 hover:bg-gray-50'
+                            ? 'bg-[#1E7B7C] text-white shadow-md'
+                            : 'text-gray-500 hover:bg-gray-50'
                             }`}
                     >
                         {tab.label}
@@ -64,7 +180,10 @@ export default function ProviderFinancialsPage() {
                                 </div>
 
                                 <div className="flex flex-col sm:flex-row gap-4">
-                                    <button className="flex-1 py-4 bg-white text-[#1E7B7C] rounded-2xl font-black hover:scale-[1.02] transition-transform shadow-lg text-lg">
+                                    <button
+                                        onClick={() => setActiveTab('withdrawals')}
+                                        className="flex-1 py-4 bg-white text-[#1E7B7C] rounded-2xl font-black hover:scale-[1.02] transition-transform shadow-lg text-lg"
+                                    >
                                         Withdraw Funds
                                     </button>
                                     <button className="px-8 py-4 bg-white/10 text-white rounded-2xl font-bold hover:bg-white/20 transition-colors backdrop-blur-md">
@@ -160,9 +279,12 @@ export default function ProviderFinancialsPage() {
                             </div>
 
                             {/* Add New Method */}
-                            <div className="border-2 border-dashed border-gray-200 rounded-[32px] p-8 flex flex-col items-center justify-center text-center hover:bg-gray-50 hover:border-[#1E7B7C]/30 transition-all cursor-pointer group">
+                            <div
+                                onClick={() => setShowAddMethod(true)}
+                                className="border-2 border-dashed border-gray-200 rounded-[32px] p-8 flex flex-col items-center justify-center text-center hover:bg-gray-50 hover:border-[#1E7B7C]/30 transition-all cursor-pointer group"
+                            >
                                 <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-white group-hover:shadow-md transition-all">
-                                    <Landmark size={24} className="text-gray-400 group-hover:text-[#1E7B7C]" />
+                                    <Plus size={24} className="text-gray-400 group-hover:text-[#1E7B7C]" />
                                 </div>
                                 <h3 className="text-xl font-black text-gray-900 mb-2">Add Payment Method</h3>
                                 <p className="text-sm font-medium text-gray-500 max-w-[200px]">Link a bank account or debit card for instant payouts.</p>
