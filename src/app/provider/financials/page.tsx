@@ -8,43 +8,52 @@ import {
 } from 'lucide-react'
 import { providerDashboardData } from '@/lib/mock-dashboards'
 
+import { useToast } from '@/providers/ToastProvider'
+import ReceiptModal from '@/components/modals/ReceiptModal'
+import { Transaction } from '@/types/payment'
+
+import { paymentsApi } from '@/lib/api/payments'
+
 export default function ProviderFinancialsPage() {
     const { stats } = providerDashboardData
+    const { showToast } = useToast()
     const [activeTab, setActiveTab] = useState('overview')
     const [showAddMethod, setShowAddMethod] = useState(false)
     const [isProcessing, setIsProcessing] = useState(false)
-    const [showSuccess, setShowSuccess] = useState(false)
+    const [selectedTx, setSelectedTx] = useState<Transaction | null>(null)
 
-    const handleAddMethod = (e: React.FormEvent) => {
+    const handleAddMethod = async (e: React.FormEvent) => {
         e.preventDefault()
         setIsProcessing(true)
 
-        // Simulate Linking Bank Account
-        setTimeout(() => {
+        try {
+            const response = await paymentsApi.linkPaymentMethod({})
+            if (response.success) {
+                showToast('Bank account linked successfully!', 'success', 'Method Verified')
+                setShowAddMethod(false)
+            }
+        } catch (error) {
+            showToast('Failed to link bank account.', 'error', 'Linking Error')
+        } finally {
             setIsProcessing(false)
-            setShowAddMethod(false)
-            setShowSuccess(true)
-
-            // Hide success message after 4 seconds
-            setTimeout(() => setShowSuccess(false), 4000)
-        }, 2000)
+        }
     }
+
+    const mockTransactions: Transaction[] = [
+        { id: 'TX-001', title: 'Deep Kitchen Cleaning', type: 'payment', date: 'Oct 15, 2023', amount: '+$180.00', status: 'completed', receiptNumber: 'RCP-129302' },
+        { id: 'TX-002', title: 'Withdrawal to Chase ***4421', type: 'withdrawal', date: 'Oct 12, 2023', amount: '-$500.00', status: 'processing', receiptNumber: 'RCP-129303' },
+        { id: 'TX-003', title: 'Service Fee - Kitchen Cleaning', type: 'fee', date: 'Oct 15, 2023', amount: '-$36.00', status: 'completed', receiptNumber: 'RCP-129304' },
+        { id: 'TX-004', title: 'Standard Tidying', type: 'payment', date: 'Oct 10, 2023', amount: '+$120.00', status: 'completed', receiptNumber: 'RCP-129305' },
+    ]
 
     return (
         <div className="max-w-6xl relative pb-24">
-            {/* Success Banner */}
-            {showSuccess && (
-                <div className="fixed top-24 left-1/2 -translate-x-1/2 z-[100] w-full max-w-md animate-in fade-in slide-in-from-top-4 duration-500">
-                    <div className="bg-emerald-500 text-white p-4 rounded-3xl shadow-2xl flex items-center gap-4 border-2 border-white/20 backdrop-blur-xl">
-                        <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                            <CheckCircle2 size={20} strokeWidth={3} />
-                        </div>
-                        <div>
-                            <p className="font-black">Method Linked Successfully!</p>
-                            <p className="text-xs font-bold opacity-80">Your bank account is now verified for withdrawals.</p>
-                        </div>
-                    </div>
-                </div>
+            {/* Receipt Modal */}
+            {selectedTx && (
+                <ReceiptModal
+                    transaction={selectedTx}
+                    onClose={() => setSelectedTx(null)}
+                />
             )}
 
             {/* Add Withdrawal Method Modal */}
@@ -227,25 +236,29 @@ export default function ProviderFinancialsPage() {
                         </div>
 
                         <div className="space-y-4">
-                            {[
-                                { id: 1, title: 'Deep Kitchen Cleaning', type: 'Payment', date: 'Oct 15, 2023', amount: '+$180.00', status: 'Cleared', icon: DollarSign, color: 'text-emerald-600', bg: 'bg-emerald-50' },
-                                { id: 2, title: 'Withdrawal to Chase ***4421', type: 'Withdrawal', date: 'Oct 12, 2023', amount: '-$500.00', status: 'Processing', icon: Landmark, color: 'text-gray-900', bg: 'bg-gray-100' },
-                                { id: 3, title: 'Service Fee - Kitchen Cleaning', type: 'Fee', date: 'Oct 15, 2023', amount: '-$36.00', status: 'Cleared', icon: FileText, color: 'text-red-500', bg: 'bg-red-50' },
-                                { id: 4, title: 'Standard Tidying', type: 'Payment', date: 'Oct 10, 2023', amount: '+$120.00', status: 'Cleared', icon: DollarSign, color: 'text-emerald-600', bg: 'bg-emerald-50' },
-                            ].map((tx) => (
-                                <div key={tx.id} className="flex items-center justify-between p-6 hover:bg-white/50 rounded-3xl transition-all border border-transparent hover:border-gray-100 group">
+                            {mockTransactions.map((tx) => (
+                                <div
+                                    key={tx.id}
+                                    onClick={() => setSelectedTx(tx)}
+                                    className="flex items-center justify-between p-6 hover:bg-white/50 rounded-3xl transition-all border border-transparent hover:border-gray-100 group cursor-pointer"
+                                >
                                     <div className="flex items-center gap-5">
-                                        <div className={`p-4 rounded-2xl ${tx.bg} ${tx.color}`}>
-                                            <tx.icon size={20} />
+                                        <div className={`p-4 rounded-2xl ${tx.type === 'payment' ? 'bg-emerald-50 text-emerald-600' :
+                                            tx.type === 'withdrawal' ? 'bg-gray-100 text-gray-900' :
+                                                'bg-red-50 text-red-500'
+                                            }`}>
+                                            {tx.type === 'payment' ? <DollarSign size={20} /> :
+                                                tx.type === 'withdrawal' ? <Landmark size={20} /> :
+                                                    <FileText size={20} />}
                                         </div>
                                         <div>
                                             <h4 className="font-black text-gray-900 text-lg mb-1">{tx.title}</h4>
-                                            <p className="text-xs font-bold text-gray-500">{tx.type} • {tx.date}</p>
+                                            <p className="text-xs font-bold text-gray-500 uppercase tracking-widest">{tx.type} • {tx.date}</p>
                                         </div>
                                     </div>
                                     <div className="text-right">
                                         <div className={`text-xl font-black mb-1.5 ${tx.amount.startsWith('+') ? 'text-emerald-600' : 'text-gray-900'}`}>{tx.amount}</div>
-                                        <div className={`text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-lg inline-block ${tx.status === 'Cleared' ? 'bg-[#E8F4F4] text-[#1E7B7C]' : 'bg-amber-50 text-amber-600'}`}>
+                                        <div className={`text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-lg inline-block ${tx.status === 'completed' ? 'bg-[#E8F4F4] text-[#1E7B7C]' : 'bg-amber-50 text-amber-600'}`}>
                                             {tx.status}
                                         </div>
                                     </div>

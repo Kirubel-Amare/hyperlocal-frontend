@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { User, MapPin, Star, Award, Settings, Edit3, Camera, CheckCircle2, ShieldCheck, Zap } from 'lucide-react'
+import { User, MapPin, Star, Award, Settings, Edit3, Camera, CheckCircle2, ShieldCheck, Zap, Plus } from 'lucide-react'
 import { providerDashboardData } from '@/lib/mock-dashboards'
 
 export default function ProviderProfilePage() {
@@ -97,44 +97,71 @@ export default function ProviderProfilePage() {
         <div className="lg:col-span-2 space-y-6">
           <div className="bg-white/60 backdrop-blur-md rounded-[40px] p-10 border border-white shadow-xl shadow-gray-200/10">
             <h3 className="text-xl font-black text-gray-900 mb-6">About Me</h3>
-            <p className="text-gray-600 leading-relaxed font-medium mb-8">
-              Professional cleaning expert with over 8 years of experience in residential and commercial detailing.
+            <p className="text-gray-600 leading-relaxed font-medium mb-8 italic">
+              "Professional cleaning expert with over 8 years of experience in residential and commercial detailing.
               I specialize in high-end restoration and weekly maintenance. My goal is to provide a 5-star experience
-              every time, ensuring your space is not just clean, but transformed.
+              every time, ensuring your space is not just clean, but transformed."
             </p>
 
             <h4 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-4">Service Specialties</h4>
-            <div className="flex flex-wrap gap-2">
-              {['Deep Kitchen Cleaning', 'Window Detailing', 'Post-Construction tidying', 'Move-in/Move-out'].map(tag => (
-                <span key={tag} className="px-4 py-2 bg-[#E8F4F4] text-[#1E7B7C] font-black text-xs rounded-xl border border-[#1E7B7C]/10">
-                  {tag}
-                </span>
+            <div className="flex flex-wrap gap-3">
+              {[
+                { label: 'Deep Kitchen Cleaning', icon: '🍽️' },
+                { label: 'Window Detailing', icon: '🪟' },
+                { label: 'Post-Construction tidying', icon: '🏗️' },
+                { label: 'Move-in/Move-out', icon: '🚚' }
+              ].map(tag => (
+                <div
+                  key={tag.label}
+                  className="px-5 py-3 bg-white hover:bg-[#E8F4F4] text-gray-600 hover:text-[#1E7B7C] font-black text-xs rounded-2xl border border-gray-100 hover:border-[#1E7B7C]/20 transition-all flex items-center gap-2 cursor-default group"
+                >
+                  <span className="group-hover:scale-125 transition-transform">{tag.icon}</span>
+                  {tag.label}
+                </div>
               ))}
             </div>
           </div>
 
-          <div className="bg-white/60 backdrop-blur-md rounded-[40px] p-10 border border-white shadow-xl shadow-gray-200/10">
-            <div className="flex items-center justify-between mb-8">
+          <div className="bg-white/60 backdrop-blur-md rounded-[40px] p-10 border border-white shadow-xl shadow-gray-200/10 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#1E7B7C]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+
+            <div className="flex items-center justify-between mb-8 relative z-10">
               <h3 className="text-xl font-black text-gray-900">Work Portfolio</h3>
-              <button className="text-[#1E7B7C] font-black text-sm hover:underline">Manage Gallery</button>
+              <div className="flex items-center gap-2">
+                <button className="p-2 text-[#1E7B7C] hover:bg-[#E8F4F4] rounded-xl transition-colors">
+                  <Edit3 size={18} />
+                </button>
+              </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {[1, 2, 3, 4, 5, 6].map(i => (
-                <div key={i} className="aspect-square relative rounded-[24px] overflow-hidden shadow-inner group cursor-pointer border border-gray-100">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative z-10">
+              {[
+                "https://images.unsplash.com/photo-1581578731548-c64695cc6954?w=400&h=400&fit=crop",
+                "https://images.unsplash.com/photo-1527515545081-5db817172677?w=400&h=400&fit=crop",
+                "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&h=400&fit=crop",
+                "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400&h=400&fit=crop",
+                "https://images.unsplash.com/photo-1556911220-e15224bbaf39?w=400&h=400&fit=crop",
+                "https://images.unsplash.com/photo-1603673073727-401fcc43878b?w=400&h=400&fit=crop"
+              ].map((src, i) => (
+                <div key={i} className="aspect-square relative rounded-[32px] overflow-hidden shadow-inner group cursor-pointer border border-gray-100/50">
                   <Image
-                    src={`https://images.unsplash.com/photo-${1500000000000 + i * 100000}?w=400&h=400&fit=crop`}
-                    alt="Work"
+                    src={src}
+                    alt={`Portfolio task ${i + 1}`}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700 blur-[0.5px] group-hover:blur-0"
                   />
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <div className="p-2 bg-white/20 backdrop-blur-md rounded-xl border border-white/30 text-white font-black text-[10px] uppercase tracking-widest">
-                      View Case Study
-                    </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                    <p className="text-[10px] font-black text-white/70 uppercase tracking-widest mb-1">Project Case</p>
+                    <p className="text-white font-black text-sm">After-Service Inspection</p>
                   </div>
                 </div>
               ))}
+              <div className="aspect-square rounded-[32px] border-2 border-dashed border-gray-200 flex flex-col items-center justify-center text-center p-6 hover:bg-white hover:border-[#1E7B7C]/30 transition-all cursor-pointer group">
+                <div className="w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 mb-4 group-hover:bg-[#E8F4F4] group-hover:text-[#1E7B7C] transition-colors">
+                  <Plus size={24} />
+                </div>
+                <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest group-hover:text-gray-900">Add Project</p>
+              </div>
             </div>
           </div>
         </div>

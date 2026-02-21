@@ -16,11 +16,17 @@ const recentTransactions = [
     { id: 'TRX-9929', date: 'Sep 30, 2026', provider: 'Sarah Miller', service: 'Lawn Care', amount: '$85.00', status: 'Completed', type: 'debit' },
 ]
 
+import { useToast } from '@/providers/ToastProvider'
+import ReceiptModal from '@/components/modals/ReceiptModal'
+import { Transaction } from '@/types/payment'
+import { paymentsApi } from '@/lib/api/payments'
+
 export default function CustomerBillingPage() {
+    const { showToast } = useToast()
     const [activeTab, setActiveTab] = useState<'overview' | 'methods' | 'invoices'>('overview')
     const [showAddCard, setShowAddCard] = useState(false)
     const [isProcessing, setIsProcessing] = useState(false)
-    const [showSuccess, setShowSuccess] = useState(false)
+    const [selectedTx, setSelectedTx] = useState<Transaction | null>(null)
 
     const tabs = [
         { id: 'overview', label: 'Overview', icon: Wallet },
@@ -28,36 +34,38 @@ export default function CustomerBillingPage() {
         { id: 'invoices', label: 'Invoices & History', icon: FileText }
     ] as const
 
-    const handleAddCard = (e: React.FormEvent) => {
+    const handleAddCard = async (e: React.FormEvent) => {
         e.preventDefault()
         setIsProcessing(true)
 
-        // Simulate Linking Card
-        setTimeout(() => {
+        try {
+            const response = await paymentsApi.linkPaymentMethod({})
+            if (response.success) {
+                showToast('New card linked successfully!', 'success', 'Card Verified')
+                setShowAddCard(false)
+            }
+        } catch (error) {
+            showToast('Failed to link card.', 'error', 'Linking Error')
+        } finally {
             setIsProcessing(false)
-            setShowAddCard(false)
-            setShowSuccess(true)
-
-            // Hide success message after 4 seconds
-            setTimeout(() => setShowSuccess(false), 4000)
-        }, 2000)
+        }
     }
+
+    const mockTransactions: Transaction[] = [
+        { id: 'TRX-9932', date: 'Oct 28, 2026', title: 'Plumbing Repair', type: 'payment', amount: '$120.00', status: 'completed', receiptNumber: 'RCP-55221' },
+        { id: 'TRX-9931', date: 'Oct 24, 2026', title: 'Deep Cleaning', type: 'payment', amount: '$150.00', status: 'completed', receiptNumber: 'RCP-55222' },
+        { id: 'TRX-9930', date: 'Oct 15, 2026', title: 'Refund - Cancelled Booking', type: 'payment', amount: '$45.00', status: 'refunded', receiptNumber: 'RCP-55223' },
+        { id: 'TRX-9929', date: 'Sep 30, 2026', title: 'Lawn Care', type: 'payment', amount: '$85.00', status: 'completed', receiptNumber: 'RCP-55224' },
+    ]
 
     return (
         <div className="max-w-6xl relative pb-24">
-            {/* Success Banner */}
-            {showSuccess && (
-                <div className="fixed top-24 left-1/2 -translate-x-1/2 z-[100] w-full max-w-md animate-in fade-in slide-in-from-top-4 duration-500">
-                    <div className="bg-emerald-500 text-white p-4 rounded-3xl shadow-2xl flex items-center gap-4 border-2 border-white/20 backdrop-blur-xl">
-                        <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                            <ShieldCheck size={20} strokeWidth={3} />
-                        </div>
-                        <div>
-                            <p className="font-black">Card Linked Successfully!</p>
-                            <p className="text-xs font-bold opacity-80">You can now use this card for future services.</p>
-                        </div>
-                    </div>
-                </div>
+            {/* Receipt Modal */}
+            {selectedTx && (
+                <ReceiptModal
+                    transaction={selectedTx}
+                    onClose={() => setSelectedTx(null)}
+                />
             )}
 
             {/* Add Payment Method Modal */}
@@ -235,20 +243,24 @@ export default function CustomerBillingPage() {
                             </div>
 
                             <div className="space-y-4">
-                                {recentTransactions.slice(0, 4).map((tx) => (
-                                    <div key={tx.id} className="flex items-center justify-between p-5 bg-white rounded-2xl border border-gray-100/50 hover:shadow-md transition-shadow group">
+                                {mockTransactions.slice(0, 4).map((tx) => (
+                                    <div
+                                        key={tx.id}
+                                        onClick={() => setSelectedTx(tx)}
+                                        className="flex items-center justify-between p-5 bg-white rounded-2xl border border-gray-100/50 hover:shadow-md transition-shadow group cursor-pointer"
+                                    >
                                         <div className="flex items-center gap-4">
-                                            <div className={`p-4 rounded-2xl ${tx.type === 'credit' ? 'bg-emerald-50 text-emerald-500' : 'bg-gray-50 text-gray-500'}`}>
-                                                {tx.type === 'credit' ? <ArrowDownRight size={20} /> : <ArrowUpRight size={20} />}
+                                            <div className={`p-4 rounded-2xl ${tx.status === 'refunded' ? 'bg-emerald-50 text-emerald-500' : 'bg-gray-50 text-gray-500'}`}>
+                                                {tx.status === 'refunded' ? <ArrowDownRight size={20} /> : <ArrowUpRight size={20} />}
                                             </div>
                                             <div>
-                                                <h4 className="font-black text-gray-900 mb-1">{tx.service}</h4>
-                                                <p className="text-sm font-bold text-gray-500">{tx.provider} • {tx.date}</p>
+                                                <h4 className="font-black text-gray-900 mb-1">{tx.title}</h4>
+                                                <p className="text-sm font-bold text-gray-500 uppercase tracking-widest text-[10px]">{tx.status} • {tx.date}</p>
                                             </div>
                                         </div>
                                         <div className="text-right">
-                                            <div className={`text-lg font-black mb-1 ${tx.type === 'credit' ? 'text-emerald-600' : 'text-gray-900'}`}>
-                                                {tx.type === 'credit' ? '+' : '-'}{tx.amount}
+                                            <div className={`text-lg font-black mb-1 ${tx.status === 'refunded' ? 'text-emerald-600' : 'text-gray-900'}`}>
+                                                {tx.status === 'refunded' ? '+' : '-'}{tx.amount}
                                             </div>
                                             <button className="text-xs font-bold text-[#1E7B7C] hover:underline flex items-center justify-end gap-1 w-full opacity-0 group-hover:opacity-100 transition-opacity">
                                                 <Download size={12} /> Receipt
@@ -321,14 +333,18 @@ export default function CustomerBillingPage() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {recentTransactions.map((tx) => (
-                                    <tr key={tx.id} className="group border-b border-gray-50/50 hover:bg-white transition-colors">
+                                {mockTransactions.map((tx) => (
+                                    <tr
+                                        key={tx.id}
+                                        onClick={() => setSelectedTx(tx)}
+                                        className="group border-b border-gray-50/50 hover:bg-white transition-colors cursor-pointer"
+                                    >
                                         <td className="py-5 font-bold text-sm text-gray-600">{tx.date}</td>
                                         <td className="py-5">
-                                            <div className="font-black text-gray-900 text-sm">{tx.service}</div>
+                                            <div className="font-black text-gray-900 text-sm">{tx.title}</div>
                                             <div className="font-bold text-xs text-gray-500">{tx.id}</div>
                                         </td>
-                                        <td className="py-5 font-black text-gray-900">${tx.amount}</td>
+                                        <td className="py-5 font-black text-gray-900">{tx.amount}</td>
                                         <td className="py-5 text-right">
                                             <button className="p-2 hover:bg-gray-100 rounded-xl transition-colors text-[#1E7B7C] inline-flex items-center justify-center">
                                                 <Download size={18} />

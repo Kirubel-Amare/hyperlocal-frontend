@@ -3,11 +3,17 @@
 import React, { useState } from 'react'
 import { Zap, CreditCard, Clock, History, ArrowUpRight, ArrowDownRight, Package, Check, HelpCircle, X, ShieldCheck, Lock } from 'lucide-react'
 
+import { useToast } from '@/providers/ToastProvider'
+import ReceiptModal from '@/components/modals/ReceiptModal'
+import { Transaction } from '@/types/payment'
+import { paymentsApi } from '@/lib/api/payments'
+
 export default function ProviderConnectsPage() {
+  const { showToast } = useToast()
   const [selectedPkg, setSelectedPkg] = useState<any>(null)
   const [showModal, setShowModal] = useState(false)
   const [isProcessing, setIsProcessing] = useState(false)
-  const [showSuccess, setShowSuccess] = useState(false)
+  const [selectedTx, setSelectedTx] = useState<Transaction | null>(null)
   const [balance, setBalance] = useState(124)
 
   const handleSelectPackage = (pkg: any) => {
@@ -15,37 +21,39 @@ export default function ProviderConnectsPage() {
     setShowModal(true)
   }
 
-  const handlePurchase = (e: React.FormEvent) => {
+  const handlePurchase = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsProcessing(true)
 
-    // Simulate Payment Processing
-    setTimeout(() => {
+    try {
+      const response = await paymentsApi.processPayment(selectedPkg.price, selectedPkg.connects)
+      if (response.success) {
+        setBalance(prev => prev + selectedPkg.connects)
+        showToast(`${selectedPkg.connects} Connects added to your balance!`, 'success', 'Purchase Successful')
+        setShowModal(false)
+      }
+    } catch (error) {
+      showToast('Payment processing failed.', 'error', 'Payment Error')
+    } finally {
       setIsProcessing(false)
-      setShowModal(false)
-      setShowSuccess(true)
-      setBalance(prev => prev + selectedPkg.connects)
-
-      // Hide success message after 4 seconds
-      setTimeout(() => setShowSuccess(false), 4000)
-    }, 2000)
+    }
   }
+
+  const mockLogTransactions: Transaction[] = [
+    { id: 'LOG-001', title: 'Connects Purchase - 80 Units', type: 'payment', date: 'Oct 28, 2023', amount: '+$12.00', status: 'completed', receiptNumber: 'RCP-88221' },
+    { id: 'LOG-002', title: 'Quote Submission - Deep Cleaning', type: 'fee', date: 'Oct 26, 2023', amount: '-4 Connects', status: 'completed', receiptNumber: 'RCP-88222' },
+    { id: 'LOG-003', title: 'Monthly Refresh Reward', type: 'deposit', date: 'Oct 10, 2023', amount: '+60 Connects', status: 'completed', receiptNumber: 'RCP-88223' },
+    { id: 'LOG-004', title: 'Bonus - Interview Won', type: 'deposit', date: 'Oct 08, 2023', amount: '+10 Connects', status: 'completed', receiptNumber: 'RCP-88224' },
+  ]
 
   return (
     <div className="max-w-6xl relative pb-24">
-      {/* Success Banner */}
-      {showSuccess && (
-        <div className="fixed top-24 left-1/2 -translate-x-1/2 z-[100] w-full max-w-md animate-in fade-in slide-in-from-top-4 duration-500">
-          <div className="bg-emerald-500 text-white p-4 rounded-3xl shadow-2xl flex items-center gap-4 border-2 border-white/20 backdrop-blur-xl">
-            <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-              <Check size={20} strokeWidth={4} />
-            </div>
-            <div>
-              <p className="font-black">Purchase Successful!</p>
-              <p className="text-xs font-bold opacity-80">{selectedPkg?.connects} connects added to your balance.</p>
-            </div>
-          </div>
-        </div>
+      {/* Receipt Modal */}
+      {selectedTx && (
+        <ReceiptModal
+          transaction={selectedTx}
+          onClose={() => setSelectedTx(null)}
+        />
       )}
 
       {/* Payment Modal */}
@@ -259,8 +267,8 @@ export default function ProviderConnectsPage() {
                   <div className="flex items-center gap-6">
                     <div className="text-2xl font-black text-gray-900">{pkg.price}</div>
                     <button className={`px-5 py-2.5 rounded-xl font-black text-xs transition-all ${pkg.popular
-                        ? 'bg-[#1E7B7C] text-white shadow-lg shadow-[#1E7B7C]/20'
-                        : 'bg-[#E8F4F4] text-[#1E7B7C] hover:bg-[#1E7B7C] hover:text-white'
+                      ? 'bg-[#1E7B7C] text-white shadow-lg shadow-[#1E7B7C]/20'
+                      : 'bg-[#E8F4F4] text-[#1E7B7C] hover:bg-[#1E7B7C] hover:text-white'
                       }`}>
                       Buy Now
                     </button>
@@ -287,23 +295,22 @@ export default function ProviderConnectsPage() {
           </div>
 
           <div className="space-y-4">
-            {[
-              { id: 1, action: 'Applied to "Plumbing fix"', type: 'Used', amount: '-4', date: 'Oct 26, 2023', icon: ArrowDownRight },
-              { id: 2, action: 'Monthly Refresh', type: 'Added', amount: '+60', date: 'Oct 10, 2023', icon: ArrowUpRight },
-              { id: 3, action: 'Interview Won Bonus', type: 'Added', amount: '+10', date: 'Oct 08, 2023', icon: ArrowUpRight },
-              { id: 4, action: 'Applied to "Window clean"', type: 'Used', amount: '-2', date: 'Oct 05, 2023', icon: ArrowDownRight },
-            ].map((log) => (
-              <div key={log.id} className="flex items-center justify-between p-5 bg-white/40 rounded-[24px] border border-gray-100/50 hover:border-[#1E7B7C]/20 hover:bg-white hover:shadow-lg hover:shadow-gray-200/20 transition-all group">
+            {mockLogTransactions.map((log) => (
+              <div
+                key={log.id}
+                onClick={() => setSelectedTx(log)}
+                className="flex items-center justify-between p-5 bg-white/40 rounded-[24px] border border-gray-100/50 hover:border-[#1E7B7C]/20 hover:bg-white hover:shadow-lg hover:shadow-gray-200/20 transition-all group cursor-pointer"
+              >
                 <div className="flex items-center gap-4">
-                  <div className={`p-3.5 rounded-2xl transition-transform group-hover:scale-110 ${log.type === 'Added' ? 'bg-emerald-50 text-emerald-600' : 'bg-gray-100 text-gray-500'}`}>
-                    <log.icon size={20} />
+                  <div className={`p-3.5 rounded-2xl transition-transform group-hover:scale-110 ${log.amount.startsWith('+') ? 'bg-emerald-50 text-emerald-600' : 'bg-gray-100 text-gray-500'}`}>
+                    {log.amount.startsWith('+') ? <ArrowUpRight size={20} /> : <ArrowDownRight size={20} />}
                   </div>
                   <div>
-                    <h4 className="font-black text-gray-900 text-[15px] mb-0.5">{log.action}</h4>
+                    <h4 className="font-black text-gray-900 text-[15px] mb-0.5">{log.title}</h4>
                     <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">{log.date}</p>
                   </div>
                 </div>
-                <div className={`text-xl font-black ${log.type === 'Added' ? 'text-emerald-500' : 'text-gray-900'}`}>
+                <div className={`text-xl font-black ${log.amount.startsWith('+') ? 'text-emerald-500' : 'text-gray-900'}`}>
                   {log.amount}
                 </div>
               </div>

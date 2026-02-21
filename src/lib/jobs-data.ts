@@ -1,49 +1,5 @@
-export interface Client {
-    id: string;
-    name: string;
-    location: string;
-    rating: number;
-    reviewsCount: number;
-    totalSpent: string;
-    memberSince: string;
-    paymentVerified: boolean;
-    activeJobs: number;
-    history: string;
-}
-
-export interface UserAccount {
-    name: string;
-    avatar?: string;
-    quotesLeft: number;
-    membershipType: string;
-    totalEarnings: string;
-    activeProposals: number;
-    rating: number;
-}
-
-export interface Job {
-    id: string;
-    title: string;
-    category: string;
-    postedTime: string;
-    description: string;
-    image?: string; // Optional job image
-    budget: {
-        type: 'Fixed-price' | 'Hourly';
-        amount?: string;
-        minRate?: string;
-        maxRate?: string;
-    };
-    duration: string;
-    experienceLevel: 'Entry' | 'Intermediate' | 'Expert';
-    skills: string[];
-    client: Client;
-    proposalsRange: string;
-    locationType: 'On-site' | 'Remote';
-    specificLocation?: string;
-    distance?: string; // e.g., "0.5 miles away"
-    coordinates?: { lat: number; lng: number };
-}
+import { Client, Job } from '@/types/job';
+import { UserAccount } from '@/types/user';
 
 export const mockUserAccount: UserAccount = {
     name: "Kirubel Amare",
