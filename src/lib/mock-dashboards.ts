@@ -77,6 +77,8 @@ export const customerDashboardData = {
             secondaryActionText: "Invoice",
         },
     ],
+    postedJobs: [] as any[],
+    serviceHistory: [] as any[],
 };
 
 export const providerDashboardData = {

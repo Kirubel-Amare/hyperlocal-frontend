@@ -1,81 +1,194 @@
 'use client'
 
-import { Settings as SettingsIcon, Bell, Lock, Shield, CreditCard, HelpCircle, Eye, LogOut, ChevronRight } from 'lucide-react'
+import React, { useState } from 'react'
+import { Settings, Shield, Bell, CreditCard, Lock, Smartphone, Mail, Globe, Check, Trash2 } from 'lucide-react'
 
 export default function ProviderSettingsPage() {
-    const sections = [
-        {
-            title: 'Profile Visibility',
-            desc: 'Control how your professional profile appears in search results.',
-            icon: Eye,
-            color: 'text-blue-500 bg-blue-50'
-        },
-        {
-            title: 'Notification Preferences',
-            desc: 'Choose how you want to be alerted about new job requests.',
-            icon: Bell,
-            color: 'text-[#1E7B7C] bg-[#E8F4F4]'
-        },
-        {
-            title: 'Security & Password',
-            desc: 'Update your login credentials and two-factor authentication.',
-            icon: Lock,
-            color: 'text-purple-500 bg-purple-50'
-        },
-        {
-            title: 'Privacy & Data',
-            desc: 'Manage your data permissions and third-party integrations.',
-            icon: Shield,
-            color: 'text-emerald-500 bg-emerald-50'
-        },
-        {
-            title: 'Billing & Subscriptions',
-            desc: 'Manage your Pro membership and payment methods.',
-            icon: CreditCard,
-            color: 'text-amber-500 bg-amber-50'
-        },
-        {
-            title: 'Help & Support',
-            desc: 'Get in touch with our team or browse the FAQ.',
-            icon: HelpCircle,
-            color: 'text-gray-500 bg-gray-50'
-        }
-    ]
+    const [activeTab, setActiveTab] = useState('account')
 
     return (
-        <div className="max-w-6xl relative">
-            <div className="mb-10">
-                <h1 className="text-4xl font-black text-gray-900 tracking-tight mb-2">Account Settings</h1>
-                <p className="text-lg text-gray-500 font-medium">Configure your professional workspace and preferences.</p>
+        <div className="max-w-6xl relative pb-24">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+                <div>
+                    <h1 className="text-4xl font-black text-gray-900 tracking-tight mb-2">Account Settings</h1>
+                    <p className="text-lg text-gray-500 font-medium">Manage your security, notifications, and platform preferences.</p>
+                </div>
             </div>
 
-            <div className="bg-white/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/10 border border-white">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {sections.map((item) => (
-                        <div key={item.title} className="group p-8 bg-white/40 rounded-[32px] border border-transparent hover:border-gray-50 hover:shadow-lg transition-all flex items-start gap-6 cursor-pointer">
-                            <div className={`p-4 rounded-2xl ${item.color} group-hover:scale-110 transition-transform`}>
-                                <item.icon size={24} />
-                            </div>
-                            <div className="flex-1">
-                                <div className="flex items-center justify-between mb-2">
-                                    <h3 className="text-xl font-black text-gray-900 group-hover:text-[#1E7B7C] transition-colors">{item.title}</h3>
-                                    <ChevronRight size={18} className="text-gray-300 group-hover:text-gray-500 transition-all group-hover:translate-x-1" />
-                                </div>
-                                <p className="text-sm font-medium text-gray-500 leading-relaxed">{item.desc}</p>
-                            </div>
-                        </div>
-                    ))}
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+                {/* Sidebar Nav */}
+                <div className="lg:col-span-1 border-r border-gray-100 pr-6 hidden lg:block">
+                    <div className="sticky top-[100px] flex flex-col gap-2">
+                        {[
+                            { id: 'account', label: 'Account Details', icon: Settings },
+                            { id: 'security', label: 'Password & Security', icon: Shield },
+                            { id: 'notifications', label: 'Notifications', icon: Bell },
+                            { id: 'billing', label: 'Membership & Billing', icon: CreditCard },
+                        ].map(tab => (
+                            <button
+                                key={tab.id}
+                                onClick={() => setActiveTab(tab.id)}
+                                className={`flex items-center gap-3 text-left px-5 py-3.5 rounded-2xl font-bold text-sm transition-all ${activeTab === tab.id
+                                        ? 'bg-[#E8F4F4] text-[#1E7B7C] shadow-inner'
+                                        : 'text-gray-500 hover:bg-gray-50'
+                                    }`}
+                            >
+                                <tab.icon size={18} />
+                                {tab.label}
+                            </button>
+                        ))}
+                    </div>
                 </div>
 
-                <div className="mt-12 pt-12 border-t border-gray-50 flex flex-col md:flex-row items-center justify-between gap-6">
-                    <div className="text-center md:text-left">
-                        <p className="text-sm font-black text-gray-400 uppercase tracking-widest mb-1">Session Management</p>
-                        <p className="text-xs font-bold text-gray-400">You are currently logged in on this Linux device.</p>
-                    </div>
-                    <button className="px-8 py-4 bg-red-50 text-red-500 rounded-2xl font-black flex items-center gap-2 hover:bg-red-100 transition-all active:scale-95 shadow-sm">
-                        <LogOut size={18} />
-                        Log Out Everywhere
-                    </button>
+                {/* Content Area */}
+                <div className="lg:col-span-3 space-y-8 animate-in fade-in slide-in-from-right-8 duration-500">
+
+                    {activeTab === 'account' && (
+                        <div className="space-y-8">
+                            <div className="bg-white/60 backdrop-blur-md rounded-[32px] p-8 border border-white shadow-xl shadow-gray-200/10">
+                                <h2 className="text-2xl font-black text-gray-900 mb-6">Contact Information</h2>
+                                <div className="space-y-6">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label className="block text-xs font-black text-gray-400 uppercase tracking-widest mb-2">First Name</label>
+                                            <input type="text" defaultValue="Alex" className="w-full px-5 py-4 bg-gray-50/50 border border-gray-200 rounded-xl font-bold text-gray-900 focus:outline-none focus:border-[#1E7B7C]" />
+                                        </div>
+                                        <div>
+                                            <label className="block text-xs font-black text-gray-400 uppercase tracking-widest mb-2">Last Name</label>
+                                            <input type="text" defaultValue="Johnson" className="w-full px-5 py-4 bg-gray-50/50 border border-gray-200 rounded-xl font-bold text-gray-900 focus:outline-none focus:border-[#1E7B7C]" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label className="block text-xs font-black text-gray-400 uppercase tracking-widest mb-2">Email Address</label>
+                                        <div className="flex relative">
+                                            <Mail size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                                            <input type="email" defaultValue="alex.j@example.com" className="w-full pl-10 pr-5 py-4 bg-gray-50/50 border border-gray-200 rounded-xl font-bold text-gray-900 focus:outline-none focus:border-[#1E7B7C]" />
+                                        </div>
+                                        <p className="text-xs font-bold text-emerald-500 mt-2 flex items-center gap-1"><Check size={14} /> Email Verified</p>
+                                    </div>
+                                </div>
+                                <div className="mt-8 pt-8 border-t border-gray-100 flex justify-end">
+                                    <button className="px-8 py-3.5 bg-[#1E7B7C] text-white rounded-xl font-black text-sm shadow-md hover:bg-[#166566] transition-colors">
+                                        Save Changes
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div className="bg-red-50/50 border border-red-100 rounded-[32px] p-8">
+                                <h3 className="text-xl font-black text-red-900 mb-2">Deactivate Account</h3>
+                                <p className="text-sm font-medium text-red-700/80 mb-6">This will hide your profile and active proposals from clients. You can reactivate anytime.</p>
+                                <button className="px-6 py-3 bg-white text-red-600 border border-red-200 rounded-xl font-black text-sm shadow-sm hover:bg-red-50 transition-colors flex items-center gap-2">
+                                    <Trash2 size={16} /> Deactivate My Account
+                                </button>
+                            </div>
+                        </div>
+                    )}
+
+                    {activeTab === 'security' && (
+                        <div className="bg-white/60 backdrop-blur-md rounded-[32px] p-8 border border-white shadow-xl shadow-gray-200/10">
+                            <h2 className="text-2xl font-black text-gray-900 mb-8">Password & Security</h2>
+
+                            <div className="space-y-6 mb-10">
+                                <div className="flex items-center justify-between p-4 border border-gray-100 rounded-2xl bg-gray-50/50">
+                                    <div className="flex gap-4 items-center">
+                                        <div className="p-3 bg-white text-[#1E7B7C] rounded-xl shadow-sm"><Lock size={20} /></div>
+                                        <div>
+                                            <h4 className="font-black text-gray-900">Password</h4>
+                                            <p className="text-xs font-bold text-gray-500">Last changed 3 months ago</p>
+                                        </div>
+                                    </div>
+                                    <button className="text-[#1E7B7C] font-black text-sm hover:underline">Change</button>
+                                </div>
+                                <div className="flex items-center justify-between p-4 border border-emerald-100 rounded-2xl bg-emerald-50/50">
+                                    <div className="flex gap-4 items-center">
+                                        <div className="p-3 bg-white text-emerald-600 rounded-xl shadow-sm"><Smartphone size={20} /></div>
+                                        <div>
+                                            <h4 className="font-black text-emerald-900">Two-Factor Authentication</h4>
+                                            <p className="text-xs font-bold text-emerald-700">Enabled via Authenticator App</p>
+                                        </div>
+                                    </div>
+                                    <button className="text-emerald-700 font-black text-sm hover:underline">Manage</button>
+                                </div>
+                            </div>
+
+                            <h3 className="text-lg font-black text-gray-900 mb-4">Active Sessions</h3>
+                            <div className="space-y-4">
+                                <div className="flex justify-between items-center py-4 border-b border-gray-100">
+                                    <div className="flex gap-3 items-center">
+                                        <Globe size={18} className="text-[#1E7B7C]" />
+                                        <div>
+                                            <p className="font-bold text-sm text-gray-900">Chrome on Mac OS</p>
+                                            <p className="text-xs font-medium text-gray-500">New York, USA • Current Session</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {activeTab === 'notifications' && (
+                        <div className="bg-white/60 backdrop-blur-md rounded-[32px] p-8 border border-white shadow-xl shadow-gray-200/10">
+                            <h2 className="text-2xl font-black text-gray-900 mb-8">Notification Preferences</h2>
+
+                            <div className="space-y-8">
+                                <div>
+                                    <h3 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-4">Messages & Activity</h3>
+                                    <div className="space-y-4">
+                                        <label className="flex items-center justify-between cursor-pointer p-2 hover:bg-gray-50 rounded-xl transition-colors">
+                                            <div>
+                                                <span className="block font-black text-gray-900 text-sm">New messages from clients</span>
+                                                <span className="block text-xs font-bold text-gray-500">Instantly notify me when I receive a message</span>
+                                            </div>
+                                            <div className="w-12 h-6 bg-[#1E7B7C] rounded-full relative shadow-inner">
+                                                <div className="absolute right-1 top-1 bg-white w-4 h-4 rounded-full shadow-sm" />
+                                            </div>
+                                        </label>
+                                        <label className="flex items-center justify-between cursor-pointer p-2 hover:bg-gray-50 rounded-xl transition-colors">
+                                            <div>
+                                                <span className="block font-black text-gray-900 text-sm">Service Request invitations</span>
+                                                <span className="block text-xs font-bold text-gray-500">When a client directly invites me</span>
+                                            </div>
+                                            <div className="w-12 h-6 bg-[#1E7B7C] rounded-full relative shadow-inner">
+                                                <div className="absolute right-1 top-1 bg-white w-4 h-4 rounded-full shadow-sm" />
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h3 className="text-sm font-black text-gray-400 uppercase tracking-widest mb-4">Marketing & Tips</h3>
+                                    <div className="space-y-4">
+                                        <label className="flex items-center justify-between cursor-pointer p-2 hover:bg-gray-50 rounded-xl transition-colors">
+                                            <div>
+                                                <span className="block font-black text-gray-900 text-sm">Product updates & news</span>
+                                                <span className="block text-xs font-bold text-gray-500">Occasional announcements about new features</span>
+                                            </div>
+                                            <div className="w-12 h-6 bg-gray-200 rounded-full relative shadow-inner border border-gray-300">
+                                                <div className="absolute left-1 top-1 bg-white w-4 h-4 rounded-full shadow-sm" />
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {activeTab === 'billing' && (
+                        <div className="bg-white/60 backdrop-blur-md rounded-[32px] p-8 border border-white shadow-xl shadow-gray-200/10 flex flex-col items-center justify-center py-20">
+                            <div className="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center mb-6">
+                                <CreditCard size={32} className="text-gray-400" />
+                            </div>
+                            <h2 className="text-2xl font-black text-gray-900 mb-2">Basic Membership</h2>
+                            <p className="text-gray-500 font-medium max-w-sm text-center mb-8">
+                                You are currently on the free Basic Provider plan. Upgrade to Premium for 80 free connects a month and profile boosting.
+                            </p>
+                            <button className="px-8 py-4 bg-gradient-to-r from-[#1E7B7C] to-[#166566] text-white rounded-xl font-black shadow-lg shadow-[#1E7B7C]/20 hover:scale-105 transition-transform">
+                                Upgrade to Premium
+                            </button>
+                        </div>
+                    )}
+
                 </div>
             </div>
         </div>

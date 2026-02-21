@@ -15,7 +15,7 @@ export default function CustomerDashboardPage() {
   const tabs = ['Posted Jobs', 'Ongoing Services', 'Service History']
 
   const getJobsForTab = () => {
-    switch(activeTab) {
+    switch (activeTab) {
       case 'Posted Jobs':
         return postedJobs || []
       case 'Ongoing Services':
@@ -77,16 +77,16 @@ export default function CustomerDashboardPage() {
       </div>
 
       {/* Tabs */}
-      <TabNavigation 
-        tabs={tabs} 
-        activeTab={activeTab} 
+      <TabNavigation
+        tabs={tabs}
+        activeTab={activeTab}
         onTabChange={setActiveTab}
         activeColor="text-[#1E7B7C]"
       />
 
       {/* Job Cards List */}
       <div className="space-y-6">
-        {getJobsForTab().map((job) => (
+        {getJobsForTab().map((job: any) => (
           <JobCard key={job.id} job={job} />
         ))}
 

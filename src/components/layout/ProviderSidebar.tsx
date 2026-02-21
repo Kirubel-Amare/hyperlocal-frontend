@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { LayoutDashboard, Calendar, DollarSign, Star, Settings, Zap, Search, MessageSquare, LogOut, FileText, Briefcase, User, ZapOff, Inbox } from 'lucide-react'
+import { LayoutDashboard, Calendar, DollarSign, Star, Settings, Zap, Search, MessageSquare, LogOut, FileText, Briefcase, User, ZapOff, Inbox, Landmark } from 'lucide-react'
 import { providerDashboardData } from '@/lib/mock-dashboards'
 
 export default function ProviderSidebar() {
@@ -33,7 +33,7 @@ export default function ProviderSidebar() {
             links: [
                 { name: 'Public Profile', href: '/provider/profile', icon: User },
                 { name: 'Schedule', href: '/provider/schedule', icon: Calendar },
-                { name: 'Earnings', href: '/provider/earnings', icon: DollarSign },
+                { name: 'Financials', href: '/provider/financials', icon: Landmark },
                 { name: 'Reviews', href: '/provider/reviews', icon: Star },
             ]
         },

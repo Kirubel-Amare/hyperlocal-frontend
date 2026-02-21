@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { User, MapPin, Star, Award, Settings, Edit3, Camera, CheckCircle2, ShieldCheck, Zap } from 'lucide-react'
 import { providerDashboardData } from '@/lib/mock-dashboards'
 
@@ -14,10 +15,10 @@ export default function ProviderProfilePage() {
           <h1 className="text-4xl font-black text-gray-900 tracking-tight mb-2">My Professional Profile</h1>
           <p className="text-lg text-gray-500 font-medium">Manage how you appear to potential clients.</p>
         </div>
-        <button className="px-6 py-3 bg-white border border-gray-100 rounded-2xl font-bold flex items-center gap-2 hover:bg-gray-50 transition-all shadow-sm">
+        <Link href="/provider/profile/edit" className="px-6 py-3 bg-white border border-gray-100 rounded-2xl font-bold flex items-center gap-2 hover:bg-gray-50 transition-all shadow-sm">
           <Edit3 size={18} />
           Edit Profile
-        </button>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
