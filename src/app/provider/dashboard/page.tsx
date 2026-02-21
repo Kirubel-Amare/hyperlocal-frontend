@@ -1,3 +1,5 @@
+'use client'
+
 import { Wallet2, UserPlus, Eye, Check, Zap, ChevronRight, Award, Trash2, Calendar } from 'lucide-react'
 import { ROLES } from '@/constants/roles'
 import { ROUTES } from '@/constants/routes'
@@ -9,8 +11,10 @@ import ActivityItem from '@/components/shared/activity-item'
 import AnalyticsChart from '@/components/dashboard/analytics-chart'
 import { useDashboard } from '@/lib/hooks/use-dashboard'
 import { ProviderDashboardData } from '@/types/dashboard'
+import { useTranslation } from '@/i18n/LanguageContext'
 
 export default function ProviderDashboardPage() {
+  const { t } = useTranslation()
   const { data, loading } = useDashboard<ProviderDashboardData>(ROLES.PROVIDER)
 
   if (loading || !data) {
@@ -26,30 +30,40 @@ export default function ProviderDashboardPage() {
   return (
     <div className="max-w-6xl relative">
       <DashboardHeader
-        title="Dashboard Overview"
-        subtitle={<>You have <span className="text-[#1E7B7C] font-black">{user.newRequestsCount} new requests</span> waiting for response.</>}
+        title={t('dashboard.header.overview')}
+        subtitle={
+          <>
+            {t('dashboard.header.providerSubtitle', { count: user.newRequestsCount }).split(/(\d+ new requests)/).map((part, i) =>
+              part === `${user.newRequestsCount} new requests` ? (
+                <span key={i} className="text-[#1E7B7C] font-black">{part}</span>
+              ) : (
+                part
+              )
+            )}
+          </>
+        }
       />
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         <StatsCard
-          label="TOTAL EARNINGS"
-          value={stats.totalEarnings.amount}
-          trend={`${stats.totalEarnings.trend} this month`}
+          label={t('dashboard.stats.totalEarnings')}
+          value={stats.totalEarnings.amount || 0}
+          trend={`${stats.totalEarnings.trend} ${t('dashboard.stats.thisMonth')}`}
           trendUp={stats.totalEarnings.trendUp}
           icon={Wallet2}
         />
         <StatsCard
-          label="ACTIVE JOBS"
-          value={stats.activeJobs.count}
+          label={t('dashboard.stats.activeJobs')}
+          value={stats.activeJobs.count || 0}
           subtitle={stats.activeJobs.subtitle}
           icon={UserPlus}
           iconColorClass="text-blue-600"
           iconBgClass="bg-blue-50"
         />
         <StatsCard
-          label="PROFILE VIEWS"
-          value={stats.profileViews.count}
+          label={t('dashboard.stats.profileViews')}
+          value={stats.profileViews.count || 0}
           trend={stats.profileViews.trend}
           trendUp={stats.profileViews.trendUp}
           icon={Eye}
@@ -61,9 +75,9 @@ export default function ProviderDashboardPage() {
       {/* New Requests */}
       <div className="mb-14">
         <div className="flex justify-between items-end mb-8">
-          <h2 className="text-2xl font-black text-gray-900">New Service Requests</h2>
+          <h2 className="text-2xl font-black text-gray-900">{t('dashboard.provider.newRequests')}</h2>
           <button className="text-[#1E7B7C] font-black text-sm hover:underline flex items-center gap-1">
-            View My Catalog
+            {t('dashboard.provider.viewCatalog')}
             <ChevronRight size={16} />
           </button>
         </div>
@@ -87,7 +101,7 @@ export default function ProviderDashboardPage() {
       {/* Bottom Row */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <GlassCard
-          title="Active Schedule"
+          title={t('dashboard.provider.activeSchedule')}
           innerClassName="p-10 pt-4"
         >
           <div className="relative border-l-2 border-gray-100/50 ml-[47px] space-y-10 pb-4">
@@ -105,8 +119,8 @@ export default function ProviderDashboardPage() {
         </GlassCard>
 
         <AnalyticsChart
-          title="Weekly Impact"
-          subtitle="Your localized service reach and earnings analysis."
+          title={t('dashboard.provider.weeklyImpact')}
+          subtitle={t('dashboard.provider.impactSubtitle')}
           type="revenue"
           data={[
             { label: 'Mon', value: 350 },

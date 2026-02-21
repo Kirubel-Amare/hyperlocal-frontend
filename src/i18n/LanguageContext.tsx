@@ -15,7 +15,7 @@ const translations: Record<Language, any> = {
 interface LanguageContextType {
     language: Language;
     setLanguage: (lang: Language) => void;
-    t: (key: string) => string;
+    t: (key: string, variables?: Record<string, string | number>) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -35,7 +35,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         localStorage.setItem('language', lang);
     };
 
-    const t = (key: string): string => {
+    const t = (key: string, variables?: Record<string, string | number>): string => {
         const keys = key.split('.');
         let value = translations[language];
 
@@ -52,11 +52,23 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
                         return key; // Return the key itself if not found even in fallback
                     }
                 }
-                return fallbackValue;
+                value = fallbackValue;
+                break;
             }
         }
 
-        return typeof value === 'string' ? value : key;
+        if (typeof value !== 'string') return key;
+
+        // Perform variable substitution
+        if (variables) {
+            let substitutedValue = value;
+            Object.entries(variables).forEach(([k, v]) => {
+                substitutedValue = substitutedValue.replace(new RegExp(`{${k}}`, 'g'), String(v));
+            });
+            return substitutedValue;
+        }
+
+        return value;
     };
 
     return (

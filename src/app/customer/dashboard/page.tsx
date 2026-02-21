@@ -11,10 +11,11 @@ import { ROUTES } from '@/constants/routes'
 import { STATUSES, STATUS_COLORS } from '@/constants/statuses'
 import { useDashboard } from '@/lib/hooks/use-dashboard'
 import { CustomerDashboardData } from '@/types/dashboard'
+import { useTranslation } from '@/i18n/LanguageContext'
 
 export default function CustomerDashboardPage() {
+  const { t } = useTranslation()
   const { data, loading } = useDashboard<CustomerDashboardData>(ROLES.CUSTOMER)
-  const [activeTab, setActiveTab] = useState(STATUSES.IN_PROGRESS)
 
   if (loading || !data) {
     return (
@@ -29,10 +30,20 @@ export default function CustomerDashboardPage() {
   return (
     <div className="max-w-6xl relative pb-24">
       <DashboardHeader
-        title={`Welcome back, ${user.name}`}
-        subtitle={<>You have <span className="text-[#1E7B7C] font-bold">{user.upcomingJobsCount} services</span> scheduled for this week.</>}
+        title={t('dashboard.header.welcome', { name: user.name })}
+        subtitle={
+          <>
+            {t('dashboard.header.subtitle', { count: user.upcomingJobsCount }).split(/(\d+ services)/).map((part, i) =>
+              part === `${user.upcomingJobsCount} services` ? (
+                <span key={i} className="text-[#1E7B7C] font-bold">{part}</span>
+              ) : (
+                part
+              )
+            )}
+          </>
+        }
         action={{
-          label: "Request a Service",
+          label: t('dashboard.header.requestAction'),
           href: ROUTES.CUSTOMER.REQUEST,
           icon: Plus
         }}
@@ -43,8 +54,8 @@ export default function CustomerDashboardPage() {
         <div className="lg:col-span-2">
           <StatsCard
             variant="primary"
-            label="Active Service Requests"
-            value={stats.ongoingJobs.count}
+            label={t('dashboard.stats.activeRequests')}
+            value={stats.ongoingJobs.count || 0}
             trend={stats.ongoingJobs.trend}
             icon={ClipboardList}
           />
@@ -52,16 +63,16 @@ export default function CustomerDashboardPage() {
 
         <div className="flex flex-col gap-6">
           <StatsCard
-            label="Pending Quotes"
-            value={stats.pendingQuotes.count}
+            label={t('dashboard.stats.pendingQuotes')}
+            value={stats.pendingQuotes.count || 0}
             subtitle={stats.pendingQuotes.subtitle}
             icon={FileText}
             iconColorClass="text-orange-500"
             iconBgClass="bg-orange-50"
           />
           <StatsCard
-            label="Total Spent"
-            value={stats.totalSpent.amount}
+            label={t('dashboard.stats.totalSpent')}
+            value={stats.totalSpent.amount || 0}
             subtitle={stats.totalSpent.subtitle}
             icon={Wallet}
             iconColorClass="text-emerald-500"
@@ -72,8 +83,8 @@ export default function CustomerDashboardPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
         <GlassCard
-          title="Recent Services"
-          action={<button className="text-[#1E7B7C] font-black text-sm hover:underline">View All</button>}
+          title={t('dashboard.recentServices.title')}
+          action={<button className="text-[#1E7B7C] font-black text-sm hover:underline">{t('dashboard.recentServices.viewAll')}</button>}
           innerClassName="p-0 space-y-4 px-10 pb-10 mt-8"
         >
           <div className="space-y-4">
@@ -94,8 +105,8 @@ export default function CustomerDashboardPage() {
 
         {/* Suggested Services */}
         <div className="bg-gray-50/50 rounded-[40px] p-10 border border-gray-100 flex flex-col">
-          <h2 className="text-2xl font-black text-gray-900 mb-2">Need something else?</h2>
-          <p className="text-sm font-medium text-gray-500 mb-8">Popular services requested in your area.</p>
+          <h2 className="text-2xl font-black text-gray-900 mb-2">{t('dashboard.suggestions.title')}</h2>
+          <p className="text-sm font-medium text-gray-500 mb-8">{t('dashboard.suggestions.subtitle')}</p>
 
           <div className="space-y-3 flex-1">
             {[
@@ -115,7 +126,7 @@ export default function CustomerDashboardPage() {
           </div>
 
           <button className="mt-6 w-full py-4 border-2 border-gray-200 text-gray-500 rounded-xl font-black text-sm hover:bg-white hover:border-[#1E7B7C] hover:text-[#1E7B7C] transition-all relative overflow-hidden">
-            Browse All Categories
+            {t('dashboard.suggestions.browseAll')}
           </button>
         </div>
       </div>

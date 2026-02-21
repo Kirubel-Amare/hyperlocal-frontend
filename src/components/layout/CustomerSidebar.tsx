@@ -3,19 +3,21 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { LayoutDashboard, Clock, CreditCard, User, Settings, LogOut } from 'lucide-react'
+import { useTranslation } from '@/i18n/LanguageContext'
 
 export default function CustomerSidebar() {
     const pathname = usePathname()
+    const { t } = useTranslation()
 
     const mainLinks = [
-        { name: 'Dashboard', href: '/customer/dashboard', icon: LayoutDashboard },
-        { name: 'My Jobs', href: '/customer/jobs', icon: Clock },
-        { name: 'Saved Providers', href: '/customer/saved', icon: User },
-        { name: 'Billing & Payments', href: '/customer/billing', icon: CreditCard },
+        { name: t('sidebar.dashboard'), href: '/customer/dashboard', icon: LayoutDashboard },
+        { name: t('sidebar.jobs'), href: '/customer/jobs', icon: Clock },
+        { name: t('sidebar.saved'), href: '/customer/saved', icon: User },
+        { name: t('sidebar.billing'), href: '/customer/billing', icon: CreditCard },
     ]
 
     const accountLinks = [
-        { name: 'Profile Settings', href: '/customer/profile', icon: Settings },
+        { name: t('sidebar.settings'), href: '/customer/profile', icon: Settings },
     ]
 
     return (
@@ -26,7 +28,7 @@ export default function CustomerSidebar() {
             <div className="px-6 mb-8 relative z-10">
                 <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-4 px-3 flex items-center gap-2">
                     <span className="w-4 h-[1px] bg-gray-300"></span>
-                    Main Menu
+                    {t('sidebar.menu')}
                 </h4>
                 <div className="space-y-1.5">
                     {mainLinks.map((link) => {
@@ -60,7 +62,7 @@ export default function CustomerSidebar() {
             <div className="px-6 mb-8 relative z-10">
                 <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-4 px-3 flex items-center gap-2">
                     <span className="w-4 h-[1px] bg-gray-300"></span>
-                    Account
+                    {t('sidebar.account')}
                 </h4>
                 <div className="space-y-1.5">
                     {accountLinks.map((link) => {
@@ -96,10 +98,10 @@ export default function CustomerSidebar() {
                 <div className="bg-gradient-to-br from-[#1E7B7C] to-[#166566] rounded-3xl p-6 text-white shadow-xl shadow-[#1E7B7C]/20 relative overflow-hidden mb-6 group cursor-pointer hover:scale-[1.02] transition-transform">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/3" />
                     <div className="relative z-10">
-                        <h4 className="text-sm font-black mb-1">Need help?</h4>
-                        <p className="text-xs text-white/80 font-medium mb-4">Contact our priority 24/7 support team.</p>
+                        <h4 className="text-sm font-black mb-1">{t('sidebar.help.title')}</h4>
+                        <p className="text-xs text-white/80 font-medium mb-4">{t('sidebar.help.description')}</p>
                         <button className="w-full bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white text-xs font-black py-2.5 rounded-xl transition-colors">
-                            Contact Support
+                            {t('sidebar.help.button')}
                         </button>
                     </div>
                 </div>
@@ -108,7 +110,7 @@ export default function CustomerSidebar() {
                     <div className="p-2 rounded-xl bg-red-50 group-hover:bg-white inset-0 shadow-sm transition-colors">
                         <LogOut size={18} />
                     </div>
-                    Logout Account
+                    {t('sidebar.logout')}
                 </button>
             </div>
 

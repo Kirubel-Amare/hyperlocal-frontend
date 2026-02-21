@@ -201,5 +201,74 @@
             "contact": "ያግኙን",
             "terms": "ውሎች"
         }
+    },
+    "sidebar": {
+        "menu": "ዋና ሜኑ",
+        "dashboard": "ዳሽቦርድ",
+        "jobs": "የእኔ ስራዎች",
+        "saved": "የተቀመጡ ባለሙያዎች",
+        "billing": "ክፍያ እና ወጪዎች",
+        "account": "መለያ",
+        "settings": "የመገለጫ ቅንብሮች",
+        "logout": "መለያ ውጣ",
+        "goOnline": "ኢንተርኔት ይግቡ",
+        "groups": {
+            "main": "ዋና ሜኑ",
+            "manage": "ያስተዳድሩ",
+            "professional": "ባለሙያ",
+            "account": "መለያ"
+        },
+        "links": {
+            "browseJobs": "ስራዎችን ይፈልጉ",
+            "messages": "መልዕክቶች",
+            "serviceRequests": "የአገልግሎት ጥያቄዎች",
+            "myQuotes": "የእኔ ዋጋዎች",
+            "ongoingJobs": "በሂደት ላይ ያሉ ስራዎች",
+            "serviceCredits": "የአገልግሎት ክሬዲቶች",
+            "publicProfile": "ይፋዊ መገለጫ",
+            "schedule": "የጊዜ ሰሌዳ",
+            "financials": "ፋይናንስ",
+            "reviews": "ግምገማዎች",
+            "settings": "ቅንብሮች"
+        },
+        "help": {
+            "title": "እርዳታ ይፈልጋሉ?",
+            "description": "የእኛን የ24/7 የድጋፍ ቡድን ያነጋግሩ።",
+            "button": "ድጋፍን ያግኙ"
+        }
+    },
+    "dashboard": {
+        "header": {
+            "welcome": "እንኳን ደህና መጡ፣ {name}",
+            "subtitle": "በዚህ ሳምንት {count} የታቀዱ አገልግሎቶች አሉዎት።",
+            "requestAction": "አገልግሎት ይዘዙ",
+            "overview": "የዳሽቦርድ አጠቃላይ እይታ",
+            "providerSubtitle": "{count} አዲስ የጥያቄዎች ምላሽ እየጠበቁ ነው።"
+        },
+        "stats": {
+            "activeRequests": "ንቁ የአገልግሎት ጥያቄዎች",
+            "pendingQuotes": "በተጠባባቂ ላይ ያሉ ዋጋዎች",
+            "totalSpent": "ጠቅላላ ወጪ",
+            "totalEarnings": "ጠቅላላ ገቢ",
+            "activeJobs": "ንቁ ስራዎች",
+            "profileViews": "የመገለጫ እይታዎች",
+            "thisMonth": "በዚህ ወር"
+        },
+        "recentServices": {
+            "title": "የቅርብ ጊዜ አገልግሎቶች",
+            "viewAll": "ሁሉንም ይመልከቱ"
+        },
+        "suggestions": {
+            "title": "ሌላ ነገር ይፈልጋሉ?",
+            "subtitle": "በአካባቢዎ የተለመዱ አገልግሎቶች።",
+            "browseAll": "ሁሉንም ምድቦች ይመልከቱ"
+        },
+        "provider": {
+            "newRequests": "አዲስ የአገልግሎት ጥያቄዎች",
+            "viewCatalog": "የእኔን ካታሎግ ይመልከቱ",
+            "activeSchedule": "ንቁ መርሃ ግብር",
+            "weeklyImpact": "ሳምንታዊ ተጽዕኖ",
+            "impactSubtitle": "የአካባቢዎ የአገልግሎት ተደራሽነት እና የገቢ ትንተና።"
+        }
     }
 }

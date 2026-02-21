@@ -51,7 +51,7 @@
             },
             "step4": {
                 "title": "Xumuri",
-                "description": "Adeemsa isaa hordofaa fi ogeeyyii waliin kallattiin wal quunnamaa"
+                "description": "Adeemsa isaa hordofaa fi ogeeyyii waliin kallattiን wal quunnamaa"
             }
         }
     },
@@ -200,6 +200,75 @@
             "safety": "Nageenya",
             "contact": "Nu quunnamaa",
             "terms": "Haalawwan"
+        }
+    },
+    "sidebar": {
+        "menu": "Menuu Guddaa",
+        "dashboard": "Daashboordii",
+        "jobs": "Hojiiwwan koo",
+        "saved": "Ogeessota Olka'an",
+        "billing": "Kaffaltii & Baasii",
+        "account": "Herrega",
+        "settings": "Qindaa'ina Proofayilaa",
+        "logout": "Herrega ba'i",
+        "goOnline": "Interneetii Seeni",
+        "groups": {
+            "main": "Menuu Guddaa",
+            "manage": "Bulchiinsa",
+            "professional": "Ogummaa",
+            "account": "Herrega"
+        },
+        "links": {
+            "browseJobs": "Hojii Barbaadi",
+            "messages": "Ergaa",
+            "serviceRequests": "Gaaffii Tajaajilaa",
+            "myQuotes": "Waliigaltee Koo",
+            "ongoingJobs": "Hojiiwwan Itti Jiran",
+            "serviceCredits": "Kireeditii Tajaajilaa",
+            "publicProfile": "Proofayila Mul'ataa",
+            "schedule": "Sagaantaa",
+            "financials": "Faayinaansii",
+            "reviews": "Yaada",
+            "settings": "Qindaa'ina"
+        },
+        "help": {
+            "title": "Gargaarsa barbaadduu?",
+            "description": "Garee deeggarsa keenya 24/7 quunnamaa.",
+            "button": "Deeggarsa quunnami"
+        }
+    },
+    "dashboard": {
+        "header": {
+            "welcome": "Baga nagaan dhuftan, {name}",
+            "subtitle": "Torban kana tajaajiloota {count} qabattee jirtu.",
+            "requestAction": "Tajaajila Gaafadhu",
+            "overview": "Ilaalcha Daashboordii",
+            "providerSubtitle": "Gaaffiiwwan haaraa {count} deebii eegaa jiru."
+        },
+        "stats": {
+            "activeRequests": "Gaaffii Tajaajilaa Hojii Irra Jiru",
+            "pendingQuotes": "Waliigaltee Eegamaa Jiran",
+            "totalSpent": "Waliigala Baasii",
+            "totalEarnings": "WALIIGALA GALII",
+            "activeJobs": "HOJIIWWAN HOJII IRRA JIRAN",
+            "profileViews": "ILAALCHA PROOFAYILAA",
+            "thisMonth": "ji'a kana"
+        },
+        "recentServices": {
+            "title": "Tajaajiloota Dhihoo",
+            "viewAll": "Hunda Ilaali"
+        },
+        "suggestions": {
+            "title": "Waan biraa barbaadduu?",
+            "subtitle": "Tajaajiloota naannoo keetti baay'ee barbaadaman.",
+            "browseAll": "Ramaddii Hunda Ilaali"
+        },
+        "provider": {
+            "newRequests": "Gaaffii Tajaajilaa Haaraa",
+            "viewCatalog": "Kaataaloogii koo Ilaali",
+            "activeSchedule": "Sagaantaa Hojii Irra Jiru",
+            "weeklyImpact": "Dhiibbaa Torbee",
+            "impactSubtitle": "Tajaajila naannoo keetii fi qaaccessa galii keetii."
         }
     }
 }

@@ -5,42 +5,44 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { LayoutDashboard, Calendar, DollarSign, Star, Settings, Zap, Search, MessageSquare, LogOut, FileText, Briefcase, User, ZapOff, Inbox, Landmark } from 'lucide-react'
 import { providerDashboardData } from '@/lib/mock-dashboards'
+import { useTranslation } from '@/i18n/LanguageContext'
 
 export default function ProviderSidebar() {
     const pathname = usePathname()
+    const { t } = useTranslation()
     const { user } = providerDashboardData
 
     const menuGroups = [
         {
-            title: 'MAIN',
+            title: t('sidebar.groups.main'),
             links: [
-                { name: 'Dashboard', href: '/provider/dashboard', icon: LayoutDashboard },
-                { name: 'Browse Jobs', href: '/jobs', icon: Search },
-                { name: 'Messages', href: '/messages', icon: MessageSquare },
+                { name: t('sidebar.dashboard'), href: '/provider/dashboard', icon: LayoutDashboard },
+                { name: t('sidebar.links.browseJobs'), href: '/jobs', icon: Search },
+                { name: t('sidebar.links.messages'), href: '/messages', icon: MessageSquare },
             ]
         },
         {
-            title: 'MANAGE',
+            title: t('sidebar.groups.manage'),
             links: [
-                { name: 'Service Requests', href: '/provider/requests', icon: Inbox },
-                { name: 'My Quotes', href: '/provider/quotes', icon: FileText },
-                { name: 'Ongoing Jobs', href: '/provider/jobs/active', icon: Briefcase },
-                { name: 'Service Credits', href: '/provider/connects', icon: Zap },
+                { name: t('sidebar.links.serviceRequests'), href: '/provider/requests', icon: Inbox },
+                { name: t('sidebar.links.myQuotes'), href: '/provider/quotes', icon: FileText },
+                { name: t('sidebar.links.ongoingJobs'), href: '/provider/jobs/active', icon: Briefcase },
+                { name: t('sidebar.links.serviceCredits'), href: '/provider/connects', icon: Zap },
             ]
         },
         {
-            title: 'PROFESSIONAL',
+            title: t('sidebar.groups.professional'),
             links: [
-                { name: 'Public Profile', href: '/provider/profile', icon: User },
-                { name: 'Schedule', href: '/provider/schedule', icon: Calendar },
-                { name: 'Financials', href: '/provider/financials', icon: Landmark },
-                { name: 'Reviews', href: '/provider/reviews', icon: Star },
+                { name: t('sidebar.links.publicProfile'), href: '/provider/profile', icon: User },
+                { name: t('sidebar.links.schedule'), href: '/provider/schedule', icon: Calendar },
+                { name: t('sidebar.links.financials'), href: '/provider/financials', icon: Landmark },
+                { name: t('sidebar.links.reviews'), href: '/provider/reviews', icon: Star },
             ]
         },
         {
-            title: 'ACCOUNT',
+            title: t('sidebar.groups.account'),
             links: [
-                { name: 'Settings', href: '/provider/settings', icon: Settings },
+                { name: t('sidebar.links.settings'), href: '/provider/settings', icon: Settings },
             ]
         }
     ]
@@ -98,7 +100,7 @@ export default function ProviderSidebar() {
                     <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/3" />
                     <div className="relative z-10 flex items-center gap-2">
                         <Zap size={18} fill="currentColor" />
-                        Go Online
+                        {t('sidebar.goOnline')}
                     </div>
                 </button>
 
@@ -106,7 +108,7 @@ export default function ProviderSidebar() {
                     <div className="p-2 rounded-xl bg-red-50 group-hover:bg-white inset-0 shadow-sm transition-colors">
                         <LogOut size={18} strokeWidth={2.5} />
                     </div>
-                    Logout Account
+                    {t('sidebar.logout')}
                 </button>
             </div>
 

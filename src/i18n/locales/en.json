@@ -201,5 +201,74 @@
             "contact": "Contact",
             "terms": "Terms"
         }
+    },
+    "sidebar": {
+        "menu": "Main Menu",
+        "dashboard": "Dashboard",
+        "jobs": "My Jobs",
+        "saved": "Saved Providers",
+        "billing": "Billing & Payments",
+        "account": "Account",
+        "settings": "Profile Settings",
+        "logout": "Logout Account",
+        "goOnline": "Go Online",
+        "groups": {
+            "main": "Main Menu",
+            "manage": "Manage",
+            "professional": "Professional",
+            "account": "Account"
+        },
+        "links": {
+            "browseJobs": "Browse Jobs",
+            "messages": "Messages",
+            "serviceRequests": "Service Requests",
+            "myQuotes": "My Quotes",
+            "ongoingJobs": "Ongoing Jobs",
+            "serviceCredits": "Service Credits",
+            "publicProfile": "Public Profile",
+            "schedule": "Schedule",
+            "financials": "Financials",
+            "reviews": "Reviews",
+            "settings": "Settings"
+        },
+        "help": {
+            "title": "Need help?",
+            "description": "Contact our priority 24/7 support team.",
+            "button": "Contact Support"
+        }
+    },
+    "dashboard": {
+        "header": {
+            "welcome": "Welcome back, {name}",
+            "subtitle": "You have {count} services scheduled for this week.",
+            "requestAction": "Request a Service",
+            "overview": "Dashboard Overview",
+            "providerSubtitle": "You have {count} new requests waiting for response."
+        },
+        "stats": {
+            "activeRequests": "Active Service Requests",
+            "pendingQuotes": "Pending Quotes",
+            "totalSpent": "Total Spent",
+            "totalEarnings": "TOTAL EARNINGS",
+            "activeJobs": "ACTIVE JOBS",
+            "profileViews": "PROFILE VIEWS",
+            "thisMonth": "this month"
+        },
+        "recentServices": {
+            "title": "Recent Services",
+            "viewAll": "View All"
+        },
+        "suggestions": {
+            "title": "Need something else?",
+            "subtitle": "Popular services requested in your area.",
+            "browseAll": "Browse All Categories"
+        },
+        "provider": {
+            "newRequests": "New Service Requests",
+            "viewCatalog": "View My Catalog",
+            "activeSchedule": "Active Schedule",
+            "weeklyImpact": "Weekly Impact",
+            "impactSubtitle": "Your localized service reach and earnings analysis."
+        }
     }
 }
