@@ -2,34 +2,36 @@
 
 import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
+import { useTranslation } from '@/i18n/LanguageContext'
 
 export default function FAQSection() {
+  const { t } = useTranslation()
   const [openIndex, setOpenIndex] = useState(0)
 
   const faqs = [
     {
-      question: 'How do I know professionals are verified?',
-      answer: 'All professionals on our platform undergo background checks, identity verification, and insurance validation. We only accept the top 10% of service providers.'
+      question: t('faq.questions.q1.question'),
+      answer: t('faq.questions.q1.answer')
     },
     {
-      question: 'What if I\'m not satisfied with the service?',
-      answer: 'We offer a 100% happiness guarantee. If you\'re not satisfied, we\'ll either redo the work for free or give you a full refund within 48 hours.'
+      question: t('faq.questions.q2.question'),
+      answer: t('faq.questions.q2.answer')
     },
     {
-      question: 'How are prices determined?',
-      answer: 'Prices are set by individual professionals based on their experience, qualifications, and market rates. You can compare prices and see exactly what you\'re paying for.'
+      question: t('faq.questions.q3.question'),
+      answer: t('faq.questions.q3.answer')
     },
     {
-      question: 'Is my payment information secure?',
-      answer: 'Yes, we use industry-standard encryption and PCI compliance. Your payment details are never shared with professionals and are processed securely.'
+      question: t('faq.questions.q4.question'),
+      answer: t('faq.questions.q4.answer')
     },
     {
-      question: 'Can I cancel or reschedule a booking?',
-      answer: 'Yes, you can cancel free of charge up to 24 hours before the scheduled service. For emergencies, contact our support team.'
+      question: t('faq.questions.q5.question'),
+      answer: t('faq.questions.q5.answer')
     },
     {
-      question: 'How do I become a service professional?',
-      answer: 'Visit our "Become a Partner" page and apply. We\'ll review your background, credentials, and insurance. Approved professionals can start accepting jobs within 48 hours.'
+      question: t('faq.questions.q6.question'),
+      answer: t('faq.questions.q6.answer')
     }
   ]
 
@@ -41,13 +43,13 @@ export default function FAQSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-block bg-purple-100 border border-purple-300 rounded-full px-4 py-2 mb-6">
-            <span className="text-purple-700 font-semibold text-sm">FREQUENTLY ASKED QUESTIONS</span>
+            <span className="text-purple-700 font-semibold text-sm">{t('faq.badge')}</span>
           </div>
           <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-4">
-            We've Got Answers
+            {t('faq.title')}
           </h2>
           <p className="text-xl text-gray-600">
-            Find solutions to common questions and concerns
+            {t('faq.description')}
           </p>
         </div>
 
@@ -77,10 +79,10 @@ export default function FAQSection() {
 
         {/* Still have questions */}
         <div className="mt-16 text-center bg-gradient-to-r from-[#1E7B7C] to-[#166566] rounded-2xl p-8 text-white shadow-xl shadow-[#1E7B7C]/10">
-          <p className="text-xl font-semibold mb-4">Still have questions?</p>
-          <p className="mb-6 text-[#E8F4F4]">Our support team is available 24/7 to help</p>
+          <p className="text-xl font-semibold mb-4">{t('faq.stillHaveQuestions')}</p>
+          <p className="mb-6 text-[#E8F4F4]">{t('faq.supportAvailable')}</p>
           <button className="bg-white text-[#1E7B7C] hover:bg-gray-100 px-8 py-3 rounded-lg font-bold transition-colors">
-            Contact Support
+            {t('faq.contactSupport')}
           </button>
         </div>
       </div>

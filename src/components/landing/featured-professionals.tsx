@@ -2,15 +2,17 @@
 
 import Image from 'next/image'
 import { Star } from 'lucide-react'
+import { useTranslation } from '@/i18n/LanguageContext'
 
 export default function FeaturedProfessionals() {
+  const { t } = useTranslation()
   const professionals = [
     {
       id: 1,
-      name: 'Sarah J',
-      title: 'Master Electrician',
-      description: 'Licensed Electrical Repairs & Wiring',
-      details: 'Expert in residential electrical troubleshooting. Future projects and power audits.',
+      name: t('featured.list.pro1.name'),
+      title: t('featured.list.pro1.title'),
+      description: t('featured.list.pro1.description'),
+      details: t('featured.list.pro1.details'),
       rating: 4.9,
       reviews: 128,
       price: '$85',
@@ -18,10 +20,10 @@ export default function FeaturedProfessionals() {
     },
     {
       id: 2,
-      name: 'Michael H',
-      title: 'Academic Tutor',
-      description: 'Math & Physics Prep (High School)',
-      details: '5+ years experience helping students excel in STEM. Focused on concepts and problem-solving.',
+      name: t('featured.list.pro2.name'),
+      title: t('featured.list.pro2.title'),
+      description: t('featured.list.pro2.description'),
+      details: t('featured.list.pro2.details'),
       rating: 4.9,
       reviews: 95,
       price: '$65',
@@ -29,10 +31,10 @@ export default function FeaturedProfessionals() {
     },
     {
       id: 3,
-      name: 'Elena D',
-      title: 'Deep Cleaning Pro',
-      description: 'Eco-Friendly Deep House Cleaning',
-      details: 'Full house cleaning using eco-products. Reliable, fast, and thorough service.',
+      name: t('featured.list.pro3.name'),
+      title: t('featured.list.pro3.title'),
+      description: t('featured.list.pro3.description'),
+      details: t('featured.list.pro3.details'),
       rating: 4.8,
       reviews: 156,
       price: '$120',
@@ -40,10 +42,10 @@ export default function FeaturedProfessionals() {
     },
     {
       id: 4,
-      name: 'Marcus W',
-      title: 'Plumbing Expert',
-      description: 'Emergency & General Plumbing',
-      details: 'Licensed plumber with 10+ years of experience. Fix leaks, install fixtures, and more.',
+      name: t('featured.list.pro4.name'),
+      title: t('featured.list.pro4.title'),
+      description: t('featured.list.pro4.description'),
+      details: t('featured.list.pro4.details'),
       rating: 4.9,
       reviews: 203,
       price: '$90',
@@ -51,10 +53,10 @@ export default function FeaturedProfessionals() {
     },
     {
       id: 5,
-      name: 'Jessica L',
-      title: 'Pet Care Specialist',
-      description: 'Dog Walking & Pet Sitting',
-      details: 'Certified pet lover offering walking, sitting, and overnight care. Trusted by many local pets.',
+      name: t('featured.list.pro5.name'),
+      title: t('featured.list.pro5.title'),
+      description: t('featured.list.pro5.description'),
+      details: t('featured.list.pro5.details'),
       rating: 5.0,
       reviews: 87,
       price: '$35',
@@ -62,10 +64,10 @@ export default function FeaturedProfessionals() {
     },
     {
       id: 6,
-      name: 'David C',
-      title: 'Gardening Pro',
-      description: 'Lawn Care & Landscaping',
-      details: 'Transform your yard with professional mowing, trimming, and seasonal cleanups.',
+      name: t('featured.list.pro6.name'),
+      title: t('featured.list.pro6.title'),
+      description: t('featured.list.pro6.description'),
+      details: t('featured.list.pro6.details'),
       rating: 4.8,
       reviews: 112,
       price: '$70',
@@ -79,8 +81,8 @@ export default function FeaturedProfessionals() {
         {/* Header */}
         <div className="flex items-center justify-between mb-12">
           <div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-2">Featured Professionals</h2>
-            <p className="text-gray-600">Highest-rated experts available this week</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-2">{t('featured.title')}</h2>
+            <p className="text-gray-600">{t('featured.description')}</p>
           </div>
         </div>
 
@@ -122,16 +124,16 @@ export default function FeaturedProfessionals() {
 
                 <div className="flex items-center justify-between mb-4 pb-4 border-b border-gray-200">
                   <div>
-                    <p className="text-xs text-gray-600">STARTING AT</p>
+                    <p className="text-xs text-gray-600">{t('featured.startingAt')}</p>
                     <p className="text-2xl font-bold text-gray-900">{pro.price}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-xs text-gray-600">{pro.reviews} reviews</p>
+                    <p className="text-xs text-gray-600">{t('featured.reviews').replace('{count}', pro.reviews.toString())}</p>
                   </div>
                 </div>
 
                 <button className="w-full text-[#1E7B7C] hover:text-[#166566] font-semibold text-sm transition-colors">
-                  View Profile →
+                  {t('featured.viewProfile')} →
                 </button>
               </div>
             </div>

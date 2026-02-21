@@ -1,20 +1,22 @@
 import Link from 'next/link'
 import { Wrench, Sparkles, BookOpen, PawPrint, Zap, Leaf, Hammer, Home, Car, Scissors, Paintbrush, Code } from 'lucide-react'
+import { useTranslation } from '@/i18n/LanguageContext'
 
 export default function CategoriesSection() {
+  const { t } = useTranslation()
   const categories = [
-    { name: 'Plumbing', icon: Wrench, color: 'blue', count: '245 pros' },
-    { name: 'Cleaning', icon: Sparkles, color: 'pink', count: '512 pros' },
-    { name: 'Tutoring', icon: BookOpen, color: 'purple', count: '189 pros' },
-    { name: 'Pet Care', icon: PawPrint, color: 'orange', count: '367 pros' },
-    { name: 'Electrical', icon: Zap, color: 'yellow', count: '298 pros' },
-    { name: 'Gardening', icon: Leaf, color: 'emerald', count: '203 pros' },
-    { name: 'Repairs', icon: Hammer, color: 'indigo', count: '421 pros' },
-    { name: 'Home Improvement', icon: Home, color: 'rose', count: '334 pros' },
-    { name: 'Auto Services', icon: Car, color: 'cyan', count: '276 pros' },
-    { name: 'Hair & Beauty', icon: Scissors, color: 'fuchsia', count: '456 pros' },
-    { name: 'Painting', icon: Paintbrush, color: 'lime', count: '198 pros' },
-    { name: 'Tech Support', icon: Code, color: 'sky', count: '289 pros' }
+    { name: t('categories.list.plumbing'), icon: Wrench, color: 'blue', count: t('categories.prosCount').replace('{count}', '245') },
+    { name: t('categories.list.cleaning'), icon: Sparkles, color: 'pink', count: t('categories.prosCount').replace('{count}', '512') },
+    { name: t('categories.list.tutoring'), icon: BookOpen, color: 'purple', count: t('categories.prosCount').replace('{count}', '189') },
+    { name: t('categories.list.petCare'), icon: PawPrint, color: 'orange', count: t('categories.prosCount').replace('{count}', '367') },
+    { name: t('categories.list.electrical'), icon: Zap, color: 'yellow', count: t('categories.prosCount').replace('{count}', '298') },
+    { name: t('categories.list.gardening'), icon: Leaf, color: 'emerald', count: t('categories.prosCount').replace('{count}', '203') },
+    { name: t('categories.list.repairs'), icon: Hammer, color: 'indigo', count: t('categories.prosCount').replace('{count}', '421') },
+    { name: t('categories.list.homeImprovement'), icon: Home, color: 'rose', count: t('categories.prosCount').replace('{count}', '334') },
+    { name: t('categories.list.autoServices'), icon: Car, color: 'cyan', count: t('categories.prosCount').replace('{count}', '276') },
+    { name: t('categories.list.hairBeauty'), icon: Scissors, color: 'fuchsia', count: t('categories.prosCount').replace('{count}', '456') },
+    { name: t('categories.list.painting'), icon: Paintbrush, color: 'lime', count: t('categories.prosCount').replace('{count}', '198') },
+    { name: t('categories.list.techSupport'), icon: Code, color: 'sky', count: t('categories.prosCount').replace('{count}', '289') }
   ]
 
   const colorClasses = {
@@ -38,11 +40,11 @@ export default function CategoriesSection() {
         {/* Header */}
         <div className="flex items-center justify-between mb-16">
           <div>
-            <h2 className="text-5xl font-bold text-gray-900 mb-3">Browse by Category</h2>
-            <p className="text-gray-600 text-lg">Explore services from verified professionals</p>
+            <h2 className="text-5xl font-bold text-gray-900 mb-3">{t('categories.title')}</h2>
+            <p className="text-gray-600 text-lg">{t('categories.description')}</p>
           </div>
           <Link href="/services" className="text-[#1E7B7C] hover:text-[#166566] font-semibold text-base flex items-center gap-2 hover:gap-3 transition-all group">
-            View All
+            {t('categories.viewAll')}
             <span className="transform group-hover:translate-x-1 transition-transform">→</span>
           </Link>
         </div>

@@ -3,10 +3,12 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { Search, MapPin, Sparkles, ArrowRight } from 'lucide-react'
+import { useTranslation } from '@/i18n/LanguageContext'
 
 export default function HeroSection() {
+  const { t } = useTranslation()
   const [service, setService] = useState('')
-  const [location, setLocation] = useState('Austin, TX')
+  const [location, setLocation] = useState(t('hero.defaultLocation'))
   const [animateElements, setAnimateElements] = useState(false)
 
   useEffect(() => {
@@ -27,18 +29,18 @@ export default function HeroSection() {
               {/* Badge with animation */}
               <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#E8F4F4] to-blue-100 border border-[#1E7B7C] rounded-full px-4 py-2 mb-8 hover:shadow-lg transition-all">
                 <Sparkles size={16} className="text-[#1E7B7C] animate-spin" style={{ animationDuration: '3s' }} />
-                <span className="text-xs font-semibold text-[#166566] uppercase tracking-wide">Trusted by 50k+ Neighbors</span>
+                <span className="text-xs font-semibold text-[#166566] uppercase tracking-wide">{t('hero.badge')}</span>
               </div>
 
               {/* Headline with gradient */}
               <h1 className="text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-tight">
-                Your local experts,{' '}
-                <span className="bg-gradient-to-r from-[#1E7B7C] to-[#166566] bg-clip-text text-transparent">just a click away</span>.
+                {t('hero.titlePrefix')}{' '}
+                <span className="bg-gradient-to-r from-[#1E7B7C] to-[#166566] bg-clip-text text-transparent">{t('hero.titleHighlight')}</span>.
               </h1>
 
               {/* Description */}
               <p className="text-xl text-gray-600 mb-10 leading-relaxed font-light">
-                From emergency plumbing to expert math tutoring, find verified professionals right in your neighborhood. Safe, reliable, and always ready.
+                {t('hero.description')}
               </p>
 
               {/* Search Bar with Overlay Button */}
@@ -48,7 +50,7 @@ export default function HeroSection() {
                     <Search size={22} className="text-[#1E7B7C]" />
                     <input
                       type="text"
-                      placeholder="What service do you need?"
+                      placeholder={t('hero.servicePlaceholder')}
                       value={service}
                       onChange={(e) => setService(e.target.value)}
                       className="flex-1 outline-none text-gray-700 placeholder-gray-400 text-lg bg-transparent"
@@ -58,7 +60,7 @@ export default function HeroSection() {
                     <MapPin size={22} className="text-[#1E7B7C]" />
                     <input
                       type="text"
-                      placeholder="Your location"
+                      placeholder={t('hero.locationPlaceholder')}
                       value={location}
                       onChange={(e) => setLocation(e.target.value)}
                       className="flex-1 outline-none text-gray-700 placeholder-gray-400 text-lg bg-transparent"
@@ -67,7 +69,7 @@ export default function HeroSection() {
                 </div>
                 <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-gradient-to-r from-[#1E7B7C] to-[#166566] hover:from-[#166566] hover:to-[#0f4a4b] text-white px-8 py-3 rounded-xl font-bold transition-all transform hover:scale-105 flex items-center gap-2 whitespace-nowrap shadow-lg shadow-[#1E7B7C]/20">
                   <Search size={20} />
-                  Search
+                  {t('hero.search')}
                 </button>
               </div>
 
@@ -81,8 +83,8 @@ export default function HeroSection() {
                   ))}
                 </div>
                 <div className="group-hover:translate-x-2 transition-transform">
-                  <p className="text-sm font-bold text-gray-900">Available professionals near you</p>
-                  <p className="text-xs text-gray-500">Join thousands of satisfied customers</p>
+                  <p className="text-sm font-bold text-gray-900">{t('hero.availablePros')}</p>
+                  <p className="text-xs text-gray-500">{t('hero.satisfiedCustomers')}</p>
                 </div>
               </div>
             </div>
@@ -109,12 +111,12 @@ export default function HeroSection() {
                   <div className="w-10 h-10 bg-gradient-to-br from-[#1E7B7C] to-[#166566] rounded-lg flex items-center justify-center">
                     <span className="text-white font-bold text-lg">✓</span>
                   </div>
-                  <span className="text-sm font-bold text-gray-800">Verified Specialist</span>
+                  <span className="text-sm font-bold text-gray-800">{t('hero.verifiedSpecialist')}</span>
                 </div>
-                <p className="text-3xl font-black bg-gradient-to-r from-[#1E7B7C] to-[#166566] bg-clip-text text-transparent">$45/task</p>
-                <p className="text-xs text-gray-500 mt-2 font-medium">Professional deep cleaning included</p>
+                <p className="text-3xl font-black bg-gradient-to-r from-[#1E7B7C] to-[#166566] bg-clip-text text-transparent">{t('hero.priceTask')}</p>
+                <p className="text-xs text-gray-500 mt-2 font-medium">{t('hero.cleaningIncluded')}</p>
                 <div className="flex items-center gap-2 mt-3 text-[#1E7B7C] font-semibold text-xs">
-                  <span>Book now</span>
+                  <span>{t('hero.bookNow')}</span>
                   <ArrowRight size={16} />
                 </div>
               </div>
@@ -125,10 +127,10 @@ export default function HeroSection() {
           <div className="mt-32 pt-16 border-t border-gray-200">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
               {[
-                { icon: '✓', label: 'Verified', value: 'Professionals', color: 'cyan' },
-                { icon: '🛡️', label: 'Insured &', value: 'Bonded', color: 'blue' },
-                { icon: '😊', label: 'Happiness', value: 'Guarantee', color: 'emerald' },
-                { icon: '🕐', label: '24/7', value: 'Support', color: 'purple' }
+                { icon: '✓', label: 'Verified', value: t('stats.verified'), color: 'cyan' },
+                { icon: '🛡️', label: 'Insured &', value: t('stats.insured'), color: 'blue' },
+                { icon: '😊', label: 'Happiness', value: t('stats.guarantee'), color: 'emerald' },
+                { icon: '🕐', label: '24/7', value: t('stats.support'), color: 'purple' }
               ].map((stat, i) => (
                 <div key={i} className="group hover:bg-gradient-to-br hover:from-[#E8F4F4] hover:to-blue-50 rounded-2xl p-6 transition-all hover:shadow-lg border border-transparent hover:border-[#E8F4F4]">
                   <div className={`w-12 h-12 bg-${stat.color}-100 rounded-lg flex items-center justify-center flex-shrink-0 mb-4 group-hover:scale-110 transition-transform`}>

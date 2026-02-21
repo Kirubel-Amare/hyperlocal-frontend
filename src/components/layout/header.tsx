@@ -25,8 +25,11 @@ import {
   Briefcase,
   Bell,
   Settings,
-  LogOut
+  LogOut,
+  Globe
 } from 'lucide-react'
+import { useTranslation } from '@/i18n/LanguageContext'
+import LanguageSelector from './LanguageSelector'
 
 interface HeaderProps {
   showLoginLink?: boolean
@@ -38,14 +41,14 @@ interface HeaderProps {
   userType?: 'guest' | 'customer' | 'provider'
 }
 
-const navLinks = [
-  { name: 'Home', href: '/', icon: <Home size={16} /> },
-  { name: 'Services', href: '/services/all', icon: <Briefcase size={16} /> },
-  { name: 'Jobs', href: '/jobs', icon: <Briefcase size={16} /> },
-  { name: 'How it Works', href: '/#how-it-works', icon: <Info size={16} /> },
-  { name: 'FAQ', href: '/#faq', icon: <HelpCircle size={16} /> },
-  { name: 'About', href: '/about', icon: <Info size={16} /> },
-  { name: 'Contact', href: '/contact', icon: <Phone size={16} /> },
+const getNavLinks = (t: (key: string) => string) => [
+  { name: t('nav.home'), href: '/', icon: <Home size={16} /> },
+  { name: t('nav.services'), href: '/services/all', icon: <Briefcase size={16} /> },
+  { name: t('nav.jobs'), href: t('nav.jobs'), icon: <Briefcase size={16} /> },
+  { name: t('nav.howItWorks'), href: '/#how-it-works', icon: <Info size={16} /> },
+  { name: t('nav.faq'), href: '/#faq', icon: <HelpCircle size={16} /> },
+  { name: t('nav.about'), href: '/about', icon: <Info size={16} /> },
+  { name: t('nav.contact'), href: '/contact', icon: <Phone size={16} /> },
 ]
 
 const customerLinks = [
@@ -81,6 +84,7 @@ export default function Header({
   variant = 'default',
   userType = 'guest'
 }: HeaderProps) {
+  const { t } = useTranslation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [showCategories, setShowCategories] = useState(false)
@@ -160,14 +164,14 @@ export default function Header({
                   />
                 </div>
                 <span className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent hidden sm:inline-block group-hover:from-[#1E7B7C] group-hover:to-[#166566] transition-all duration-300">
-                  LocalService
+                  {t('brand.name') || 'LocalService'}
                 </span>
               </Link>
             </div>
 
             {/* Desktop Navigation with icons */}
             <nav className="hidden md:flex items-center gap-1">
-              {(userType === 'customer' ? customerLinks : userType === 'provider' ? providerLinks : navLinks).map((link) => (
+              {(userType === 'customer' ? customerLinks : userType === 'provider' ? providerLinks : getNavLinks(t)).map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
@@ -194,6 +198,8 @@ export default function Header({
               <button className="p-2.5 rounded-xl text-gray-600 hover:text-[#1E7B7C] hover:bg-[#E8F4F4] transition-all duration-300 group">
                 <Search size={20} className="group-hover:scale-110 transition-transform duration-300" />
               </button>
+
+              <LanguageSelector />
 
               {rightElement ? (
                 rightElement
@@ -296,6 +302,11 @@ export default function Header({
               </button>
             </div>
           </div>
+        </div>
+
+        {/* Language selector for mobile */}
+        <div className="md:hidden border-t border-gray-50 bg-gray-50/50 px-4 py-3 flex justify-end">
+          <LanguageSelector />
         </div>
 
         {/* Mobile Menu with animations */}

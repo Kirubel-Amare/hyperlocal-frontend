@@ -1,28 +1,30 @@
 'use client'
 
 import { Star } from 'lucide-react'
+import { useTranslation } from '@/i18n/LanguageContext'
 
 export default function TestimonialsSection() {
+  const { t } = useTranslation()
   const testimonials = [
     {
-      name: 'Sarah Mitchell',
-      role: 'Homeowner',
+      name: t('testimonials.list.t1.name'),
+      role: t('testimonials.list.t1.role'),
       image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah',
-      content: 'Found the perfect plumber in 10 minutes. Professional, punctual, and fair pricing. Couldn\'t ask for better!',
+      content: t('testimonials.list.t1.content'),
       rating: 5
     },
     {
-      name: 'James Rodriguez',
-      role: 'Business Owner',
+      name: t('testimonials.list.t2.name'),
+      role: t('testimonials.list.t2.role'),
       image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=James',
-      content: 'As a service provider, this platform has transformed my business. I get quality leads consistently.',
+      content: t('testimonials.list.t2.content'),
       rating: 5
     },
     {
-      name: 'Emma Chen',
-      role: 'Busy Professional',
+      name: t('testimonials.list.t3.name'),
+      role: t('testimonials.list.t3.role'),
       image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Emma',
-      content: 'The convenience is unmatched. Real background checks and verified reviews give me peace of mind.',
+      content: t('testimonials.list.t3.content'),
       rating: 5
     }
   ]
@@ -35,13 +37,13 @@ export default function TestimonialsSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-block bg-[#E8F4F4] border border-[#1E7B7C] rounded-full px-4 py-2 mb-6">
-            <span className="text-[#166566] font-semibold text-sm">WHAT OUR USERS SAY</span>
+            <span className="text-[#166566] font-semibold text-sm">{t('testimonials.badge')}</span>
           </div>
           <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-4">
-            Trusted by thousands
+            {t('testimonials.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Real stories from real customers who've transformed their service experiences
+            {t('testimonials.description')}
           </p>
         </div>
 

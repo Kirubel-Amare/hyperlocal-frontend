@@ -1,1 +1,205 @@
-{}
+{
+    "nav": {
+        "home": "Home",
+        "services": "Services",
+        "jobs": "Jobs",
+        "howItWorks": "How it Works",
+        "faq": "FAQ",
+        "about": "About",
+        "contact": "Contact",
+        "login": "Log in",
+        "categories": "Categories"
+    },
+    "hero": {
+        "badge": "Trusted by 50k+ Neighbors",
+        "titlePrefix": "Your local experts, ",
+        "titleHighlight": "just a click away",
+        "description": "From emergency plumbing to expert math tutoring, find verified professionals right in your neighborhood. Safe, reliable, and always ready.",
+        "servicePlaceholder": "What service do you need?",
+        "locationPlaceholder": "Your location",
+        "search": "Search",
+        "defaultLocation": "Addis Ababa, Ethiopia",
+        "availablePros": "Available professionals near you",
+        "satisfiedCustomers": "Join thousands of satisfied customers",
+        "verifiedSpecialist": "Verified Specialist",
+        "priceTask": "$45/task",
+        "cleaningIncluded": "Professional deep cleaning included",
+        "bookNow": "Book now"
+    },
+    "stats": {
+        "verified": "Verified Professionals",
+        "insured": "Insured & Bonded",
+        "guarantee": "Happiness Guarantee",
+        "support": "24/7 Support"
+    },
+    "howItWorks": {
+        "badge": "HOW IT WORKS",
+        "title": "Get Expert Help in 4 Steps",
+        "description": "From search to completion, it's simple and straightforward",
+        "steps": {
+            "step1": {
+                "title": "Search Services",
+                "description": "Browse thousands of verified professionals in your area"
+            },
+            "step2": {
+                "title": "View Profiles",
+                "description": "Check ratings, reviews, and pricing from real customers"
+            },
+            "step3": {
+                "title": "Book & Pay",
+                "description": "Secure booking and flexible payment options available"
+            },
+            "step4": {
+                "title": "Get It Done",
+                "description": "Track progress and communicate directly with professionals"
+            }
+        }
+    },
+    "faq": {
+        "badge": "FREQUENTLY ASKED QUESTIONS",
+        "title": "We've Got Answers",
+        "description": "Find solutions to common questions and concerns",
+        "questions": {
+            "q1": {
+                "question": "How do I know professionals are verified?",
+                "answer": "All professionals on our platform undergo background checks, identity verification, and insurance validation. We only accept the top 10% of service providers."
+            },
+            "q2": {
+                "question": "What if I'm not satisfied with the service?",
+                "answer": "We offer a 100% happiness guarantee. If you're not satisfied, we'll either redo the work for free or give you a full refund within 48 hours."
+            },
+            "q3": {
+                "question": "How are prices determined?",
+                "answer": "Prices are set by individual professionals based on their experience, qualifications, and market rates. You can compare prices and see exactly what you're paying for."
+            },
+            "q4": {
+                "question": "Is my payment information secure?",
+                "answer": "Yes, we use industry-standard encryption and PCI compliance. Your payment details are never shared with professionals and are processed securely."
+            },
+            "q5": {
+                "question": "Can I cancel or reschedule a booking?",
+                "answer": "Yes, you can cancel free of charge up to 24 hours before the scheduled service. For emergencies, contact our support team."
+            },
+            "q6": {
+                "question": "How do I become a service professional?",
+                "answer": "Visit our \"Become a Partner\" page and apply. We'll review your background, credentials, and insurance. Approved professionals can start accepting jobs within 48 hours."
+            }
+        },
+        "stillHaveQuestions": "Still have questions?",
+        "supportAvailable": "Our support team is available 24/7 to help",
+        "contactSupport": "Contact Support"
+    },
+    "categories": {
+        "title": "Browse by Category",
+        "description": "Explore services from verified professionals",
+        "viewAll": "View All",
+        "list": {
+            "plumbing": "Plumbing",
+            "cleaning": "Cleaning",
+            "tutoring": "Tutoring",
+            "petCare": "Pet Care",
+            "electrical": "Electrical",
+            "gardening": "Gardening",
+            "repairs": "Repairs",
+            "homeImprovement": "Home Improvement",
+            "autoServices": "Auto Services",
+            "hairBeauty": "Hair & Beauty",
+            "painting": "Painting",
+            "techSupport": "Tech Support"
+        },
+        "prosCount": "{count} pros"
+    },
+    "featured": {
+        "title": "Featured Professionals",
+        "description": "Highest-rated experts available this week",
+        "startingAt": "STARTING AT",
+        "reviews": "{count} reviews",
+        "viewProfile": "View Profile",
+        "list": {
+            "pro1": {
+                "name": "Selam A.",
+                "title": "Master Electrician",
+                "description": "Licensed Electrical Repairs & Wiring",
+                "details": "Expert in residential electrical troubleshooting."
+            },
+            "pro2": {
+                "name": "Michael B.",
+                "title": "Academic Tutor",
+                "description": "Math & Physics Prep (High School)",
+                "details": "5+ years experience helping students excel in STEM."
+            },
+            "pro3": {
+                "name": "Helen G.",
+                "title": "Deep Cleaning Pro",
+                "description": "Eco-Friendly Deep House Cleaning",
+                "details": "Full house cleaning using eco-products."
+            },
+            "pro4": {
+                "name": "Markos T.",
+                "title": "Plumbing Expert",
+                "description": "Emergency & General Plumbing",
+                "details": "Licensed plumber with 10+ years of experience."
+            },
+            "pro5": {
+                "name": "Yeshi L.",
+                "title": "Pet Care Specialist",
+                "description": "Dog Walking & Pet Sitting",
+                "details": "Certified pet lover offering walking and sitting."
+            },
+            "pro6": {
+                "name": "Dawit K.",
+                "title": "Gardening Pro",
+                "description": "Lawn Care & Landscaping",
+                "details": "Transform your yard with professional mowing."
+            }
+        }
+    },
+    "cta": {
+        "title": "Are you a service professional?",
+        "description": "Grow your business and connect with customers in your neighborhood.\nStart listing your services for free.",
+        "button": "Become a Partner",
+        "howItWorks": "How it Works"
+    },
+    "testimonials": {
+        "badge": "WHAT OUR USERS SAY",
+        "title": "Trusted by thousands",
+        "description": "Real stories from real customers who've transformed their service experiences",
+        "list": {
+            "t1": {
+                "name": "Sarah Mitchell",
+                "role": "Homeowner",
+                "content": "Found the perfect plumber in 10 minutes. Professional, punctual, and fair pricing. Couldn't ask for better!"
+            },
+            "t2": {
+                "name": "James Rodriguez",
+                "role": "Business Owner",
+                "content": "As a service provider, this platform has transformed my business. I get quality leads consistently."
+            },
+            "t3": {
+                "name": "Emma Chen",
+                "role": "Busy Professional",
+                "content": "The convenience is unmatched. Real background checks and verified reviews give me peace of mind."
+            }
+        }
+    },
+    "footer": {
+        "brandDescription": "Building stronger communities by connecting neighbors with the best local service professionals.",
+        "services": "Services",
+        "company": "Company",
+        "support": "Support",
+        "copyright": "© 2024 LocalExpert Technologies. All rights reserved.",
+        "privacyPolicy": "Privacy Policy",
+        "termsOfService": "Terms of Service",
+        "cookiePolicy": "Cookie Policy",
+        "links": {
+            "aboutUs": "About Us",
+            "careers": "Careers",
+            "press": "Press",
+            "impact": "Impact",
+            "helpCenter": "Help Center",
+            "safety": "Safety",
+            "contact": "Contact",
+            "terms": "Terms"
+        }
+    }
+}

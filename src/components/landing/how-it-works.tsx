@@ -1,34 +1,36 @@
 'use client'
 
 import { Search, Users, CheckCircle, MessageSquare } from 'lucide-react'
+import { useTranslation } from '@/i18n/LanguageContext'
 
 export default function HowItWorks() {
+  const { t } = useTranslation()
   const steps = [
     {
       number: 1,
-      title: 'Search Services',
-      description: 'Browse thousands of verified professionals in your area',
+      title: t('howItWorks.steps.step1.title'),
+      description: t('howItWorks.steps.step1.description'),
       icon: Search,
       color: 'cyan'
     },
     {
       number: 2,
-      title: 'View Profiles',
-      description: 'Check ratings, reviews, and pricing from real customers',
+      title: t('howItWorks.steps.step2.title'),
+      description: t('howItWorks.steps.step2.description'),
       icon: Users,
       color: 'blue'
     },
     {
       number: 3,
-      title: 'Book & Pay',
-      description: 'Secure booking and flexible payment options available',
+      title: t('howItWorks.steps.step3.title'),
+      description: t('howItWorks.steps.step3.description'),
       icon: CheckCircle,
       color: 'emerald'
     },
     {
       number: 4,
-      title: 'Get It Done',
-      description: 'Track progress and communicate directly with professionals',
+      title: t('howItWorks.steps.step4.title'),
+      description: t('howItWorks.steps.step4.description'),
       icon: MessageSquare,
       color: 'purple'
     }
@@ -42,13 +44,13 @@ export default function HowItWorks() {
         {/* Header */}
         <div className="text-center mb-20">
           <div className="inline-block bg-blue-100 border border-blue-300 rounded-full px-4 py-2 mb-6">
-            <span className="text-blue-700 font-semibold text-sm">HOW IT WORKS</span>
+            <span className="text-blue-700 font-semibold text-sm">{t('howItWorks.badge')}</span>
           </div>
           <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-4">
-            Get Expert Help in 4 Steps
+            {t('howItWorks.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            From search to completion, it's simple and straightforward
+            {t('howItWorks.description')}
           </p>
         </div>
 

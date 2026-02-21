@@ -1,0 +1,205 @@
+{
+    "nav": {
+        "home": "Fuula Duraa",
+        "services": "Tajaajila",
+        "jobs": "Hojii",
+        "howItWorks": "Akkaataa Hojii",
+        "faq": "Gaaffilee Yeroo Baay'ee Gaafataman",
+        "about": "Waa'ee Keenya",
+        "contact": "Nu Quunnamaa",
+        "login": "Seeni",
+        "categories": "Ramaddii"
+    },
+    "hero": {
+        "badge": "Olloota 50k+ oliin kan dhuunfatame",
+        "titlePrefix": "Ogeeyyii naannoo keessanii, ",
+        "titleHighlight": "harkaa dhiyootti",
+        "description": "Tajaajila bishaanii ariifachiisaa irraa hanga barsiisa herregaa ogeessaatti, ogeeyyii naannoo keessanitti mirkanaayan kumaatamaan lakkayaman ilaalaa. Amanamaa fi yeroo hunda qophii.",
+        "servicePlaceholder": "Tajaajila akkamii barbaaddu?",
+        "locationPlaceholder": "Iddoo keessan",
+        "search": "Barbaadi",
+        "defaultLocation": "Finfinnee, Itoophiyaa",
+        "availablePros": "Ogeeyyii nannoo keessan jiran",
+        "satisfiedCustomers": "Maamiltoota kumaatamaan lakkayaman gammadanitti makamaa",
+        "verifiedSpecialist": "Ogeessa Mirkanaa'e",
+        "priceTask": "$45/Hojii",
+        "cleaningIncluded": "Qulqullina gadi fageenyaa ogeessaan dabalata",
+        "bookNow": "Amma Qabadhaa"
+    },
+    "stats": {
+        "verified": "Ogeeyyii Mirkanaa'an",
+        "insured": "Wabii fi Kallaacha",
+        "guarantee": "Wabii Gammachuu",
+        "support": "Deeggarsa 24/7"
+    },
+    "howItWorks": {
+        "badge": "AKKAATAA HOJII",
+        "title": "Tarkaanfii 4n Gargaarsa OgeessAA Argadhaa",
+        "description": "Barbaacha irraa hanga xumuraatti, salphaa fi qajeelaadha",
+        "steps": {
+            "step1": {
+                "title": "Tajaajila Barbaadi",
+                "description": "Ogeeyyii naannoo keessanitti mirkanaayan kumaatamaan lakkayaman ilaalaa"
+            },
+            "step2": {
+                "title": "Proofayilii Ilaali",
+                "description": "Maamiltoota dhugaa irraa sadarkaa, yaada fi gatii ilaalaa"
+            },
+            "step3": {
+                "title": "Qabadhuu Kafali",
+                "description": "Sirna qabiinsa amansiisaa fi filannoo kaffaltii jabaa qaba"
+            },
+            "step4": {
+                "title": "Xumuri",
+                "description": "Adeemsa isaa hordofaa fi ogeeyyii waliin kallattiin wal quunnamaa"
+            }
+        }
+    },
+    "faq": {
+        "badge": "GAAFFIILEE YEROO BAAY'EE GAAFATAMAN",
+        "title": "Nu Deebii Qabna",
+        "description": "Gaaffilee fi yaaddoo baramaa ta'aniif deebii argadhaa",
+        "questions": {
+            "q1": {
+                "question": "Ogeeyyiin mirkanaasifaman akkamitti beeka?",
+                "answer": "Ogeeyyiin madaallii keenya hundi qorannoo duubaa, mirkaneessaa eenyummaa fi mirkaneessaa inshuraansii keessa darbu. Nutis tajaajila kennitoota dhibbeentaa 10 keessaa warra baay'ee fidan qofa fudhanna."
+            },
+            "q2": {
+                "question": "Yoo tajaajila itti hin gammadin maaltu ta'a?",
+                "answer": "Wabii gammachuu dhibbeentaa 100 ni kennina. Yoo hin gammadin, hojichaa bilisaan ni hojjenna ykn sa'aatii 48 keessatti kafaltii keessan guutuu ni deebisna."
+            },
+            "q3": {
+                "question": "Gatiin akkamitti murteeffama?",
+                "answer": "Gatiin ogeeyyii dhuunfaan muuxannoo, dandeettii fi gatii gabaa irratti hundaa'un murteeffama. Gatii wal bira qabuun maaliif kaffalaa akka jirtan arguu dandeessu."
+            },
+            "q4": {
+                "question": "Odeeffannoon kaffaltii kootii amansiisaadhaa?",
+                "answer": "Eeyyee, qindaa'ina koodii (encryption) beekamoo ta'an ni fayyadamna. Odeeffannoon kaffaltii keessanii ogeeyyiidhaaf hin hiramu."
+            },
+            "q5": {
+                "question": "Beellama haqauun ykn jijjiiruun ni danda'amaa?",
+                "answer": "Eeyyee, yeroo tajaajilaa sa'aatii 24 duratti bilisaan haqauun ni danda'ama. Dhimma ariifachiisaaf garee deeggarsa keenya quunnamaa."
+            },
+            "q6": {
+                "question": "Akkamitti ogeessa tajaajilaa ta'uu danda'ama?",
+                "answer": "Fuula \"Partner Ta'i\" jedhu daawwadhuu iyyadhu. Nutis duub-deebii, ragaalee fi inshuraansii kee ni qoranna. Ogeeyyiin mirkanaasifaman sa'aatii 48 keessatti hojii fudhachuu jalqabuu danda'u."
+            }
+        },
+        "stillHaveQuestions": "Ammas gaaffii qabduu?",
+        "supportAvailable": "Garee deeggarsa keenya isin gargaaruuf 24/7 qophiidha",
+        "contactSupport": "Deeggarsa Quunnami"
+    },
+    "categories": {
+        "title": "Ramaddii keessaa filadhu",
+        "description": "Ogeeyyii mirkanaayan irraa tajaajila adda addaa argadhu",
+        "viewAll": "Hunda Ilaali",
+        "list": {
+            "plumbing": "Hojii bishaanii",
+            "cleaning": "Qulqulleessuu",
+            "tutoring": "Barsiisuu",
+            "petCare": "Kunyannoo bineensotaa",
+            "electrical": "Hojii elektirikii",
+            "gardening": "Iddoo filannoo",
+            "repairs": "Suphaa",
+            "homeImprovement": "Fooyya'insa mana",
+            "autoServices": "Tajaajila konkolaataa",
+            "hairBeauty": "Rifeensa fi bareedina",
+            "painting": "Halluu dibuu",
+            "techSupport": "Deeggarsa teeknikaa"
+        },
+        "prosCount": "ogeeyyii {count}"
+    },
+    "featured": {
+        "title": "Ogeeyyii Filataman",
+        "description": "Ogeeyyii torban kana sadarkaa guddaa qaban",
+        "startingAt": "KAA'UMSA",
+        "reviews": "yaada {count}",
+        "viewProfile": "Proofayilii Ilaali",
+        "list": {
+            "pro1": {
+                "name": "Selam A.",
+                "title": "Ogeessa Elektirikii",
+                "description": "Suphaa fi Toora Elektirikii Mirkanaa'e",
+                "details": "Rakkina elektirikii mana keessaa hiikuu irratti ogeessa."
+            },
+            "pro2": {
+                "name": "Michael B.",
+                "title": "BarsiiSa",
+                "description": "Herrega fi Fiiziiksii (Sadarkaa 2ffaa)",
+                "details": "Barattoonni STEM irratti akka milkaa'an gargaaruuf muuxannoo waggaa 5+."
+            },
+            "pro3": {
+                "name": "Helen G.",
+                "title": "Ogeettii Qulqullinaa",
+                "description": "Qulqullina Manaa Gadi Fageenyaa",
+                "details": "Meeshaalee naannoof mijatoo ta'an fayyadamuun qulqullina manaa guutuu."
+            },
+            "pro4": {
+                "name": "Markos T.",
+                "title": "Ogeessa Pilaambingii",
+                "description": "Pilaambingii Ariifachiisaa fi Waligalaa",
+                "details": "Ogeessa pilaambingii muuxannoo waggaa 10+ qabu."
+            },
+            "pro5": {
+                "name": "Yeshi L.",
+                "title": "Kunyannoo Bineensotaa",
+                "description": "Saree deemsisuu fi kunyannoo",
+                "details": "Jaalattuu bineensotaa mirkanaante."
+            },
+            "pro6": {
+                "name": "Dawit K.",
+                "title": "Ogeessa Iddoo Filannoo",
+                "description": "Kunyannoo Iddoo fi Bareedina",
+                "details": "Bakka keessan ogeessaan bareechisaa."
+            }
+        }
+    },
+    "cta": {
+        "title": "Ogeessa tajaajilaa dhaa?",
+        "description": "Daldala keessan guddisaa fi maamiltoota naannoo keessanii waliin wal quunnamaa.\nTajaajila keessan bilisaan galmeessuu jalqabaa.",
+        "button": "Partner Ta'i",
+        "howItWorks": "How it Works"
+    },
+    "testimonials": {
+        "badge": "MAAMILTOONNI KEENYA MAAL JEDHU",
+        "title": "Kumaatamaan kan amaname",
+        "description": "Seenaa dhugaa maamiltoota tajaajila isaanii geeddarratan irraa",
+        "list": {
+            "t1": {
+                "name": "Saaraa Miicheel",
+                "role": "Abbaa Manaa",
+                "content": "Ogeessa bishaanii sirrii ta'e daqiiqaa 10 keessatti argeera. Ogeessa, yeroo eegu fi gatii madaalawaa. Kana caalaa waan gaafatu hin qabu!"
+            },
+            "t2": {
+                "name": "Jeemsi Roodiriigeel",
+                "role": "Abbaa Daldalaa",
+                "content": "Akka tajaajila kennituutti, waltajjiin kun daldala koo jijjiireera. Maamiltoota qulqullina qaban yeroo hunda nan argadha."
+            },
+            "t3": {
+                "name": "Eemmaa Cheen",
+                "role": "Ogeettii",
+                "content": "Mijaawaan isaa kan wal bira qabu miti. Qorannoo duubaa dhugaa fi yaadni mirkanaa'an nagaa sammuu naaf kennu."
+            }
+        }
+    },
+    "footer": {
+        "brandDescription": "Olloota ogeeyyii tajaajila naannoo hunda caalan waliin wal quunnamsiisuun hawaasa jabaa ijaaruu.",
+        "services": "Tajaajila",
+        "company": "Dhaabbata",
+        "support": "Deeggarsa",
+        "copyright": "© 2024 LocalExpert Technologies. Mirgi hunduu eegamaadha.",
+        "privacyPolicy": "Imaammata dhuunfaa",
+        "termsOfService": "Haala tajaajilaa",
+        "cookiePolicy": "Imaammata kookii",
+        "links": {
+            "aboutUs": "Waa'ee keenya",
+            "careers": "Hojii",
+            "press": "Miidiyaa",
+            "impact": "Dhiibbaa",
+            "helpCenter": "Giddugala gargaarsaa",
+            "safety": "Nageenya",
+            "contact": "Nu quunnamaa",
+            "terms": "Haalawwan"
+        }
+    }
+}
