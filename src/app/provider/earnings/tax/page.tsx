@@ -124,7 +124,7 @@ export default function TaxReportingPage() {
                                     className="group p-5 rounded-[2rem] border border-gray-50 hover:border-[#1E7B7C]/20 hover:bg-[#E8F4F4]/20 transition-all cursor-pointer flex items-center justify-between"
                                 >
                                     <div className="flex items-center gap-4">
-                                        <div className="w-10 h-10 rounded-xl bg-gray-50 dark:bg-gray-900 group-hover:bg-white dark:bg-gray-950 text-gray-400 dark:text-gray-500 group-hover:text-[#1E7B7C] flex items-center justify-center transition-all shadow-sm">
+                                        <div className="w-10 h-10 rounded-xl bg-gray-50 dark:bg-gray-900 group-hover:bg-white text-gray-400 dark:text-gray-500 group-hover:text-[#1E7B7C] flex items-center justify-center transition-all shadow-sm">
                                             <FileText size={20} />
                                         </div>
                                         <div>
@@ -156,7 +156,7 @@ export default function TaxReportingPage() {
                     {/* External Settings Link */}
                     <div className="p-8 bg-gray-900 text-white rounded-[3rem] shadow-xl group cursor-pointer hover:bg-gray-800 transition-all">
                         <div className="flex justify-between items-start mb-6">
-                            <div className="p-3 bg-white dark:bg-gray-950/10 rounded-2xl border border-white/10">
+                            <div className="p-3 bg-white/20 dark:bg-white/5 rounded-2xl border border-white/10">
                                 <BarChart3 size={20} />
                             </div>
                             <ChevronRight size={20} className="text-white/30 group-hover:text-white transition-all transform group-hover:translate-x-1" />

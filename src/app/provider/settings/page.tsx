@@ -46,7 +46,7 @@ export default function ProviderSettingsPage() {
 
                     {activeTab === 'account' && (
                         <div className="space-y-8">
-                            <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-white shadow-xl shadow-gray-200/10">
+                            <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-white dark:border-gray-800 shadow-xl shadow-gray-200/10">
                                 <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100 mb-6">Contact Information</h2>
                                 <div className="space-y-6">
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -86,7 +86,7 @@ export default function ProviderSettingsPage() {
                     )}
 
                     {activeTab === 'security' && (
-                        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-white shadow-xl shadow-gray-200/10">
+                        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-white dark:border-gray-800 shadow-xl shadow-gray-200/10">
                             <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100 mb-8">Password & Security</h2>
 
                             <div className="space-y-6 mb-10">
@@ -128,7 +128,7 @@ export default function ProviderSettingsPage() {
                     )}
 
                     {activeTab === 'notifications' && (
-                        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-white shadow-xl shadow-gray-200/10">
+                        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-white dark:border-gray-800 shadow-xl shadow-gray-200/10">
                             <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100 mb-8">Notification Preferences</h2>
 
                             <div className="space-y-8">
@@ -175,7 +175,7 @@ export default function ProviderSettingsPage() {
                     )}
 
                     {activeTab === 'billing' && (
-                        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-white shadow-xl shadow-gray-200/10 flex flex-col items-center justify-center py-20">
+                        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-white dark:border-gray-800 shadow-xl shadow-gray-200/10 flex flex-col items-center justify-center py-20">
                             <div className="w-20 h-20 bg-gray-50 dark:bg-gray-900 rounded-full flex items-center justify-center mb-6">
                                 <CreditCard size={32} className="text-gray-400 dark:text-gray-500" />
                             </div>

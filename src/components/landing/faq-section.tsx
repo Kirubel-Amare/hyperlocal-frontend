@@ -59,7 +59,7 @@ export default function FAQSection() {
             <div key={i} className="border-2 border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden hover:border-[#1E7B7C] dark:hover:border-cyan-700 transition-all">
               <button
                 onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
-                className="w-full flex items-center justify-between p-6 bg-white dark:bg-gray-950 dark:bg-gray-800/50 hover:bg-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800 transition-colors"
+                className="w-full flex items-center justify-between p-6 bg-white dark:bg-gray-950 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
               >
                 <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 dark:text-gray-100 text-left">{faq.question}</h3>
                 <ChevronDown
@@ -81,7 +81,7 @@ export default function FAQSection() {
         <div className="mt-16 text-center bg-gradient-to-r from-[#1E7B7C] to-[#166566] dark:from-cyan-900 dark:to-teal-900 rounded-2xl p-8 text-white shadow-xl shadow-[#1E7B7C]/10 dark:shadow-black/40">
           <p className="text-xl font-semibold mb-4">{t('faq.stillHaveQuestions')}</p>
           <p className="mb-6 text-[#E8F4F4] dark:text-cyan-100">{t('faq.supportAvailable')}</p>
-          <button className="bg-white dark:bg-gray-950 dark:bg-gray-800 text-[#1E7B7C] dark:text-cyan-400 hover:bg-gray-100 dark:hover:bg-gray-700 px-8 py-3 rounded-lg font-bold transition-colors">
+          <button className="bg-white dark:bg-gray-950 text-[#1E7B7C] dark:text-cyan-400 hover:bg-gray-100 dark:hover:bg-gray-700 px-8 py-3 rounded-lg font-bold transition-colors">
             {t('faq.contactSupport')}
           </button>
         </div>

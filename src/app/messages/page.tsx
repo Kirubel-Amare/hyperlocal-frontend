@@ -138,9 +138,9 @@ export default function MessagesPage() {
                                     key={thread.id}
                                     onClick={() => setActiveThreadId(thread.id)}
                                     className={`w-full p-4 rounded-3xl flex items-start gap-4 transition-all ${activeThreadId === thread.id
-                                        ? 'bg-white dark:bg-gray-950 shadow-lg shadow-[#1E7B7C]/5 border border-[#1E7B7C]/10'
-                                        : 'hover:bg-white dark:bg-gray-950/50 border border-transparent'
-                                        }`}
+ ? 'bg-white dark:bg-gray-950 shadow-lg shadow-[#1E7B7C]/5 border border-[#1E7B7C]/10'
+ : 'hover:bg-white border border-transparent'
+ }`}
                                 >
                                     <div className="relative flex-shrink-0">
                                         <div className="w-12 h-12 rounded-2xl overflow-hidden bg-gray-100">
@@ -153,7 +153,7 @@ export default function MessagesPage() {
                                             )}
                                         </div>
                                         {thread.participant.isOnline && (
-                                            <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-emerald-500 border-2 border-white rounded-full" />
+                                            <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-emerald-500 border-2 border-white dark:border-gray-800 rounded-full" />
                                         )}
                                     </div>
 
@@ -269,7 +269,7 @@ export default function MessagesPage() {
                             <div className="px-6 py-4 bg-gray-50 dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 animate-in slide-in-from-bottom-4">
                                 <div className="relative w-32 group">
                                     {attachedFile.type.startsWith('image/') ? (
-                                        <div className="relative h-20 w-32 rounded-xl overflow-hidden border-2 border-white shadow-md">
+                                        <div className="relative h-20 w-32 rounded-xl overflow-hidden border-2 border-white dark:border-gray-800 shadow-md">
                                             <Image src={attachedFile.url} alt="preview" fill className="object-cover" />
                                         </div>
                                     ) : (

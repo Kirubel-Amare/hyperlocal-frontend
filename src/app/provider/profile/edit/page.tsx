@@ -68,7 +68,7 @@ export default function ProviderProfileEditPage() {
                 <div className="lg:col-span-3 space-y-8">
 
                     {/* 1. General Info & Photo */}
-                    <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-white shadow-xl shadow-gray-200/10">
+                    <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-white dark:border-gray-800 shadow-xl shadow-gray-200/10">
                         <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100 mb-8">Profile Photo & Title</h2>
 
                         <div className="flex flex-col sm:flex-row gap-8 items-start mb-8 pb-8 border-b border-gray-100 dark:border-gray-800">
@@ -151,7 +151,7 @@ export default function ProviderProfileEditPage() {
                     </div>
 
                     {/* 2. Skills & Expertise */}
-                    <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-white shadow-xl shadow-gray-200/10">
+                    <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-white dark:border-gray-800 shadow-xl shadow-gray-200/10">
                         <div className="flex items-center justify-between mb-8">
                             <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100">Skills & Expertise</h2>
                             <span className="text-sm font-bold text-gray-400 dark:text-gray-500">4/15 Skills Added</span>
@@ -178,7 +178,7 @@ export default function ProviderProfileEditPage() {
                     </div>
 
                     {/* 3. Portfolio Projects */}
-                    <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-white shadow-xl shadow-gray-200/10">
+                    <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-white dark:border-gray-800 shadow-xl shadow-gray-200/10">
                         <div className="flex items-center justify-between mb-8">
                             <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100">Portfolio</h2>
                             <button className="p-2 bg-gray-50 dark:bg-gray-900 text-[#1E7B7C] rounded-xl hover:bg-[#E8F4F4] transition-colors border border-gray-100 dark:border-gray-800">
@@ -188,7 +188,7 @@ export default function ProviderProfileEditPage() {
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             <div className="col-span-1 sm:col-span-2 lg:col-span-3 border-2 border-dashed border-gray-200 rounded-2xl p-10 flex flex-col items-center justify-center text-center hover:border-[#1E7B7C]/30 hover:bg-[#E8F4F4]/50 transition-all cursor-pointer group">
-                                <div className="w-16 h-16 bg-gray-50 dark:bg-gray-900 rounded-full flex items-center justify-center mb-4 group-hover:bg-white dark:bg-gray-950 group-hover:shadow-md transition-all">
+                                <div className="w-16 h-16 bg-gray-50 dark:bg-gray-900 rounded-full flex items-center justify-center mb-4 group-hover:bg-white group-hover:shadow-md transition-all">
                                     <Plus size={32} className="text-gray-400 dark:text-gray-500 group-hover:text-[#1E7B7C]" />
                                 </div>
                                 <h4 className="font-black text-gray-900 dark:text-gray-100 mb-1">Add Portfolio Project</h4>
@@ -199,7 +199,7 @@ export default function ProviderProfileEditPage() {
                                 <div key={i} className="relative aspect-[4/3] rounded-2xl overflow-hidden group border border-gray-200 shadow-sm">
                                     <Image src={`https://images.unsplash.com/photo-${1500000000000 + i * 100000}?w=400&h=300&fit=crop`} alt="Portfolio" fill className="object-cover" />
                                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                                        <button className="p-2 bg-white dark:bg-gray-950/20 hover:bg-white dark:bg-gray-950/40 rounded-xl text-white transition-colors backdrop-blur-sm">
+                                        <button className="p-2 bg-white dark:bg-gray-950/20 hover:bg-white rounded-xl text-white transition-colors backdrop-blur-sm">
                                             <Edit2 size={18} />
                                         </button>
                                         <button className="p-2 bg-red-500/80 hover:bg-red-500 rounded-xl text-white transition-colors backdrop-blur-sm">
@@ -215,7 +215,7 @@ export default function ProviderProfileEditPage() {
                     </div>
 
                     {/* 4. Employment History */}
-                    <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-white shadow-xl shadow-gray-200/10">
+                    <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-white dark:border-gray-800 shadow-xl shadow-gray-200/10">
                         <div className="flex items-center justify-between mb-8">
                             <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100">Employment History</h2>
                             <button className="p-2 bg-gray-50 dark:bg-gray-900 text-[#1E7B7C] rounded-xl hover:bg-[#E8F4F4] transition-colors border border-gray-100 dark:border-gray-800">
@@ -253,7 +253,7 @@ export default function ProviderProfileEditPage() {
 
                     {/* 5. Education & Certifications */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-white shadow-xl shadow-gray-200/10">
+                        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-white dark:border-gray-800 shadow-xl shadow-gray-200/10">
                             <div className="flex items-center justify-between mb-8">
                                 <h2 className="text-xl font-black text-gray-900 dark:text-gray-100">Education</h2>
                                 <button className="p-2 bg-gray-50 dark:bg-gray-900 text-[#1E7B7C] rounded-xl"><Plus size={16} /></button>
@@ -271,7 +271,7 @@ export default function ProviderProfileEditPage() {
                             </div>
                         </div>
 
-                        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-white shadow-xl shadow-gray-200/10">
+                        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 border border-white dark:border-gray-800 shadow-xl shadow-gray-200/10">
                             <div className="flex items-center justify-between mb-8">
                                 <h2 className="text-xl font-black text-gray-900 dark:text-gray-100">Certifications</h2>
                                 <button className="p-2 bg-gray-50 dark:bg-gray-900 text-[#1E7B7C] rounded-xl"><Plus size={16} /></button>

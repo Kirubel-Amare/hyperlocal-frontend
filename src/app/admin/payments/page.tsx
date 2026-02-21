@@ -102,7 +102,7 @@ export default function AdminPaymentsPage() {
                     <p className="text-gray-500 dark:text-gray-400 font-medium italic">Oversee user payment methods, verification status, and financial security.</p>
                 </div>
                 <div className="flex items-center gap-3">
-                    <button className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 px-5 py-2.5 rounded-2xl font-bold text-sm text-gray-700 dark:text-gray-300 shadow-sm hover:bg-gray-50 dark:bg-gray-900 transition-all flex items-center gap-2 italic">
+                    <button className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 px-5 py-2.5 rounded-2xl font-bold text-sm text-gray-700 dark:text-gray-300 shadow-sm hover:bg-gray-50 transition-all flex items-center gap-2 italic">
                         <ShieldCheck size={18} />
                         Compliance Logs
                     </button>
@@ -168,7 +168,7 @@ export default function AdminPaymentsPage() {
                             placeholder="Search by User or Method ID..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full pl-12 pr-4 py-3 bg-gray-50 dark:bg-gray-900 border border-transparent rounded-2xl outline-none focus:bg-white dark:bg-gray-950 focus:border-[#1E7B7C]/20 transition-all text-sm font-medium italic"
+                            className="w-full pl-12 pr-4 py-3 bg-gray-50 dark:bg-gray-900 border border-transparent rounded-2xl outline-none focus:bg-white focus:border-[#1E7B7C]/20 transition-all text-sm font-medium italic"
                         />
                     </div>
                 </div>

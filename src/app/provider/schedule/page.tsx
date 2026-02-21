@@ -97,7 +97,7 @@ export default function ProviderSchedulePage() {
                     <p className="text-lg text-gray-500 dark:text-gray-400 font-medium italic">AI-driven availability management & auto-booking engine.</p>
                 </div>
                 <div className="flex items-center gap-3">
-                    <button className="px-6 py-3 bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 text-gray-900 dark:text-gray-100 rounded-2xl font-black flex items-center gap-2 hover:bg-gray-50 dark:bg-gray-900 transition-all shadow-sm">
+                    <button className="px-6 py-3 bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 text-gray-900 dark:text-gray-100 rounded-2xl font-black flex items-center gap-2 hover:bg-gray-50 transition-all shadow-sm">
                         <Settings size={18} />
                         Calendar Sync
                     </button>
@@ -114,7 +114,7 @@ export default function ProviderSchedulePage() {
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                 {/* Main Calendar View */}
                 <div className="lg:col-span-3 space-y-8">
-                    <div className="bg-white dark:bg-gray-950/60 backdrop-blur-xl border border-white rounded-[40px] p-8 lg:p-10 shadow-2xl shadow-gray-200/20">
+                    <div className="bg-white dark:bg-gray-950/60 backdrop-blur-xl border border-white dark:border-gray-800 rounded-[40px] p-8 lg:p-10 shadow-2xl shadow-gray-200/20">
                         {/* Calendar Header */}
                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
                             <div className="flex items-center gap-4">
@@ -165,9 +165,9 @@ export default function ProviderSchedulePage() {
                                         {event.time}
                                     </div>
                                     {/* Timeline Dot */}
-                                    <div className={`absolute -left-[5px] top-6 w-2.5 h-2.5 rounded-full border-2 border-white shadow-xl z-10 transition-transform group-hover:scale-150 ${event.color}`} />
+                                    <div className={`absolute -left-[5px] top-6 w-2.5 h-2.5 rounded-full border-2 border-white dark:border-gray-800 shadow-xl z-10 transition-transform group-hover:scale-150 ${event.color}`} />
 
-                                    <div className={`p-8 rounded-[32px] border border-white shadow-xl transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-1 ${event.bg}`}>
+                                    <div className={`p-8 rounded-[32px] border border-white dark:border-gray-800 shadow-xl transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-1 ${event.bg}`}>
                                         <div className="flex justify-between items-start mb-4">
                                             <div>
                                                 <div className="flex items-center gap-2 mb-1">
@@ -183,7 +183,7 @@ export default function ProviderSchedulePage() {
                                                     {event.title}
                                                 </h4>
                                             </div>
-                                            <button className="p-2 text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-950/50 rounded-xl transition-all">
+                                            <button className="p-2 text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:text-gray-100 bg-white/20 dark:bg-white/50 rounded-xl transition-all">
                                                 <MoreHorizontal size={20} />
                                             </button>
                                         </div>
@@ -210,7 +210,7 @@ export default function ProviderSchedulePage() {
                             {/* Empty Slot Action */}
                             <div className="relative pl-10 group opacity-40 hover:opacity-100 transition-opacity">
                                 <div className="absolute -left-[80px] top-4 text-xs font-bold text-gray-300 w-16 text-right italic">06:00 PM</div>
-                                <div className="absolute -left-[5px] top-4 w-2.5 h-2.5 rounded-full bg-gray-200 border-2 border-white" />
+                                <div className="absolute -left-[5px] top-4 w-2.5 h-2.5 rounded-full bg-gray-200 border-2 border-white dark:border-gray-800" />
                                 <button className="w-full py-6 border-2 border-dashed border-gray-100 dark:border-gray-800 rounded-[32px] flex items-center justify-center gap-2 text-gray-400 dark:text-gray-500 font-black italic hover:border-[#1E7B7C] hover:text-[#1E7B7C] transition-all">
                                     <Plus size={20} /> Add Assignment
                                 </button>
@@ -244,7 +244,7 @@ export default function ProviderSchedulePage() {
                             <p className="text-xs text-gray-400 dark:text-gray-500 font-medium leading-relaxed italic">
                                 Automatically accept jobs that match your availability and preferred category settings.
                             </p>
-                            <div className="h-px bg-white dark:bg-gray-950/10" />
+                            <div className="h-px bg-white/20 dark:bg-white/5" />
                             <div className="flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-emerald-400 italic">
                                 <span>Engine Active</span>
                                 <CheckCircle2 size={16} />

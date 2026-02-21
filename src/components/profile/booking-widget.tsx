@@ -142,11 +142,11 @@ export function BookingWidget({ hourlyRate, responseTime, name }: BookingWidgetP
                                     disabled={!slot.available}
                                     onClick={() => setSelectedTime(slot.time)}
                                     className={`p-3 rounded-xl text-xs font-medium transition-all ${selectedTime === slot.time
-                                        ? 'bg-[#1E7B7C] text-white shadow-lg shadow-[#1E7B7C]/20 scale-105'
-                                        : slot.available
-                                            ? 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:scale-105'
-                                            : 'bg-gray-50 dark:bg-gray-900/50 text-gray-300 dark:text-gray-700 cursor-not-allowed line-through'
-                                        }`}
+ ? 'bg-[#1E7B7C] text-white shadow-lg shadow-[#1E7B7C]/20 scale-105'
+ : slot.available
+ ? 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:scale-105'
+ : 'bg-gray-50 text-gray-300 dark:text-gray-700 cursor-not-allowed line-through'
+ }`}
                                 >
                                     {slot.time}
                                 </button>

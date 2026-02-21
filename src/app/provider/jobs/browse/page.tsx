@@ -48,7 +48,7 @@ export default function BrowseRequestsPage() {
                     <p className="text-lg text-gray-500 dark:text-gray-400 font-medium max-w-xl">Find the perfect service requests in your area and grow your business.</p>
                 </div>
 
-                <div className="flex items-center gap-4 bg-white dark:bg-gray-950/60 backdrop-blur-md p-2 rounded-3xl border border-white shadow-xl shadow-gray-200/5">
+                <div className="flex items-center gap-4 bg-white dark:bg-gray-950/60 backdrop-blur-md p-2 rounded-3xl border border-white dark:border-gray-800 shadow-xl shadow-gray-200/5">
                     <div className="px-6 py-3 border-r border-gray-100 dark:border-gray-800 hidden lg:block">
                         <p className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-1">Available Connects</p>
                         <div className="flex items-center gap-2">
@@ -77,10 +77,10 @@ export default function BrowseRequestsPage() {
                         placeholder="Search for jobs (e.g. plumbing, cleaning...)"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className="w-full bg-white dark:bg-gray-950/80 backdrop-blur-md border border-white focus:border-[#1E7B7C] focus:ring-8 focus:ring-[#1E7B7C]/5 rounded-[32px] pl-16 pr-8 py-6 text-lg font-medium text-gray-900 dark:text-gray-100 outline-none transition-all shadow-xl shadow-gray-200/10 placeholder:text-gray-300"
+                        className="w-full bg-white dark:bg-gray-950/80 backdrop-blur-md border border-white dark:border-gray-800 focus:border-[#1E7B7C] focus:ring-8 focus:ring-[#1E7B7C]/5 rounded-[32px] pl-16 pr-8 py-6 text-lg font-medium text-gray-900 dark:text-gray-100 outline-none transition-all shadow-xl shadow-gray-200/10 placeholder:text-gray-300"
                     />
                 </div>
-                <button className="bg-white dark:bg-gray-950/80 backdrop-blur-md border border-white hover:border-gray-200 rounded-[32px] px-8 py-6 flex items-center justify-center gap-4 text-gray-900 dark:text-gray-100 font-black transition-all shadow-xl shadow-gray-200/10 hover:shadow-2xl">
+                <button className="bg-white dark:bg-gray-950/80 backdrop-blur-md border border-white dark:border-gray-800 hover:border-gray-200 rounded-[32px] px-8 py-6 flex items-center justify-center gap-4 text-gray-900 dark:text-gray-100 font-black transition-all shadow-xl shadow-gray-200/10 hover:shadow-2xl">
                     <SlidersHorizontal size={22} />
                     Filters
                 </button>
@@ -94,7 +94,7 @@ export default function BrowseRequestsPage() {
                         onClick={() => setFilterCategory(cat)}
                         className={`px-8 py-4 rounded-2xl font-black text-sm whitespace-nowrap transition-all border ${filterCategory === cat
                             ? 'bg-[#1E7B7C] text-white border-[#1E7B7C] shadow-xl shadow-[#1E7B7C]/20 scale-105'
-                            : 'bg-white dark:bg-gray-950/60 backdrop-blur-md text-gray-500 dark:text-gray-400 border-white hover:border-gray-200'
+                            : 'bg-white dark:bg-gray-950/60 backdrop-blur-md text-gray-500 dark:text-gray-400 border-white dark:border-gray-800 hover:border-gray-200'
                             }`}
                     >
                         {cat}
@@ -107,7 +107,7 @@ export default function BrowseRequestsPage() {
                     filteredJobs.map((job) => (
                         <div
                             key={job.id}
-                            className="group bg-white dark:bg-gray-950/70 backdrop-blur-xl border border-white hover:border-[#1E7B7C]/30 rounded-[40px] p-8 lg:p-10 shadow-xl shadow-gray-200/10 hover:shadow-2xl transition-all relative overflow-hidden flex flex-col lg:flex-row gap-8"
+                            className="group bg-white dark:bg-gray-950/70 backdrop-blur-xl border border-white dark:border-gray-800 hover:border-[#1E7B7C]/30 rounded-[40px] p-8 lg:p-10 shadow-xl shadow-gray-200/10 hover:shadow-2xl transition-all relative overflow-hidden flex flex-col lg:flex-row gap-8"
                         >
                             {/* Status Badge */}
                             <div className="absolute top-0 right-0 p-10 pointer-events-none">

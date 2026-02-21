@@ -88,7 +88,7 @@ export default function OnboardingWizard({ isOpen, onClose }: OnboardingWizardPr
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                className="relative w-full max-w-2xl bg-white dark:bg-gray-950/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-[40px] border border-white/20 dark:border-gray-800/50 shadow-2xl dark:shadow-black/50 overflow-hidden flex flex-col md:flex-row h-[500px]"
+                className="relative w-full max-w-2xl bg-white dark:bg-gray-950/80 backdrop-blur-xl rounded-[40px] border border-white/20 dark:border-gray-800/50 shadow-2xl dark:shadow-black/50 overflow-hidden flex flex-col md:flex-row h-[500px]"
             >
                 {/* Visual Side */}
                 <div className="hidden md:block w-5/12 relative bg-[#1E7B7C]/10 overflow-hidden">
@@ -149,12 +149,12 @@ export default function OnboardingWizard({ isOpen, onClose }: OnboardingWizardPr
                                                 key={opt.id}
                                                 onClick={() => setSelections({ ...selections, role: opt.id })}
                                                 className={`p-4 rounded-2xl border-2 text-left transition-all ${selections.role === opt.id
-                                                        ? 'border-[#1E7B7C] bg-[#1E7B7C]/5 shadow-lg shadow-[#1E7B7C]/5'
-                                                        : 'border-gray-50 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50 dark:bg-gray-800/50 hover:bg-white dark:bg-gray-950 dark:hover:bg-gray-800 hover:border-gray-100 dark:border-gray-800 dark:hover:border-gray-700'
-                                                    }`}
+ ? 'border-[#1E7B7C] bg-[#1E7B7C]/5 shadow-lg shadow-[#1E7B7C]/5'
+ : 'border-gray-50 bg-gray-50/50 dark:bg-gray-900/50 hover:bg-white dark:hover:bg-gray-800 hover:border-gray-100 dark:border-gray-800 dark:hover:border-gray-700'
+ }`}
                                             >
                                                 <div className="flex items-center gap-4">
-                                                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${selections.role === opt.id ? 'bg-[#1E7B7C] text-white' : 'bg-white dark:bg-gray-950 dark:bg-gray-700 text-[#1E7B7C] dark:text-cyan-400'}`}>
+                                                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${selections.role === opt.id ? 'bg-[#1E7B7C] text-white' : 'bg-white dark:bg-gray-950 text-[#1E7B7C] dark:text-cyan-400'}`}>
                                                         {opt.icon}
                                                     </div>
                                                     <div>
@@ -170,7 +170,7 @@ export default function OnboardingWizard({ isOpen, onClose }: OnboardingWizardPr
                                 {step.checkboxes && (
                                     <div className="space-y-3">
                                         {step.checkboxes.map(cb => (
-                                            <label key={cb.id} className="flex items-center gap-3 p-4 bg-gray-50/50 dark:bg-gray-900/50 dark:bg-gray-800/50 rounded-2xl cursor-pointer hover:bg-white dark:bg-gray-950 dark:hover:bg-gray-800 transition-all group border-2 border-transparent hover:border-gray-100 dark:border-gray-800 dark:hover:border-gray-700">
+                                            <label key={cb.id} className="flex items-center gap-3 p-4 bg-gray-50/50 dark:bg-gray-900/50 rounded-2xl cursor-pointer hover:bg-white dark:hover:bg-gray-800 transition-all group border-2 border-transparent hover:border-gray-100 dark:border-gray-800 dark:hover:border-gray-700">
                                                 <input
                                                     type="checkbox"
                                                     className="w-5 h-5 rounded-lg border-2 border-gray-200 dark:border-gray-700 text-[#1E7B7C] dark:text-cyan-600 focus:ring-[#1E7B7C]/20 transition-all cursor-pointer dark:bg-gray-900"

@@ -48,7 +48,7 @@ export function QuickFilters({
 
             <div className="h-9 w-px bg-gray-200 dark:bg-gray-700 mx-1" />
 
-            <div className="flex items-center gap-2 px-4 py-2 bg-gray-50 dark:bg-gray-900 dark:bg-gray-800 rounded-full text-sm font-medium text-gray-500 dark:text-gray-400 dark:text-gray-400 border border-gray-100 dark:border-gray-800 dark:border-gray-700">
+            <div className="flex items-center gap-2 px-4 py-2 bg-gray-50 dark:bg-gray-900 rounded-full text-sm font-medium text-gray-500 dark:text-gray-400 dark:text-gray-400 border border-gray-100 dark:border-gray-800 ">
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 142 pros near you
             </div>

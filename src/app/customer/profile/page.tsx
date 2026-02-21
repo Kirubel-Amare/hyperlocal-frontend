@@ -20,7 +20,7 @@ export default function CustomerProfilePage() {
           </p>
         </div>
         <div className="flex gap-4">
-          <button className="px-6 py-3 bg-white dark:bg-gray-950 text-gray-700 dark:text-gray-300 rounded-2xl font-bold hover:bg-gray-50 dark:bg-gray-900 transition-colors shadow-sm border border-gray-100 dark:border-gray-800">
+          <button className="px-6 py-3 bg-white dark:bg-gray-950 text-gray-700 dark:text-gray-300 rounded-2xl font-bold hover:bg-gray-50 transition-colors shadow-sm border border-gray-100 dark:border-gray-800">
             Cancel
           </button>
           <button className="px-6 py-3 bg-gradient-to-r from-[#1E7B7C] to-[#166566] text-white rounded-2xl font-black shadow-lg shadow-[#1E7B7C]/20 hover:scale-105 active:scale-95 transition-all">
@@ -32,7 +32,7 @@ export default function CustomerProfilePage() {
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Fixed Navigation Sidebar */}
         <div className="w-full lg:w-64 shrink-0">
-          <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-4 border border-white shadow-xl shadow-gray-200/10 sticky top-28 space-y-2">
+          <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-4 border border-white dark:border-gray-800 shadow-xl shadow-gray-200/10 sticky top-28 space-y-2">
             <button
               onClick={() => setActiveSection('personal')}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold transition-all ${activeSection === 'personal' ? 'bg-[#E8F4F4] text-[#1E7B7C]' : 'text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:bg-gray-900 hover:text-gray-900 dark:text-gray-100'}`}
@@ -57,13 +57,13 @@ export default function CustomerProfilePage() {
         {/* Form Content Area */}
         <div className="flex-1 space-y-8">
           {activeSection === 'personal' && (
-            <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-8 md:p-10 border border-white shadow-xl shadow-gray-200/10 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-8 md:p-10 border border-white dark:border-gray-800 shadow-xl shadow-gray-200/10 animate-in fade-in slide-in-from-bottom-4 duration-500">
               <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100 mb-8 border-b border-gray-100 dark:border-gray-800 pb-4">Personal Information</h2>
 
               {/* Photo Upload */}
               <div className="flex items-center gap-6 mb-10">
                 <div className="relative group">
-                  <div className="w-24 h-24 rounded-3xl overflow-hidden border-4 border-white shadow-lg">
+                  <div className="w-24 h-24 rounded-3xl overflow-hidden border-4 border-white dark:border-gray-800 shadow-lg">
                     <img src={user.avatar} alt={user.name} className="w-full h-full object-cover" />
                   </div>
                   <button className="absolute inset-0 bg-black/40 rounded-3xl flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm cursor-pointer">
@@ -130,7 +130,7 @@ export default function CustomerProfilePage() {
           )}
 
           {activeSection === 'security' && (
-            <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-8 md:p-10 border border-white shadow-xl shadow-gray-200/10 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-8 md:p-10 border border-white dark:border-gray-800 shadow-xl shadow-gray-200/10 animate-in fade-in slide-in-from-bottom-4 duration-500">
               <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100 mb-8 border-b border-gray-100 dark:border-gray-800 pb-4">Security Settings</h2>
 
               <div className="space-y-8">
@@ -167,7 +167,7 @@ export default function CustomerProfilePage() {
           )}
 
           {activeSection === 'notifications' && (
-            <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-8 md:p-10 border border-white shadow-xl shadow-gray-200/10 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-8 md:p-10 border border-white dark:border-gray-800 shadow-xl shadow-gray-200/10 animate-in fade-in slide-in-from-bottom-4 duration-500">
               <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100 mb-8 border-b border-gray-100 dark:border-gray-800 pb-4">Notification Preferences</h2>
 
               <div className="space-y-6">

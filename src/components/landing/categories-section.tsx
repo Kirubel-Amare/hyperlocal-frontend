@@ -58,7 +58,7 @@ export default function CategoriesSection() {
               <Link
                 key={index}
                 href={`/services?category=${category.name}`}
-                className="group bg-white dark:bg-gray-950 dark:bg-gray-800 rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-800 dark:border-gray-700 hover:border-[#E8F4F4] dark:hover:border-gray-600 overflow-hidden relative"
+                className="group bg-white dark:bg-gray-950 rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-800 hover:border-[#E8F4F4] dark:hover:border-gray-600 overflow-hidden relative"
               >
 
                 {/* Gradient background on hover */}

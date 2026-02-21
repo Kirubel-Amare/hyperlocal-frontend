@@ -23,7 +23,7 @@ export default function AdminSettingsPage() {
                     <p className="text-gray-500 dark:text-gray-400 font-medium">Configure platform-wide parameters, financial rules, and security protocols.</p>
                 </div>
                 <div className="flex items-center gap-3">
-                    <button className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 px-5 py-2.5 rounded-2xl font-bold text-sm text-gray-700 dark:text-gray-300 shadow-sm hover:bg-gray-50 dark:bg-gray-900 transition-all flex items-center gap-2">
+                    <button className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 px-5 py-2.5 rounded-2xl font-bold text-sm text-gray-700 dark:text-gray-300 shadow-sm hover:bg-gray-50 transition-all flex items-center gap-2">
                         <RefreshCw size={18} />
                         Reset to Defaults
                     </button>
@@ -52,13 +52,13 @@ export default function AdminSettingsPage() {
                             <div className="space-y-2">
                                 <label className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest ml-1">Platform Commission (%)</label>
                                 <div className="relative">
-                                    <input type="number" defaultValue="15" className="w-full pl-4 pr-10 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl outline-none focus:bg-white dark:bg-gray-950 focus:border-[#1E7B7C]/20 transition-all text-sm font-bold" />
+                                    <input type="number" defaultValue="15" className="w-full pl-4 pr-10 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl outline-none focus:bg-white focus:border-[#1E7B7C]/20 transition-all text-sm font-bold" />
                                     <Percent className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" size={16} />
                                 </div>
                             </div>
                             <div className="space-y-2">
                                 <label className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest ml-1">Min. Payout ($)</label>
-                                <input type="number" defaultValue="50" className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl outline-none focus:bg-white dark:bg-gray-950 focus:border-[#1E7B7C]/20 transition-all text-sm font-bold" />
+                                <input type="number" defaultValue="50" className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl outline-none focus:bg-white focus:border-[#1E7B7C]/20 transition-all text-sm font-bold" />
                             </div>
                         </div>
                         <div className="p-4 bg-emerald-50/50 rounded-2xl border border-emerald-100/50 flex items-center justify-between">
@@ -122,7 +122,7 @@ export default function AdminSettingsPage() {
                     <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-2">
                             <label className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest ml-1">Default Currency</label>
-                            <select className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl outline-none focus:bg-white dark:bg-gray-950 focus:border-[#1E7B7C]/20 transition-all text-sm font-bold">
+                            <select className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl outline-none focus:bg-white focus:border-[#1E7B7C]/20 transition-all text-sm font-bold">
                                 <option>USD ($)</option>
                                 <option>EUR (€)</option>
                                 <option>GBP (£)</option>
@@ -130,7 +130,7 @@ export default function AdminSettingsPage() {
                         </div>
                         <div className="space-y-2">
                             <label className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest ml-1">Timezone</label>
-                            <select className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl outline-none focus:bg-white dark:bg-gray-950 focus:border-[#1E7B7C]/20 transition-all text-sm font-bold">
+                            <select className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl outline-none focus:bg-white focus:border-[#1E7B7C]/20 transition-all text-sm font-bold">
                                 <option>UTC -5 (New York)</option>
                                 <option>UTC +0 (London)</option>
                                 <option>UTC +3 (Nairobi)</option>

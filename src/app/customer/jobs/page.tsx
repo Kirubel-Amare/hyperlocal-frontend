@@ -41,9 +41,9 @@ export default function CustomerJobsPage() {
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
                             className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-bold text-sm transition-all duration-300 ${isActive
-                                ? 'bg-gradient-to-r from-[#1E7B7C] to-[#166566] text-white shadow-lg shadow-[#1E7B7C]/20 scale-105'
-                                : 'bg-white dark:bg-gray-950/60 backdrop-blur-md text-gray-500 dark:text-gray-400 hover:bg-white dark:bg-gray-950 hover:text-gray-900 dark:text-gray-100 hover:shadow-md'
-                                }`}
+ ? 'bg-gradient-to-r from-[#1E7B7C] to-[#166566] text-white shadow-lg shadow-[#1E7B7C]/20 scale-105'
+ : 'bg-white /60 backdrop-blur-md text-gray-500 dark:text-gray-400 hover:bg-white dark:bg-gray-950 hover:text-gray-900 dark:text-gray-100 hover:shadow-md'
+ }`}
                         >
                             <Icon size={16} />
                             {tab.label}
@@ -65,7 +65,7 @@ export default function CustomerJobsPage() {
                         className="w-full bg-white dark:bg-gray-950/60 backdrop-blur-md border-none rounded-2xl py-4 pl-12 pr-4 text-sm font-medium focus:ring-2 focus:ring-[#1E7B7C]/20 shadow-sm"
                     />
                 </div>
-                <button className="flex items-center justify-center gap-2 bg-white dark:bg-gray-950/60 backdrop-blur-md px-6 py-4 rounded-2xl text-gray-700 dark:text-gray-300 font-bold text-sm hover:bg-white dark:bg-gray-950 transition-colors shadow-sm whitespace-nowrap">
+                <button className="flex items-center justify-center gap-2 bg-white /60 backdrop-blur-md px-6 py-4 rounded-2xl text-gray-700 dark:text-gray-300 font-bold text-sm hover:bg-white dark:bg-gray-950 transition-colors shadow-sm whitespace-nowrap">
                     <Filter size={18} />
                     {t('jobs.filters')}
                 </button>
@@ -75,7 +75,7 @@ export default function CustomerJobsPage() {
             <div className="space-y-6">
                 {activeTab === 'active' && (
                     ongoingServices.map((service: any) => (
-                        <div key={service.id} className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-6 shadow-xl shadow-gray-200/10 border border-white flex flex-col md:flex-row gap-6 hover:shadow-2xl transition-all duration-500 group">
+                        <div key={service.id} className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-6 shadow-xl shadow-gray-200/10 border border-white dark:border-gray-800 flex flex-col md:flex-row gap-6 hover:shadow-2xl transition-all duration-500 group">
                             {/* Provider Info */}
                             <div className="flex flex-col items-center md:w-48 shrink-0 text-center gap-3 pr-6 md:border-r border-gray-100 dark:border-gray-800">
                                 <div className="w-20 h-20 rounded-2xl overflow-hidden relative shadow-md group-hover:scale-105 transition-transform duration-500">
@@ -139,7 +139,7 @@ export default function CustomerJobsPage() {
                 )}
 
                 {activeTab === 'pending' && (
-                    <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-12 shadow-xl shadow-gray-200/10 border border-white flex flex-col items-center justify-center text-center">
+                    <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-12 shadow-xl shadow-gray-200/10 border border-white dark:border-gray-800 flex flex-col items-center justify-center text-center">
                         <div className="w-20 h-20 bg-orange-50 rounded-full flex items-center justify-center mb-6">
                             <Clock size={32} className="text-orange-400" />
                         </div>
@@ -155,7 +155,7 @@ export default function CustomerJobsPage() {
 
                 {activeTab === 'completed' && serviceHistory && (
                     serviceHistory.map((service: any) => (
-                        <div key={service.id} className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-6 shadow-xl shadow-gray-200/10 border border-white flex flex-col md:flex-row items-center gap-6 opacity-80 hover:opacity-100 transition-opacity duration-300">
+                        <div key={service.id} className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-6 shadow-xl shadow-gray-200/10 border border-white dark:border-gray-800 flex flex-col md:flex-row items-center gap-6 opacity-80 hover:opacity-100 transition-opacity duration-300">
                             <div className="w-16 h-16 rounded-2xl overflow-hidden relative shadow-sm shrink-0">
                                 <img src={service.provider.avatar} alt={service.provider.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                             </div>

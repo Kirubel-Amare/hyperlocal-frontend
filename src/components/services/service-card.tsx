@@ -26,7 +26,7 @@ export default function ServiceCard({ service, categorySlug }: ServiceCardProps)
                 className="object-cover w-full h-full"
               />
             </div>
-            <div className="absolute -bottom-1 -right-1 bg-[#1E7B7C] w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-sm">
+            <div className="absolute -bottom-1 -right-1 bg-[#1E7B7C] w-5 h-5 rounded-full flex items-center justify-center border-2 border-white dark:border-gray-800 shadow-sm">
               <Check size={12} className="text-white" />
             </div>
           </div>

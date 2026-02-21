@@ -16,7 +16,7 @@ export default function ProviderRequestsPage() {
 
       <div className="grid grid-cols-1 gap-6">
         {newRequests.map((req) => (
-          <div key={req.id} className="group bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 shadow-xl shadow-gray-200/10 border border-white flex flex-col lg:flex-row lg:items-center gap-10 hover:shadow-2xl transition-all duration-500">
+          <div key={req.id} className="group bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 shadow-xl shadow-gray-200/10 border border-white dark:border-gray-800 flex flex-col lg:flex-row lg:items-center gap-10 hover:shadow-2xl transition-all duration-500">
             {/* Image Section */}
             <div className="w-full lg:w-72 h-48 rounded-2xl overflow-hidden flex-shrink-0 relative shadow-inner">
               <Image src={req.image} alt={req.title} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
@@ -64,7 +64,7 @@ export default function ProviderRequestsPage() {
                 <Check size={18} strokeWidth={4} />
                 Accept Job
               </button>
-              <button className="flex-1 lg:w-full py-4 px-6 rounded-2xl bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 text-gray-500 dark:text-gray-400 font-black flex items-center justify-center gap-2 hover:bg-gray-50 dark:bg-gray-900 hover:text-gray-900 dark:text-gray-100 transition-all">
+              <button className="flex-1 lg:w-full py-4 px-6 rounded-2xl bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 text-gray-500 dark:text-gray-400 font-black flex items-center justify-center gap-2 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-100 transition-all">
                 <MessageSquare size={18} />
                 Message Client
               </button>

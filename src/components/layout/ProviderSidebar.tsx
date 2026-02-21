@@ -79,7 +79,7 @@ export default function ProviderSidebar() {
                                         {isActive && (
                                             <div className="absolute inset-0 bg-gradient-to-r from-[#1E7B7C]/10 dark:from-cyan-400/10 to-transparent opacity-100" />
                                         )}
-                                        <div className={`relative z-10 p-2 rounded-xl transition-colors ${isActive ? 'bg-white dark:bg-gray-950 dark:bg-gray-800 shadow-sm text-[#1E7B7C] dark:text-cyan-400' : 'bg-transparent text-gray-400 dark:text-gray-500 dark:text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-300'}`}>
+                                        <div className={`relative z-10 p-2 rounded-xl transition-colors ${isActive ? 'bg-white dark:bg-gray-950 shadow-sm text-[#1E7B7C] dark:text-cyan-400' : 'bg-transparent text-gray-400 dark:text-gray-500 dark:text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-300'}`}>
                                             <Icon size={18} strokeWidth={2.5} />
                                         </div>
                                         <span className="relative z-10 truncate">{link.name}</span>
@@ -97,7 +97,7 @@ export default function ProviderSidebar() {
             {/* Bottom Actions */}
             <div className="px-6 mt-auto relative z-10 flex flex-col gap-4">
                 <button className="w-full bg-gradient-to-br from-[#1E7B7C] to-[#166566] hover:scale-[1.02] text-white py-4 rounded-2xl text-sm font-bold transition-all flex items-center justify-center gap-2 shadow-xl shadow-[#1E7B7C]/20 group relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-white dark:bg-gray-950/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/3" />
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 dark:bg-white/5 rounded-full blur-2xl -translate-y-1/2 translate-x-1/3" />
                     <div className="relative z-10 flex items-center gap-2">
                         <Zap size={18} fill="currentColor" />
                         {t('sidebar.goOnline')}

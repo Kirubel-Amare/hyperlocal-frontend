@@ -120,7 +120,7 @@ export default function ServiceRequestPage() {
 
             <form onSubmit={handleSubmit} className="space-y-8">
                 {/* Main Details Card */}
-                <div className="bg-white dark:bg-gray-950/60 backdrop-blur-xl rounded-[40px] p-8 md:p-10 shadow-2xl shadow-gray-200/20 border border-white">
+                <div className="bg-white dark:bg-gray-950/60 backdrop-blur-xl rounded-[40px] p-8 md:p-10 shadow-2xl shadow-gray-200/20 border border-white dark:border-gray-800">
                     <div className="flex items-center gap-4 mb-8">
                         <div className="w-12 h-12 bg-[#E8F4F4] rounded-2xl flex items-center justify-center text-[#1E7B7C]">
                             <FileText size={24} />
@@ -139,7 +139,7 @@ export default function ServiceRequestPage() {
                                 value={formData.title}
                                 onChange={handleChange}
                                 placeholder="e.g. Need a plumber to fix a leaking under-sink pipe"
-                                className="w-full bg-white dark:bg-gray-950/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl px-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all placeholder:text-gray-400 dark:text-gray-500 font-medium"
+                                className="w-full bg-white/20 dark:bg-white/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl px-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all placeholder:text-gray-400 dark:text-gray-500 font-medium"
                             />
                         </div>
 
@@ -152,7 +152,7 @@ export default function ServiceRequestPage() {
                                     required
                                     value={formData.category}
                                     onChange={handleChange}
-                                    className="w-full bg-white dark:bg-gray-950/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl px-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all appearance-none font-medium text-base"
+                                    className="w-full bg-white/20 dark:bg-white/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl px-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all appearance-none font-medium text-base"
                                 >
                                     <option value="" disabled>Select the best category</option>
                                     {CATEGORIES.map(cat => (
@@ -173,14 +173,14 @@ export default function ServiceRequestPage() {
                                 onChange={handleChange}
                                 rows={5}
                                 placeholder="Describe the job in detail. Include dimensions, specific materials needed, or any relevant history..."
-                                className="w-full bg-white dark:bg-gray-950/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl px-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all placeholder:text-gray-400 dark:text-gray-500 font-medium resize-none shadow-inner"
+                                className="w-full bg-white/20 dark:bg-white/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl px-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all placeholder:text-gray-400 dark:text-gray-500 font-medium resize-none shadow-inner"
                             />
                         </div>
                     </div>
                 </div>
 
                 {/* Logistics Card */}
-                <div className="bg-white dark:bg-gray-950/60 backdrop-blur-xl rounded-[40px] p-8 md:p-10 shadow-xl shadow-gray-200/10 border border-white">
+                <div className="bg-white dark:bg-gray-950/60 backdrop-blur-xl rounded-[40px] p-8 md:p-10 shadow-xl shadow-gray-200/10 border border-white dark:border-gray-800">
                     <div className="flex items-center gap-4 mb-8">
                         <div className="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-500">
                             <MapPin size={24} />
@@ -200,7 +200,7 @@ export default function ServiceRequestPage() {
                                     value={formData.location}
                                     onChange={handleChange}
                                     placeholder="e.g. 123 Main St, Brooklyn, NY or Online"
-                                    className="w-full bg-white dark:bg-gray-950/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl pl-12 pr-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all placeholder:text-gray-400 dark:text-gray-500 font-medium"
+                                    className="w-full bg-white/20 dark:bg-white/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl pl-12 pr-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all placeholder:text-gray-400 dark:text-gray-500 font-medium"
                                 />
                                 <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" size={20} />
                             </div>
@@ -243,7 +243,7 @@ export default function ServiceRequestPage() {
                 </div>
 
                 {/* Budget Card */}
-                <div className="bg-white dark:bg-gray-950/60 backdrop-blur-xl rounded-[40px] p-8 md:p-10 shadow-xl shadow-gray-200/10 border border-white">
+                <div className="bg-white dark:bg-gray-950/60 backdrop-blur-xl rounded-[40px] p-8 md:p-10 shadow-xl shadow-gray-200/10 border border-white dark:border-gray-800">
                     <div className="flex items-center gap-4 mb-8">
                         <div className="w-12 h-12 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600">
                             <DollarSign size={24} />
@@ -317,7 +317,7 @@ export default function ServiceRequestPage() {
                 </div>
 
                 {/* Media Upload */}
-                <div className="bg-white dark:bg-gray-950/60 backdrop-blur-xl rounded-[40px] p-8 md:p-10 shadow-xl shadow-gray-200/10 border border-white">
+                <div className="bg-white dark:bg-gray-950/60 backdrop-blur-xl rounded-[40px] p-8 md:p-10 shadow-xl shadow-gray-200/10 border border-white dark:border-gray-800">
                     <div className="flex items-center gap-4 mb-8">
                         <div className="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-500">
                             <ImageIcon size={24} />
@@ -333,7 +333,7 @@ export default function ServiceRequestPage() {
                             onChange={handleImageUpload}
                             className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                         />
-                        <div className="w-20 h-20 bg-gray-50 dark:bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform group-hover:bg-white dark:bg-gray-950 shadow-sm">
+                        <div className="w-20 h-20 bg-gray-50 dark:bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform group-hover:bg-white shadow-sm">
                             <UploadCloud size={32} className="text-gray-400 dark:text-gray-500 group-hover:text-[#1E7B7C] transition-colors" />
                         </div>
                         <h4 className="font-bold text-gray-900 dark:text-gray-100 text-lg mb-2">Click to upload or drag images here</h4>
@@ -351,7 +351,7 @@ export default function ServiceRequestPage() {
                                     <button
                                         type="button"
                                         onClick={() => removeImage(i)}
-                                        className="absolute top-1 right-1 p-1 bg-white dark:bg-gray-950/80 rounded-full text-red-500 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white dark:bg-gray-950 hover:scale-110 shadow-sm"
+                                        className="absolute top-1 right-1 p-1 bg-white /80 rounded-full text-red-500 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white dark:bg-gray-950 hover:scale-110 shadow-sm"
                                     >
                                         <X size={14} />
                                     </button>
@@ -373,7 +373,7 @@ export default function ServiceRequestPage() {
                     >
                         {isSubmitting ? (
                             <>
-                                <div className="w-5 h-5 rounded-full border-2 border-white border-t-transparent animate-spin" />
+                                <div className="w-5 h-5 rounded-full border-2 border-white dark:border-gray-800 border-t-transparent animate-spin" />
                                 Processing...
                             </>
                         ) : (

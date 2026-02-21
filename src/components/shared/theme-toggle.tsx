@@ -24,7 +24,7 @@ export function ThemeToggle() {
         <div className="relative" ref={dropdownRef}>
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="relative p-2.5 rounded-full bg-white dark:bg-gray-950/50 backdrop-blur-md border border-white/20 shadow-sm hover:bg-white dark:bg-gray-950/80 transition-all focus:outline-none dark:bg-[#1a1c23]/50 dark:border-white/10 dark:hover:bg-[#1a1c23]/80"
+                className="relative p-2.5 rounded-full bg-white/20 dark:bg-white/50 backdrop-blur-md border border-white/20 shadow-sm hover:bg-white transition-all focus:outline-none dark:bg-[#1a1c23]/50 dark:border-white/10 dark:hover:bg-[#1a1c23]/80"
                 aria-label="Toggle theme"
             >
                 <div className="relative w-5 h-5 flex items-center justify-center">
@@ -34,7 +34,7 @@ export function ThemeToggle() {
             </button>
 
             {isOpen && (
-                <div className="absolute right-0 mt-2 w-36 bg-white dark:bg-gray-950 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl shadow-xl py-1 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                <div className="absolute right-0 mt-2 w-36 bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 rounded-xl shadow-xl py-1 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
                     <button
                         onClick={() => { setTheme('light'); setIsOpen(false) }}
                         className={`w-full flex items-center justify-between px-4 py-2 hover:bg-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800 transition-colors text-sm ${theme === 'light' ? 'text-[#1E7B7C] font-semibold' : 'text-gray-700 dark:text-gray-300 dark:text-gray-300'}`}

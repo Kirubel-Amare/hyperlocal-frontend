@@ -234,7 +234,7 @@ export default function Header({
                   <div className="flex items-center gap-2 pr-4 border-r border-gray-200">
                     <button className="relative p-2.5 rounded-xl text-gray-600 hover:text-[#1E7B7C] hover:bg-[#E8F4F4] transition-all duration-300">
                       <Bell size={20} />
-                      <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 border-2 border-white rounded-full" />
+                      <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 border-2 border-white dark:border-gray-800 rounded-full" />
                     </button>
                   </div>
 
@@ -258,7 +258,7 @@ export default function Header({
                     </button>
 
                     {showProfileMenu && (
-                      <div className="absolute right-0 top-full mt-2 w-64 bg-white dark:bg-gray-950/95 dark:bg-gray-900/95 backdrop-blur-xl border border-gray-100 dark:border-gray-800 shadow-xl rounded-2xl py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                      <div className="absolute right-0 top-full mt-2 w-64 bg-white dark:bg-gray-950/95 backdrop-blur-xl border border-gray-100 dark:border-gray-800 shadow-xl rounded-2xl py-2 animate-in fade-in slide-in-from-top-2 duration-200">
                         <div className="px-4 py-3 border-b border-gray-100 dark:border-gray-800 mb-2">
                           <p className="text-sm font-bold text-gray-900 dark:text-gray-100 dark:text-gray-100">{userType === 'customer' ? 'Alex Johnson' : 'Sarah Miller'}</p>
                           <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">{userType === 'customer' ? t('header.customerProfile') : t('header.providerProfile')}</p>
@@ -319,13 +319,13 @@ export default function Header({
 
         {/* Mobile Menu with animations */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-gray-950/95 dark:bg-gray-900/95 backdrop-blur-xl border-t border-gray-100 dark:border-gray-800 shadow-2xl animate-in slide-in-from-top duration-500">
+          <div className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-gray-950/95 backdrop-blur-xl border-t border-gray-100 dark:border-gray-800 shadow-2xl animate-in slide-in-from-top duration-500">
             <div className="max-h-[calc(100vh-5rem)] overflow-y-auto">
               {/* User Profile Section */}
               <div className="p-6 bg-gradient-to-r from-[#E8F4F4] dark:from-[#1E7B7C]/10 to-blue-50 dark:to-indigo-900/10 border-b border-gray-100 dark:border-gray-800">
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#1E7B7C] to-[#166566] p-[2px]">
-                    <div className="w-full h-full rounded-full bg-white dark:bg-gray-950 dark:bg-gray-900 flex items-center justify-center">
+                    <div className="w-full h-full rounded-full bg-white dark:bg-gray-950 flex items-center justify-center">
                       <User size={24} className="text-[#1E7B7C]" />
                     </div>
                   </div>
@@ -340,7 +340,7 @@ export default function Header({
                 {/* Categories Dropdown with animation */}
                 <button
                   onClick={() => setShowCategories(!showCategories)}
-                  className="flex items-center justify-between w-full px-4 py-3.5 rounded-xl bg-gray-50 dark:bg-gray-900 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100 dark:text-gray-100 hover:bg-[#E8F4F4] dark:hover:bg-[#1E7B7C]/20 hover:text-[#1E7B7C] transition-all duration-300 group"
+                  className="flex items-center justify-between w-full px-4 py-3.5 rounded-xl bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 dark:text-gray-100 hover:bg-[#E8F4F4] dark:hover:bg-[#1E7B7C]/20 hover:text-[#1E7B7C] transition-all duration-300 group"
                 >
                   <span className="flex items-center gap-3 font-medium">
                     <LayoutGrid size={18} className="text-[#1E7B7C]" />
@@ -354,7 +354,7 @@ export default function Header({
 
                 {/* Categories Submenu with grid layout */}
                 {showCategories && (
-                  <div className="grid grid-cols-2 gap-2 p-2 bg-gray-50/50 dark:bg-gray-900/50 dark:bg-gray-800/30 rounded-xl animate-in slide-in-from-left fade-in duration-300">
+                  <div className="grid grid-cols-2 gap-2 p-2 bg-gray-50/50 dark:bg-gray-900/50 rounded-xl animate-in slide-in-from-left fade-in duration-300">
                     {getCategoryLinks(t).map((cat: any) => (
                       <Link
                         key={cat.id}
@@ -501,11 +501,11 @@ export default function Header({
                   {t('header.quickFilters')}
                 </h4>
                 <div className="space-y-2">
-                  <button className="flex items-center gap-3 w-full px-4 py-4 rounded-xl border-2 border-transparent hover:border-[#E8F4F4] bg-gray-50 dark:bg-gray-900 dark:bg-gray-800/50 hover:bg-white dark:bg-gray-950 dark:hover:bg-gray-800 transition-all duration-300 group">
+                  <button className="flex items-center gap-3 w-full px-4 py-4 rounded-xl border-2 border-transparent hover:border-[#E8F4F4] bg-gray-50 dark:bg-gray-900 hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 group">
                     <div className="w-5 h-5 border-2 border-gray-300 dark:border-gray-600 rounded-md group-hover:border-[#1E7B7C] group-hover:bg-[#E8F4F4] dark:group-hover:bg-gray-700 transition-all" />
                     <span className="font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 group-hover:text-[#1E7B7C]">{t('header.verifiedOnly')}</span>
                   </button>
-                  <button className="flex items-center gap-3 w-full px-4 py-4 rounded-xl border-2 border-transparent hover:border-[#E8F4F4] bg-gray-50 dark:bg-gray-900 dark:bg-gray-800/50 hover:bg-white dark:bg-gray-950 dark:hover:bg-gray-800 transition-all duration-300 group">
+                  <button className="flex items-center gap-3 w-full px-4 py-4 rounded-xl border-2 border-transparent hover:border-[#E8F4F4] bg-gray-50 dark:bg-gray-900 hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 group">
                     <div className="w-5 h-5 border-2 border-gray-300 dark:border-gray-600 rounded-md group-hover:border-[#1E7B7C] group-hover:bg-[#E8F4F4] dark:group-hover:bg-gray-700 transition-all" />
                     <span className="font-medium text-gray-700 dark:text-gray-300 dark:text-gray-300 group-hover:text-[#1E7B7C]">{t('header.openNow')}</span>
                   </button>

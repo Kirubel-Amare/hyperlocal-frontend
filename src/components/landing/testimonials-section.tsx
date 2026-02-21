@@ -50,7 +50,7 @@ export default function TestimonialsSection() {
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, i) => (
-            <div key={i} className="group bg-white dark:bg-gray-950 dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100 dark:border-gray-800 dark:border-gray-700 hover:border-[#E8F4F4] dark:hover:border-cyan-800">
+            <div key={i} className="group bg-white dark:bg-gray-950 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100 dark:border-gray-800 hover:border-[#E8F4F4] dark:hover:border-cyan-800">
               {/* Rating */}
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: testimonial.rating }).map((_, j) => (

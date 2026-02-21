@@ -45,7 +45,7 @@ export default function HeroSection() {
 
               {/* Search Bar with Overlay Button */}
               <div className="relative mb-10">
-                <div className="bg-white dark:bg-gray-950/80 dark:bg-gray-900/80 backdrop-blur border border-gray-200 dark:border-gray-800 rounded-2xl shadow-2xl dark:shadow-black/50 p-6 flex flex-col lg:flex-row gap-4 hover:shadow-3xl transition-all pr-28 lg:pr-6">
+                <div className="bg-white dark:bg-gray-950/80 backdrop-blur border border-gray-200 dark:border-gray-800 rounded-2xl shadow-2xl dark:shadow-black/50 p-6 flex flex-col lg:flex-row gap-4 hover:shadow-3xl transition-all pr-28 lg:pr-6">
                   <div className="flex-1 flex items-center gap-3 lg:border-r border-gray-200 dark:border-gray-800 lg:pr-6">
                     <Search size={22} className="text-[#1E7B7C] dark:text-cyan-400" />
                     <input
@@ -106,7 +106,7 @@ export default function HeroSection() {
               </div>
 
               {/* Price Card with Enhanced Design */}
-              <div className="absolute -bottom-6 -right-6 lg:-bottom-8 lg:-right-8 bg-white dark:bg-gray-950 dark:bg-gray-800 rounded-2xl shadow-2xl p-6 max-w-xs border border-gray-100 dark:border-gray-800 dark:border-gray-700 hover:shadow-3xl transition-all transform hover:scale-105 z-20">
+              <div className="absolute -bottom-6 -right-6 lg:-bottom-8 lg:-right-8 bg-white dark:bg-gray-950 rounded-2xl shadow-2xl p-6 max-w-xs border border-gray-100 dark:border-gray-800 hover:shadow-3xl transition-all transform hover:scale-105 z-20">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-[#1E7B7C] to-[#166566] rounded-lg flex items-center justify-center">
                     <span className="text-white font-bold text-lg">✓</span>

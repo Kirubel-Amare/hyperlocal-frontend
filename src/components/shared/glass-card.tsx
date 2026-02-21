@@ -20,7 +20,7 @@ export default function GlassCard({
     innerClassName = "p-10"
 }: GlassCardProps) {
     return (
-        <div className={`bg-white dark:bg-gray-950/60 dark:bg-gray-900/60 backdrop-blur-md rounded-[40px] shadow-xl shadow-gray-200/10 dark:shadow-none border border-white dark:border-gray-800 overflow-hidden ${className}`}>
+        <div className={`bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] shadow-xl shadow-gray-200/10 dark:shadow-none border border-white dark:border-gray-800 overflow-hidden ${className}`}>
             {(title || action) && (
                 <div className="px-10 pt-10 flex items-center justify-between">
                     <div>

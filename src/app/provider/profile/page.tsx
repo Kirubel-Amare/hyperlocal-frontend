@@ -37,9 +37,9 @@ export default function ProviderProfilePage() {
 
         {/* Left Column: Essential Info */}
         <div className="lg:col-span-1 space-y-6">
-          <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 border border-white shadow-xl shadow-gray-200/10 flex flex-col items-center text-center">
+          <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 border border-white dark:border-gray-800 shadow-xl shadow-gray-200/10 flex flex-col items-center text-center">
             <div className="relative group mb-6">
-              <div className="w-40 h-40 rounded-[48px] overflow-hidden border-8 border-white shadow-2xl relative">
+              <div className="w-40 h-40 rounded-[48px] overflow-hidden border-8 border-white dark:border-gray-800 shadow-2xl relative">
                 <Image src={user.avatar} alt={user.name} fill className="object-cover" />
               </div>
               <button className="absolute bottom-2 right-2 p-3 bg-gray-900 text-white rounded-2xl shadow-lg transform group-hover:scale-110 transition-transform">

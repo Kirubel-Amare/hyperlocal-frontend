@@ -30,10 +30,10 @@ export default function ActivityItem({
     return (
         <div
             onClick={onClick}
-            className={`flex items-center justify-between p-4 bg-gray-50/50 dark:bg-gray-900/50 dark:bg-gray-800/50 rounded-2xl border border-gray-100/50 dark:border-gray-800/50 dark:border-gray-700/50 hover:bg-white dark:bg-gray-950 dark:hover:bg-gray-800 transition-colors group cursor-pointer`}
+            className={`flex items-center justify-between p-4 bg-gray-50/50 dark:bg-gray-900/50 rounded-2xl border border-gray-100/50 dark:border-gray-800/50 hover:bg-white dark:hover:bg-gray-800 transition-colors group cursor-pointer`}
         >
             <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-gray-200 dark:bg-gray-700 overflow-hidden relative shadow-sm">
+                <div className="w-12 h-12 rounded-xl bg-gray-200 dark:bg-gray-800 overflow-hidden relative shadow-sm border border-transparent dark:border-gray-700">
                     {(image || avatar) ? (
                         <Image
                             src={image || avatar || ''}

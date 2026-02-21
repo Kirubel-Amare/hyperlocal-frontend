@@ -71,10 +71,10 @@ export default function CustomerSavedProvidersPage() {
                     />
                 </div>
                 <div className="flex gap-2">
-                    <button className="px-6 py-4 bg-white dark:bg-gray-950/60 backdrop-blur-md text-gray-700 dark:text-gray-300 font-bold text-sm rounded-2xl hover:bg-white dark:bg-gray-950 transition-colors shadow-sm whitespace-nowrap">
+                    <button className="px-6 py-4 bg-white /60 backdrop-blur-md text-gray-700 dark:text-gray-300 font-bold text-sm rounded-2xl hover:bg-white dark:bg-gray-950 transition-colors shadow-sm whitespace-nowrap">
                         Category
                     </button>
-                    <button className="px-6 py-4 bg-white dark:bg-gray-950/60 backdrop-blur-md text-gray-700 dark:text-gray-300 font-bold text-sm rounded-2xl hover:bg-white dark:bg-gray-950 transition-colors shadow-sm whitespace-nowrap">
+                    <button className="px-6 py-4 bg-white /60 backdrop-blur-md text-gray-700 dark:text-gray-300 font-bold text-sm rounded-2xl hover:bg-white dark:bg-gray-950 transition-colors shadow-sm whitespace-nowrap">
                         Availability
                     </button>
                 </div>
@@ -83,7 +83,7 @@ export default function CustomerSavedProvidersPage() {
             {/* Providers Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {savedProviders.map((provider) => (
-                    <div key={provider.id} className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] border border-white shadow-xl shadow-gray-200/10 overflow-hidden group hover:shadow-2xl transition-all duration-500 flex flex-col">
+                    <div key={provider.id} className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] border border-white dark:border-gray-800 shadow-xl shadow-gray-200/10 overflow-hidden group hover:shadow-2xl transition-all duration-500 flex flex-col">
                         <div className="p-6 pb-0 relative">
                             {/* Saved Heart Button */}
                             <button className="absolute top-6 right-6 p-2.5 bg-white dark:bg-gray-950/80 backdrop-blur-md rounded-xl text-red-500 hover:scale-110 active:scale-95 transition-all shadow-sm z-10 group/btn">
@@ -96,11 +96,11 @@ export default function CustomerSavedProvidersPage() {
                                         <img src={provider.avatar} alt={provider.name} className="w-full h-full object-cover group-hover/avatar:scale-110 transition-transform duration-500" />
                                     </div>
                                     {provider.isAvailable ? (
-                                        <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-emerald-100 rounded-xl border-4 border-white flex items-center justify-center" title="Available Now">
+                                        <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-emerald-100 rounded-xl border-4 border-white dark:border-gray-800 flex items-center justify-center" title="Available Now">
                                             <div className="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse" />
                                         </div>
                                     ) : (
-                                        <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-red-100 rounded-xl border-4 border-white flex items-center justify-center" title="Busy">
+                                        <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-red-100 rounded-xl border-4 border-white dark:border-gray-800 flex items-center justify-center" title="Busy">
                                             <div className="w-2.5 h-2.5 bg-red-500 rounded-full" />
                                         </div>
                                     )}

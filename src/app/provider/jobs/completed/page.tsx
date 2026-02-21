@@ -56,7 +56,7 @@ export default function ProviderJobsCompletedPage() {
         </div>
       </div>
 
-      <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/10 border border-white">
+      <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/10 border border-white dark:border-gray-800">
 
         {/* Filters */}
         <div className="flex flex-col md:flex-row gap-4 mb-10">

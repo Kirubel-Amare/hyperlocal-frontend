@@ -77,7 +77,7 @@ export default function AdminSidebar() {
                                 {isActive && (
                                     <div className="absolute inset-0 bg-gradient-to-r from-[#1E7B7C]/10 dark:from-cyan-400/10 to-transparent opacity-100" />
                                 )}
-                                <div className={`relative z-10 p-2 rounded-xl transition-colors ${isActive ? 'bg-white dark:bg-gray-950 dark:bg-gray-800 shadow-sm text-[#1E7B7C] dark:text-cyan-400' : 'bg-transparent text-gray-400 dark:text-gray-500 dark:text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-300'}`}>
+                                <div className={`relative z-10 p-2 rounded-xl transition-colors ${isActive ? 'bg-white dark:bg-gray-950 shadow-sm text-[#1E7B7C] dark:text-cyan-400' : 'bg-transparent text-gray-400 dark:text-gray-500 dark:text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-300'}`}>
                                     <Icon size={18} />
                                 </div>
                                 <span className="relative z-10">{link.name}</span>
@@ -127,14 +127,14 @@ export default function AdminSidebar() {
             <div className="px-6 mt-auto relative z-10">
                 {/* Admin Status Card */}
                 <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-6 text-white shadow-xl shadow-black/5 relative overflow-hidden mb-6 group cursor-pointer hover:scale-[1.02] transition-transform">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-white dark:bg-gray-950/5 rounded-full blur-2xl -translate-y-1/2 translate-x-1/3" />
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 dark:bg-white/5 rounded-full blur-2xl -translate-y-1/2 translate-x-1/3" />
                     <div className="relative z-10">
                         <h4 className="text-sm font-black mb-1">System Status</h4>
                         <div className="flex items-center gap-2 mb-4">
                             <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                             <p className="text-xs text-emerald-500 font-bold uppercase tracking-wider">All Systems Operational</p>
                         </div>
-                        <button className="w-full bg-white dark:bg-gray-950/10 hover:bg-white dark:bg-gray-950/20 backdrop-blur-sm text-white text-xs font-black py-2.5 rounded-xl transition-colors border border-white/10">
+                        <button className="w-full bg-white/20 dark:bg-white/5 hover:bg-white backdrop-blur-sm text-white text-xs font-black py-2.5 rounded-xl transition-colors border border-white/10">
                             View Server Logs
                         </button>
                     </div>

@@ -60,7 +60,7 @@ export default function ProviderConnectsPage() {
       {showModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-gray-900/40 backdrop-blur-md" onClick={() => !isProcessing && setShowModal(false)} />
-          <div className="bg-white dark:bg-gray-950/90 backdrop-blur-2xl w-full max-w-lg rounded-[48px] p-10 shadow-2xl relative z-10 border border-white animate-in zoom-in-95 duration-300">
+          <div className="bg-white dark:bg-gray-950/90 backdrop-blur-2xl w-full max-w-lg rounded-[48px] p-10 shadow-2xl relative z-10 border border-white dark:border-gray-800 animate-in zoom-in-95 duration-300">
             <button
               onClick={() => setShowModal(false)}
               disabled={isProcessing}
@@ -148,7 +148,7 @@ export default function ProviderConnectsPage() {
               >
                 {isProcessing ? (
                   <>
-                    <div className="w-5 h-5 rounded-full border-2 border-white border-t-transparent animate-spin" />
+                    <div className="w-5 h-5 rounded-full border-2 border-white dark:border-gray-800 border-t-transparent animate-spin" />
                     Processing Payment...
                   </>
                 ) : (
@@ -171,7 +171,7 @@ export default function ProviderConnectsPage() {
           onClick={() => handleSelectPackage({ id: 2, connects: 80, price: '$12.00', popular: true })}
           className="px-8 py-4 bg-gradient-to-r from-[#1E7B7C] to-[#166566] text-white rounded-2xl font-black flex items-center gap-2 hover:shadow-2xl hover:shadow-[#1E7B7C]/30 hover:scale-[1.02] active:scale-95 transition-all group overflow-hidden relative"
         >
-          <div className="absolute inset-0 bg-white dark:bg-gray-950/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="absolute inset-0 bg-white/20 dark:bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
           <CreditCard size={18} className="relative z-10" />
           <span className="relative z-10">Purchase Credits</span>
         </button>
@@ -181,12 +181,12 @@ export default function ProviderConnectsPage() {
         {/* Core Balance Card */}
         <div className="lg:col-span-2 bg-gradient-to-br from-[#1E7B7C] to-[#166566] rounded-[40px] p-10 shadow-2xl shadow-[#1E7B7C]/20 text-white relative overflow-hidden flex flex-col justify-between h-72 border border-white/10 group">
           {/* Animated decorative element */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-white dark:bg-gray-950/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 group-hover:scale-110 transition-transform duration-700" />
+          <div className="absolute top-0 right-0 w-80 h-80 bg-white/20 dark:bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 group-hover:scale-110 transition-transform duration-700" />
           <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
 
           <div className="flex justify-between items-start relative z-10 mb-8">
             <span className="text-xs font-black text-white/60 uppercase tracking-widest block">Available Balance</span>
-            <div className="p-4 bg-white dark:bg-gray-950/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-inner">
+            <div className="p-4 bg-white/20 dark:bg-white/5 backdrop-blur-md rounded-2xl border border-white/20 shadow-inner">
               <Zap size={32} className="text-white fill-white animate-pulse" />
             </div>
           </div>
@@ -195,7 +195,7 @@ export default function ProviderConnectsPage() {
               <span className="text-7xl font-black tracking-tight drop-shadow-sm">{balance}</span>
               <span className="text-2xl font-bold text-white/70 uppercase tracking-wider">Connects</span>
             </div>
-            <div className="flex items-center gap-2.5 text-sm font-bold bg-white dark:bg-gray-950/10 backdrop-blur-md w-fit px-4 py-2 rounded-2xl border border-white/20 shadow-sm">
+            <div className="flex items-center gap-2.5 text-sm font-bold bg-white/20 dark:bg-white/5 backdrop-blur-md w-fit px-4 py-2 rounded-2xl border border-white/20 shadow-sm">
               <Clock size={16} className="text-[#E8F4F4]" />
               Monthly Refresh in <span className="text-[#E8F4F4]">14 days</span>
             </div>
@@ -203,7 +203,7 @@ export default function ProviderConnectsPage() {
         </div>
 
         {/* Info Card */}
-        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 shadow-xl shadow-gray-200/5 border border-white flex flex-col justify-between h-72">
+        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 shadow-xl shadow-gray-200/5 border border-white dark:border-gray-800 flex flex-col justify-between h-72">
           <div className="flex justify-between items-start mb-4">
             <span className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest">Connects Guide</span>
             <div className="p-2 bg-[#E8F4F4] rounded-xl text-[#1E7B7C]">
@@ -212,11 +212,11 @@ export default function ProviderConnectsPage() {
           </div>
           <div className="flex-1 flex flex-col justify-center">
             <div className="space-y-4 mb-6">
-              <div className="flex justify-between items-center bg-white dark:bg-gray-950/50 p-4 rounded-2xl border border-gray-100/80 dark:border-gray-800/80 shadow-sm">
+              <div className="flex justify-between items-center bg-white/20 dark:bg-white/50 p-4 rounded-2xl border border-gray-100/80 dark:border-gray-800/80 shadow-sm">
                 <span className="text-sm font-bold text-gray-600">Standard Job</span>
                 <span className="text-sm font-black text-[#1E7B7C] bg-[#E8F4F4] px-3 py-1 rounded-lg">2-4 Units</span>
               </div>
-              <div className="flex justify-between items-center bg-white dark:bg-gray-950/50 p-4 rounded-2xl border border-gray-100/80 dark:border-gray-800/80 shadow-sm">
+              <div className="flex justify-between items-center bg-white/20 dark:bg-white/50 p-4 rounded-2xl border border-gray-100/80 dark:border-gray-800/80 shadow-sm">
                 <span className="text-sm font-bold text-gray-600">Premium Lead</span>
                 <span className="text-sm font-black text-amber-600 bg-amber-50 px-3 py-1 rounded-lg">6-8 Units</span>
               </div>
@@ -229,7 +229,7 @@ export default function ProviderConnectsPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
         {/* Packages */}
-        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/5 border border-white">
+        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/5 border border-white dark:border-gray-800">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100 flex items-center gap-3">
               <div className="w-10 h-10 bg-[#E8F4F4] rounded-xl flex items-center justify-center text-[#1E7B7C]">
@@ -247,13 +247,13 @@ export default function ProviderConnectsPage() {
             ].map((pkg) => (
               <div key={pkg.id} className={`p-1 rounded-[30px] transition-all relative group ${pkg.popular ? 'bg-gradient-to-r from-[#1E7B7C] to-[#166566] shadow-xl shadow-[#1E7B7C]/20' : 'bg-transparent border border-gray-100 dark:border-gray-800'}`}>
                 {pkg.popular && (
-                  <div className="absolute -top-3 left-8 px-4 py-1.5 bg-[#1E7B7C] text-white text-[10px] font-black uppercase tracking-widest rounded-full border-2 border-white shadow-lg animate-bounce-slow">
+                  <div className="absolute -top-3 left-8 px-4 py-1.5 bg-[#1E7B7C] text-white text-[10px] font-black uppercase tracking-widest rounded-full border-2 border-white dark:border-gray-800 shadow-lg animate-bounce-slow">
                     Most Popular
                   </div>
                 )}
                 <div
                   onClick={() => handleSelectPackage(pkg)}
-                  className="bg-white dark:bg-gray-950 rounded-[26px] p-6 flex items-center justify-between cursor-pointer hover:bg-gray-50/50 dark:bg-gray-900/50 transition-all active:scale-[0.98]"
+                  className="bg-white dark:bg-gray-950 rounded-[26px] p-6 flex items-center justify-between cursor-pointer hover:bg-gray-50/50 transition-all active:scale-[0.98]"
                 >
                   <div className="flex items-center gap-5">
                     <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110 ${pkg.popular ? 'bg-[#E8F4F4] text-[#1E7B7C]' : 'bg-gray-50 dark:bg-gray-900 text-gray-400 dark:text-gray-500'}`}>
@@ -283,7 +283,7 @@ export default function ProviderConnectsPage() {
         </div>
 
         {/* History */}
-        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/5 border border-white">
+        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/5 border border-white dark:border-gray-800">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100 flex items-center gap-3">
               <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center text-amber-500">
@@ -299,7 +299,7 @@ export default function ProviderConnectsPage() {
               <div
                 key={log.id}
                 onClick={() => setSelectedTx(log)}
-                className="flex items-center justify-between p-5 bg-white dark:bg-gray-950/40 rounded-[24px] border border-gray-100/50 dark:border-gray-800/50 hover:border-[#1E7B7C]/20 hover:bg-white dark:bg-gray-950 hover:shadow-lg hover:shadow-gray-200/20 transition-all group cursor-pointer"
+                className="flex items-center justify-between p-5 bg-white /40 rounded-[24px] border border-gray-100/50 dark:border-gray-800/50 hover:border-[#1E7B7C]/20 hover:bg-white dark:bg-gray-950 hover:shadow-lg hover:shadow-gray-200/20 transition-all group cursor-pointer"
               >
                 <div className="flex items-center gap-4">
                   <div className={`p-3.5 rounded-2xl transition-transform group-hover:scale-110 ${log.amount.startsWith('+') ? 'bg-emerald-50 text-emerald-600' : 'bg-gray-100 text-gray-500 dark:text-gray-400'}`}>

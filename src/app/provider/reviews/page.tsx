@@ -45,7 +45,7 @@ export default function ProviderReviewsPage() {
                     <h1 className="text-4xl font-black text-gray-900 dark:text-gray-100 tracking-tight mb-2">My Reviews</h1>
                     <p className="text-lg text-gray-500 dark:text-gray-400 font-medium">See what clients are saying about your provided services.</p>
                 </div>
-                <button className="px-6 py-3 bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 rounded-2xl font-bold flex items-center gap-2 hover:bg-gray-50 dark:bg-gray-900 transition-all shadow-sm text-gray-500 dark:text-gray-400">
+                <button className="px-6 py-3 bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 rounded-2xl font-bold flex items-center gap-2 hover:bg-gray-50 transition-all shadow-sm text-gray-500 dark:text-gray-400">
                     <MessageSquare size={18} />
                     Request Testimonial
                 </button>
@@ -55,7 +55,7 @@ export default function ProviderReviewsPage() {
 
                 {/* Overall Score */}
                 <div className="bg-gradient-to-br from-[#1E7B7C] to-[#166566] rounded-[40px] p-10 shadow-3xl shadow-[#1E7B7C]/20 text-white flex flex-col items-center justify-center text-center border border-white/10 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-white dark:bg-gray-950/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 dark:bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
 
                     <div className="relative z-10">
                         <h2 className="text-sm font-black text-white/60 uppercase tracking-widest mb-6 block">Overall Rating</h2>
@@ -67,7 +67,7 @@ export default function ProviderReviewsPage() {
                 </div>
 
                 {/* Rating Breakdown */}
-                <div className="lg:col-span-2 bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/10 border border-white flex flex-col justify-center">
+                <div className="lg:col-span-2 bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/10 border border-white dark:border-gray-800 flex flex-col justify-center">
                     <h2 className="text-xl font-black text-gray-900 dark:text-gray-100 mb-6 flex items-center gap-2">
                         <TrendingUp size={20} className="text-[#1E7B7C]" />
                         Score Breakdown
@@ -99,7 +99,7 @@ export default function ProviderReviewsPage() {
             </div>
 
             {/* Reviews List */}
-            <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/10 border border-white">
+            <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/10 border border-white dark:border-gray-800">
 
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-8 border-b border-gray-100/50 dark:border-gray-800/50">
                     <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100">Recent Feedback</h2>
@@ -115,7 +115,7 @@ export default function ProviderReviewsPage() {
 
                 <div className="space-y-8">
                     {reviews.map((review) => (
-                        <div key={review.id} className="group p-6 rounded-3xl border border-transparent hover:border-gray-100 dark:border-gray-800 hover:bg-white dark:bg-gray-950/50 transition-all duration-300 relative">
+                        <div key={review.id} className="group p-6 rounded-3xl border border-transparent hover:border-gray-100 dark:border-gray-800 hover:bg-white/20 dark:bg-white/50 transition-all duration-300 relative">
 
                             <div className="flex flex-col sm:flex-row gap-6">
                                 <div className="flex-shrink-0">

@@ -12,6 +12,7 @@ import { STATUSES, STATUS_COLORS } from '@/constants/statuses'
 import { useDashboard } from '@/lib/hooks/use-dashboard'
 import { CustomerDashboardData } from '@/types/dashboard'
 import { useTranslation } from '@/i18n/LanguageContext'
+import { div } from 'framer-motion/client'
 
 export default function CustomerDashboardPage() {
   const { t } = useTranslation()
@@ -115,7 +116,7 @@ export default function CustomerDashboardPage() {
               { id: 3, name: 'Lawn Mowing & Care', price: 'Est. $50-$90', icon: '🌿' },
               { id: 4, name: 'TV Mounting', price: 'Est. $60-$100', icon: '📺' }
             ].map((item) => (
-              <div key={item.id} className="bg-white dark:bg-gray-950 dark:bg-gray-800 p-4 rounded-2xl flex justify-between items-center shadow-sm hover:shadow-md transition-shadow cursor-pointer border border-transparent hover:border-[#1E7B7C]/20 dark:hover:border-cyan-500/20 box-border">
+              <div key={item.id} className="bg-white dark:bg-gray-950 p-4 rounded-2xl flex justify-between items-center shadow-sm hover:shadow-md transition-shadow cursor-pointer border border-transparent hover:border-[#1E7B7C]/20 dark:hover:border-cyan-500/20 box-border">
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">{item.icon}</span>
                   <span className="font-bold text-sm text-gray-900 dark:text-gray-100 dark:text-gray-100">{item.name}</span>

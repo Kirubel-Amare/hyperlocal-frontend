@@ -75,7 +75,7 @@ export default function VerificationPage() {
             </div>
 
             {/* Main Card */}
-            <div className="bg-white dark:bg-gray-950/60 backdrop-blur-xl border border-white rounded-[40px] p-8 md:p-12 shadow-2xl shadow-gray-200/20 relative overflow-hidden min-h-[500px] flex flex-col">
+            <div className="bg-white dark:bg-gray-950/60 backdrop-blur-xl border border-white dark:border-gray-800 rounded-[40px] p-8 md:p-12 shadow-2xl shadow-gray-200/20 relative overflow-hidden min-h-[500px] flex flex-col">
 
                 {step === 'intro' && (
                     <div className="flex-1 flex flex-col items-center justify-center text-center space-y-8 animate-in fade-in zoom-in duration-500">
@@ -118,8 +118,8 @@ export default function VerificationPage() {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <label className={`relative group cursor-pointer border-2 border-dashed rounded-3xl p-8 transition-all flex flex-col items-center justify-center min-h-[220px] ${idFront ? 'border-[#1E7B7C] bg-emerald-50/20' : 'border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50 hover:bg-gray-50 dark:bg-gray-900'
-                                }`}>
+                            <label className={`relative group cursor-pointer border-2 border-dashed rounded-3xl p-8 transition-all flex flex-col items-center justify-center min-h-[220px] ${idFront ? 'border-[#1E7B7C] bg-emerald-50/20' : 'border-gray-100 dark:border-gray-800 bg-gray-50/50 /50 hover:bg-gray-50 dark:bg-gray-900'
+ }`}>
                                 <input type="file" className="hidden" onChange={(e) => setIdFront(URL.createObjectURL(e.target.files![0]))} />
                                 {idFront ? (
                                     <img src={idFront} className="absolute inset-2 w-full h-full object-cover rounded-2xl" alt="ID Front" />
@@ -133,8 +133,8 @@ export default function VerificationPage() {
                                 )}
                             </label>
 
-                            <label className={`relative group cursor-pointer border-2 border-dashed rounded-3xl p-8 transition-all flex flex-col items-center justify-center min-h-[220px] ${idBack ? 'border-[#1E7B7C] bg-emerald-50/20' : 'border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50 hover:bg-gray-50 dark:bg-gray-900'
-                                }`}>
+                            <label className={`relative group cursor-pointer border-2 border-dashed rounded-3xl p-8 transition-all flex flex-col items-center justify-center min-h-[220px] ${idBack ? 'border-[#1E7B7C] bg-emerald-50/20' : 'border-gray-100 dark:border-gray-800 bg-gray-50/50 /50 hover:bg-gray-50 dark:bg-gray-900'
+ }`}>
                                 <input type="file" className="hidden" onChange={(e) => setIdBack(URL.createObjectURL(e.target.files![0]))} />
                                 {idBack ? (
                                     <img src={idBack} className="absolute inset-2 w-full h-full object-cover rounded-2xl" alt="ID Back" />

@@ -69,7 +69,7 @@ export default function TransactionsPage() {
           <p className="text-gray-500 dark:text-gray-400 font-medium italic">Monitor payments, platform fees, and refund activities.</p>
         </div>
         <div className="flex items-center gap-3">
-          <button className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 px-5 py-2.5 rounded-2xl font-bold text-sm text-gray-700 dark:text-gray-300 shadow-sm hover:bg-gray-50 dark:bg-gray-900 transition-all flex items-center gap-2 italic">
+          <button className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 px-5 py-2.5 rounded-2xl font-bold text-sm text-gray-700 dark:text-gray-300 shadow-sm hover:bg-gray-50 transition-all flex items-center gap-2 italic">
             <Download size={18} />
             Export CSV
           </button>
@@ -139,7 +139,7 @@ export default function TransactionsPage() {
                 placeholder="Search transaction..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-11 pr-4 py-2.5 bg-gray-50 dark:bg-gray-900 border border-transparent rounded-2xl outline-none focus:bg-white dark:bg-gray-950 focus:border-[#1E7B7C]/20 focus:ring-4 focus:ring-[#1E7B7C]/5 transition-all text-sm font-medium w-64 shadow-sm italic"
+                className="pl-11 pr-4 py-2.5 bg-gray-50 dark:bg-gray-900 border border-transparent rounded-2xl outline-none focus:bg-white focus:border-[#1E7B7C]/20 focus:ring-4 focus:ring-[#1E7B7C]/5 transition-all text-sm font-medium w-64 shadow-sm italic"
               />
             </div>
             <button className="p-2.5 bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 rounded-xl text-gray-400 dark:text-gray-500 hover:text-[#1E7B7C] shadow-sm italic">

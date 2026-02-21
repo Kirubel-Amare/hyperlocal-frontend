@@ -44,9 +44,9 @@ function RatingOption({ rating, isSelected, onClick }: RatingOptionProps) {
     return (
         <label
             className={`flex items-center justify-between gap-3 cursor-pointer group p-3 rounded-xl border-2 transition-all ${isSelected
-                ? 'border-[#1E7B7C] bg-[#E8F4F4]/50 dark:bg-cyan-900/30'
-                : 'border-transparent hover:bg-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800'
-                }`}
+ ? 'border-[#1E7B7C] bg-[#E8F4F4]/50 dark:bg-cyan-900/30'
+ : 'border-transparent hover:bg-gray-50 dark:hover:bg-gray-800'
+ }`}
             onClick={onClick}
         >
             <div className="flex items-center gap-3">

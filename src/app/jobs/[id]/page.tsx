@@ -59,11 +59,11 @@ export default function JobPostPage() {
                         Back to Job Feed
                     </button>
                     <div className="flex gap-4">
-                        <button className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-950/60 backdrop-blur-md border border-gray-100 dark:border-gray-800 rounded-xl text-sm font-bold text-gray-600 hover:bg-white dark:bg-gray-950 transition-all">
+                        <button className="flex items-center gap-2 px-4 py-2 bg-white /60 backdrop-blur-md border border-gray-100 dark:border-gray-800 rounded-xl text-sm font-bold text-gray-600 hover:bg-white dark:bg-gray-950 transition-all">
                             <Share2 size={16} />
                             Share
                         </button>
-                        <button className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-950/60 backdrop-blur-md border border-gray-100 dark:border-gray-800 rounded-xl text-sm font-bold text-gray-600 hover:bg-white dark:bg-gray-950 transition-all">
+                        <button className="flex items-center gap-2 px-4 py-2 bg-white /60 backdrop-blur-md border border-gray-100 dark:border-gray-800 rounded-xl text-sm font-bold text-gray-600 hover:bg-white dark:bg-gray-950 transition-all">
                             <Heart size={16} />
                             Save
                         </button>
@@ -94,7 +94,7 @@ export default function JobPostPage() {
                         )}
 
                         {/* Job Title & Header */}
-                        <div className="bg-white dark:bg-gray-950/60 dark:bg-gray-900/60 backdrop-blur-md rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm">
+                        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm">
                             <div className="flex justify-between items-start mb-6">
                                 <div>
                                     <h1 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-gray-100 dark:text-gray-100 mb-4">{job.title}</h1>
@@ -105,11 +105,11 @@ export default function JobPostPage() {
                                                 <NavigationIcon size={16} />
                                                 {job.distance || '0.5 miles away'}
                                             </span>
-                                            <span className="flex items-center gap-1.5 text-gray-500 dark:text-gray-400 dark:text-gray-400 bg-gray-50 dark:bg-gray-900 dark:bg-gray-800 px-2.5 py-1 rounded-xl">
+                                            <span className="flex items-center gap-1.5 text-gray-500 dark:text-gray-400 dark:text-gray-400 bg-gray-50 dark:bg-gray-900 px-2.5 py-1 rounded-xl">
                                                 <MapPin size={16} />
                                                 {job.specificLocation || 'On-site Service'}
                                             </span>
-                                            <span className="flex items-center gap-1.5 text-gray-500 dark:text-gray-400 dark:text-gray-400 bg-gray-50 dark:bg-gray-900 dark:bg-gray-800 px-2.5 py-1 rounded-xl">
+                                            <span className="flex items-center gap-1.5 text-gray-500 dark:text-gray-400 dark:text-gray-400 bg-gray-50 dark:bg-gray-900 px-2.5 py-1 rounded-xl">
                                                 <Clock size={16} />
                                                 Posted {job.postedTime}
                                             </span>
@@ -127,7 +127,7 @@ export default function JobPostPage() {
                         </div>
 
                         {/* Job Meta Details (Budget, Duration, Level) */}
-                        <div className="bg-white dark:bg-gray-950/60 dark:bg-gray-900/60 backdrop-blur-md rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm grid grid-cols-1 md:grid-cols-3 gap-8">
                             <div className="flex items-start gap-4">
                                 <div className="p-4 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 rounded-2xl">
                                     <DollarSign size={24} />
@@ -162,7 +162,7 @@ export default function JobPostPage() {
                         </div>
 
                         {/* Skills Required */}
-                        <div className="bg-white dark:bg-gray-950/60 dark:bg-gray-900/60 backdrop-blur-md rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm">
+                        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm">
                             <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 dark:text-gray-100 mb-6 flex items-center gap-2">
                                 <Zap size={20} className="text-[#1E7B7C] dark:text-cyan-400" />
                                 Required Skills
@@ -171,7 +171,7 @@ export default function JobPostPage() {
                                 {job.skills.map((skill: string) => (
                                     <span
                                         key={skill}
-                                        className="px-5 py-2.5 bg-gray-50 dark:bg-gray-900 dark:bg-gray-800 hover:bg-[#E8F4F4] dark:hover:bg-cyan-900/20 hover:text-[#1E7B7C] dark:hover:text-cyan-400 transition-all rounded-xl text-sm font-bold text-gray-600 dark:text-gray-300 border border-transparent hover:border-[#1E7B7C]/10 dark:hover:border-cyan-500/30"
+                                        className="px-5 py-2.5 bg-gray-50 dark:bg-gray-900 hover:bg-[#E8F4F4] dark:hover:bg-cyan-900/20 hover:text-[#1E7B7C] dark:hover:text-cyan-400 transition-all rounded-xl text-sm font-bold text-gray-600 dark:text-gray-300 border border-transparent hover:border-[#1E7B7C]/10 dark:hover:border-cyan-500/30"
                                     >
                                         {skill}
                                     </span>
@@ -192,13 +192,13 @@ export default function JobPostPage() {
                                 Submit a Proposal
                                 <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
                             </Link>
-                            <button className="w-full py-5 border-2 border-white/20 text-white font-black rounded-2xl hover:bg-white dark:bg-gray-950/10 transition-all mb-8">
+                            <button className="w-full py-5 border-2 border-white/20 text-white font-black rounded-2xl hover:bg-white/20 dark:bg-white/5 transition-all mb-8">
                                 Save Listing
                             </button>
 
                             <div className="space-y-6 text-sm">
                                 <div className="flex items-start gap-4">
-                                    <div className="p-2 bg-white dark:bg-gray-950/10 rounded-lg">
+                                    <div className="p-2 bg-white/20 dark:bg-white/5 rounded-lg">
                                         <ShieldCheck size={18} />
                                     </div>
                                     <p className="font-medium text-white/90">Work protected by LocalService Escrow and Safety protocols.</p>
@@ -207,7 +207,7 @@ export default function JobPostPage() {
                         </div>
 
                         {/* Client Info Card */}
-                        <div className="bg-white dark:bg-gray-950/60 dark:bg-gray-900/60 backdrop-blur-md rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm">
+                        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm">
                             <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 dark:text-gray-100 mb-6">About the Client</h3>
 
                             <div className="space-y-6">

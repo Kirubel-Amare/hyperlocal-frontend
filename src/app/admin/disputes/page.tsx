@@ -158,7 +158,7 @@ export default function DisputesPage() {
           <div className="space-y-6">
             <div className="bg-gray-900 text-white p-8 rounded-[2.5rem] shadow-xl space-y-6">
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-white dark:bg-gray-950/10 rounded-2xl">
+                <div className="p-3 bg-white/20 dark:bg-white/5 rounded-2xl">
                   <Gavel size={24} />
                 </div>
                 <h3 className="text-lg font-black tracking-tight italic">Final Decision</h3>
@@ -182,7 +182,7 @@ export default function DisputesPage() {
                 </button>
                 <button
                   onClick={() => handleResolve(selectedDispute.id, 'split')}
-                  className="w-full bg-white dark:bg-gray-950/10 text-white border border-white/20 py-4 rounded-3xl font-black flex items-center justify-center gap-3 hover:bg-white dark:bg-gray-950/20 transition-all italic"
+                  className="w-full bg-white/20 dark:bg-white/5 text-white border border-white/20 py-4 rounded-3xl font-black flex items-center justify-center gap-3 hover:bg-white transition-all italic"
                 >
                   <RotateCcw size={20} />
                   Split Payment (50/50)
@@ -223,7 +223,7 @@ export default function DisputesPage() {
           <p className="text-gray-500 dark:text-gray-400 font-medium italic">Handle conflicts between customers and providers efficiently.</p>
         </div>
         <div className="flex items-center gap-3">
-          <button className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 px-5 py-2.5 rounded-2xl font-bold text-sm text-gray-700 dark:text-gray-300 shadow-sm hover:bg-gray-50 dark:bg-gray-900 transition-all flex items-center gap-2 italic">
+          <button className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 px-5 py-2.5 rounded-2xl font-bold text-sm text-gray-700 dark:text-gray-300 shadow-sm hover:bg-gray-50 transition-all flex items-center gap-2 italic">
             <History size={18} />
             Resolution History
           </button>
@@ -289,7 +289,7 @@ export default function DisputesPage() {
               placeholder="Search ID or party..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-11 pr-4 py-2.5 bg-gray-50 dark:bg-gray-900 border border-transparent rounded-2xl outline-none focus:bg-white dark:bg-gray-950 focus:border-[#1E7B7C]/20 transition-all text-sm font-medium italic"
+              className="w-full pl-11 pr-4 py-2.5 bg-gray-50 dark:bg-gray-900 border border-transparent rounded-2xl outline-none focus:bg-white focus:border-[#1E7B7C]/20 transition-all text-sm font-medium italic"
             />
           </div>
         </div>

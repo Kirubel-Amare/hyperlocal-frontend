@@ -67,7 +67,7 @@ export default function ProviderJobsActivePage() {
 
       <div className="space-y-6">
         {activeJobs.map((job) => (
-          <div key={job.id} className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 shadow-xl shadow-gray-200/10 border border-white hover:shadow-2xl transition-all duration-300 group flex flex-col xl:flex-row gap-8">
+          <div key={job.id} className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 shadow-xl shadow-gray-200/10 border border-white dark:border-gray-800 hover:shadow-2xl transition-all duration-300 group flex flex-col xl:flex-row gap-8">
 
             {/* Image / Visual Status */}
             <div className="w-full xl:w-64 h-48 rounded-2xl overflow-hidden relative flex-shrink-0 border border-gray-100 dark:border-gray-800">

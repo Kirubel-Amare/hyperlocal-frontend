@@ -32,7 +32,7 @@ export default function ProviderEarningsPage() {
           </button>
         </div>
 
-        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 shadow-xl shadow-gray-200/10 border border-white flex flex-col justify-between">
+        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 shadow-xl shadow-gray-200/10 border border-white dark:border-gray-800 flex flex-col justify-between">
           <div className="flex justify-between items-start">
             <span className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest">Lifetime Earnings</span>
             <TrendingUp size={24} className="text-[#1E7B7C]" />
@@ -46,7 +46,7 @@ export default function ProviderEarningsPage() {
           </div>
         </div>
 
-        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 shadow-xl shadow-gray-200/10 border border-white flex flex-col justify-between">
+        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 shadow-xl shadow-gray-200/10 border border-white dark:border-gray-800 flex flex-col justify-between">
           <div className="flex justify-between items-start">
             <span className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest">Active Jobs Value</span>
             <DollarSign size={24} className="text-blue-500" />
@@ -59,7 +59,7 @@ export default function ProviderEarningsPage() {
       </div>
 
       {/* Transaction History */}
-      <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/10 border border-white">
+      <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/10 border border-white dark:border-gray-800">
         <div className="flex items-center justify-between mb-10">
           <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100">Recent Transactions</h2>
           <div className="flex items-center gap-2 p-1 bg-gray-50 dark:bg-gray-900 rounded-xl">
@@ -76,7 +76,7 @@ export default function ProviderEarningsPage() {
             { id: 3, title: 'Standard Tidying', client: 'James W.', date: 'Oct 10, 2023', amount: '$120.00', status: 'Completed', type: 'Income' },
             { id: 4, title: 'Window Cleaning Pro', client: 'David K.', date: 'Oct 08, 2023', amount: '$210.00', status: 'Completed', type: 'Income' },
           ].map((tx) => (
-            <div key={tx.id} className="flex items-center justify-between p-6 hover:bg-white dark:bg-gray-950/50 rounded-3xl transition-all group">
+            <div key={tx.id} className="flex items-center justify-between p-6 hover:bg-white/20 dark:bg-white/50 rounded-3xl transition-all group">
               <div className="flex items-center gap-6">
                 <div className={`p-4 rounded-2xl ${tx.type === 'Income' ? 'bg-emerald-50 text-emerald-600' : 'bg-blue-50 text-blue-600'}`}>
                   {tx.type === 'Income' ? <ArrowUpRight size={20} /> : <ArrowDownRight size={20} />}

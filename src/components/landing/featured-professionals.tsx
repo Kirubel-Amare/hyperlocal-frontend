@@ -91,7 +91,7 @@ export default function FeaturedProfessionals() {
           {professionals.map((pro) => (
             <div
               key={pro.id}
-              className="bg-white dark:bg-gray-950 dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              className="bg-white dark:bg-gray-950 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
               {/* Image */}
               <div className="relative h-64 bg-gray-200 dark:bg-gray-700 overflow-hidden">
@@ -101,7 +101,7 @@ export default function FeaturedProfessionals() {
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute top-4 right-4 bg-white dark:bg-gray-950 dark:bg-gray-900 rounded-full px-3 py-1 flex items-center gap-1 shadow-md">
+                <div className="absolute top-4 right-4 bg-white dark:bg-gray-950 rounded-full px-3 py-1 flex items-center gap-1 shadow-md">
                   <Star size={16} className="text-yellow-400 fill-yellow-400" />
                   <span className="font-semibold text-sm text-gray-900 dark:text-gray-100 dark:text-gray-100">{pro.rating}</span>
                 </div>

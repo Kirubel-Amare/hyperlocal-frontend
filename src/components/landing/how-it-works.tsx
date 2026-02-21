@@ -69,7 +69,7 @@ export default function HowItWorks() {
                 </div>
 
                 {/* Card */}
-                <div className="bg-white dark:bg-gray-950 dark:bg-gray-800 rounded-2xl p-6 border-2 border-gray-100 dark:border-gray-800 dark:border-gray-700 group-hover:border-[#1E7B7C] dark:group-hover:border-cyan-600 group-hover:shadow-lg transition-all text-center h-full">
+                <div className="bg-white dark:bg-gray-950 rounded-2xl p-6 border-2 border-gray-100 dark:border-gray-800 group-hover:border-[#1E7B7C] dark:group-hover:border-cyan-600 group-hover:shadow-lg transition-all text-center h-full">
                   <div className="flex justify-center mb-4">
                     <div className={`p-3 bg-${step.color}-100 dark:bg-${step.color}-900/30 rounded-lg`}>
                       <Icon size={28} className={`text-${step.color}-600 dark:text-${step.color}-400`} />

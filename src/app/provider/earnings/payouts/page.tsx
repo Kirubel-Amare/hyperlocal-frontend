@@ -57,7 +57,7 @@ export default function PayoutsPage() {
                         </div>
                         <div className="relative z-10 space-y-8">
                             <div className="flex items-center gap-3">
-                                <div className="p-3 bg-white dark:bg-gray-950/10 rounded-2xl backdrop-blur-md border border-white/10">
+                                <div className="p-3 bg-white/20 dark:bg-white/5 rounded-2xl backdrop-blur-md border border-white/10">
                                     <CreditCard size={24} className="text-emerald-400" />
                                 </div>
                                 <span className="text-xs font-black uppercase tracking-[0.2em] text-gray-400 dark:text-gray-500">Available for Payout</span>
@@ -75,7 +75,7 @@ export default function PayoutsPage() {
                                     Withdraw Now
                                     <ArrowUpRight size={20} />
                                 </button>
-                                <button className="px-8 py-4 bg-white dark:bg-gray-950/10 border border-white/10 text-white rounded-[2rem] font-black hover:bg-white dark:bg-gray-950/20 transition-all">
+                                <button className="px-8 py-4 bg-white/20 dark:bg-white/5 border border-white/10 text-white rounded-[2rem] font-black hover:bg-white transition-all">
                                     Auto-Payout Settings
                                 </button>
                             </div>

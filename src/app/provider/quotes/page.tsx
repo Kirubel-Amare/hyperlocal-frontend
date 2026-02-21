@@ -16,7 +16,7 @@ export default function ProviderQuotesPage() {
         </div>
       </div>
 
-      <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/10 border border-white">
+      <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[40px] p-10 shadow-xl shadow-gray-200/10 border border-white dark:border-gray-800">
         <div className="flex flex-col md:flex-row gap-4 mb-10">
           <div className="flex-1 relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" size={18} />
@@ -53,7 +53,7 @@ export default function ProviderQuotesPage() {
                     {quote.status}
                   </div>
                 </div>
-                <button className="p-4 bg-gray-50 dark:bg-gray-900 text-gray-400 dark:text-gray-500 rounded-2xl hover:bg-white dark:bg-gray-950 hover:text-[#1E7B7C] hover:shadow-md transition-all">
+                <button className="p-4 bg-gray-50 dark:bg-gray-900 text-gray-400 dark:text-gray-500 rounded-2xl hover:bg-white hover:text-[#1E7B7C] hover:shadow-md transition-all">
                   <ChevronRight size={20} />
                 </button>
               </div>

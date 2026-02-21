@@ -63,7 +63,7 @@ export function FilterSidebar({
                                         type="number"
                                         value={minPrice}
                                         onChange={(e) => onMinPriceChange(Number(e.target.value))}
-                                        className="w-full pl-7 pr-3 py-2 bg-gray-50 dark:bg-gray-900 border border-transparent rounded-xl text-sm font-semibold focus:bg-white dark:bg-gray-950 focus:border-[#1E7B7C] focus:outline-none transition-all"
+                                        className="w-full pl-7 pr-3 py-2 bg-gray-50 dark:bg-gray-900 border border-transparent rounded-xl text-sm font-semibold focus:bg-white focus:border-[#1E7B7C] focus:outline-none transition-all"
                                     />
                                 </div>
                             </div>
@@ -75,7 +75,7 @@ export function FilterSidebar({
                                         type="number"
                                         value={maxPrice}
                                         onChange={(e) => onMaxPriceChange(Number(e.target.value))}
-                                        className="w-full pl-7 pr-3 py-2 bg-gray-50 dark:bg-gray-900 border border-transparent rounded-xl text-sm font-semibold focus:bg-white dark:bg-gray-950 focus:border-[#1E7B7C] focus:outline-none transition-all"
+                                        className="w-full pl-7 pr-3 py-2 bg-gray-50 dark:bg-gray-900 border border-transparent rounded-xl text-sm font-semibold focus:bg-white focus:border-[#1E7B7C] focus:outline-none transition-all"
                                     />
                                 </div>
                             </div>

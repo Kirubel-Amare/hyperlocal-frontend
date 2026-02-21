@@ -133,7 +133,7 @@ export default function CategoriesManagementPage() {
                   value={newCatName}
                   onChange={(e) => setNewCatName(e.target.value)}
                   placeholder="e.g. Interior Design"
-                  className="w-full px-4 py-2.5 bg-gray-50 dark:bg-gray-900 border border-transparent rounded-xl outline-none focus:bg-white dark:bg-gray-950 focus:border-[#1E7B7C]/20 transition-all text-sm font-medium italic"
+                  className="w-full px-4 py-2.5 bg-gray-50 dark:bg-gray-900 border border-transparent rounded-xl outline-none focus:bg-white focus:border-[#1E7B7C]/20 transition-all text-sm font-medium italic"
                 />
               </div>
               <button
@@ -211,7 +211,7 @@ export default function CategoriesManagementPage() {
             onClick={() => setIsAdding(true)}
             className="border-2 border-dashed border-gray-200 rounded-[2.5rem] p-6 flex flex-col items-center justify-center gap-4 hover:border-[#1E7B7C]/30 hover:bg-[#E8F4F4]/20 transition-all duration-300 group min-h-[280px]"
           >
-            <div className="w-16 h-16 rounded-full bg-gray-50 dark:bg-gray-900 flex items-center justify-center text-gray-400 dark:text-gray-500 group-hover:bg-white dark:bg-gray-950 group-hover:text-[#1E7B7C] group-hover:scale-110 transition-all duration-300 shadow-sm group-hover:shadow-md">
+            <div className="w-16 h-16 rounded-full bg-gray-50 dark:bg-gray-900 flex items-center justify-center text-gray-400 dark:text-gray-500 group-hover:bg-white group-hover:text-[#1E7B7C] group-hover:scale-110 transition-all duration-300 shadow-sm group-hover:shadow-md">
               <Plus size={32} />
             </div>
             <div className="text-center">

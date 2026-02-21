@@ -28,11 +28,11 @@ export default function StatsCard({
     if (variant === 'primary') {
         return (
             <div className="bg-gradient-to-br from-[#1E7B7C] to-[#166566] rounded-[40px] p-10 shadow-2xl shadow-[#1E7B7C]/20 text-white relative overflow-hidden flex flex-col justify-between min-h-[220px] border border-white/10">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-white dark:bg-gray-950/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 dark:bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
 
                 <div className="flex justify-between items-start relative z-10 mb-8">
                     <span className="text-sm font-black text-white/60 uppercase tracking-widest block">{label}</span>
-                    <div className="p-4 bg-white dark:bg-gray-950/10 backdrop-blur-md rounded-2xl">
+                    <div className="p-4 bg-white/20 dark:bg-white/5 backdrop-blur-md rounded-2xl">
                         <Icon size={32} className="text-white" />
                     </div>
                 </div>
@@ -43,7 +43,7 @@ export default function StatsCard({
                             <span className="text-6xl font-black">{value}</span>
                         </div>
                         {trend && (
-                            <div className="flex items-center gap-2 text-sm font-bold bg-white dark:bg-gray-950/10 backdrop-blur-sm w-fit px-3 py-1.5 rounded-xl border border-white/20">
+                            <div className="flex items-center gap-2 text-sm font-bold bg-white/20 dark:bg-white/5 backdrop-blur-sm w-fit px-3 py-1.5 rounded-xl border border-white/20">
                                 {trend}
                             </div>
                         )}
@@ -54,7 +54,7 @@ export default function StatsCard({
     }
 
     return (
-        <div className="bg-white dark:bg-gray-950/60 dark:bg-gray-900/60 backdrop-blur-md rounded-[32px] p-8 shadow-xl shadow-gray-200/20 dark:shadow-none border border-white dark:border-gray-800 flex flex-col justify-between min-h-[192px] hover:translate-y-[-4px] transition-all group">
+        <div className="bg-white dark:bg-gray-950/60 backdrop-blur-md rounded-[32px] p-8 shadow-xl shadow-gray-200/20 dark:shadow-none border border-white dark:border-gray-800 flex flex-col justify-between min-h-[192px] hover:translate-y-[-4px] transition-all group">
             <div className="flex justify-between items-start">
                 <span className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest">{label}</span>
                 <div className={`p-2 rounded-xl transition-colors ${iconBgClass} ${iconColorClass}`}>
@@ -64,8 +64,8 @@ export default function StatsCard({
             <div>
                 <div className="text-4xl font-black text-gray-900 dark:text-gray-100 dark:text-gray-100 mb-2">{value}</div>
                 {trend && (
-                    <div className={`text-sm font-black flex items-center gap-1.5 w-fit px-2 py-1 rounded-lg ${trendUp ? 'text-emerald-500 bg-emerald-50 dark:bg-emerald-900/20' : 'text-gray-400 dark:text-gray-500 bg-gray-50 dark:bg-gray-900 dark:bg-gray-800'
-                        }`}>
+                    <div className={`text-sm font-black flex items-center gap-1.5 w-fit px-2 py-1 rounded-lg ${trendUp ? 'text-emerald-500 bg-emerald-50 dark:bg-emerald-900/20' : 'text-gray-400 dark:text-gray-500 bg-gray-50 '
+ }`}>
                         <Zap size={12} fill="currentColor" />
                         {trend}
                     </div>

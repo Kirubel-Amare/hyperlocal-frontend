@@ -120,7 +120,7 @@ export default function UserManagementPage() {
           <p className="text-gray-500 dark:text-gray-400 font-medium italic">Manage and monitor all platform users, their activities and status.</p>
         </div>
         <div className="flex items-center gap-3">
-          <button className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 px-5 py-2.5 rounded-2xl font-bold text-sm text-gray-700 dark:text-gray-300 shadow-sm hover:bg-gray-50 dark:bg-gray-900 transition-all flex items-center gap-2 italic">
+          <button className="bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 px-5 py-2.5 rounded-2xl font-bold text-sm text-gray-700 dark:text-gray-300 shadow-sm hover:bg-gray-50 transition-all flex items-center gap-2 italic">
             <Filter size={18} />
             Filters
           </button>
@@ -186,7 +186,7 @@ export default function UserManagementPage() {
               placeholder="Search by name, email or ID..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 bg-gray-50 dark:bg-gray-900 border border-transparent rounded-2xl outline-none focus:bg-white dark:bg-gray-950 focus:border-[#1E7B7C]/20 focus:ring-4 focus:ring-[#1E7B7C]/5 transition-all text-sm font-medium italic"
+              className="w-full pl-12 pr-4 py-3 bg-gray-50 dark:bg-gray-900 border border-transparent rounded-2xl outline-none focus:bg-white focus:border-[#1E7B7C]/20 focus:ring-4 focus:ring-[#1E7B7C]/5 transition-all text-sm font-medium italic"
             />
           </div>
         </div>
@@ -213,9 +213,9 @@ export default function UserManagementPage() {
                         <img
                           src={user.avatar}
                           alt={user.name}
-                          className="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm"
+                          className="w-12 h-12 rounded-full object-cover border-2 border-white dark:border-gray-800 shadow-sm"
                         />
-                        <div className={`absolute bottom-0 right-0 w-3.5 h-3.5 border-2 border-white rounded-full ${user.status === 'Active' ? 'bg-emerald-500' :
+                        <div className={`absolute bottom-0 right-0 w-3.5 h-3.5 border-2 border-white dark:border-gray-800 rounded-full ${user.status === 'Active' ? 'bg-emerald-500' :
                           user.status === 'Suspended' ? 'bg-red-500' : 'bg-gray-400'
                           }`} />
                       </div>
