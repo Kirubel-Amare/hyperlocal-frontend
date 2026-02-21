@@ -12,7 +12,10 @@ import {
     LogOut,
     ShieldCheck,
     BarChart3,
-    Briefcase
+    Briefcase,
+    MessageSquare,
+    Star,
+    Wallet
 } from 'lucide-react'
 
 export default function AdminSidebar() {
@@ -23,6 +26,9 @@ export default function AdminSidebar() {
         { name: 'User Management', href: '/admin/users', icon: Users },
         { name: 'Jobs Management', href: '/admin/jobs', icon: Briefcase },
         { name: 'Categories', href: '/admin/categories', icon: Layers },
+        { name: 'Chats & Messages', href: '/admin/chats', icon: MessageSquare },
+        { name: 'Reviews & Ratings', href: '/admin/reviews', icon: Star },
+        { name: 'Payment Methods', href: '/admin/payments', icon: Wallet },
         { name: 'Transactions', href: '/admin/transactions', icon: CreditCard },
         { name: 'Disputes', href: '/admin/disputes', icon: AlertCircle },
     ]
