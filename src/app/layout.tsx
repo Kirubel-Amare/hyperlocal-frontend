@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   generator: 'Hyperlocal marketplace',
 }
 
-import { ToastProvider } from '@/providers/ToastProvider'
+import { AppProviders } from '@/providers'
 
 export default function RootLayout({
   children,
@@ -22,9 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans antialiased">
-        <ToastProvider>
+        <AppProviders>
           {children}
-        </ToastProvider>
+        </AppProviders>
       </body>
     </html>
   )

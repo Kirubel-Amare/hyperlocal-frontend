@@ -1,27 +1,37 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
-import { User, MapPin, Star, Award, Settings, Edit3, Camera, CheckCircle2, ShieldCheck, Zap, Plus } from 'lucide-react'
-import { providerDashboardData } from '@/lib/mock-dashboards'
+import { MapPin, Star, Award, Edit3, Camera, CheckCircle2, ShieldCheck, Zap, Plus } from 'lucide-react'
+import DashboardHeader from '@/components/shared/dashboard-header'
+import GlassCard from '@/components/shared/glass-card'
 import AvailabilityCalendar from '@/components/profile/availability-calendar'
 import TrustBadge from '@/components/shared/trust-badge'
+import { ROUTES } from '@/constants/routes'
+import { useProfile } from '@/lib/hooks/use-profile'
 
 export default function ProviderProfilePage() {
-  const { user } = providerDashboardData
+  const { profile: user, loading } = useProfile('current-user')
+
+  if (loading || !user) {
+    return (
+      <div className="flex items-center justify-center min-h-[400px]">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#1E7B7C]"></div>
+      </div>
+    )
+  }
 
   return (
     <div className="max-w-6xl relative">
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
-        <div>
-          <h1 className="text-4xl font-black text-gray-900 tracking-tight mb-2">My Professional Profile</h1>
-          <p className="text-lg text-gray-500 font-medium">Manage how you appear to potential clients.</p>
-        </div>
-        <Link href="/provider/profile/edit" className="px-6 py-3 bg-white border border-gray-100 rounded-2xl font-bold flex items-center gap-2 hover:bg-gray-50 transition-all shadow-sm">
-          <Edit3 size={18} />
-          Edit Profile
-        </Link>
-      </div>
+      <DashboardHeader
+        title="My Professional Profile"
+        subtitle="Manage how you appear to potential clients."
+        action={{
+          label: "Edit Profile",
+          href: ROUTES.PROVIDER.EDIT_PROFILE,
+          icon: Edit3,
+          className: "px-6 py-3 bg-white border border-gray-100 rounded-2xl font-bold flex items-center gap-2 hover:bg-gray-50 transition-all shadow-sm"
+        }}
+      />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
@@ -29,7 +39,7 @@ export default function ProviderProfilePage() {
         <div className="lg:col-span-1 space-y-6">
           <div className="bg-white/60 backdrop-blur-md rounded-[40px] p-10 border border-white shadow-xl shadow-gray-200/10 flex flex-col items-center text-center">
             <div className="relative group mb-6">
-              <div className="w-40 h-40 rounded-[48px] overflow-hidden border-8 border-white shadow-2xl">
+              <div className="w-40 h-40 rounded-[48px] overflow-hidden border-8 border-white shadow-2xl relative">
                 <Image src={user.avatar} alt={user.name} fill className="object-cover" />
               </div>
               <button className="absolute bottom-2 right-2 p-3 bg-gray-900 text-white rounded-2xl shadow-lg transform group-hover:scale-110 transition-transform">
@@ -72,11 +82,10 @@ export default function ProviderProfilePage() {
             </div>
           </div>
 
-          <div className="bg-white/60 backdrop-blur-md rounded-[32px] p-8 border border-white shadow-xl shadow-gray-200/10">
-            <h3 className="text-lg font-black text-gray-900 mb-6 flex items-center gap-2">
-              <Award size={20} className="text-[#1E7B7C]" />
-              Badges & Status
-            </h3>
+          <GlassCard
+            title="Badges & Status"
+            innerClassName="p-8 pt-6 space-y-4"
+          >
             <div className="space-y-4">
               <div className="flex items-center gap-4 p-4 bg-gray-50/50 rounded-2xl">
                 <div className="w-10 h-10 bg-[#E8F4F4] rounded-xl flex items-center justify-center text-[#1E7B7C]">
@@ -97,13 +106,12 @@ export default function ProviderProfilePage() {
                 </div>
               </div>
             </div>
-          </div>
+          </GlassCard>
         </div>
 
         {/* Right Column: Detailed Bio & Portfolio */}
         <div className="lg:col-span-2 space-y-6">
-          <div className="bg-white/60 backdrop-blur-md rounded-[40px] p-10 border border-white shadow-xl shadow-gray-200/10">
-            <h3 className="text-xl font-black text-gray-900 mb-6">About Me</h3>
+          <GlassCard title="About Me">
             <p className="text-gray-600 leading-relaxed font-medium mb-8 italic">
               "Professional cleaning expert with over 8 years of experience in residential and commercial detailing.
               I specialize in high-end restoration and weekly maintenance. My goal is to provide a 5-star experience
@@ -127,22 +135,18 @@ export default function ProviderProfilePage() {
                 </div>
               ))}
             </div>
-          </div>
+          </GlassCard>
 
           <AvailabilityCalendar />
 
-          <div className="bg-white/60 backdrop-blur-md rounded-[40px] p-10 border border-white shadow-xl shadow-gray-200/10 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#1E7B7C]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-
-            <div className="flex items-center justify-between mb-8 relative z-10">
-              <h3 className="text-xl font-black text-gray-900">Work Portfolio</h3>
-              <div className="flex items-center gap-2">
-                <button className="p-2 text-[#1E7B7C] hover:bg-[#E8F4F4] rounded-xl transition-colors">
-                  <Edit3 size={18} />
-                </button>
-              </div>
-            </div>
-
+          <GlassCard
+            title="Work Portfolio"
+            action={
+              <button className="p-2 text-[#1E7B7C] hover:bg-[#E8F4F4] rounded-xl transition-colors">
+                <Edit3 size={18} />
+              </button>
+            }
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative z-10">
               {[
                 "https://images.unsplash.com/photo-1581578731548-c64695cc6954?w=400&h=400&fit=crop",
@@ -172,7 +176,7 @@ export default function ProviderProfilePage() {
                 <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest group-hover:text-gray-900">Add Project</p>
               </div>
             </div>
-          </div>
+          </GlassCard>
         </div>
 
       </div>

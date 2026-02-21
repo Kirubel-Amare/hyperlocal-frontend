@@ -1,7 +1,14 @@
 import { Notification } from '@/types/notification';
 
-export const notificationsApi = {
-    fetchNotifications: async (): Promise<Notification[]> => {
+/**
+ * Notification Service
+ * Standardized service for managing user and system notifications.
+ */
+export const notificationService = {
+    async fetchNotifications(): Promise<Notification[]> {
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 300));
+
         return [
             {
                 id: '1',
@@ -22,7 +29,8 @@ export const notificationsApi = {
         ];
     },
 
-    markAsRead: async (id: string): Promise<{ success: boolean }> => {
+    async markAsRead(id: string): Promise<{ success: boolean }> {
+        await new Promise(resolve => setTimeout(resolve, 200));
         return { success: true };
     }
 };
