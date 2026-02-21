@@ -63,15 +63,15 @@ export default function AdminDashboardPage() {
       {/* Page Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-black text-gray-900 tracking-tight mb-2">System Overview</h1>
-          <p className="text-gray-500 font-medium">Welcome back, Administrator. Here's what's happening today.</p>
+          <h1 className="text-3xl font-black text-gray-900 tracking-tight mb-2 italic">System Overview</h1>
+          <p className="text-gray-500 font-medium italic">Welcome back, Administrator. Here's what's happening today.</p>
         </div>
         <div className="flex items-center gap-3">
           <div className="bg-white border border-gray-100 rounded-2xl px-4 py-2.5 shadow-sm hidden sm:flex items-center gap-3">
             <TrendingUp size={18} className="text-emerald-500" />
-            <span className="text-sm font-bold text-gray-700">System Performance: <span className="text-emerald-500">Optimal</span></span>
+            <span className="text-sm font-bold text-gray-700 italic">System Performance: <span className="text-emerald-500 italic">Optimal</span></span>
           </div>
-          <button className="bg-[#1E7B7C] text-white px-6 py-2.5 rounded-2xl font-bold text-sm shadow-lg shadow-[#1E7B7C]/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
+          <button className="bg-[#1E7B7C] text-white px-6 py-2.5 rounded-2xl font-bold text-sm shadow-lg shadow-[#1E7B7C]/20 hover:scale-[1.02] active:scale-[0.98] transition-all italic">
             Generate Report
           </button>
         </div>
@@ -85,14 +85,14 @@ export default function AdminDashboardPage() {
               <div className={`${stat.color} p-3.5 rounded-2xl text-white shadow-lg shadow-${stat.color.split('-')[1]}-500/20 group-hover:scale-110 transition-transform duration-500`}>
                 <stat.icon size={22} />
               </div>
-              <div className={`flex items-center gap-1 text-xs font-black px-2.5 py-1.5 rounded-full ${stat.trendUp ? 'bg-emerald-50 text-emerald-600' : 'bg-red-50 text-red-600'}`}>
+              <div className={`flex items-center gap-1 text-xs font-black px-2.5 py-1.5 rounded-full ${stat.trendUp ? 'bg-emerald-50 text-emerald-600' : 'bg-red-50 text-red-600'} italic`}>
                 {stat.trendUp ? <ArrowUpRight size={14} /> : <ArrowDownRight size={14} />}
                 {stat.trend}
               </div>
             </div>
             <div>
-              <p className="text-sm font-bold text-gray-400 mb-1">{stat.label}</p>
-              <h3 className="text-2xl font-black text-gray-900">{stat.value}</h3>
+              <p className="text-sm font-bold text-gray-400 mb-1 italic">{stat.label}</p>
+              <h3 className="text-2xl font-black text-gray-900 italic">{stat.value}</h3>
             </div>
           </div>
         ))}
@@ -103,10 +103,10 @@ export default function AdminDashboardPage() {
         <div className="lg:col-span-2 bg-white/70 backdrop-blur-xl border border-gray-100 p-8 rounded-[2.5rem] shadow-sm flex flex-col min-h-[450px]">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h3 className="text-xl font-black text-gray-900 tracking-tight">Revenue Growth</h3>
-              <p className="text-sm text-gray-500 font-medium">Monthly revenue analysis vs previous year</p>
+              <h3 className="text-xl font-black text-gray-900 tracking-tight italic">Revenue Growth</h3>
+              <p className="text-sm text-gray-500 font-medium italic">Monthly revenue analysis vs previous year</p>
             </div>
-            <select className="bg-gray-50 border-none rounded-xl px-4 py-2 text-sm font-bold text-gray-600 outline-none ring-1 ring-gray-100 focus:ring-[#1E7B7C]/20">
+            <select className="bg-gray-50 border-none rounded-xl px-4 py-2 text-sm font-bold text-gray-600 outline-none ring-1 ring-gray-100 focus:ring-[#1E7B7C]/20 italic">
               <option>Last 12 Months</option>
               <option>Last 6 Months</option>
               <option>Last 30 Days</option>
@@ -126,9 +126,9 @@ export default function AdminDashboardPage() {
             </div>
             <div className="absolute inset-0 grid grid-rows-4 pointer-events-none">
               <div className="border-b border-gray-50" />
-              <div className="border-b border-gray-50" />
-              <div className="border-b border-gray-50" />
-              <div className="border-b border-gray-50" />
+              <div className="border-b border-gray-100" />
+              <div className="border-b border-gray-100" />
+              <div className="border-b border-gray-100" />
             </div>
           </div>
         </div>
@@ -136,7 +136,7 @@ export default function AdminDashboardPage() {
         {/* Activity Feed */}
         <div className="bg-white/70 backdrop-blur-xl border border-gray-100 p-8 rounded-[2.5rem] shadow-sm flex flex-col">
           <div className="flex items-center justify-between mb-8">
-            <h3 className="text-xl font-black text-gray-900 tracking-tight">Recent Activity</h3>
+            <h3 className="text-xl font-black text-gray-900 tracking-tight italic">Recent Activity</h3>
             <button className="text-[#1E7B7C] p-2 rounded-xl hover:bg-[#E8F4F4] transition-colors">
               <MoreVertical size={20} />
             </button>
@@ -160,10 +160,10 @@ export default function AdminDashboardPage() {
                 </div>
                 <div className="flex-1 pb-6">
                   <div className="flex items-center justify-between gap-2 mb-1">
-                    <span className="text-sm font-black text-gray-900">{activity.user}</span>
-                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">{activity.time}</span>
+                    <span className="text-sm font-black text-gray-900 italic">{activity.user}</span>
+                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider italic">{activity.time}</span>
                   </div>
-                  <p className="text-xs text-gray-500 font-medium leading-relaxed">
+                  <p className="text-xs text-gray-500 font-medium leading-relaxed italic">
                     {activity.action}
                   </p>
                 </div>
@@ -171,7 +171,7 @@ export default function AdminDashboardPage() {
             ))}
           </div>
 
-          <button className="w-full mt-6 py-3.5 rounded-2xl border-2 border-gray-100 text-gray-500 text-sm font-bold hover:bg-gray-50 hover:border-gray-200 transition-all">
+          <button className="w-full mt-6 py-3.5 rounded-2xl border-2 border-gray-100 text-gray-500 text-sm font-bold hover:bg-gray-50 hover:border-gray-200 transition-all italic">
             View All Activities
           </button>
         </div>
