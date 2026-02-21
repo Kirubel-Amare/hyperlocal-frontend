@@ -138,9 +138,9 @@ export default function MessagesPage() {
                                     key={thread.id}
                                     onClick={() => setActiveThreadId(thread.id)}
                                     className={`w-full p-4 rounded-3xl flex items-start gap-4 transition-all ${activeThreadId === thread.id
- ? 'bg-white dark:bg-gray-950 shadow-lg shadow-[#1E7B7C]/5 border border-[#1E7B7C]/10'
- : 'hover:bg-white border border-transparent'
- }`}
+                                        ? 'bg-white dark:bg-gray-950 shadow-lg shadow-[#1E7B7C]/5 border border-[#1E7B7C]/10'
+                                        : 'hover:bg-white border border-transparent'
+                                        }`}
                                 >
                                     <div className="relative flex-shrink-0">
                                         <div className="w-12 h-12 rounded-2xl overflow-hidden bg-gray-100">
@@ -238,7 +238,7 @@ export default function MessagesPage() {
                                         <div className={`max-w-[70%] space-y-1 ${isMe ? 'items-end' : 'items-start'} flex flex-col`}>
                                             <div className={`px-4 py-3 rounded-2xl text-sm leading-relaxed shadow-sm ${isMe
                                                 ? 'bg-[#1E7B7C] text-white rounded-tr-none'
-                                                : 'bg-gray-100 text-gray-900 dark:text-gray-100 rounded-tl-none'
+                                                : 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-tl-none'
                                                 }`}>
                                                 {msg.text}
                                             </div>
