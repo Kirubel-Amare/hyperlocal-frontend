@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { CreditCard, Wallet, FileText, Download, Plus, ArrowUpRight, ArrowDownRight, ShieldCheck, MoreVertical } from 'lucide-react'
+import { CreditCard, Wallet, FileText, Download, Plus, ArrowUpRight, ArrowDownRight, ShieldCheck, MoreVertical, Clock } from 'lucide-react'
 
 // Mock Data for Payments
 const paymentMethods = [
@@ -48,8 +48,8 @@ export default function CustomerBillingPage() {
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
                             className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-bold text-sm transition-all duration-300 ${isActive
-                                    ? 'bg-gradient-to-r from-[#1E7B7C] to-[#166566] text-white shadow-lg shadow-[#1E7B7C]/20 scale-105'
-                                    : 'bg-white/60 backdrop-blur-md text-gray-500 hover:bg-white hover:text-gray-900 hover:shadow-md'
+                                ? 'bg-gradient-to-r from-[#1E7B7C] to-[#166566] text-white shadow-lg shadow-[#1E7B7C]/20 scale-105'
+                                : 'bg-white/60 backdrop-blur-md text-gray-500 hover:bg-white hover:text-gray-900 hover:shadow-md'
                                 }`}
                         >
                             <Icon size={16} />
