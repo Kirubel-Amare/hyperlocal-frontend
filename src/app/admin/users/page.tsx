@@ -16,10 +16,15 @@ import {
   XCircle,
   ChevronLeft,
   ChevronRight,
-  ExternalLink
+  ExternalLink,
+  ShieldAlert,
+  Ban,
+  RotateCcw,
+  Trash2
 } from 'lucide-react';
+import { useToast } from '@/providers/ToastProvider';
 
-const users = [
+const initialUsers = [
   {
     id: 1,
     name: 'Sarah Miller',
@@ -78,30 +83,48 @@ const users = [
 ];
 
 export default function UserManagementPage() {
+  const [userList, setUserList] = useState(initialUsers);
   const [activeTab, setActiveTab] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+  const { showToast } = useToast();
 
-  const filteredUsers = users.filter(user => {
+  const filteredUsers = userList.filter(user => {
     const matchesTab = activeTab === 'All' || user.role === activeTab;
     const matchesSearch = user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       user.email.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesTab && matchesSearch;
   });
 
+  const handleStatusChange = (id: number, newStatus: 'Active' | 'Suspended' | 'Unverified') => {
+    setUserList(prev => prev.map(user => {
+      if (user.id === id) {
+        showToast(`User ${user.name} status updated to ${newStatus}`, newStatus === 'Suspended' ? 'warning' : 'success');
+        return { ...user, status: newStatus };
+      }
+      return user;
+    }));
+  };
+
+  const deleteUser = (id: number) => {
+    const userToDelete = userList.find(u => u.id === id);
+    setUserList(prev => prev.filter(u => u.id !== id));
+    showToast(`User ${userToDelete?.name} permanently deleted`, 'error');
+  };
+
   return (
     <div className="space-y-8 animate-in fade-in duration-700">
       {/* Page Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-black text-gray-900 tracking-tight mb-2">User Management</h1>
-          <p className="text-gray-500 font-medium">Manage and monitor all platform users, their activities and status.</p>
+          <h1 className="text-3xl font-black text-gray-900 tracking-tight mb-2 italic">User Management</h1>
+          <p className="text-gray-500 font-medium italic">Manage and monitor all platform users, their activities and status.</p>
         </div>
         <div className="flex items-center gap-3">
-          <button className="bg-white border border-gray-100 px-5 py-2.5 rounded-2xl font-bold text-sm text-gray-700 shadow-sm hover:bg-gray-50 transition-all flex items-center gap-2">
+          <button className="bg-white border border-gray-100 px-5 py-2.5 rounded-2xl font-bold text-sm text-gray-700 shadow-sm hover:bg-gray-50 transition-all flex items-center gap-2 italic">
             <Filter size={18} />
             Filters
           </button>
-          <button className="bg-[#1E7B7C] text-white px-6 py-2.5 rounded-2xl font-bold text-sm shadow-lg shadow-[#1E7B7C]/20 hover:scale-[1.02] transition-all flex items-center gap-2">
+          <button className="bg-[#1E7B7C] text-white px-6 py-2.5 rounded-2xl font-bold text-sm shadow-lg shadow-[#1E7B7C]/20 hover:scale-[1.02] transition-all flex items-center gap-2 italic">
             <Users size={18} />
             Invite Admin
           </button>
@@ -115,8 +138,8 @@ export default function UserManagementPage() {
             <Users size={24} />
           </div>
           <div>
-            <p className="text-sm font-bold text-gray-400 mb-0.5">Total Users</p>
-            <h3 className="text-2xl font-black text-gray-900">16,704</h3>
+            <p className="text-sm font-bold text-gray-400 mb-0.5 italic">Total Users</p>
+            <h3 className="text-2xl font-black text-gray-900">{userList.length}</h3>
           </div>
         </div>
         <div className="bg-white border border-gray-100 p-6 rounded-[2rem] shadow-sm flex items-center gap-5 group cursor-pointer hover:shadow-xl transition-all duration-300">
@@ -124,8 +147,8 @@ export default function UserManagementPage() {
             <ShieldCheck size={24} />
           </div>
           <div>
-            <p className="text-sm font-bold text-gray-400 mb-0.5">Providers</p>
-            <h3 className="text-2xl font-black text-gray-900">1,284</h3>
+            <p className="text-sm font-bold text-gray-400 mb-0.5 italic">Providers</p>
+            <h3 className="text-2xl font-black text-gray-900">{userList.filter(u => u.role === 'Provider').length}</h3>
           </div>
         </div>
         <div className="bg-white border border-gray-100 p-6 rounded-[2rem] shadow-sm flex items-center gap-5 group cursor-pointer hover:shadow-xl transition-all duration-300">
@@ -133,8 +156,8 @@ export default function UserManagementPage() {
             <UserX size={24} />
           </div>
           <div>
-            <p className="text-sm font-bold text-gray-400 mb-0.5">Reported/Suspended</p>
-            <h3 className="text-2xl font-black text-gray-900">42</h3>
+            <p className="text-sm font-bold text-gray-400 mb-0.5 italic">Reported/Suspended</p>
+            <h3 className="text-2xl font-black text-gray-900">{userList.filter(u => u.status === 'Suspended').length}</h3>
           </div>
         </div>
       </div>
@@ -147,9 +170,9 @@ export default function UserManagementPage() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-6 py-2 rounded-xl text-sm font-bold transition-all ${activeTab === tab
-                    ? 'bg-white text-gray-900 shadow-sm'
-                    : 'text-gray-500 hover:text-gray-700'
+                className={`px-6 py-2 rounded-xl text-sm font-bold transition-all italic ${activeTab === tab
+                  ? 'bg-white text-gray-900 shadow-sm'
+                  : 'text-gray-500 hover:text-gray-700'
                   }`}
               >
                 {tab}s
@@ -163,7 +186,7 @@ export default function UserManagementPage() {
               placeholder="Search by name, email or ID..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-transparent rounded-2xl outline-none focus:bg-white focus:border-[#1E7B7C]/20 focus:ring-4 focus:ring-[#1E7B7C]/5 transition-all text-sm font-medium"
+              className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-transparent rounded-2xl outline-none focus:bg-white focus:border-[#1E7B7C]/20 focus:ring-4 focus:ring-[#1E7B7C]/5 transition-all text-sm font-medium italic"
             />
           </div>
         </div>
@@ -182,7 +205,7 @@ export default function UserManagementPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
-              {filteredUsers.map((user) => (
+              {filteredUsers.length > 0 ? filteredUsers.map((user) => (
                 <tr key={user.id} className="group hover:bg-gray-50/50 transition-colors">
                   <td className="px-6 py-5">
                     <div className="flex items-center gap-4">
@@ -192,76 +215,104 @@ export default function UserManagementPage() {
                           alt={user.name}
                           className="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm"
                         />
-                        <div className={`absolute bottom-0 right-0 w-3.5 h-3.5 border-2 border-white rounded-full ${user.status === 'Active' ? 'bg-emerald-500' : 'bg-gray-400'
+                        <div className={`absolute bottom-0 right-0 w-3.5 h-3.5 border-2 border-white rounded-full ${user.status === 'Active' ? 'bg-emerald-500' :
+                          user.status === 'Suspended' ? 'bg-red-500' : 'bg-gray-400'
                           }`} />
                       </div>
                       <div>
-                        <h4 className="font-bold text-gray-900 text-sm group-hover:text-[#1E7B7C] transition-colors">{user.name}</h4>
-                        <p className="text-xs text-gray-500 font-medium">{user.email}</p>
+                        <h4 className="font-bold text-gray-900 text-sm group-hover:text-[#1E7B7C] transition-colors italic">{user.name}</h4>
+                        <p className="text-xs text-gray-500 font-medium italic">{user.email}</p>
                       </div>
                     </div>
                   </td>
                   <td className="px-6 py-5">
-                    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold ${user.role === 'Provider' ? 'bg-indigo-50 text-indigo-600' : 'bg-purple-50 text-purple-600'
+                    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold italic ${user.role === 'Provider' ? 'bg-indigo-50 text-indigo-600' : 'bg-purple-50 text-purple-600'
                       }`}>
                       {user.role === 'Provider' ? <ShieldCheck size={14} /> : <Users size={14} />}
                       {user.role}
                     </span>
                   </td>
                   <td className="px-6 py-5">
-                    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold ${user.status === 'Active' ? 'bg-emerald-50 text-emerald-600' :
-                        user.status === 'Unverified' ? 'bg-amber-50 text-amber-600' : 'bg-red-50 text-red-600'
+                    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold italic ${user.status === 'Active' ? 'bg-emerald-50 text-emerald-600' :
+                      user.status === 'Unverified' ? 'bg-amber-50 text-amber-600' : 'bg-red-50 text-red-600'
                       }`}>
                       {user.status === 'Active' ? <CheckCircle2 size={14} /> :
-                        user.status === 'Unverified' ? <Calendar size={14} /> : <XCircle size={14} />}
+                        user.status === 'Unverified' ? <Calendar size={14} /> : <Ban size={14} />}
                       {user.status}
                     </span>
                   </td>
                   <td className="px-6 py-5">
                     <div>
                       <span className="text-sm font-black text-gray-900">{user.jobs}</span>
-                      <span className="text-xs text-gray-400 font-bold ml-1">Jobs</span>
+                      <span className="text-xs text-gray-400 font-bold ml-1 italic">Jobs</span>
                       <div className="flex items-center gap-1 mt-1 text-[10px] font-bold text-amber-500">
-                        <span className="bg-amber-50 px-1.5 py-0.5 rounded">⭐ {user.rating}</span>
+                        <span className="bg-amber-50 px-1.5 py-0.5 rounded italic">⭐ {user.rating}</span>
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-5 text-sm font-bold text-gray-500">
+                  <td className="px-6 py-5 text-sm font-bold text-gray-500 italic">
                     {user.joined}
                   </td>
                   <td className="px-6 py-5 text-right">
                     <div className="flex items-center justify-end gap-2">
+                      {user.status === 'Suspended' ? (
+                        <button
+                          onClick={() => handleStatusChange(user.id, 'Active')}
+                          title="Unsuspend User"
+                          className="p-2 text-emerald-500 hover:bg-emerald-50 rounded-xl shadow-sm transition-all border border-transparent hover:border-gray-100"
+                        >
+                          <RotateCcw size={18} />
+                        </button>
+                      ) : (
+                        <button
+                          onClick={() => handleStatusChange(user.id, 'Suspended')}
+                          title="Suspend User"
+                          className="p-2 text-red-500 hover:bg-red-50 rounded-xl shadow-sm transition-all border border-transparent hover:border-gray-100"
+                        >
+                          <Ban size={18} />
+                        </button>
+                      )}
                       <button className="p-2 text-gray-400 hover:text-[#1E7B7C] hover:bg-white rounded-xl shadow-sm transition-all border border-transparent hover:border-gray-100">
                         <ExternalLink size={18} />
                       </button>
-                      <button className="p-2 text-gray-400 hover:text-[#1E7B7C] hover:bg-white rounded-xl shadow-sm transition-all border border-transparent hover:border-gray-100">
-                        <MoreVertical size={18} />
+                      <button
+                        onClick={() => deleteUser(user.id)}
+                        title="Delete User"
+                        className="p-2 text-gray-400 hover:text-red-600 hover:bg-white rounded-xl shadow-sm transition-all border border-transparent hover:border-gray-100"
+                      >
+                        <Trash2 size={18} />
                       </button>
                     </div>
                   </td>
                 </tr>
-              ))}
+              )) : (
+                <tr>
+                  <td colSpan={6} className="px-6 py-20 text-center">
+                    <div className="flex flex-col items-center gap-3 text-gray-400">
+                      <Users size={48} strokeWidth={1} />
+                      <p className="text-lg font-black italic">No users found</p>
+                      <p className="text-sm font-medium italic">Try a different search or filter</p>
+                    </div>
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>
 
         {/* Pagination Placeholder */}
         <div className="p-6 border-t border-gray-100 flex items-center justify-between">
-          <p className="text-sm font-bold text-gray-400">
-            Showing <span className="text-gray-900 font-black">1 - 5</span> of <span className="text-gray-900 font-black">16,704</span> users
+          <p className="text-sm font-bold text-gray-400 italic">
+            Showing <span className="text-gray-900 font-black italic">1 - {filteredUsers.length}</span> of <span className="text-gray-900 font-black italic">{userList.length}</span> users
           </p>
           <div className="flex items-center gap-2">
             <button className="p-2 rounded-xl border border-gray-100 text-gray-400 hover:bg-gray-50 disabled:opacity-50" disabled>
               <ChevronLeft size={20} />
             </button>
             <div className="flex items-center gap-1">
-              <button className="w-10 h-10 rounded-xl bg-[#1E7B7C] text-white font-black text-sm">1</button>
-              <button className="w-10 h-10 rounded-xl hover:bg-gray-50 text-gray-600 font-bold text-sm">2</button>
-              <button className="w-10 h-10 rounded-xl hover:bg-gray-50 text-gray-600 font-bold text-sm">3</button>
-              <span className="px-2 text-gray-400">...</span>
-              <button className="w-10 h-10 rounded-xl hover:bg-gray-50 text-gray-600 font-bold text-sm">3341</button>
+              <button className="w-10 h-10 rounded-xl bg-[#1E7B7C] text-white font-black text-sm italic">1</button>
             </div>
-            <button className="p-2 rounded-xl border border-gray-100 text-gray-400 hover:bg-gray-50">
+            <button className="p-2 rounded-xl border border-gray-100 text-gray-400 hover:bg-gray-50 disabled:opacity-50" disabled>
               <ChevronRight size={20} />
             </button>
           </div>

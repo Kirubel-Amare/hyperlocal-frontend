@@ -27,3 +27,12 @@
   --color-chart-5: hsl(27 87% 67%);
   --radius: 0.5rem;
 }
+
+@keyframes notification-progress {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+@utility animate-notification-progress {
+  animation: notification-progress linear forwards;
+}

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import {
   AlertCircle,
   Search,
@@ -11,7 +12,15 @@ import {
   XCircle,
   ShieldAlert,
   Gavel,
-  History
+  History,
+  Image as ImageIcon,
+  ChevronRight,
+  User,
+  AlertTriangle,
+  ArrowLeft,
+  ThumbsUp,
+  ThumbsDown,
+  RotateCcw
 } from 'lucide-react';
 
 const disputes = [
@@ -23,6 +32,147 @@ const disputes = [
 
 export default function DisputesPage() {
   const [activeTab, setActiveTab] = useState('All');
+  const [selectedDispute, setSelectedDispute] = useState<typeof disputes[0] | null>(null);
+
+  if (selectedDispute) {
+    return (
+      <div className="space-y-8 animate-in fade-in slide-in-from-right-8 duration-500">
+        {/* Header */}
+        <div className="flex items-center justify-between">
+          <button
+            onClick={() => setSelectedDispute(null)}
+            className="flex items-center gap-2 text-gray-500 hover:text-gray-900 font-black text-sm transition-colors group"
+          >
+            <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
+            Back to Disputes
+          </button>
+          <div className="flex items-center gap-3">
+            <span className="bg-red-50 text-red-600 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border border-red-100">
+              {selectedDispute.priority} Priority
+            </span>
+            <span className="bg-gray-50 text-gray-500 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border border-gray-100">
+              ID: {selectedDispute.id}
+            </span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Main Arbitration Area */}
+          <div className="lg:col-span-2 space-y-8">
+            {/* Parties involved */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-white/70 backdrop-blur-md border border-gray-100 p-6 rounded-[2.5rem] shadow-sm flex items-center gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
+                  <User size={24} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Customer</p>
+                  <h4 className="text-lg font-black text-gray-900">{selectedDispute.customer}</h4>
+                </div>
+              </div>
+              <div className="bg-white/70 backdrop-blur-md border border-gray-100 p-6 rounded-[2.5rem] shadow-sm flex items-center gap-4 text-right justify-end">
+                <div>
+                  <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Provider</p>
+                  <h4 className="text-lg font-black text-gray-900">{selectedDispute.provider}</h4>
+                </div>
+                <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                  <ShieldAlert size={24} />
+                </div>
+              </div>
+            </div>
+
+            {/* Evidence Gallery */}
+            <div className="bg-white/70 backdrop-blur-md border border-gray-100 p-8 rounded-[2.5rem] shadow-sm space-y-6">
+              <div className="flex items-center justify-between">
+                <h3 className="text-xl font-black text-gray-900 italic">Evidence Locker</h3>
+                <span className="text-xs font-bold text-gray-400">4 Attachments Found</span>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                {[1, 2, 3, 4].map(i => (
+                  <div key={i} className="group relative aspect-square rounded-2xl bg-gray-50 border border-gray-100 overflow-hidden cursor-pointer">
+                    <Image src={`https://images.unsplash.com/photo-${1500000000000 + i}?w=400&h=400&fit=crop`} alt="evidence" fill className="object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100" />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <ExternalLink className="text-white" size={24} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Timeline */}
+            <div className="bg-white/70 backdrop-blur-md border border-gray-100 p-8 rounded-[2.5rem] shadow-sm">
+              <h3 className="text-xl font-black text-gray-900 italic mb-8">Event Timeline</h3>
+              <div className="space-y-8 relative before:absolute before:inset-0 before:left-[11px] before:w-0.5 before:bg-gray-100">
+                {[
+                  { title: 'Dispute Created', desc: 'Customer initiated dispute for "Incomplete Work"', time: '2 days ago', icon: AlertCircle, color: 'text-red-500' },
+                  { title: 'Provider Responded', desc: 'Provider submitted counter-evidence and photos', time: '1 day ago', icon: MessageSquare, color: 'text-blue-500' },
+                  { title: 'Admin Assigned', desc: 'Super Admin started investigation', time: '4 hours ago', icon: Gavel, color: 'text-amber-500' },
+                ].map((event, idx) => (
+                  <div key={idx} className="relative pl-10">
+                    <div className={`absolute left-0 top-1 w-6 h-6 rounded-full bg-white border-2 border-gray-100 flex items-center justify-center z-10 ${event.color}`}>
+                      <event.icon size={12} />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-black text-gray-900">{event.title}</h4>
+                      <p className="text-xs text-gray-500 font-medium">{event.desc}</p>
+                      <span className="text-[10px] text-gray-400 font-bold uppercase mt-1 block">{event.time}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Arbitration Controls Sidebar */}
+          <div className="space-y-6">
+            <div className="bg-gray-900 text-white p-8 rounded-[2.5rem] shadow-xl space-y-6">
+              <div className="flex items-center gap-3">
+                <div className="p-3 bg-white/10 rounded-2xl">
+                  <Gavel size={24} />
+                </div>
+                <h3 className="text-lg font-black tracking-tight italic">Final Decision</h3>
+              </div>
+              <p className="text-xs text-gray-400 font-medium">Please review all evidence before making a final ruling. Decisions are irreversible.</p>
+
+              <div className="space-y-3">
+                <button className="w-full bg-emerald-500 text-white py-4 rounded-3xl font-black flex items-center justify-center gap-3 hover:scale-[1.02] transition-all shadow-lg shadow-emerald-500/20">
+                  <ThumbsUp size={20} />
+                  Release to Provider
+                </button>
+                <button className="w-full bg-red-600 text-white py-4 rounded-3xl font-black flex items-center justify-center gap-3 hover:scale-[1.02] transition-all shadow-lg shadow-red-600/20">
+                  <ThumbsDown size={20} />
+                  Refund Customer
+                </button>
+                <button className="w-full bg-white/10 text-white border border-white/20 py-4 rounded-3xl font-black flex items-center justify-center gap-3 hover:bg-white/20 transition-all italic">
+                  <RotateCcw size={20} />
+                  Split Payment (50/50)
+                </button>
+              </div>
+            </div>
+
+            <div className="bg-white border border-gray-100 p-8 rounded-[2.5rem] shadow-sm space-y-6">
+              <h4 className="text-xs font-black text-gray-400 uppercase tracking-widest">Case Summary</h4>
+              <div className="space-y-4">
+                <div className="flex justify-between">
+                  <span className="text-xs font-bold text-gray-500">Total Amount</span>
+                  <span className="text-sm font-black text-gray-900">${selectedDispute.amount.toFixed(2)}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-xs font-bold text-gray-500">Service Fee</span>
+                  <span className="text-sm font-black text-gray-900">$15.00</span>
+                </div>
+                <div className="h-px bg-gray-50" />
+                <div className="flex justify-between">
+                  <span className="text-xs font-bold text-emerald-600 italic">Net in Escrow</span>
+                  <span className="text-lg font-black text-emerald-600">${(selectedDispute.amount - 15).toFixed(2)}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-8 animate-in fade-in duration-700">
@@ -84,8 +234,8 @@ export default function DisputesPage() {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`px-6 py-2 rounded-xl text-sm font-bold transition-all ${activeTab === tab
-                    ? 'bg-white text-gray-900 shadow-sm'
-                    : 'text-gray-500 hover:text-gray-700'
+                  ? 'bg-white text-gray-900 shadow-sm'
+                  : 'text-gray-500 hover:text-gray-700'
                   }`}
               >
                 {tab}
@@ -131,16 +281,16 @@ export default function DisputesPage() {
                   </td>
                   <td className="px-6 py-5">
                     <span className={`inline-flex items-center px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider ${dispute.priority === 'Critical' ? 'bg-red-50 text-red-600' :
-                        dispute.priority === 'High' ? 'bg-orange-50 text-orange-600' :
-                          dispute.priority === 'Medium' ? 'bg-blue-50 text-blue-600' : 'bg-gray-50 text-gray-600'
+                      dispute.priority === 'High' ? 'bg-orange-50 text-orange-600' :
+                        dispute.priority === 'Medium' ? 'bg-blue-50 text-blue-600' : 'bg-gray-50 text-gray-600'
                       }`}>
                       {dispute.priority}
                     </span>
                   </td>
                   <td className="px-6 py-5">
                     <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-tighter ${dispute.status === 'Open' ? 'bg-red-50 text-red-600 underline' :
-                        dispute.status === 'Investigation' ? 'bg-amber-50 text-amber-600' :
-                          dispute.status === 'Resolved' ? 'bg-emerald-50 text-emerald-600' : 'bg-gray-50 text-gray-600'
+                      dispute.status === 'Investigation' ? 'bg-amber-50 text-amber-600' :
+                        dispute.status === 'Resolved' ? 'bg-emerald-50 text-emerald-600' : 'bg-gray-50 text-gray-600'
                       }`}>
                       {dispute.status === 'Resolved' ? <CheckCircle2 size={12} /> :
                         dispute.status === 'Closed' ? <XCircle size={12} /> : <Clock size={12} />}
@@ -152,11 +302,15 @@ export default function DisputesPage() {
                   </td>
                   <td className="px-6 py-5 text-right">
                     <div className="flex items-center justify-end gap-2">
-                      <button className="p-2 text-gray-400 hover:text-[#1E7B7C] hover:bg-white rounded-xl shadow-sm transition-all border border-transparent hover:border-gray-100">
-                        <MessageSquare size={18} />
+                      <button
+                        onClick={() => setSelectedDispute(dispute)}
+                        className="p-2 text-gray-400 hover:text-[#1E7B7C] hover:bg-white rounded-xl shadow-sm transition-all border border-transparent hover:border-gray-100"
+                        title="Moderate Case"
+                      >
+                        <Gavel size={18} />
                       </button>
                       <button className="p-2 text-gray-400 hover:text-gray-900 hover:bg-white rounded-xl shadow-sm transition-all border border-transparent hover:border-gray-100">
-                        <ExternalLink size={18} />
+                        <MessageSquare size={18} />
                       </button>
                     </div>
                   </td>
