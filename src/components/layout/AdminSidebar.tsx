@@ -11,7 +11,8 @@ import {
     Settings,
     LogOut,
     ShieldCheck,
-    BarChart3
+    BarChart3,
+    Briefcase
 } from 'lucide-react'
 
 export default function AdminSidebar() {
@@ -20,6 +21,7 @@ export default function AdminSidebar() {
     const mainLinks = [
         { name: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard },
         { name: 'User Management', href: '/admin/users', icon: Users },
+        { name: 'Jobs Management', href: '/admin/jobs', icon: Briefcase },
         { name: 'Categories', href: '/admin/categories', icon: Layers },
         { name: 'Transactions', href: '/admin/transactions', icon: CreditCard },
         { name: 'Disputes', href: '/admin/disputes', icon: AlertCircle },
