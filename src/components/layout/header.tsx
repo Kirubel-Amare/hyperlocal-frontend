@@ -22,7 +22,10 @@ import {
   Info,
   Phone,
   HelpCircle,
-  Briefcase
+  Briefcase,
+  Bell,
+  Settings,
+  LogOut
 } from 'lucide-react'
 
 interface HeaderProps {
@@ -32,6 +35,7 @@ interface HeaderProps {
   showSidebar?: boolean
   onSidebarToggle?: (isOpen: boolean) => void
   variant?: 'default' | 'transparent' | 'colored'
+  userType?: 'guest' | 'customer' | 'provider'
 }
 
 const navLinks = [
@@ -42,6 +46,19 @@ const navLinks = [
   { name: 'FAQ', href: '/#faq', icon: <HelpCircle size={16} /> },
   { name: 'About', href: '/about', icon: <Info size={16} /> },
   { name: 'Contact', href: '/contact', icon: <Phone size={16} /> },
+]
+
+const customerLinks = [
+  { name: 'Dashboard', href: '/customer/dashboard', icon: <Home size={16} /> },
+  { name: 'My Jobs', href: '/customer/jobs', icon: <Briefcase size={16} /> },
+  { name: 'Messages', href: '/messages', icon: <Phone size={16} /> },
+]
+
+const providerLinks = [
+  { name: 'Dashboard', href: '/provider/dashboard', icon: <Home size={16} /> },
+  { name: 'Find Work', href: '/jobs', icon: <Search size={16} /> },
+  { name: 'My Jobs', href: '/provider/jobs/active', icon: <Briefcase size={16} /> },
+  { name: 'Messages', href: '/messages', icon: <Phone size={16} /> },
 ]
 
 const categoryLinks = [
@@ -61,13 +78,15 @@ export default function Header({
   rightElement,
   showSidebar = false,
   onSidebarToggle,
-  variant = 'default'
+  variant = 'default',
+  userType = 'guest'
 }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [showCategories, setShowCategories] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeLink, setActiveLink] = useState('')
+  const [showProfileMenu, setShowProfileMenu] = useState(false)
 
   // Handle scroll effect
   useEffect(() => {
@@ -148,7 +167,7 @@ export default function Header({
 
             {/* Desktop Navigation with icons */}
             <nav className="hidden md:flex items-center gap-1">
-              {navLinks.map((link) => (
+              {(userType === 'customer' ? customerLinks : userType === 'provider' ? providerLinks : navLinks).map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
@@ -178,23 +197,73 @@ export default function Header({
 
               {rightElement ? (
                 rightElement
-              ) : showLoginLink ? (
-                <div className="flex items-center gap-4">
-                  <span className="text-gray-500 hidden lg:inline text-sm">
-                    Ready to start?
-                  </span>
-                  <Link
-                    href={loginHref}
-                    className="relative px-6 py-2.5 rounded-full bg-gradient-to-r from-[#1E7B7C] to-[#166566] text-white font-medium transition-all duration-300 hover:shadow-xl hover:shadow-[#E8F4F4]/50 hover:scale-105 active:scale-95 group overflow-hidden"
-                  >
-                    <span className="relative z-10 flex items-center gap-2">
-                      <LogIn size={16} />
-                      Log in
+              ) : userType === 'guest' ? (
+                showLoginLink && (
+                  <div className="flex items-center gap-4">
+                    <span className="text-gray-500 hidden lg:inline text-sm">
+                      Ready to start?
                     </span>
-                    <span className="absolute inset-0 bg-gradient-to-r from-[#166566] to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </Link>
+                    <Link
+                      href={loginHref}
+                      className="relative px-6 py-2.5 rounded-full bg-gradient-to-r from-[#1E7B7C] to-[#166566] text-white font-medium transition-all duration-300 hover:shadow-xl hover:shadow-[#E8F4F4]/50 hover:scale-105 active:scale-95 group overflow-hidden"
+                    >
+                      <span className="relative z-10 flex items-center gap-2">
+                        <LogIn size={16} />
+                        Log in
+                      </span>
+                      <span className="absolute inset-0 bg-gradient-to-r from-[#166566] to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </Link>
+                  </div>
+                )
+              ) : (
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-2 pr-4 border-r border-gray-200">
+                    <button className="relative p-2.5 rounded-xl text-gray-600 hover:text-[#1E7B7C] hover:bg-[#E8F4F4] transition-all duration-300">
+                      <Bell size={20} />
+                      <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 border-2 border-white rounded-full" />
+                    </button>
+                  </div>
+
+                  <div className="relative">
+                    <button
+                      onClick={() => setShowProfileMenu(!showProfileMenu)}
+                      className="flex items-center gap-3 hover:bg-gray-50 p-1.5 pl-3 rounded-full border border-gray-100 transition-colors"
+                    >
+                      <span className="text-sm font-bold text-gray-700 hidden sm:block">
+                        {userType === 'customer' ? 'Alex J.' : 'Sarah Miller'}
+                      </span>
+                      <div className="w-9 h-9 rounded-full bg-gradient-to-r from-[#1E7B7C] to-[#166566] p-[2px]">
+                        <Image
+                          src={userType === 'customer' ? 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&h=100&fit=crop' : 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop'}
+                          alt="User"
+                          width={32}
+                          height={32}
+                          className="rounded-full bg-white object-cover"
+                        />
+                      </div>
+                    </button>
+
+                    {showProfileMenu && (
+                      <div className="absolute right-0 top-full mt-2 w-64 bg-white/95 backdrop-blur-xl border border-gray-100 shadow-xl rounded-2xl py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                        <div className="px-4 py-3 border-b border-gray-100 mb-2">
+                          <p className="text-sm font-bold text-gray-900">{userType === 'customer' ? 'Alex Johnson' : 'Sarah Miller'}</p>
+                          <p className="text-xs text-gray-500 font-medium">{userType === 'customer' ? 'Customer Profile' : 'Provider Profile'}</p>
+                        </div>
+                        <Link onClick={() => setShowProfileMenu(false)} href={userType === 'customer' ? '/customer/dashboard' : '/provider/profile/edit'} className="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-sm font-medium text-gray-700 transition-colors">
+                          <User size={16} className="text-gray-400" /> View Profile
+                        </Link>
+                        <Link onClick={() => setShowProfileMenu(false)} href={userType === 'customer' ? '/customer/settings' : '/provider/settings'} className="flex items-center gap-3 px-4 py-2 hover:bg-gray-50 text-sm font-medium text-gray-700 transition-colors">
+                          <Settings size={16} className="text-gray-400" /> Settings
+                        </Link>
+                        <div className="h-px bg-gray-100 my-2" />
+                        <Link onClick={() => setShowProfileMenu(false)} href="/" className="flex items-center gap-3 px-4 py-2 hover:bg-red-50 text-sm font-bold text-red-600 transition-colors">
+                          <LogOut size={16} /> Sign Out
+                        </Link>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              ) : null}
+              )}
             </div>
 
             {/* Mobile menu buttons */}
@@ -290,7 +359,7 @@ export default function Header({
 
                 {/* Navigation Links with icons */}
                 <div className="space-y-1 pt-2">
-                  {navLinks.map((link) => (
+                  {(userType === 'customer' ? customerLinks : userType === 'provider' ? providerLinks : navLinks).map((link) => (
                     <Link
                       key={link.name}
                       href={link.href}
@@ -306,22 +375,35 @@ export default function Header({
                 </div>
 
                 {/* Login Section */}
-                {showLoginLink && !rightElement && (
+                {userType === 'guest' ? (
+                  showLoginLink && !rightElement && (
+                    <div className="pt-4 mt-2 border-t border-gray-100">
+                      <Link
+                        href={loginHref}
+                        onClick={() => setIsMenuOpen(false)}
+                        className="flex items-center justify-center gap-2 w-full px-4 py-4 rounded-xl bg-gradient-to-r from-[#1E7B7C] to-[#166566] text-white font-medium hover:shadow-xl hover:shadow-[#E8F4F4]/50 transition-all duration-300 group"
+                      >
+                        <LogIn size={18} className="group-hover:translate-x-1 transition-transform" />
+                        Sign In to Your Account
+                      </Link>
+                      <p className="text-center text-xs text-gray-400 mt-4">
+                        Don't have an account?{' '}
+                        <Link href="/signup" className="text-[#1E7B7C] font-medium hover:underline">
+                          Sign up
+                        </Link>
+                      </p>
+                    </div>
+                  )
+                ) : (
                   <div className="pt-4 mt-2 border-t border-gray-100">
                     <Link
-                      href={loginHref}
+                      href="/"
                       onClick={() => setIsMenuOpen(false)}
-                      className="flex items-center justify-center gap-2 w-full px-4 py-4 rounded-xl bg-gradient-to-r from-[#1E7B7C] to-[#166566] text-white font-medium hover:shadow-xl hover:shadow-[#E8F4F4]/50 transition-all duration-300 group"
+                      className="flex items-center justify-center gap-2 w-full px-4 py-4 rounded-xl bg-red-50 text-red-600 font-black hover:bg-red-100 transition-all duration-300 group"
                     >
-                      <LogIn size={18} className="group-hover:translate-x-1 transition-transform" />
-                      Sign In to Your Account
+                      <LogOut size={18} />
+                      Sign Out
                     </Link>
-                    <p className="text-center text-xs text-gray-400 mt-4">
-                      Don't have an account?{' '}
-                      <Link href="/signup" className="text-[#1E7B7C] font-medium hover:underline">
-                        Sign up
-                      </Link>
-                    </p>
                   </div>
                 )}
 
