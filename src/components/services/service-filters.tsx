@@ -24,7 +24,7 @@ export default function ServiceFilters({
   setMinRating
 }: ServiceFiltersProps) {
   return (
-    <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-200 p-6 sticky top-6">
+    <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-200 p-6 sticky top-6 dark:border-gray-800">
       <div className="flex items-center gap-2 mb-6">
         <Sliders size={20} className="text-[#1E7B7C]" />
         <h3 className="font-bold text-lg">Filters</h3>
@@ -47,7 +47,7 @@ export default function ServiceFilters({
       </div>
 
       {/* Price Range */}
-      <div className="mb-6 pb-6 border-b border-gray-200">
+      <div className="mb-6 pb-6 border-b border-gray-200 dark:border-gray-800">
         <label className="block text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3">Price Range</label>
         <div className="space-y-2">
           <div className="flex items-center gap-2">

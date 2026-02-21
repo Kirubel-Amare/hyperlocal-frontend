@@ -85,7 +85,7 @@ export default function JobPostPage() {
                                     className="object-cover"
                                 />
                                 <div className="absolute bottom-6 left-6 flex gap-2">
-                                    <span className="px-4 py-2 bg-black/50 backdrop-blur-md text-white text-xs font-bold rounded-xl border border-white/10 flex items-center gap-2">
+                                    <span className="px-4 py-2 bg-black/50 backdrop-blur-md text-white text-xs font-bold rounded-xl border border-white/10 flex items-center gap-2 dark:border-gray-800/10">
                                         <ShieldCheck size={14} className="text-[#1E7B7C]" />
                                         Verified Service
                                     </span>
@@ -192,7 +192,7 @@ export default function JobPostPage() {
                                 Submit a Proposal
                                 <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
                             </Link>
-                            <button className="w-full py-5 border-2 border-white/20 text-white font-black rounded-2xl hover:bg-white/20 dark:bg-white/5 transition-all mb-8">
+                            <button className="w-full py-5 border-2 border-white/20 text-white font-black rounded-2xl hover:bg-white/20 dark:bg-white/5 transition-all mb-8 dark:border-gray-800/20">
                                 Save Listing
                             </button>
 

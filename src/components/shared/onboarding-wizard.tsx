@@ -119,7 +119,7 @@ export default function OnboardingWizard({ isOpen, onClose }: OnboardingWizardPr
                 </div>
 
                 {/* Content Side */}
-                <div className="flex-1 p-8 md:p-12 flex flex-col border-l border-white/20">
+                <div className="flex-1 p-8 md:p-12 flex flex-col border-l border-white/20 dark:border-gray-800/20">
                     <button
                         onClick={onClose}
                         className="absolute top-6 right-6 p-2 text-gray-400 dark:text-gray-500 hover:text-gray-600 transition-colors"

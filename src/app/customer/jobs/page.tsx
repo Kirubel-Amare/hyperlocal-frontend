@@ -126,7 +126,7 @@ export default function CustomerJobsPage() {
                                 </div>
 
                                 <div className="mt-auto flex justify-end gap-3 border-t border-gray-100 dark:border-gray-800 pt-4">
-                                    <button className="px-6 py-2.5 border-2 border-gray-200 text-gray-600 rounded-xl font-bold text-sm hover:border-gray-300 hover:bg-gray-50 dark:bg-gray-900 transition-colors">
+                                    <button className="px-6 py-2.5 border-2 border-gray-200 text-gray-600 rounded-xl font-bold text-sm hover:border-gray-300 hover:bg-gray-50 dark:bg-gray-900 transition-colors dark:border-gray-800">
                                         {t('jobs.reschedule')}
                                     </button>
                                     <button className="px-6 py-2.5 bg-gradient-to-r from-[#1E7B7C] to-[#166566] text-white rounded-xl font-bold text-sm hover:shadow-lg hover:shadow-[#1E7B7C]/20 transition-all active:scale-95">

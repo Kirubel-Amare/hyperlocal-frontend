@@ -294,7 +294,7 @@ export default function ProviderFinancialsPage() {
                             {/* Add New Method */}
                             <div
                                 onClick={() => setShowAddMethod(true)}
-                                className="border-2 border-dashed border-gray-200 rounded-[32px] p-8 flex flex-col items-center justify-center text-center hover:bg-gray-50 dark:bg-gray-900 hover:border-[#1E7B7C]/30 transition-all cursor-pointer group"
+                                className="border-2 border-dashed border-gray-200 rounded-[32px] p-8 flex flex-col items-center justify-center text-center hover:bg-gray-50 dark:bg-gray-900 hover:border-[#1E7B7C]/30 transition-all cursor-pointer group dark:border-gray-800"
                             >
                                 <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-white dark:bg-gray-950 group-hover:shadow-md transition-all">
                                     <Plus size={24} className="text-gray-400 dark:text-gray-500 group-hover:text-[#1E7B7C]" />

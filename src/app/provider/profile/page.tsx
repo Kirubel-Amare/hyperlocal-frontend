@@ -169,7 +169,7 @@ export default function ProviderProfilePage() {
                   </div>
                 </div>
               ))}
-              <div className="aspect-square rounded-[32px] border-2 border-dashed border-gray-200 flex flex-col items-center justify-center text-center p-6 hover:bg-white dark:bg-gray-950 hover:border-[#1E7B7C]/30 transition-all cursor-pointer group">
+              <div className="aspect-square rounded-[32px] border-2 border-dashed border-gray-200 flex flex-col items-center justify-center text-center p-6 hover:bg-white dark:bg-gray-950 hover:border-[#1E7B7C]/30 transition-all cursor-pointer group dark:border-gray-800">
                 <div className="w-12 h-12 bg-gray-50 dark:bg-gray-900 rounded-2xl flex items-center justify-center text-gray-400 dark:text-gray-500 mb-4 group-hover:bg-[#E8F4F4] group-hover:text-[#1E7B7C] transition-colors">
                   <Plus size={24} />
                 </div>

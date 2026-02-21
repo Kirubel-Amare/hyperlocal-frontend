@@ -273,7 +273,7 @@ export default function MessagesPage() {
                                             <Image src={attachedFile.url} alt="preview" fill className="object-cover" />
                                         </div>
                                     ) : (
-                                        <div className="h-20 w-32 rounded-xl bg-white dark:bg-gray-950 border border-gray-200 flex flex-col items-center justify-center p-2 text-center">
+                                        <div className="h-20 w-32 rounded-xl bg-white dark:bg-gray-950 border border-gray-200 flex flex-col items-center justify-center p-2 text-center dark:border-gray-800">
                                             <FileText size={24} className="text-indigo-500 mb-1" />
                                             <span className="text-[8px] font-bold truncate w-full">{attachedFile.name}</span>
                                         </div>
@@ -303,7 +303,7 @@ export default function MessagesPage() {
                                 <button
                                     key={i}
                                     onClick={() => setNewMessage(suggestion)}
-                                    className="flex-shrink-0 px-4 py-1.5 bg-gray-50 dark:bg-gray-900 hover:bg-[#1E7B7C]/5 hover:border-[#1E7B7C]/30 border border-gray-200 rounded-full text-xs font-medium text-gray-600 transition-all"
+                                    className="flex-shrink-0 px-4 py-1.5 bg-gray-50 dark:bg-gray-900 hover:bg-[#1E7B7C]/5 hover:border-[#1E7B7C]/30 border border-gray-200 rounded-full text-xs font-medium text-gray-600 transition-all dark:border-gray-800"
                                 >
                                     {suggestion}
                                 </button>

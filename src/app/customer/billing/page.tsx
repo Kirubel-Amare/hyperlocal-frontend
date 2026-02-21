@@ -300,7 +300,7 @@ export default function CustomerBillingPage() {
 
                         <button
                             onClick={() => setShowAddCard(true)}
-                            className="bg-gray-50/50 dark:bg-gray-900/50 hover:bg-white rounded-[32px] p-8 border-2 border-dashed border-gray-200 hover:border-[#1E7B7C] hover:text-[#1E7B7C] text-gray-400 dark:text-gray-500 transition-all flex flex-col justify-center items-center min-h-[220px] group cursor-pointer shadow-none hover:shadow-xl"
+                            className="bg-gray-50/50 dark:bg-gray-900/50 hover:bg-white rounded-[32px] p-8 border-2 border-dashed border-gray-200 hover:border-[#1E7B7C] hover:text-[#1E7B7C] text-gray-400 dark:text-gray-500 transition-all flex flex-col justify-center items-center min-h-[220px] group cursor-pointer shadow-none hover:shadow-xl dark:border-gray-800"
                         >
                             <div className="p-4 bg-white dark:bg-gray-950 group-hover:bg-[#E8F4F4] rounded-2xl mb-4 transition-colors">
                                 <Plus size={24} className="group-hover:scale-125 transition-transform" />

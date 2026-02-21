@@ -36,7 +36,7 @@ export function ReviewsSection({ reviews, averageRating, totalReviews }: Reviews
 
       {/* Rating Overview */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
-        <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100">
+        <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 dark:border-gray-800">
           <div className="text-center">
             <div className="text-5xl font-black text-gray-900 mb-2">{averageRating}</div>
             <div className="flex justify-center gap-1 mb-2">
@@ -52,7 +52,7 @@ export function ReviewsSection({ reviews, averageRating, totalReviews }: Reviews
           </div>
         </div>
 
-        <div className="lg:col-span-2 bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100">
+        <div className="lg:col-span-2 bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 dark:border-gray-800">
           <div className="space-y-3">
             {[5, 4, 3, 2, 1].map((rating) => (
               <div key={rating} className="flex items-center gap-3">
@@ -102,7 +102,7 @@ export function ReviewsSection({ reviews, averageRating, totalReviews }: Reviews
         {reviews.map((review) => (
           <div
             key={review.id}
-            className="group bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 hover:border-[#E8F4F4] transition-all duration-300"
+            className="group bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 hover:border-[#E8F4F4] transition-all duration-300 dark:border-gray-800"
           >
             <div className="flex items-start justify-between mb-4">
               <div className="flex items-center gap-4">

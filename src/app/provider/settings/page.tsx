@@ -52,18 +52,18 @@ export default function ProviderSettingsPage() {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div>
                                             <label className="block text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-2">First Name</label>
-                                            <input type="text" defaultValue="Alex" className="w-full px-5 py-4 bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 rounded-xl font-bold text-gray-900 dark:text-gray-100 focus:outline-none focus:border-[#1E7B7C]" />
+                                            <input type="text" defaultValue="Alex" className="w-full px-5 py-4 bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 rounded-xl font-bold text-gray-900 dark:text-gray-100 focus:outline-none focus:border-[#1E7B7C] dark:border-gray-800" />
                                         </div>
                                         <div>
                                             <label className="block text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-2">Last Name</label>
-                                            <input type="text" defaultValue="Johnson" className="w-full px-5 py-4 bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 rounded-xl font-bold text-gray-900 dark:text-gray-100 focus:outline-none focus:border-[#1E7B7C]" />
+                                            <input type="text" defaultValue="Johnson" className="w-full px-5 py-4 bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 rounded-xl font-bold text-gray-900 dark:text-gray-100 focus:outline-none focus:border-[#1E7B7C] dark:border-gray-800" />
                                         </div>
                                     </div>
                                     <div>
                                         <label className="block text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-2">Email Address</label>
                                         <div className="flex relative">
                                             <Mail size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" />
-                                            <input type="email" defaultValue="alex.j@example.com" className="w-full pl-10 pr-5 py-4 bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 rounded-xl font-bold text-gray-900 dark:text-gray-100 focus:outline-none focus:border-[#1E7B7C]" />
+                                            <input type="email" defaultValue="alex.j@example.com" className="w-full pl-10 pr-5 py-4 bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 rounded-xl font-bold text-gray-900 dark:text-gray-100 focus:outline-none focus:border-[#1E7B7C] dark:border-gray-800" />
                                         </div>
                                         <p className="text-xs font-bold text-emerald-500 mt-2 flex items-center gap-1"><Check size={14} /> Email Verified</p>
                                     </div>

@@ -139,7 +139,7 @@ export default function ServiceRequestPage() {
                                 value={formData.title}
                                 onChange={handleChange}
                                 placeholder="e.g. Need a plumber to fix a leaking under-sink pipe"
-                                className="w-full bg-white/20 dark:bg-white/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl px-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all placeholder:text-gray-400 dark:text-gray-500 font-medium"
+                                className="w-full bg-white/20 dark:bg-white/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl px-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all placeholder:text-gray-400 dark:text-gray-500 font-medium dark:border-gray-800"
                             />
                         </div>
 
@@ -152,7 +152,7 @@ export default function ServiceRequestPage() {
                                     required
                                     value={formData.category}
                                     onChange={handleChange}
-                                    className="w-full bg-white/20 dark:bg-white/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl px-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all appearance-none font-medium text-base"
+                                    className="w-full bg-white/20 dark:bg-white/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl px-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all appearance-none font-medium text-base dark:border-gray-800"
                                 >
                                     <option value="" disabled>Select the best category</option>
                                     {CATEGORIES.map(cat => (
@@ -173,7 +173,7 @@ export default function ServiceRequestPage() {
                                 onChange={handleChange}
                                 rows={5}
                                 placeholder="Describe the job in detail. Include dimensions, specific materials needed, or any relevant history..."
-                                className="w-full bg-white/20 dark:bg-white/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl px-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all placeholder:text-gray-400 dark:text-gray-500 font-medium resize-none shadow-inner"
+                                className="w-full bg-white/20 dark:bg-white/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl px-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all placeholder:text-gray-400 dark:text-gray-500 font-medium resize-none shadow-inner dark:border-gray-800"
                             />
                         </div>
                     </div>
@@ -200,7 +200,7 @@ export default function ServiceRequestPage() {
                                     value={formData.location}
                                     onChange={handleChange}
                                     placeholder="e.g. 123 Main St, Brooklyn, NY or Online"
-                                    className="w-full bg-white/20 dark:bg-white/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl pl-12 pr-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all placeholder:text-gray-400 dark:text-gray-500 font-medium"
+                                    className="w-full bg-white/20 dark:bg-white/50 border border-gray-200 focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 rounded-2xl pl-12 pr-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all placeholder:text-gray-400 dark:text-gray-500 font-medium dark:border-gray-800"
                                 />
                                 <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" size={20} />
                             </div>
@@ -281,7 +281,7 @@ export default function ServiceRequestPage() {
                                     value={formData.budgetAmount}
                                     onChange={handleChange}
                                     placeholder="e.g. 150"
-                                    className="w-full bg-transparent border border-gray-200 focus:border-purple-300 focus:ring-4 focus:ring-purple-100 rounded-2xl pl-12 pr-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all text-xl font-black"
+                                    className="w-full bg-transparent border border-gray-200 focus:border-purple-300 focus:ring-4 focus:ring-purple-100 rounded-2xl pl-12 pr-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all text-xl font-black dark:border-gray-800"
                                 />
                             </div>
                         ) : (
@@ -295,7 +295,7 @@ export default function ServiceRequestPage() {
                                         value={formData.budgetMin}
                                         onChange={handleChange}
                                         placeholder="Min"
-                                        className="w-full bg-transparent border border-gray-200 focus:border-purple-300 focus:ring-4 focus:ring-purple-100 rounded-2xl pl-12 pr-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all text-xl font-black"
+                                        className="w-full bg-transparent border border-gray-200 focus:border-purple-300 focus:ring-4 focus:ring-purple-100 rounded-2xl pl-12 pr-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all text-xl font-black dark:border-gray-800"
                                     />
                                 </div>
                                 <span className="font-bold text-gray-400 dark:text-gray-500">to</span>
@@ -308,7 +308,7 @@ export default function ServiceRequestPage() {
                                         value={formData.budgetMax}
                                         onChange={handleChange}
                                         placeholder="Max"
-                                        className="w-full bg-transparent border border-gray-200 focus:border-purple-300 focus:ring-4 focus:ring-purple-100 rounded-2xl pl-12 pr-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all text-xl font-black"
+                                        className="w-full bg-transparent border border-gray-200 focus:border-purple-300 focus:ring-4 focus:ring-purple-100 rounded-2xl pl-12 pr-5 py-4 text-gray-900 dark:text-gray-100 outline-none transition-all text-xl font-black dark:border-gray-800"
                                     />
                                 </div>
                             </div>
@@ -325,7 +325,7 @@ export default function ServiceRequestPage() {
                         <h2 className="text-2xl font-black text-gray-900 dark:text-gray-100">Reference Images <span className="text-sm text-gray-400 dark:text-gray-500 font-medium">(Optional)</span></h2>
                     </div>
 
-                    <div className="border-2 border-dashed border-gray-200 rounded-[32px] p-10 text-center hover:border-[#1E7B7C] hover:bg-[#1E7B7C]/5 transition-all group relative">
+                    <div className="border-2 border-dashed border-gray-200 rounded-[32px] p-10 text-center hover:border-[#1E7B7C] hover:bg-[#1E7B7C]/5 transition-all group relative dark:border-gray-800">
                         <input
                             type="file"
                             multiple
@@ -344,7 +344,7 @@ export default function ServiceRequestPage() {
                     {images.length > 0 && (
                         <div className="flex flex-wrap gap-4 mt-6">
                             {images.map((file, i) => (
-                                <div key={i} className="relative w-24 h-24 rounded-2xl overflow-hidden border border-gray-200 group">
+                                <div key={i} className="relative w-24 h-24 rounded-2xl overflow-hidden border border-gray-200 group dark:border-gray-800">
                                     <div className="w-full h-full bg-gray-100 flex items-center justify-center">
                                         <ImageIcon className="text-gray-300" size={32} />
                                     </div>

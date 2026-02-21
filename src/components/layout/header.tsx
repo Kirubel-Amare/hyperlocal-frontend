@@ -231,7 +231,7 @@ export default function Header({
                 )
               ) : (
                 <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-2 pr-4 border-r border-gray-200">
+                  <div className="flex items-center gap-2 pr-4 border-r border-gray-200 dark:border-gray-800">
                     <button className="relative p-2.5 rounded-xl text-gray-600 hover:text-[#1E7B7C] hover:bg-[#E8F4F4] transition-all duration-300">
                       <Bell size={20} />
                       <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 border-2 border-white dark:border-gray-800 rounded-full" />

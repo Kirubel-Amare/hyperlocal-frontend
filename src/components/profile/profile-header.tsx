@@ -30,7 +30,7 @@ export function ProfileHeader({ profile }: ProfileHeaderProps) {
       {/* Background Gradient Card */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#1E7B7C]/5 via-[#1E7B7C]/5 to-[#166566]/5 rounded-[3rem] blur-3xl" />
 
-      <div className="relative bg-white/80 backdrop-blur-xl rounded-[3rem] border border-white/80 shadow-2xl shadow-gray-200/50 p-8 md:p-10">
+      <div className="relative bg-white/80 backdrop-blur-xl rounded-[3rem] border border-white/80 shadow-2xl shadow-gray-200/50 p-8 md:p-10 dark:border-gray-800/80">
         {/* Decorative Elements */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#1E7B7C]/10 to-[#166566]/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-purple-500/10 to-pink-500/10 rounded-full blur-3xl" />
@@ -90,7 +90,7 @@ export function ProfileHeader({ profile }: ProfileHeaderProps) {
 
             {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-              <div className="bg-white/60 backdrop-blur rounded-2xl p-4 border border-gray-100">
+              <div className="bg-white/60 backdrop-blur rounded-2xl p-4 border border-gray-100 dark:border-gray-800">
                 <div className="flex items-center gap-2 text-yellow-500 mb-1">
                   <Star className="fill-yellow-500" size={20} />
                   <span className="text-2xl font-bold text-gray-900">{profile.rating}</span>
@@ -98,7 +98,7 @@ export function ProfileHeader({ profile }: ProfileHeaderProps) {
                 <span className="text-xs text-gray-500">{profile.reviewsCount} reviews</span>
               </div>
 
-              <div className="bg-white/60 backdrop-blur rounded-2xl p-4 border border-gray-100">
+              <div className="bg-white/60 backdrop-blur rounded-2xl p-4 border border-gray-100 dark:border-gray-800">
                 <div className="flex items-center gap-2 text-[#1E7B7C] mb-1">
                   <Shield size={20} />
                   <span className="text-2xl font-bold text-gray-900">{profile.experience}</span>
@@ -106,7 +106,7 @@ export function ProfileHeader({ profile }: ProfileHeaderProps) {
                 <span className="text-xs text-gray-500">Experience</span>
               </div>
 
-              <div className="bg-white/60 backdrop-blur rounded-2xl p-4 border border-gray-100">
+              <div className="bg-white/60 backdrop-blur rounded-2xl p-4 border border-gray-100 dark:border-gray-800">
                 <div className="flex items-center gap-2 text-emerald-500 mb-1">
                   <Award size={20} />
                   <span className="text-2xl font-bold text-gray-900">{profile.completedJobs || 150}+</span>
@@ -114,7 +114,7 @@ export function ProfileHeader({ profile }: ProfileHeaderProps) {
                 <span className="text-xs text-gray-500">Jobs Done</span>
               </div>
 
-              <div className="bg-white/60 backdrop-blur rounded-2xl p-4 border border-gray-100">
+              <div className="bg-white/60 backdrop-blur rounded-2xl p-4 border border-gray-100 dark:border-gray-800">
                 <div className="flex items-center gap-2 text-purple-500 mb-1">
                   <Clock size={20} />
                   <span className="text-2xl font-bold text-gray-900">&lt; 2h</span>
@@ -127,17 +127,14 @@ export function ProfileHeader({ profile }: ProfileHeaderProps) {
             <div className="flex items-center justify-center md:justify-start gap-3">
               <button
                 onClick={() => setIsLiked(!isLiked)}
-                className={`p-3 rounded-xl border transition-all duration-300 ${isLiked
-                    ? 'bg-rose-500 border-rose-500 text-white shadow-lg shadow-rose-200'
-                    : 'bg-white border-gray-200 text-gray-600 hover:border-rose-300 hover:text-rose-500'
-                  }`}
+                className={`p-3 rounded-xl border transition-all duration-300 ${isLiked ? 'bg-rose-500 border-rose-500 text-white shadow-lg shadow-rose-200' : 'bg-white border-gray-200 text-gray-600 hover:border-rose-300 hover:text-rose-500' } dark:border-gray-800`}
               >
                 <Heart size={20} fill={isLiked ? 'white' : 'none'} />
               </button>
 
               <button
                 onClick={() => setIsShared(!isShared)}
-                className="p-3 rounded-xl bg-white border border-gray-200 text-gray-600 hover:border-[#1E7B7C]/30 hover:text-[#1E7B7C] transition-all duration-300"
+                className="p-3 rounded-xl bg-white border border-gray-200 text-gray-600 hover:border-[#1E7B7C]/30 hover:text-[#1E7B7C] transition-all duration-300 dark:border-gray-800"
               >
                 <Share2 size={20} />
               </button>

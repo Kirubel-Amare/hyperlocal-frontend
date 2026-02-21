@@ -134,7 +134,7 @@ export default function AdminSidebar() {
                             <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                             <p className="text-xs text-emerald-500 font-bold uppercase tracking-wider">All Systems Operational</p>
                         </div>
-                        <button className="w-full bg-white/20 dark:bg-white/5 hover:bg-white backdrop-blur-sm text-white text-xs font-black py-2.5 rounded-xl transition-colors border border-white/10">
+                        <button className="w-full bg-white/20 dark:bg-white/5 hover:bg-white backdrop-blur-sm text-white text-xs font-black py-2.5 rounded-xl transition-colors border border-white/10 dark:border-gray-800/10">
                             View Server Logs
                         </button>
                     </div>

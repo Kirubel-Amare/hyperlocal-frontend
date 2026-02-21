@@ -89,7 +89,7 @@ export default function ProviderProfileEditPage() {
                                     <input
                                         type="text"
                                         defaultValue={user.name}
-                                        className="w-full px-5 py-3.5 bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 rounded-xl font-bold text-gray-900 dark:text-gray-100 focus:outline-none focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 transition-all"
+                                        className="w-full px-5 py-3.5 bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 rounded-xl font-bold text-gray-900 dark:text-gray-100 focus:outline-none focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 transition-all dark:border-gray-800"
                                     />
                                 </div>
                                 <div>
@@ -97,7 +97,7 @@ export default function ProviderProfileEditPage() {
                                     <input
                                         type="text"
                                         defaultValue={user.role}
-                                        className="w-full px-5 py-3.5 bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 rounded-xl font-bold text-gray-900 dark:text-gray-100 focus:outline-none focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 transition-all"
+                                        className="w-full px-5 py-3.5 bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 rounded-xl font-bold text-gray-900 dark:text-gray-100 focus:outline-none focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 transition-all dark:border-gray-800"
                                         placeholder="e.g. Expert Plumber & Pipe Fitter"
                                     />
                                     <p className="text-xs font-medium text-gray-400 dark:text-gray-500 mt-2">A strong title helps you stand out in search results.</p>
@@ -114,7 +114,7 @@ export default function ProviderProfileEditPage() {
                             <textarea
                                 rows={6}
                                 defaultValue="Professional cleaning expert with over 8 years of experience in residential and commercial detailing. I specialize in high-end restoration and weekly maintenance. My goal is to provide a 5-star experience every time, ensuring your space is not just clean, but transformed."
-                                className="w-full px-5 py-4 bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 rounded-2xl font-medium text-gray-700 dark:text-gray-300 leading-relaxed focus:outline-none focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 transition-all resize-y"
+                                className="w-full px-5 py-4 bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 rounded-2xl font-medium text-gray-700 dark:text-gray-300 leading-relaxed focus:outline-none focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 transition-all resize-y dark:border-gray-800"
                                 placeholder="Highlight your top skills, experience, and interests. This is one of the first things clients will see on your profile."
                             />
                         </div>
@@ -128,7 +128,7 @@ export default function ProviderProfileEditPage() {
                                     <input
                                         type="number"
                                         defaultValue="45.00"
-                                        className="w-full pl-10 pr-5 py-3.5 bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 rounded-xl font-bold text-gray-900 dark:text-gray-100 focus:outline-none focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 transition-all"
+                                        className="w-full pl-10 pr-5 py-3.5 bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 rounded-xl font-bold text-gray-900 dark:text-gray-100 focus:outline-none focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 transition-all dark:border-gray-800"
                                     />
                                 </div>
                                 <p className="text-[10px] font-bold text-gray-400 dark:text-gray-500 mt-2 flex justify-between">
@@ -143,7 +143,7 @@ export default function ProviderProfileEditPage() {
                                     <input
                                         type="text"
                                         defaultValue="New York, NY"
-                                        className="w-full pl-10 pr-5 py-3.5 bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 rounded-xl font-bold text-gray-900 dark:text-gray-100 focus:outline-none focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 transition-all"
+                                        className="w-full pl-10 pr-5 py-3.5 bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 rounded-xl font-bold text-gray-900 dark:text-gray-100 focus:outline-none focus:border-[#1E7B7C] focus:ring-4 focus:ring-[#1E7B7C]/10 transition-all dark:border-gray-800"
                                     />
                                 </div>
                             </div>
@@ -161,7 +161,7 @@ export default function ProviderProfileEditPage() {
                             <input
                                 type="text"
                                 placeholder="Search and add skills (e.g. Deep Cleaning, Plumbing)"
-                                className="w-full px-5 py-4 bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 rounded-xl font-medium text-gray-900 dark:text-gray-100 focus:outline-none focus:border-[#1E7B7C] transition-all"
+                                className="w-full px-5 py-4 bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 rounded-xl font-medium text-gray-900 dark:text-gray-100 focus:outline-none focus:border-[#1E7B7C] transition-all dark:border-gray-800"
                             />
                         </div>
 
@@ -187,7 +187,7 @@ export default function ProviderProfileEditPage() {
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <div className="col-span-1 sm:col-span-2 lg:col-span-3 border-2 border-dashed border-gray-200 rounded-2xl p-10 flex flex-col items-center justify-center text-center hover:border-[#1E7B7C]/30 hover:bg-[#E8F4F4]/50 transition-all cursor-pointer group">
+                            <div className="col-span-1 sm:col-span-2 lg:col-span-3 border-2 border-dashed border-gray-200 rounded-2xl p-10 flex flex-col items-center justify-center text-center hover:border-[#1E7B7C]/30 hover:bg-[#E8F4F4]/50 transition-all cursor-pointer group dark:border-gray-800">
                                 <div className="w-16 h-16 bg-gray-50 dark:bg-gray-900 rounded-full flex items-center justify-center mb-4 group-hover:bg-white group-hover:shadow-md transition-all">
                                     <Plus size={32} className="text-gray-400 dark:text-gray-500 group-hover:text-[#1E7B7C]" />
                                 </div>
@@ -196,7 +196,7 @@ export default function ProviderProfileEditPage() {
                             </div>
 
                             {[1, 2, 3].map(i => (
-                                <div key={i} className="relative aspect-[4/3] rounded-2xl overflow-hidden group border border-gray-200 shadow-sm">
+                                <div key={i} className="relative aspect-[4/3] rounded-2xl overflow-hidden group border border-gray-200 shadow-sm dark:border-gray-800">
                                     <Image src={`https://images.unsplash.com/photo-${1500000000000 + i * 100000}?w=400&h=300&fit=crop`} alt="Portfolio" fill className="object-cover" />
                                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
                                         <button className="p-2 bg-white dark:bg-gray-950/20 hover:bg-white rounded-xl text-white transition-colors backdrop-blur-sm">

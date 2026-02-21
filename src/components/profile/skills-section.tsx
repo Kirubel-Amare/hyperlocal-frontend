@@ -19,13 +19,13 @@ export function SkillsSection({ skills, expertise }: SkillsSectionProps) {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100">
+        <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 dark:border-gray-800">
           <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Specialized Skills</h3>
           <div className="flex flex-wrap gap-2">
             {skills.map((skill) => (
               <span
                 key={skill}
-                className="group relative px-4 py-2 bg-white rounded-xl text-sm font-medium text-gray-700 border border-gray-200 hover:border-[#1E7B7C]/30 hover:text-[#1E7B7C] hover:shadow-lg transition-all duration-300 cursor-default"
+                className="group relative px-4 py-2 bg-white rounded-xl text-sm font-medium text-gray-700 border border-gray-200 hover:border-[#1E7B7C]/30 hover:text-[#1E7B7C] hover:shadow-lg transition-all duration-300 cursor-default dark:border-gray-800"
               >
                 {skill}
                 <span className="absolute inset-0 bg-gradient-to-r from-[#1E7B7C]/0 to-[#166566]/0 group-hover:from-[#1E7B7C]/5 group-hover:to-[#166566]/5 rounded-xl transition-all" />
@@ -35,7 +35,7 @@ export function SkillsSection({ skills, expertise }: SkillsSectionProps) {
         </div>
 
         {expertise && (
-          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100">
+          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 dark:border-gray-800">
             <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Areas of Expertise</h3>
             <div className="space-y-3">
               {expertise.map((item) => (

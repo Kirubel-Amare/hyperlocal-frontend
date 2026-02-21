@@ -53,7 +53,7 @@ export default function AboutPage() {
               {values.map((value, i) => {
                 const Icon = value.icon
                 return (
-                  <div key={i} className="group bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-100 hover:border-[#1E7B7C]/20 hover:shadow-xl transition-all">
+                  <div key={i} className="group bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-100 hover:border-[#1E7B7C]/20 hover:shadow-xl transition-all dark:border-gray-800">
                     <div className="w-14 h-14 bg-gradient-to-br from-[#E8F4F4] to-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                       <Icon size={28} className="text-[#1E7B7C]" />
                     </div>
@@ -78,7 +78,7 @@ export default function AboutPage() {
                       {i + 1}
                     </div>
                   </div>
-                  <div className="flex-1 bg-white rounded-2xl p-6 border border-gray-100 hover:border-[#1E7B7C]/20 hover:shadow-lg transition-all">
+                  <div className="flex-1 bg-white rounded-2xl p-6 border border-gray-100 hover:border-[#1E7B7C]/20 hover:shadow-lg transition-all dark:border-gray-800">
                     <p className="text-sm font-bold text-[#1E7B7C] uppercase">{milestone.year}</p>
                     <p className="text-lg font-semibold text-gray-900 mt-2">{milestone.event}</p>
                   </div>

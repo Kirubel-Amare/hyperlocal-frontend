@@ -64,7 +64,7 @@ export default function ContactPage() {
                   <Link
                     key={i}
                     href={item.link}
-                    className="group bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100 hover:border-[#1E7B7C]/20 hover:shadow-xl transition-all"
+                    className="group bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100 hover:border-[#1E7B7C]/20 hover:shadow-xl transition-all dark:border-gray-800"
                   >
                     <div className="w-12 h-12 bg-gradient-to-br from-[#E8F4F4] to-blue-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                       <Icon size={24} className="text-[#1E7B7C]" />
@@ -163,7 +163,7 @@ export default function ContactPage() {
               <h2 className="text-4xl font-bold mb-8 text-gray-900">Frequently Asked Questions</h2>
               <div className="space-y-4">
                 {faqs.map((faq, i) => (
-                  <details key={i} className="group bg-white rounded-xl border border-gray-200 hover:border--[#1E7B7C]/20 hover:shadow-lg transition-all">
+                  <details key={i} className="group bg-white rounded-xl border border-gray-200 hover:border--[#1E7B7C]/20 hover:shadow-lg transition-all dark:border-gray-800">
                     <summary className="flex items-center justify-between px-6 py-4 cursor-pointer font-semibold text-gray-900 hover:text-[#1E7B7C] transition-colors">
                       <span>{faq.q}</span>
                       <span className="transform group-open:rotate-180 transition-transform">
@@ -172,7 +172,7 @@ export default function ContactPage() {
                         </svg>
                       </span>
                     </summary>
-                    <div className="px-6 py-4 pt-0 text-gray-600 border-t border-gray-100">
+                    <div className="px-6 py-4 pt-0 text-gray-600 border-t border-gray-100 dark:border-gray-800">
                       {faq.a}
                     </div>
                   </details>

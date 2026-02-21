@@ -214,7 +214,7 @@ export default function AllJobsPage() {
                                                             className="object-cover group-hover:scale-105 transition-transform duration-700"
                                                         />
                                                         <div className="absolute top-4 left-4">
-                                                            <span className="px-3 py-1.5 bg-black/50 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest rounded-lg border border-white/10">
+                                                            <span className="px-3 py-1.5 bg-black/50 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest rounded-lg border border-white/10 dark:border-gray-800/10">
                                                                 Service Listing
                                                             </span>
                                                         </div>
@@ -322,7 +322,7 @@ export default function AllJobsPage() {
                             </div>
                         ) : (
                             /* Map View Implementation */
-                            <div className="relative h-[600px] bg-gray-100 rounded-[40px] overflow-hidden border border-gray-200 shadow-2xl">
+                            <div className="relative h-[600px] bg-gray-100 rounded-[40px] overflow-hidden border border-gray-200 shadow-2xl dark:border-gray-800">
                                 {/* Mock Map Background (Animated Grid & Gradient) */}
                                 <div className="absolute inset-0 bg-[#F8FAFA]">
                                     <div className="absolute inset-0 opacity-20" style={{
@@ -385,8 +385,8 @@ export default function AllJobsPage() {
                                 </div>
 
                                 {/* Map Controls */}
-                                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-white dark:bg-gray-950/80 backdrop-blur-md px-6 py-4 rounded-3xl shadow-2xl border border-white/20">
-                                    <div className="flex items-center gap-2 pr-4 border-r border-gray-200">
+                                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-white dark:bg-gray-950/80 backdrop-blur-md px-6 py-4 rounded-3xl shadow-2xl border border-white/20 dark:border-gray-800/20">
+                                    <div className="flex items-center gap-2 pr-4 border-r border-gray-200 dark:border-gray-800">
                                         <NavigationIcon size={18} className="text-[#1E7B7C]" />
                                         <span className="text-sm font-black text-gray-900 dark:text-gray-100">Current Location: New York, NY</span>
                                     </div>

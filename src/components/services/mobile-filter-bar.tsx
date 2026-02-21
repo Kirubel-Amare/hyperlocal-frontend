@@ -8,7 +8,7 @@ interface MobileFilterBarProps {
 
 export function MobileFilterBar({ onFilterClick }: MobileFilterBarProps) {
     return (
-        <div className="lg:hidden flex items-center justify-between p-4 bg-white dark:bg-gray-950 border border-gray-200 rounded-2xl mb-6 shadow-sm">
+        <div className="lg:hidden flex items-center justify-between p-4 bg-white dark:bg-gray-950 border border-gray-200 rounded-2xl mb-6 shadow-sm dark:border-gray-800">
             <div className="flex items-center gap-2">
                 <SlidersHorizontal size={18} className="text-[#1E7B7C]" />
                 <span className="font-semibold text-gray-900 dark:text-gray-100">Filters</span>

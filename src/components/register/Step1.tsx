@@ -32,7 +32,7 @@ export default function Step1({ initialData, onSubmit }: Step1Props) {
   }
 
   return (
-    <div className="bg-white rounded-lg border-gray-200 p-8 shadow-lg">
+    <div className="bg-white rounded-lg border-gray-200 p-8 shadow-lg dark:border-gray-800">
       <h1 className="text-3xl font-bold text-gray-900 text-center mb-2">
         Join our community
       </h1>

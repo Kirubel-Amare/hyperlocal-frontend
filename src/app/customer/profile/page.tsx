@@ -74,7 +74,7 @@ export default function CustomerProfilePage() {
                   <h3 className="text-sm font-black text-gray-900 dark:text-gray-100 mb-1">Profile Photo</h3>
                   <p className="text-xs font-bold text-gray-400 dark:text-gray-500 mb-3">JPG, GIF or PNG. Max size 2MB</p>
                   <div className="flex gap-2">
-                    <button className="px-4 py-2 border-2 border-gray-200 hover:border-[#1E7B7C] hover:text-[#1E7B7C] rounded-xl text-xs font-bold text-gray-500 dark:text-gray-400 transition-colors">Upload New</button>
+                    <button className="px-4 py-2 border-2 border-gray-200 hover:border-[#1E7B7C] hover:text-[#1E7B7C] rounded-xl text-xs font-bold text-gray-500 dark:text-gray-400 transition-colors dark:border-gray-800">Upload New</button>
                     <button className="px-4 py-2 bg-red-50 text-red-500 hover:bg-red-100 rounded-xl text-xs font-bold transition-colors">Remove</button>
                   </div>
                 </div>
@@ -86,14 +86,14 @@ export default function CustomerProfilePage() {
                     <label className="text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest pl-1">First Name</label>
                     <div className="relative">
                       <User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" size={18} />
-                      <input type="text" defaultValue="Alex" className="w-full bg-white dark:bg-gray-950 border border-gray-200 rounded-2xl py-3 pl-12 pr-4 text-sm font-bold text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] transition-all" />
+                      <input type="text" defaultValue="Alex" className="w-full bg-white dark:bg-gray-950 border border-gray-200 rounded-2xl py-3 pl-12 pr-4 text-sm font-bold text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] transition-all dark:border-gray-800" />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest pl-1">Last Name</label>
                     <div className="relative">
                       <User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" size={18} />
-                      <input type="text" defaultValue="Johnson" className="w-full bg-white dark:bg-gray-950 border border-gray-200 rounded-2xl py-3 pl-12 pr-4 text-sm font-bold text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] transition-all" />
+                      <input type="text" defaultValue="Johnson" className="w-full bg-white dark:bg-gray-950 border border-gray-200 rounded-2xl py-3 pl-12 pr-4 text-sm font-bold text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] transition-all dark:border-gray-800" />
                     </div>
                   </div>
                 </div>
@@ -103,14 +103,14 @@ export default function CustomerProfilePage() {
                     <label className="text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest pl-1">Email Address</label>
                     <div className="relative">
                       <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" size={18} />
-                      <input type="email" defaultValue="alex.j@example.com" className="w-full bg-white dark:bg-gray-950 border border-gray-200 rounded-2xl py-3 pl-12 pr-4 text-sm font-bold text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] transition-all" />
+                      <input type="email" defaultValue="alex.j@example.com" className="w-full bg-white dark:bg-gray-950 border border-gray-200 rounded-2xl py-3 pl-12 pr-4 text-sm font-bold text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] transition-all dark:border-gray-800" />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest pl-1">Phone Number</label>
                     <div className="relative">
                       <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" size={18} />
-                      <input type="tel" defaultValue="+1 (555) 123-4567" className="w-full bg-white dark:bg-gray-950 border border-gray-200 rounded-2xl py-3 pl-12 pr-4 text-sm font-bold text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] transition-all" />
+                      <input type="tel" defaultValue="+1 (555) 123-4567" className="w-full bg-white dark:bg-gray-950 border border-gray-200 rounded-2xl py-3 pl-12 pr-4 text-sm font-bold text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] transition-all dark:border-gray-800" />
                     </div>
                   </div>
                 </div>
@@ -122,7 +122,7 @@ export default function CustomerProfilePage() {
                   </label>
                   <div className="relative">
                     <MapPin className="absolute left-4 top-4 text-gray-400 dark:text-gray-500" size={18} />
-                    <textarea rows={3} defaultValue="123 Main St, Apt 4B&#10;San Francisco, CA 94105" className="w-full bg-white dark:bg-gray-950 border border-gray-200 rounded-2xl py-3 pl-12 pr-4 text-sm font-bold text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] transition-all resize-none"></textarea>
+                    <textarea rows={3} defaultValue="123 Main St, Apt 4B&#10;San Francisco, CA 94105" className="w-full bg-white dark:bg-gray-950 border border-gray-200 rounded-2xl py-3 pl-12 pr-4 text-sm font-bold text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] transition-all resize-none dark:border-gray-800"></textarea>
                   </div>
                 </div>
               </form>
@@ -139,11 +139,11 @@ export default function CustomerProfilePage() {
                   <div className="space-y-4 max-w-md">
                     <div className="relative">
                       <Key className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" size={18} />
-                      <input type="password" placeholder="Current Password" className="w-full bg-white dark:bg-gray-950 border border-gray-200 rounded-2xl py-3 pl-12 pr-4 text-sm font-bold text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] transition-all" />
+                      <input type="password" placeholder="Current Password" className="w-full bg-white dark:bg-gray-950 border border-gray-200 rounded-2xl py-3 pl-12 pr-4 text-sm font-bold text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] transition-all dark:border-gray-800" />
                     </div>
                     <div className="relative">
                       <Key className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" size={18} />
-                      <input type="password" placeholder="New Password" className="w-full bg-white dark:bg-gray-950 border border-gray-200 rounded-2xl py-3 pl-12 pr-4 text-sm font-bold text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] transition-all" />
+                      <input type="password" placeholder="New Password" className="w-full bg-white dark:bg-gray-950 border border-gray-200 rounded-2xl py-3 pl-12 pr-4 text-sm font-bold text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-[#1E7B7C]/20 focus:border-[#1E7B7C] transition-all dark:border-gray-800" />
                     </div>
                     <button className="px-6 py-3 bg-gray-900 text-white rounded-xl font-bold text-sm hover:bg-black transition-colors">
                       Update Password

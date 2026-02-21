@@ -217,7 +217,7 @@ export default function BrowseRequestsPage() {
                         </div>
                     ))
                 ) : (
-                    <div className="text-center py-20 bg-white dark:bg-gray-950/40 backdrop-blur-md rounded-[40px] border border-dashed border-gray-200">
+                    <div className="text-center py-20 bg-white dark:bg-gray-950/40 backdrop-blur-md rounded-[40px] border border-dashed border-gray-200 dark:border-gray-800">
                         <div className="w-20 h-20 bg-gray-50 dark:bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6 text-gray-300">
                             <Search size={40} />
                         </div>

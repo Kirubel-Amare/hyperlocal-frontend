@@ -27,7 +27,7 @@ export default function StatsCard({
 }: StatsCardProps) {
     if (variant === 'primary') {
         return (
-            <div className="bg-gradient-to-br from-[#1E7B7C] to-[#166566] rounded-[40px] p-10 shadow-2xl shadow-[#1E7B7C]/20 text-white relative overflow-hidden flex flex-col justify-between min-h-[220px] border border-white/10">
+            <div className="bg-gradient-to-br from-[#1E7B7C] to-[#166566] rounded-[40px] p-10 shadow-2xl shadow-[#1E7B7C]/20 text-white relative overflow-hidden flex flex-col justify-between min-h-[220px] border border-white/10 dark:border-gray-800/10">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 dark:bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
 
                 <div className="flex justify-between items-start relative z-10 mb-8">
@@ -43,7 +43,7 @@ export default function StatsCard({
                             <span className="text-6xl font-black">{value}</span>
                         </div>
                         {trend && (
-                            <div className="flex items-center gap-2 text-sm font-bold bg-white/20 dark:bg-white/5 backdrop-blur-sm w-fit px-3 py-1.5 rounded-xl border border-white/20">
+                            <div className="flex items-center gap-2 text-sm font-bold bg-white/20 dark:bg-white/5 backdrop-blur-sm w-fit px-3 py-1.5 rounded-xl border border-white/20 dark:border-gray-800/20">
                                 {trend}
                             </div>
                         )}

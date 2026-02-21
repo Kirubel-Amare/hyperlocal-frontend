@@ -21,7 +21,7 @@ export default function ProviderRequestsPage() {
             <div className="w-full lg:w-72 h-48 rounded-2xl overflow-hidden flex-shrink-0 relative shadow-inner">
               <Image src={req.image} alt={req.title} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
               <div className="absolute top-4 left-4">
-                <div className="px-3 py-1.5 bg-black/40 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest rounded-xl border border-white/10">
+                <div className="px-3 py-1.5 bg-black/40 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest rounded-xl border border-white/10 dark:border-gray-800/10">
                   {req.urgency}
                 </div>
               </div>
@@ -77,7 +77,7 @@ export default function ProviderRequestsPage() {
         ))}
 
         {/* Empty State / Bottom Note */}
-        <div className="mt-8 p-8 text-center bg-gray-50/50 dark:bg-gray-900/50 rounded-[32px] border-2 border-dashed border-gray-200">
+        <div className="mt-8 p-8 text-center bg-gray-50/50 dark:bg-gray-900/50 rounded-[32px] border-2 border-dashed border-gray-200 dark:border-gray-800">
           <p className="text-gray-400 dark:text-gray-500 font-bold flex items-center justify-center gap-2">
             <ChevronRight size={16} />
             Showing all active service requests in your area

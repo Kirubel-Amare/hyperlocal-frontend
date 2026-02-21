@@ -182,7 +182,7 @@ export default function DisputesPage() {
                 </button>
                 <button
                   onClick={() => handleResolve(selectedDispute.id, 'split')}
-                  className="w-full bg-white/20 dark:bg-white/5 text-white border border-white/20 py-4 rounded-3xl font-black flex items-center justify-center gap-3 hover:bg-white transition-all italic"
+                  className="w-full bg-white/20 dark:bg-white/5 text-white border border-white/20 py-4 rounded-3xl font-black flex items-center justify-center gap-3 hover:bg-white transition-all italic dark:border-gray-800/20"
                 >
                   <RotateCcw size={20} />
                   Split Payment (50/50)

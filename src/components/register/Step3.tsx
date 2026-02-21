@@ -26,7 +26,7 @@ export default function Step3({ initialData, onBack, onSubmit }: Step3Props) {
   }
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-8">
+    <div className="bg-white rounded-lg border border-gray-200 p-8 dark:border-gray-800">
       <h2 className="text-2xl font-bold text-gray-900 mb-6">Verification</h2>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>

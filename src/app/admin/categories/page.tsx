@@ -209,7 +209,7 @@ export default function CategoriesManagementPage() {
         {!isAdding && (
           <button
             onClick={() => setIsAdding(true)}
-            className="border-2 border-dashed border-gray-200 rounded-[2.5rem] p-6 flex flex-col items-center justify-center gap-4 hover:border-[#1E7B7C]/30 hover:bg-[#E8F4F4]/20 transition-all duration-300 group min-h-[280px]"
+            className="border-2 border-dashed border-gray-200 rounded-[2.5rem] p-6 flex flex-col items-center justify-center gap-4 hover:border-[#1E7B7C]/30 hover:bg-[#E8F4F4]/20 transition-all duration-300 group min-h-[280px] dark:border-gray-800"
           >
             <div className="w-16 h-16 rounded-full bg-gray-50 dark:bg-gray-900 flex items-center justify-center text-gray-400 dark:text-gray-500 group-hover:bg-white group-hover:text-[#1E7B7C] group-hover:scale-110 transition-all duration-300 shadow-sm group-hover:shadow-md">
               <Plus size={32} />

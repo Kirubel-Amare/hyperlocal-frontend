@@ -153,7 +153,7 @@ export default function CustomerSavedProvidersPage() {
 
                 {/* Empty State Card Example */}
                 {savedProviders.length < 4 && (
-                    <div className="bg-gray-50/50 dark:bg-gray-900/50 rounded-[32px] border-2 border-dashed border-gray-200 flex flex-col items-center justify-center p-8 text-center min-h-[400px]">
+                    <div className="bg-gray-50/50 dark:bg-gray-900/50 rounded-[32px] border-2 border-dashed border-gray-200 flex flex-col items-center justify-center p-8 text-center min-h-[400px] dark:border-gray-800">
                         <div className="w-16 h-16 bg-white dark:bg-gray-950 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm flex items-center justify-center mb-4">
                             <Search className="text-gray-400 dark:text-gray-500" size={24} />
                         </div>

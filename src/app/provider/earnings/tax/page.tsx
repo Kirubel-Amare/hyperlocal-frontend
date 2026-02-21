@@ -156,7 +156,7 @@ export default function TaxReportingPage() {
                     {/* External Settings Link */}
                     <div className="p-8 bg-gray-900 text-white rounded-[3rem] shadow-xl group cursor-pointer hover:bg-gray-800 transition-all">
                         <div className="flex justify-between items-start mb-6">
-                            <div className="p-3 bg-white/20 dark:bg-white/5 rounded-2xl border border-white/10">
+                            <div className="p-3 bg-white/20 dark:bg-white/5 rounded-2xl border border-white/10 dark:border-gray-800/10">
                                 <BarChart3 size={20} />
                             </div>
                             <ChevronRight size={20} className="text-white/30 group-hover:text-white transition-all transform group-hover:translate-x-1" />

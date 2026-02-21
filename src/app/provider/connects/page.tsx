@@ -179,14 +179,14 @@ export default function ProviderConnectsPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
         {/* Core Balance Card */}
-        <div className="lg:col-span-2 bg-gradient-to-br from-[#1E7B7C] to-[#166566] rounded-[40px] p-10 shadow-2xl shadow-[#1E7B7C]/20 text-white relative overflow-hidden flex flex-col justify-between h-72 border border-white/10 group">
+        <div className="lg:col-span-2 bg-gradient-to-br from-[#1E7B7C] to-[#166566] rounded-[40px] p-10 shadow-2xl shadow-[#1E7B7C]/20 text-white relative overflow-hidden flex flex-col justify-between h-72 border border-white/10 group dark:border-gray-800/10">
           {/* Animated decorative element */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/20 dark:bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 group-hover:scale-110 transition-transform duration-700" />
           <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
 
           <div className="flex justify-between items-start relative z-10 mb-8">
             <span className="text-xs font-black text-white/60 uppercase tracking-widest block">Available Balance</span>
-            <div className="p-4 bg-white/20 dark:bg-white/5 backdrop-blur-md rounded-2xl border border-white/20 shadow-inner">
+            <div className="p-4 bg-white/20 dark:bg-white/5 backdrop-blur-md rounded-2xl border border-white/20 shadow-inner dark:border-gray-800/20">
               <Zap size={32} className="text-white fill-white animate-pulse" />
             </div>
           </div>
@@ -195,7 +195,7 @@ export default function ProviderConnectsPage() {
               <span className="text-7xl font-black tracking-tight drop-shadow-sm">{balance}</span>
               <span className="text-2xl font-bold text-white/70 uppercase tracking-wider">Connects</span>
             </div>
-            <div className="flex items-center gap-2.5 text-sm font-bold bg-white/20 dark:bg-white/5 backdrop-blur-md w-fit px-4 py-2 rounded-2xl border border-white/20 shadow-sm">
+            <div className="flex items-center gap-2.5 text-sm font-bold bg-white/20 dark:bg-white/5 backdrop-blur-md w-fit px-4 py-2 rounded-2xl border border-white/20 shadow-sm dark:border-gray-800/20">
               <Clock size={16} className="text-[#E8F4F4]" />
               Monthly Refresh in <span className="text-[#E8F4F4]">14 days</span>
             </div>

@@ -54,7 +54,7 @@ export default function ProviderReviewsPage() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
 
                 {/* Overall Score */}
-                <div className="bg-gradient-to-br from-[#1E7B7C] to-[#166566] rounded-[40px] p-10 shadow-3xl shadow-[#1E7B7C]/20 text-white flex flex-col items-center justify-center text-center border border-white/10 relative overflow-hidden">
+                <div className="bg-gradient-to-br from-[#1E7B7C] to-[#166566] rounded-[40px] p-10 shadow-3xl shadow-[#1E7B7C]/20 text-white flex flex-col items-center justify-center text-center border border-white/10 relative overflow-hidden dark:border-gray-800/10">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 dark:bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
 
                     <div className="relative z-10">

@@ -21,7 +21,7 @@ export default function ProviderProfile({
   tags
 }: ProviderProfileProps) {
   return (
-    <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-200 p-8">
+    <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-200 p-8 dark:border-gray-800">
       <h3 className="text-2xl font-bold mb-6">About the Professional</h3>
 
       <div className="flex gap-6 mb-6">
