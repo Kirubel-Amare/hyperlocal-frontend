@@ -9,7 +9,7 @@ export default function CustomerHeader() {
     const { user } = customerDashboardData
 
     return (
-        <header className="h-20 bg-white border-b border-gray-100 flex items-center justify-between px-8 fixed top-0 left-0 right-0 z-50">
+        <header className="h-20 bg-white/80 backdrop-blur-xl border-b border-gray-100 flex items-center justify-between px-8 fixed top-0 left-0 right-0 z-50">
             <div className="flex items-center gap-12">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2">
